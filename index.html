@@ -552,86 +552,166 @@ footer p{font-size:13px;color:var(--muted)}
   }
   .cmp-table small{display:block;font-size:10px;color:var(--muted);margin-top:3px}
 
-  /* ====== ANTITHESIS ====== */
-  .anti-sec{
-    background:var(--navy);
-    padding:90px 0;
-    color:#fff;
-  }
-  .anti-question{
-    font-size:clamp(2rem,4.5vw,3.2rem);
-    font-weight:900;line-height:1.25;
-    letter-spacing:-0.04em;
-    text-align:center;
-    margin-bottom:18px;
-  }
-  .anti-sub{
-    text-align:center;
-    font-size:17px;font-weight:700;
-    color:var(--orange);
-    margin-bottom:60px;
-    letter-spacing:.04em;
-  }
-  .anti-cards{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:32px;
-    max-width:860px;margin:0 auto 56px;
-    align-items:center;
-  }
-  .anti-card{
-    background:rgba(255,255,255,.07);
-    border:1px solid rgba(255,255,255,.15);
-    border-radius:16px;
-    padding:36px 28px;
-    text-align:center;
-  }
-  .anti-quote{
-    font-size:clamp(1.3rem,2.5vw,1.8rem);
-    font-weight:900;line-height:1.55;
-    color:#fff;
-  }
-  .anti-flow{display:flex;flex-direction:column;gap:0}
-  .anti-step{
-    background:rgba(255,255,255,.05);
-    border-radius:10px;padding:16px 20px;
-    font-size:14px;line-height:1.7;color:rgba(255,255,255,.85);
-    display:flex;align-items:flex-start;gap:14px;
-  }
-  .anti-step strong{color:#fff}
-  .anti-step-n{
-    flex-shrink:0;
-    background:var(--orange);color:#fff;
-    font-size:11px;font-weight:900;
-    padding:3px 8px;border-radius:6px;
-    margin-top:2px;
-  }
-  .anti-arrow{
-    text-align:center;color:var(--orange);
-    font-size:22px;padding:6px 0;
-  }
-  .anti-conclusion{
-    text-align:center;
-    max-width:680px;margin:0 auto;
-    border-top:1px solid rgba(255,255,255,.15);
-    padding-top:44px;
-  }
-  .anti-conclusion p{
-    font-size:16px;color:rgba(255,255,255,.75);
-    line-height:1.8;margin-bottom:16px;
-  }
-  .anti-big{
-    font-size:clamp(1.2rem,2.2vw,1.6rem) !important;
-    font-weight:900;color:#fff !important;
-    line-height:1.6;
-  }
-  .anti-big em{color:var(--orange);font-style:normal}
-  .sp-br{display:none}
+  
   @media(max-width:640px){
     .anti-cards{grid-template-columns:1fr}
     .sp-br{display:inline}
     .cmp-table{font-size:12px}
     .cmp-table th,.cmp-table td{padding:10px 8px}
+  }
+
+
+  /* ====== ANTITHESIS ====== */
+  .anti-sec{
+    background:linear-gradient(160deg, #0F1E32 0%, #1A3050 60%, #0F1E32 100%);
+    color:#fff;
+    overflow:hidden;
+    position:relative;
+  }
+  /* 薄いドット装飾 */
+  .anti-sec::before{
+    content:'';position:absolute;inset:0;
+    background-image:radial-gradient(rgba(255,255,255,.06) 1px,transparent 1px);
+    background-size:32px 32px;pointer-events:none;
+  }
+
+  /* HOOK */
+  .anti-hook{
+    position:relative;z-index:2;
+    text-align:center;
+    padding:90px 24px 70px;
+    background:linear-gradient(to bottom,rgba(247,148,29,.08) 0%,transparent 100%);
+    border-bottom:1px solid rgba(255,255,255,.08);
+  }
+  .anti-hook-inner{max-width:700px;margin:0 auto}
+  .anti-eyebrow{
+    font-size:11px;font-weight:700;letter-spacing:.3em;
+    color:var(--orange);text-transform:uppercase;
+    margin-bottom:28px;
+  }
+  .anti-h{
+    font-size:clamp(2.4rem,5.5vw,4rem);
+    font-weight:900;line-height:1.18;
+    letter-spacing:-0.05em;
+    margin-bottom:28px;
+  }
+  .anti-h em{color:var(--orange);font-style:normal}
+  .anti-hook-note{
+    display:inline-block;
+    font-size:16px;font-weight:700;
+    color:rgba(255,255,255,.55);
+    border-top:1px solid rgba(255,255,255,.15);
+    padding-top:20px;
+    letter-spacing:.06em;
+  }
+
+  /* QUOTE */
+  .anti-quote-block{
+    position:relative;z-index:2;
+    padding:64px 24px;
+    text-align:center;
+  }
+  .anti-quote-inner{
+    display:inline-flex;
+    align-items:flex-start;
+    gap:12px;
+    background:rgba(247,148,29,.1);
+    border:1px solid rgba(247,148,29,.3);
+    border-radius:20px;
+    padding:40px 48px;
+    max-width:560px;
+  }
+  .anti-quote-mark{
+    font-size:5rem;line-height:.7;
+    color:var(--orange);opacity:.6;
+    font-family:Georgia,serif;
+    flex-shrink:0;
+    align-self:flex-start;
+  }
+  .anti-quote-mark-r{
+    align-self:flex-end;
+    transform:rotate(180deg);
+  }
+  .anti-quote-text{
+    font-size:clamp(1.3rem,2.8vw,1.9rem);
+    font-weight:900;line-height:1.65;
+    letter-spacing:-0.02em;
+  }
+
+  /* STEPS */
+  .anti-steps-wrap{
+    position:relative;z-index:2;
+    max-width:680px;margin:0 auto;
+    padding:0 0 64px;
+    display:flex;flex-direction:column;gap:0;
+  }
+  .anti-step-item{
+    display:grid;
+    grid-template-columns:64px 1fr;
+    gap:20px;
+    align-items:center;
+    background:rgba(255,255,255,.04);
+    border:1px solid rgba(255,255,255,.1);
+    border-radius:14px;
+    padding:22px 28px;
+  }
+  .anti-step-item--last{
+    background:rgba(247,148,29,.08);
+    border-color:rgba(247,148,29,.35);
+  }
+  .anti-step-num{
+    font-size:2rem;font-weight:900;
+    color:rgba(255,255,255,.2);
+    text-align:center;letter-spacing:-0.04em;
+    line-height:1;
+  }
+  .anti-step-num--accent{color:var(--orange)}
+  .anti-step-text{
+    font-size:15.5px;line-height:1.75;
+    color:rgba(255,255,255,.8);
+  }
+  .anti-step-text strong{color:#fff;font-weight:800}
+  .anti-step-connector{
+    display:flex;flex-direction:column;
+    align-items:center;
+    padding:4px 0;
+    margin-left:32px;
+    gap:0;
+  }
+  .anti-step-line{width:1.5px;height:20px;background:rgba(255,255,255,.15)}
+  .anti-step-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.2);margin:2px 0}
+
+  /* CONCLUSION */
+  .anti-conclusion-block{
+    position:relative;z-index:2;
+    max-width:700px;margin:0 auto;
+    padding:56px 0 90px;
+    text-align:center;
+    border-top:1px solid rgba(255,255,255,.1);
+  }
+  .anti-conc-lead{
+    font-size:15px;color:rgba(255,255,255,.5);
+    margin-bottom:32px;line-height:2;
+    letter-spacing:.04em;
+  }
+  .anti-conc-main p{
+    font-size:clamp(1.3rem,2.5vw,1.8rem);
+    font-weight:900;line-height:1.65;
+    color:#fff;margin-bottom:12px;
+    letter-spacing:-0.02em;
+  }
+  .anti-conc-em em{
+    color:var(--orange);font-style:normal;
+  }
+  .pc-br{display:inline}
+  @media(max-width:640px){
+    .anti-hook{padding:64px 20px 48px}
+    .anti-quote-inner{padding:28px 20px;flex-direction:column;gap:4px}
+    .anti-quote-mark{font-size:3.5rem}
+    .anti-step-item{grid-template-columns:48px 1fr;gap:12px;padding:18px 16px}
+    .anti-step-num{font-size:1.5rem}
+    .anti-step-text{font-size:14px}
+    .pc-br{display:none}
   }
 
 </style>
@@ -1064,35 +1144,66 @@ footer p{font-size:13px;color:var(--muted)}
 
 <!-- ANTITHESIS -->
 <section class="anti-sec">
-  <div class="wrap">
-    <div class="anti-question">貴社は昨年、<br class="sp-br">次期幹部社員候補を<br>採用できましたか？</div>
-    <div class="anti-sub">3年夏からでは、もう遅い。</div>
-    <div class="anti-cards">
-      <div class="anti-card">
-        <div class="anti-quote">"まだ誰にも取られていない<br>優秀な2年生に、<br>先に会う権利。"</div>
-      </div>
-      <div class="anti-flow">
-        <div class="anti-step">
-          <span class="anti-step-n">01</span>
-          <p>優秀な学生ほど、<strong>3年の夏には動きを終えている。</strong></p>
-        </div>
-        <div class="anti-arrow">↓</div>
-        <div class="anti-step">
-          <span class="anti-step-n">02</span>
-          <p>そこで初めて出会っても、<strong>椅子はもう競合が埋めている。</strong></p>
-        </div>
-        <div class="anti-arrow">↓</div>
-        <div class="anti-step">
-          <span class="anti-step-n">03</span>
-          <p>勝敗は、<strong>誰も動いていない2年生の時点で、静かに決している。</strong></p>
-        </div>
-      </div>
-    </div>
-    <div class="anti-conclusion">
-      <p>早く会い、見極め、関係を育てた企業だけが、最後に選ばれる。</p>
-      <p class="anti-big">「いつか欲しい人材」を、競合より一年早く、自社の中に。<br>それが、<em>これからの採用の競争優位です。</em></p>
+
+  <!-- ── TOP HOOK ── -->
+  <div class="anti-hook">
+    <div class="anti-hook-inner">
+      <p class="anti-eyebrow">質問があります。</p>
+      <h2 class="anti-h">貴社は昨年、<br>次期幹部候補を<br><em>採用できましたか？</em></h2>
+      <p class="anti-hook-note">3年夏からでは、もう遅い。</p>
     </div>
   </div>
+
+  <!-- ── QUOTE ── -->
+  <div class="anti-quote-block">
+    <div class="anti-quote-inner">
+      <span class="anti-quote-mark">"</span>
+      <p class="anti-quote-text">まだ誰にも取られていない<br>優秀な2年生に、<br>先に会う権利。</p>
+      <span class="anti-quote-mark anti-quote-mark-r">"</span>
+    </div>
+  </div>
+
+  <!-- ── STEPS ── -->
+  <div class="wrap">
+    <div class="anti-steps-wrap">
+      <div class="anti-step-item">
+        <div class="anti-step-num">01</div>
+        <div class="anti-step-body">
+          <p class="anti-step-text">優秀な学生ほど、<br><strong>3年の夏には動きを終えている。</strong></p>
+        </div>
+      </div>
+      <div class="anti-step-connector">
+        <div class="anti-step-line"></div>
+        <div class="anti-step-dot"></div>
+      </div>
+      <div class="anti-step-item">
+        <div class="anti-step-num">02</div>
+        <div class="anti-step-body">
+          <p class="anti-step-text">そこで出会っても、<br><strong>椅子はもう競合が埋めている。</strong></p>
+        </div>
+      </div>
+      <div class="anti-step-connector">
+        <div class="anti-step-line"></div>
+        <div class="anti-step-dot"></div>
+      </div>
+      <div class="anti-step-item anti-step-item--last">
+        <div class="anti-step-num anti-step-num--accent">03</div>
+        <div class="anti-step-body">
+          <p class="anti-step-text">勝敗は、<strong>誰も動いていない<br>2年生の時点で、静かに決している。</strong></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── CONCLUSION ── -->
+    <div class="anti-conclusion-block">
+      <p class="anti-conc-lead">早く会い、見極め、関係を育てた企業だけが、最後に選ばれる。</p>
+      <div class="anti-conc-main">
+        <p>「いつか欲しい人材」を、<br class="pc-br">競合より一年早く、自社の中に。</p>
+        <p class="anti-conc-em">それが、これからの採用の<em>競争優位</em>です。</p>
+      </div>
+    </div>
+  </div>
+
 </section>
 
 <!-- LONGTERM -->
