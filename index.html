@@ -462,26 +462,7 @@ footer{background:#EAE6DC;border-top:1px solid var(--line);padding:32px;text-ali
 footer p{font-size:13px;color:var(--muted)}
 
 /* ====== RESPONSIVE ====== */
-@media(max-width:860px){
-  .hero-body{grid-template-columns:1fr;gap:0;padding-top:40px;min-height:auto}
-  .hero-glow{width:300px;height:300px;left:50%;transform:translate(-50%,-50%)}
-  .hero-char-area{min-height:320px;margin-top:20px}
-  .fc1,.fc2,.fc3,.fc4,.fc5{display:none}
-  .hero-body{grid-template-columns:1fr}
-  .hero-form-card{margin-top:24px}
-  .hfc-row2{grid-template-columns:1fr}
-  .concept-grid,.svc-wrap,.results-wrap,.profile-wrap{grid-template-columns:1fr}
-  .svc-char,.profile-char{display:none}
-  .prob-grid,.why-grid{grid-template-columns:1fr}
-  .flow-wrap{grid-template-columns:1fr 1fr;gap:28px}
-  .flow-wrap::before{display:none}
-  .photo-grid{grid-template-columns:1fr 1fr}
-  .s-grid{grid-template-columns:1fr 1fr}
-  .s-item:nth-child(2){border-right:none}
-  .lt-wrap{flex-direction:column;padding:24px}
-  .cta-form{padding:24px 18px}
-  .fl2{grid-template-columns:1fr}
-}
+
 
   
     50%{transform:translateY(-8px)}
@@ -627,12 +608,7 @@ footer p{font-size:13px;color:var(--muted)}
   }
   .anti-big em{color:var(--orange);font-style:normal}
   .sp-br{display:none}
-  @media(max-width:640px){
-    .anti-cards{grid-template-columns:1fr}
-    .sp-br{display:inline}
-    .cmp-table{font-size:12px}
-    .cmp-table th,.cmp-table td{padding:10px 8px}
-  }
+  
 
 
   /* ====== COMPARISON ====== */
@@ -656,7 +632,7 @@ footer p{font-size:13px;color:var(--muted)}
   .cmp-tag-mid{display:inline-block;background:#fff3cd;color:#856404;font-size:11px;font-weight:700;padding:2px 8px;border-radius:100px}
   .cmp-tag-bad{display:inline-block;background:#f8d7da;color:#842029;font-size:11px;font-weight:700;padding:2px 8px;border-radius:100px}
   .cmp-table small{display:block;font-size:10px;color:var(--muted);margin-top:2px}
-  @media(max-width:640px){.cmp-table{font-size:11px}.cmp-table th,.cmp-table td{padding:9px 7px}}
+  
 
   /* ====== ANTITHESIS ====== */
   .anti-sec{background:var(--navy);color:#fff;padding:72px 0 80px}
@@ -677,7 +653,7 @@ footer p{font-size:13px;color:var(--muted)}
   .anti-foot p{font-size:13px;color:rgba(255,255,255,.38);line-height:1.9;margin-bottom:16px}
   .anti-foot-big{font-size:clamp(1rem,2vw,1.35rem) !important;font-weight:900;color:#fff !important;line-height:1.7}
   .anti-foot-big em{color:var(--orange);font-style:normal}
-  @media(max-width:640px){.anti-sec{padding:52px 0 56px}.anti-s{padding:13px 14px}}
+  
 
 
 .jobs-link{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;background:linear-gradient(120deg,var(--orange) 0%,#3DA0E3 100%);color:#fff;font-size:14px;font-weight:700;border-radius:50px;text-decoration:none;letter-spacing:.04em;box-shadow:0 4px 22px rgba(61,160,227,.35);transition:transform .2s,box-shadow .2s}
@@ -710,16 +686,7 @@ footer p{font-size:13px;color:var(--muted)}
 .journey-foot-highlight{font-size:15px;font-weight:800;color:var(--orange)}
 .journey-foot-note{font-size:13px;color:rgba(255,255,255,.85)}
 .journey-foot-note strong{color:#fff}
-@media(max-width:860px){
-  .journey-track{grid-template-columns:1fr 1fr;gap:24px 0}
-  .journey-track::before{display:none}
-  .jstep-arrow{display:none}
-  .jstep-card{width:95%}
-  .journey-foot-inner{flex-direction:column;text-align:center;gap:8px}
-}
-@media(max-width:540px){
-  .journey-track{grid-template-columns:1fr}
-}
+
 
 /* ===== POKEKUN GROWTH STAGES ===== */
 .jstep-poke-wrap{display:flex;flex-direction:column;align-items:center;gap:6px;margin-bottom:6px}
@@ -744,6 +711,196 @@ footer p{font-size:13px;color:var(--muted)}
 /* 成長ラインをグラデーションで */
 .journey-track::before{background:linear-gradient(to right,#3DA0E3 0%,#3DA0E3 30%,#F7941D 60%,#1A3050 100%)}
 
+/* ===== RESPONSIVE ===== */
+
+/* ---------- 1024px: タブレット横 ---------- */
+@media(max-width:1024px){
+  .wrap{padding:0 2rem}
+  .hero-body{grid-template-columns:1fr 360px;gap:32px}
+  .hero-form-card{width:100%}
+  .journey-wide-wrap{padding:0 2rem}
+}
+
+/* ---------- 860px: タブレット縦 ---------- */
+@media(max-width:860px){
+  /* 全体 */
+  .wrap{padding:0 1.5rem}
+  .journey-wide-wrap{padding:0 1.5rem}
+  section.sec, section.bgw, section.bg2{padding:56px 0}
+
+  /* ヘッダー */
+  nav .btn-out{display:none}
+  nav .btn-main{padding:10px 18px;font-size:13px}
+
+  /* Hero */
+  .hero{padding:0}
+  .hero-body{grid-template-columns:1fr;gap:0;padding:40px 1.5rem 48px;min-height:auto}
+  .hero-glow{width:280px;height:280px;left:50%;transform:translate(-50%,-50%)}
+  .hero-char-area{display:none}
+  .hero-text{text-align:center}
+  .hero-service-tag{justify-content:center}
+  .hero-cta-row{justify-content:center;flex-wrap:wrap}
+  .line-stats{justify-content:center}
+  .hero-quote{text-align:center}
+  .hero-form-card{margin-top:32px;max-width:540px;margin-left:auto;margin-right:auto}
+  .hfc-row2{grid-template-columns:1fr}
+
+  /* Stats */
+  .s-grid{grid-template-columns:1fr 1fr}
+  .s-item:nth-child(2){border-right:none}
+  .s-item:nth-child(3){border-top:1px solid var(--line)}
+
+  /* Concept */
+  .concept-grid{grid-template-columns:1fr}
+  .concept-cards-row{grid-template-columns:1fr 1fr}
+
+  /* 比較表 */
+  .cmp-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .cmp-table{min-width:560px;font-size:12px}
+  .cmp-table th,.cmp-table td{padding:10px 8px}
+
+  /* カルーセル */
+  .c-item{width:200px}
+  .c-item img{height:130px}
+
+  /* Journey */
+  .journey-track{grid-template-columns:1fr 1fr;gap:28px 12px}
+  .journey-track::before{display:none}
+  .jstep-arrow{display:none}
+  .jstep-card{width:95%}
+  .journey-foot-inner{flex-direction:column;text-align:center;gap:8px;padding:16px 20px}
+
+  /* Flow */
+  .flow-wrap{grid-template-columns:1fr 1fr;gap:24px}
+  .flow-wrap::before{display:none}
+
+  /* Profile */
+  .profile-wrap{grid-template-columns:1fr}
+  .profile-char{display:none}
+
+  /* CTA */
+  .cta-form{flex-direction:column;gap:12px;max-width:480px;margin:0 auto}
+  .cta-form .fi{width:100%}
+  .cta-form .fi-submit{width:100%}
+
+  /* prob/why */
+  .prob-grid,.why-grid{grid-template-columns:1fr}
+
+  /* photo */
+  .photo-grid{grid-template-columns:1fr 1fr}
+}
+
+/* ---------- 640px: スマホ大 ---------- */
+@media(max-width:640px){
+  .wrap{padding:0 1.25rem}
+  .journey-wide-wrap{padding:0 1.25rem}
+  section.sec, section.bgw, section.bg2{padding:44px 0}
+
+  /* ヘッダー */
+  .hd-r{gap:10px}
+  nav .btn-main{padding:9px 16px;font-size:12px}
+
+  /* Hero */
+  .hero-body{padding:32px 1.25rem 40px}
+  .hero-form-card{border-radius:16px}
+  .hero-text h1{font-size:clamp(2rem,8vw,2.8rem)}
+
+  /* Stats */
+  .s-grid{grid-template-columns:1fr 1fr}
+  .s-num{font-size:clamp(1.8rem,6vw,2.4rem)}
+
+  /* Concept cards */
+  .concept-cards-row{grid-template-columns:1fr}
+
+  /* 比較表 */
+  .cmp-table{font-size:11px}
+  .cmp-table th,.cmp-table td{padding:9px 7px}
+
+  /* Journey */
+  .journey-track{grid-template-columns:1fr 1fr;gap:20px 8px}
+  .jstep-poke-stage{width:100px;height:100px}
+  .poke-ring{border-width:2px}
+  .jstep-card{padding:14px 10px 14px}
+  .jstep-h{font-size:13px}
+  .jstep-txt{font-size:11px}
+  .jstep-badge{font-size:11px}
+  .jstep-time{font-size:12px;margin-bottom:10px}
+  .journey-foot-inner{padding:14px 16px;gap:6px}
+  .journey-foot-label,.journey-foot-note{font-size:12px}
+  .journey-foot-highlight{font-size:14px}
+
+  /* carousel */
+  .c-item{width:180px}
+  .c-item img{height:115px}
+  .carousel-sec{padding:48px 0}
+
+  /* CTA */
+  .cta-h{font-size:clamp(1.4rem,5vw,1.8rem)}
+
+  /* anti */
+  .anti-sec{padding:44px 0 48px}
+  .anti-s{padding:13px 14px}
+  .anti-cards{grid-template-columns:1fr}
+
+  /* flow */
+  .flow-wrap{grid-template-columns:1fr}
+  .f-item:not(:last-child)::after{display:none}
+
+  /* profile */
+  .profile-list{grid-template-columns:1fr}
+
+  /* sh（セクション見出し）*/
+  .sh{font-size:clamp(1.6rem,5.5vw,2.2rem)}
+  .sl{font-size:clamp(0.9rem,3vw,1rem)}
+}
+
+/* ---------- 480px: スマホ小 ---------- */
+@media(max-width:480px){
+  .wrap{padding:0 1rem}
+  .journey-wide-wrap{padding:0 1rem}
+  section.sec, section.bgw, section.bg2{padding:36px 0}
+
+  /* ヘッダー */
+  nav{gap:8px}
+
+  /* Hero */
+  .hero-body{padding:28px 1rem 36px}
+  .hero-text h1{font-size:clamp(1.8rem,7.5vw,2.4rem)}
+  .hero-form-card{border-radius:12px}
+  .hfc-head{padding:14px 16px}
+  .hfc-body{padding:14px 16px 16px}
+
+  /* Journey: 1列 */
+  .journey-track{grid-template-columns:1fr;gap:16px}
+  .jstep-card{width:92%}
+  .jstep-poke-stage{width:90px;height:90px}
+  /* GOAL のポケくんも縮小 */
+  .stage4 .poke-img{width:80px !important}
+  .stage3 .poke-img{width:66px !important}
+  .stage2 .poke-img{width:54px !important}
+  .stage1 .poke-img{width:44px !important}
+  .journey-sec{padding:48px 0 56px}
+  .journey-sec .wrap{padding:0 1rem}
+
+  /* Stats 1列 */
+  .s-grid{grid-template-columns:1fr}
+  .s-item{border-right:none !important;border-top:1px solid var(--line)}
+  .s-item:first-child{border-top:none}
+
+  /* 比較表 */
+  .cmp-table{font-size:10px}
+  .cmp-table th,.cmp-table td{padding:7px 5px}
+
+  /* carousel */
+  .c-item{width:160px}
+  .c-item img{height:105px}
+
+  /* sh */
+  .sh{font-size:clamp(1.4rem,5vw,1.8rem)}
+
+  /* jobs-link */
+  .jobs-link{font-size:12px;padding:12px 24px}
+}
 </style>
 </head>
 <body>
