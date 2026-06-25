@@ -714,6 +714,77 @@ footer p{font-size:13px;color:var(--muted)}
     .pc-br{display:none}
   }
 
+  /* ====== ANTITHESIS ====== */
+  .anti-sec{
+    background:var(--navy);
+    color:#fff;padding:72px 0 80px;
+  }
+  .anti-wrap{max-width:680px}
+  .anti-eyebrow{
+    font-size:11px;font-weight:700;letter-spacing:.28em;
+    color:var(--orange);text-transform:uppercase;margin-bottom:20px;
+  }
+  .anti-h{
+    font-size:clamp(2rem,4.5vw,3rem);
+    font-weight:900;line-height:1.22;letter-spacing:-0.04em;
+    margin-bottom:16px;
+  }
+  .anti-h em{color:var(--orange);font-style:normal}
+  .anti-hook-note{
+    font-size:14px;font-weight:700;letter-spacing:.08em;
+    color:rgba(255,255,255,.4);margin-bottom:40px;
+  }
+  .anti-bq{
+    font-size:clamp(1.2rem,2.4vw,1.55rem);
+    font-weight:900;line-height:1.65;
+    border-left:3px solid var(--orange);
+    padding:4px 0 4px 22px;
+    margin:0 0 48px;
+    color:#fff;
+  }
+  .anti-steps{
+    display:flex;flex-direction:column;gap:2px;
+    margin-bottom:52px;
+  }
+  .anti-s{
+    display:grid;grid-template-columns:36px 1fr;
+    gap:16px;align-items:start;
+    padding:18px 20px;
+    background:rgba(255,255,255,.04);
+    border-radius:10px;
+  }
+  .anti-s--last{
+    background:rgba(247,148,29,.1);
+    border:1px solid rgba(247,148,29,.25);
+  }
+  .anti-s span{
+    font-size:11px;font-weight:900;
+    color:rgba(255,255,255,.25);
+    padding-top:3px;letter-spacing:.04em;
+  }
+  .anti-s--last span{color:var(--orange)}
+  .anti-s p{font-size:14.5px;line-height:1.75;color:rgba(255,255,255,.7)}
+  .anti-s p strong{color:#fff;font-weight:800}
+  .anti-foot{
+    border-top:1px solid rgba(255,255,255,.1);
+    padding-top:40px;
+  }
+  .anti-foot p{
+    font-size:13.5px;color:rgba(255,255,255,.4);
+    line-height:1.9;margin-bottom:20px;letter-spacing:.02em;
+  }
+  .anti-foot-big{
+    font-size:clamp(1.1rem,2.2vw,1.5rem) !important;
+    font-weight:900;color:#fff !important;
+    line-height:1.7;letter-spacing:-0.02em;
+  }
+  .anti-foot-big em{color:var(--orange);font-style:normal}
+  @media(max-width:640px){
+    .anti-sec{padding:52px 0 60px}
+    .anti-s{padding:14px 14px}
+  }
+
+
 </style>
 </head>
 <body>
@@ -968,7 +1039,7 @@ footer p{font-size:13px;color:var(--muted)}
       </div>
       <div class="why-card">
         <div class="why-num">強み 03</div>
-        <h3>定着促進・<br>早期離職防止</h3>
+        <h3>入社後まで<br>伴走するサポート</h3>
         <p>ご希望に応じて、人事メンバーとの壁打ち支援や内定者オンボーディングの企画協力も対応。採用の「その後」まで伴走します。</p>
       </div>
     </div>
@@ -996,7 +1067,7 @@ footer p{font-size:13px;color:var(--muted)}
         <tbody>
           <tr>
             <td class="cmp-axis">接触開始時期</td>
-            <td class="cmp-us"><span class="cmp-tag-good">2年生秋冬〜</span><br><small>競合より1年早い</small></td>
+            <td class="cmp-us"><span class="cmp-tag-good">2年生秋冬〜</span></td>
             <td><span class="cmp-tag-bad">3年生〜</span></td>
             <td><span class="cmp-tag-mid">2〜3年生</span></td>
             <td><span class="cmp-tag-bad">3年生〜</span></td>
@@ -1030,11 +1101,11 @@ footer p{font-size:13px;color:var(--muted)}
             <td><span class="cmp-tag-bad">× 高額</span></td>
           </tr>
           <tr class="cmp-row-alt">
-            <td class="cmp-axis">定着・離職防止</td>
-            <td class="cmp-us"><span class="cmp-tag-good">◎ 関係構築済み</span></td>
-            <td><span class="cmp-tag-bad">× 対応なし</span></td>
-            <td><span class="cmp-tag-bad">× 対応なし</span></td>
-            <td><span class="cmp-tag-bad">× 対応なし</span></td>
+            <td class="cmp-axis">入社後サポート</td>
+            <td class="cmp-us"><span class="cmp-tag-good">◎ 対応可</span><br><small>壁打ち・OBD企画協力</small></td>
+            <td><span class="cmp-tag-bad">× なし</span></td>
+            <td><span class="cmp-tag-bad">× なし</span></td>
+            <td><span class="cmp-tag-mid">△ 限定的</span></td>
           </tr>
           <tr>
             <td class="cmp-axis">採用担当の工数</td>
@@ -1144,66 +1215,32 @@ footer p{font-size:13px;color:var(--muted)}
 
 <!-- ANTITHESIS -->
 <section class="anti-sec">
+  <div class="wrap anti-wrap">
 
-  <!-- ── TOP HOOK ── -->
-  <div class="anti-hook">
-    <div class="anti-hook-inner">
-      <p class="anti-eyebrow">質問があります。</p>
-      <h2 class="anti-h">貴社は昨年、<br>次期幹部候補を<br><em>採用できましたか？</em></h2>
-      <p class="anti-hook-note">3年夏からでは、もう遅い。</p>
+    <p class="anti-eyebrow">問いかけ</p>
+
+    <h2 class="anti-h">
+      貴社は昨年、<br>次期幹部候補を<em>採用できましたか？</em>
+    </h2>
+
+    <p class="anti-hook-note">3年夏からでは、もう遅い。</p>
+
+    <blockquote class="anti-bq">
+      まだ誰にも取られていない優秀な2年生に、<br>先に会う権利。
+    </blockquote>
+
+    <div class="anti-steps">
+      <div class="anti-s"><span>01</span><p>優秀な学生ほど、<strong>3年の夏には動きを終えている。</strong></p></div>
+      <div class="anti-s"><span>02</span><p>そこで出会っても、<strong>椅子はもう競合が埋めている。</strong></p></div>
+      <div class="anti-s anti-s--last"><span>03</span><p>勝敗は、<strong>誰も動いていない2年生の時点で、静かに決している。</strong></p></div>
     </div>
+
+    <div class="anti-foot">
+      <p>早く会い、見極め、関係を育てた企業だけが、最後に選ばれる。</p>
+      <p class="anti-foot-big">「いつか欲しい人材」を、競合より一年早く。<br><em>それが、採用の競争優位です。</em></p>
+    </div>
+
   </div>
-
-  <!-- ── QUOTE ── -->
-  <div class="anti-quote-block">
-    <div class="anti-quote-inner">
-      <span class="anti-quote-mark">"</span>
-      <p class="anti-quote-text">まだ誰にも取られていない<br>優秀な2年生に、<br>先に会う権利。</p>
-      <span class="anti-quote-mark anti-quote-mark-r">"</span>
-    </div>
-  </div>
-
-  <!-- ── STEPS ── -->
-  <div class="wrap">
-    <div class="anti-steps-wrap">
-      <div class="anti-step-item">
-        <div class="anti-step-num">01</div>
-        <div class="anti-step-body">
-          <p class="anti-step-text">優秀な学生ほど、<br><strong>3年の夏には動きを終えている。</strong></p>
-        </div>
-      </div>
-      <div class="anti-step-connector">
-        <div class="anti-step-line"></div>
-        <div class="anti-step-dot"></div>
-      </div>
-      <div class="anti-step-item">
-        <div class="anti-step-num">02</div>
-        <div class="anti-step-body">
-          <p class="anti-step-text">そこで出会っても、<br><strong>椅子はもう競合が埋めている。</strong></p>
-        </div>
-      </div>
-      <div class="anti-step-connector">
-        <div class="anti-step-line"></div>
-        <div class="anti-step-dot"></div>
-      </div>
-      <div class="anti-step-item anti-step-item--last">
-        <div class="anti-step-num anti-step-num--accent">03</div>
-        <div class="anti-step-body">
-          <p class="anti-step-text">勝敗は、<strong>誰も動いていない<br>2年生の時点で、静かに決している。</strong></p>
-        </div>
-      </div>
-    </div>
-
-    <!-- ── CONCLUSION ── -->
-    <div class="anti-conclusion-block">
-      <p class="anti-conc-lead">早く会い、見極め、関係を育てた企業だけが、最後に選ばれる。</p>
-      <div class="anti-conc-main">
-        <p>「いつか欲しい人材」を、<br class="pc-br">競合より一年早く、自社の中に。</p>
-        <p class="anti-conc-em">それが、これからの採用の<em>競争優位</em>です。</p>
-      </div>
-    </div>
-  </div>
-
 </section>
 
 <!-- LONGTERM -->
