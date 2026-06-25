@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NXCNC85H');</script>
+<!-- End Google Tag Manager -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>AOHARUインターン | 大学2年生からの新卒採用</title>
@@ -996,9 +1003,61 @@ footer p{font-size:13px;color:var(--muted)}
   .sp-cta-btn:hover{transform:translateY(-1px);box-shadow:0 6px 18px rgba(247,148,29,.5)}
 }
 
+
+/* ===== 送信完了モーダル ===== */
+#dl-modal-overlay{
+  display:none;position:fixed;inset:0;background:rgba(26,48,80,.55);
+  z-index:9999;align-items:center;justify-content:center;padding:20px;
+}
+#dl-modal-overlay.active{display:flex;}
+#dl-modal{
+  background:#fff;border-radius:18px;padding:36px 28px 32px;
+  max-width:420px;width:100%;position:relative;
+  box-shadow:0 12px 48px rgba(26,48,80,.2);
+  text-align:center;
+}
+#dl-modal .modal-close{
+  position:absolute;top:14px;right:18px;
+  background:none;border:none;font-size:20px;
+  color:var(--muted);cursor:pointer;line-height:1;padding:4px;
+}
+#dl-modal .modal-close:hover{color:var(--ink);}
+#dl-modal .modal-icon{
+  width:56px;height:56px;background:rgba(61,160,227,.12);
+  border-radius:50%;display:flex;align-items:center;justify-content:center;
+  margin:0 auto 18px;font-size:26px;
+}
+#dl-modal .modal-title{
+  font-size:20px;font-weight:800;color:var(--navy);
+  margin-bottom:8px;letter-spacing:-.01em;
+}
+#dl-modal .modal-sub{
+  font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:24px;
+}
+#dl-modal .modal-dl-btn{
+  display:block;width:100%;
+  background:linear-gradient(135deg,var(--orange) 0%,#ff9e2c 100%);
+  color:#fff;font-size:15px;font-weight:800;
+  padding:15px 20px;border-radius:999px;text-decoration:none;
+  box-shadow:0 4px 18px rgba(247,148,29,.35);
+  transition:transform .15s,box-shadow .15s;letter-spacing:.02em;
+}
+#dl-modal .modal-dl-btn:hover{
+  transform:translateY(-1px);
+  box-shadow:0 6px 22px rgba(247,148,29,.45);
+}
+@media(max-width:480px){
+  #dl-modal{padding:28px 20px 24px;}
+  #dl-modal .modal-title{font-size:18px;}
+}
+
 </style>
 </head>
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NXCNC85H"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
 <!-- HEADER -->
 <header>
@@ -1689,7 +1748,6 @@ function collectForm(prefix) {
 }
 
 function sendToGas(data, doneId, noteId, btnId) {
-  const done = document.getElementById(doneId);
   const note = document.getElementById(noteId);
   const btn  = btnId ? document.getElementById(btnId) : null;
   if (btn) btn.disabled = true;
@@ -1697,13 +1755,41 @@ function sendToGas(data, doneId, noteId, btnId) {
     method: 'POST',
     body: JSON.stringify(data)
   }).then(() => {
-    if (done) done.style.display = 'block';
+    // GTM: フォーム送信成功イベント
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({ event: 'dl_form_submit' });
+    // モーダル表示
+    openDlModal();
     if (note) note.style.display = 'none';
     if (btn)  btn.style.display  = 'none';
   }).catch(() => {
     alert('送信エラーが発生しました。お手数ですが直接ご連絡ください。');
     if (btn) btn.disabled = false;
   });
+}
+
+function openDlModal() {
+  document.getElementById('dl-modal-overlay').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeDlModal() {
+  document.getElementById('dl-modal-overlay').classList.remove('active');
+  document.body.style.overflow = '';
+}
+// オーバーレイ外クリックで閉じる
+document.addEventListener('DOMContentLoaded', function() {
+  document.getElementById('dl-modal-overlay').addEventListener('click', function(e) {
+    if (e.target === this) closeDlModal();
+  });
+});
+// ESCキーで閉じる
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeDlModal();
+});
+// 資料DLクリック計測（GTMへ）
+function trackDlClick() {
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({ event: 'dl_btn_click' });
 }
 
 function submitHfc() {
@@ -1746,6 +1832,21 @@ function submitCta(e) {
   });
 })();
 </script>
+
+
+<!-- ===== 送信完了モーダル ===== -->
+<div id="dl-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="dl-modal-title">
+  <div id="dl-modal">
+    <button class="modal-close" onclick="closeDlModal()" aria-label="閉じる">×</button>
+    <div class="modal-icon">📄</div>
+    <div class="modal-title" id="dl-modal-title">回答ありがとうございます！</div>
+    <p class="modal-sub">担当者より1営業日以内にご連絡いたします。<br>よろしければ資料もあわせてご確認ください。</p>
+    <a href="DOCUMENT_URL_PLACEHOLDER" target="_blank" rel="noopener" class="modal-dl-btn"
+       onclick="trackDlClick()">
+      📥 資料ダウンロードはこちら
+    </a>
+  </div>
+</div>
 
 <!-- スマホ用スティッキーCTAバー -->
 <div class="sp-cta-bar">
