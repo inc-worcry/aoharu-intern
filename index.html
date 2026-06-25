@@ -74,11 +74,22 @@ header{
 /* オレンジのグロー */
 .hero-glow{
   position:absolute;
-  width:520px;height:520px;
-  background:radial-gradient(circle,rgba(247,148,29,.1) 0%,transparent 65%);
+  width:600px;height:600px;
+  background:radial-gradient(circle,rgba(247,148,29,.13) 0%,transparent 65%);
   border-radius:50%;
-  top:50%;left:50%;transform:translate(-28%,-50%);
+  top:50%;left:42%;transform:translate(-50%,-52%);
   pointer-events:none;
+}
+/* 装飾丸 */
+.hero-deco-blue{
+  position:absolute;width:220px;height:220px;
+  background:radial-gradient(circle,rgba(61,160,227,.08) 0%,transparent 70%);
+  border-radius:50%;bottom:12%;left:3%;pointer-events:none;
+}
+.hero-deco-sm{
+  position:absolute;width:90px;height:90px;
+  background:rgba(247,148,29,.07);border-radius:50%;
+  top:18%;right:36%;pointer-events:none;
 }
 .hero-body{
   position:relative;z-index:2;
@@ -917,6 +928,8 @@ footer p{font-size:13px;color:var(--muted)}
 <!-- ====== HERO ====== -->
 <section class="hero">
   <div class="hero-glow"></div>
+  <div class="hero-deco-blue"></div>
+  <div class="hero-deco-sm"></div>
   <div class="hero-body">
 
     <!-- 左: テキスト -->
@@ -930,12 +943,12 @@ footer p{font-size:13px;color:var(--muted)}
       <div class="line-stats">
         <span class="line-icon">LINE</span>
         <div class="line-stat">
-          <span class="line-num">2,300<small>人</small></span>
+          <span class="line-num" id="line-cnt1">2,300<small>人</small></span>
           <span class="line-lbl">大学1・2年生のLINE友達登録数</span>
         </div>
         <div class="line-div"></div>
         <div class="line-stat">
-          <span class="line-num">500<small>〜600名/月</small></span>
+          <span class="line-num" id="line-cnt2">500<small>〜600名/月</small></span>
           <span class="line-lbl">月間新規LINE登録</span>
         </div>
       </div>
@@ -1621,6 +1634,33 @@ function submitCta(e) {
   if (!data.company || !data.email) { alert('会社名とメールアドレスは必須です。'); return; }
   sendToGas(data, 'cta-done', 'cta-note', null);
 }
+</script>
+
+<script>
+/* LINE stats カウンターアニメ */
+(function(){
+  function animCount(el, target, suffix, dur){
+    var start=0, step=target/(dur/16);
+    var t=setInterval(function(){
+      start=Math.min(start+step,target);
+      el.innerHTML=Math.round(start).toLocaleString()+'<small>'+suffix+'</small>';
+      if(start>=target)clearInterval(t);
+    },16);
+  }
+  function onVisible(el,cb){
+    if(!el)return;
+    var io=new IntersectionObserver(function(entries){
+      if(entries[0].isIntersecting){cb();io.disconnect();}
+    },{threshold:.3});
+    io.observe(el);
+  }
+  var c1=document.getElementById('line-cnt1');
+  var c2=document.getElementById('line-cnt2');
+  onVisible(c1,function(){
+    animCount(c1,2300,'人',1400);
+    setTimeout(function(){animCount(c2,500,'〜600名/月',1200);},200);
+  });
+})();
 </script>
 </body>
 </html>
