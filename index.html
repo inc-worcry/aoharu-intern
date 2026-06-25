@@ -912,6 +912,90 @@ footer p{font-size:13px;color:var(--muted)}
   /* jobs-link */
   .jobs-link{font-size:12px;padding:12px 24px}
 }
+
+/* ===== MOBILE FV 専用 ===== */
+@media(max-width:860px){
+  /* フォームカードをヒーローで非表示 */
+  .hero-form-card{display:none}
+
+  /* ヒーローテキストは左揃え */
+  .hero-text{text-align:left}
+  .hero-service-tag{display:inline-flex}
+  .line-stats{justify-content:flex-start}
+
+  /* クオート */
+  .hero-quote{margin-bottom:24px;border-left:3px solid var(--orange)}
+  .hero-quote-main{display:block;font-size:15px;font-weight:700;color:var(--navy);margin-bottom:4px}
+  .hero-quote-sub{display:block;font-size:13px;color:var(--muted)}
+
+  /* LINE stats → 2枚横並びカード */
+  .line-stats{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+    background:transparent;
+    border:none;
+    box-shadow:none;
+    padding:0;
+    width:100%;
+    margin-top:4px;
+  }
+  .line-icon{display:none}
+  .line-div{display:none}
+  .line-stat{
+    background:var(--white);
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:14px 16px;
+    display:flex;
+    flex-direction:column;
+    box-shadow:0 2px 10px rgba(26,48,80,.06);
+  }
+  .line-stat:first-of-type{border-top:3px solid var(--navy)}
+  .line-stat:last-of-type{border-top:3px solid var(--orange)}
+  .line-num{font-size:clamp(1.3rem,5vw,1.7rem)}
+  .line-lbl{font-size:11px;color:var(--muted);margin-top:4px;line-height:1.4}
+
+  /* ヒーロー全体のパディングを詰める */
+  .hero-body{padding:28px 1.25rem 100px}
+
+  /* スティッキーCTAバーのスペース確保 */
+}
+
+/* スティッキーCTAバー（モバイルのみ） */
+.sp-cta-bar{display:none}
+@media(max-width:860px){
+  .sp-cta-bar{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    position:fixed;
+    bottom:0;left:0;right:0;
+    background:var(--white);
+    border-top:1px solid var(--line);
+    padding:12px 20px calc(12px + env(safe-area-inset-bottom));
+    z-index:999;
+    box-shadow:0 -4px 20px rgba(26,48,80,.1);
+  }
+  .sp-cta-text{
+    font-size:12px;color:var(--muted);line-height:1.4;
+  }
+  .sp-cta-text strong{display:block;font-size:13px;color:var(--navy);font-weight:700}
+  .sp-cta-btn{
+    background:var(--orange);
+    color:#fff;
+    font-size:13px;font-weight:700;
+    padding:12px 22px;
+    border-radius:999px;
+    text-decoration:none;
+    white-space:nowrap;
+    box-shadow:0 4px 14px rgba(247,148,29,.4);
+    transition:transform .15s,box-shadow .15s;
+    flex-shrink:0;
+  }
+  .sp-cta-btn:hover{transform:translateY(-1px);box-shadow:0 6px 18px rgba(247,148,29,.5)}
+}
+
 </style>
 </head>
 <body>
@@ -1523,7 +1607,7 @@ footer p{font-size:13px;color:var(--muted)}
 </section>
 
 <!-- CTA -->
-<div class="cta-sec" id="cta">
+<div class="cta-sec" id="footer-cta">
   <div class="wrap">
     <div class="stag">お問い合わせ</div>
     <h2 class="cta-h">まずはお気軽に<br>ご相談ください！</h2>
@@ -1662,5 +1746,14 @@ function submitCta(e) {
   });
 })();
 </script>
+
+<!-- スマホ用スティッキーCTAバー -->
+<div class="sp-cta-bar">
+  <div class="sp-cta-text">
+    <strong>まずはお気軽にご相談を</strong>
+    1営業日以内に返信
+  </div>
+  <a href="#footer-cta" class="sp-cta-btn">資料請求する →</a>
+</div>
 </body>
 </html>
