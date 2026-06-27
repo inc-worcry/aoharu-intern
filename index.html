@@ -434,54 +434,31 @@ header{
 .pi p{font-size:15px;color:var(--muted);line-height:1.72;font-weight:500}
 
 /* ====== LONGTERM ====== */
-.lt-inner{ max-width:760px; margin:0 auto; }
-.lt-badge{
-  display:inline-block;
-  font-size:11.5px;font-weight:700;
-  background:rgba(247,148,29,.12);color:var(--orange);
-  border:1px solid rgba(247,148,29,.3);
-  padding:4px 13px;border-radius:4px;
-  margin-bottom:16px;
+.lt-wrap{
+  max-width:760px;margin:0 auto;
+  display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:flex-start;
+  background:var(--white);border:1px solid var(--line);
+  border-radius:12px;padding:28px 32px;
 }
-.lt-title{
-  font-size:clamp(1.55rem,3.5vw,2.1rem);
-  font-weight:900;color:var(--navy);
-  line-height:1.28;letter-spacing:-.03em;
-  margin-bottom:32px;
-  width:100%;
-}
-.lt-body{
-  display:flex;
-  gap:32px;
-  align-items:flex-start;
-  margin-bottom:32px;
-}
-.lt-poke{
-  flex-shrink:0;
-  display:flex;align-items:center;
-}
-.lt-text p{
-  font-size:15.5px;color:var(--muted);
-  line-height:1.9;font-weight:500;
-}
-.lt-cta-row{ text-align:center }
+.lt-badge{display:inline-block;font-size:11.5px;font-weight:700;background:var(--bg2);color:var(--navy);border:1px solid var(--line);padding:4px 13px;border-radius:4px;margin-bottom:10px}
+.lt-wrap h3{font-size:19px;font-weight:900;color:var(--navy);margin-bottom:8px;letter-spacing:-.02em;line-height:1.3}
+.lt-wrap p{font-size:14.5px;color:var(--muted);line-height:1.8;font-weight:500;margin-bottom:14px}
 .lt-cta-btn{
   display:inline-block;
   background:var(--orange);color:#fff;
-  font-size:16px;font-weight:700;
-  padding:16px 44px;border-radius:8px;
+  font-size:14px;font-weight:700;
+  padding:11px 28px;border-radius:6px;
   text-decoration:none;
-  letter-spacing:.04em;
+  letter-spacing:.03em;
   transition:all .18s;
-  box-shadow:0 4px 18px rgba(247,148,29,.28);
 }
-.lt-cta-btn:hover{ background:#e07c0e; box-shadow:0 6px 26px rgba(247,148,29,.42); transform:translateY(-1px) }
+.lt-cta-btn:hover{ background:#e07c0e; box-shadow:0 4px 16px rgba(247,148,29,.35); transform:translateY(-1px) }
 
 @media(max-width:640px){
-  .lt-title{ font-size:clamp(1.35rem,6vw,1.7rem); margin-bottom:22px }
-  .lt-body { flex-direction:column; gap:18px; align-items:center }
-  .lt-text p{ font-size:14px; line-height:1.8 }
-  .lt-cta-btn{ font-size:15px; padding:14px 32px; display:block; text-align:center }
+  .lt-wrap { grid-template-columns:1fr; gap:16px; padding:20px 18px }
+  .lt-poke { display:flex; justify-content:center }
+  .lt-wrap p { font-size:13px }
+  .lt-cta-btn { display:block; text-align:center; padding:12px 20px }
 }
 
 /* ====== CTA ====== */
@@ -737,12 +714,12 @@ footer p{font-size:13px;color:var(--muted)}
 .jstep-arrow{font-size:22px;color:var(--line);position:absolute;right:-12px;top:105px;z-index:2}
 .jstep--last .jstep-arrow{display:none}
 .journey-foot{margin-top:44px}
-.journey-foot-inner{display:flex;align-items:center;justify-content:center;gap:14px;background:var(--navy);color:#fff;padding:18px 32px;border-radius:12px;flex-wrap:wrap}
-.journey-foot-label{font-size:13px;color:rgba(255,255,255,.7)}
+.journey-foot-inner{display:flex;align-items:center;justify-content:center;gap:14px;background:var(--bg);border:1.5px solid var(--line);border-left:4px solid var(--orange);padding:18px 28px;border-radius:12px;flex-wrap:wrap}
+.journey-foot-label{font-size:13px;color:var(--muted)}
 .journey-foot-arrow{font-size:18px;color:var(--orange)}
-.journey-foot-highlight{font-size:15px;font-weight:800;color:var(--orange)}
-.journey-foot-note{font-size:13px;color:rgba(255,255,255,.85)}
-.journey-foot-note strong{color:#fff}
+.journey-foot-highlight{font-size:15px;font-weight:800;color:var(--navy)}
+.journey-foot-note{font-size:13px;color:var(--ink)}
+.journey-foot-note strong{color:var(--orange)}
 
 
 /* ===== POKEKUN GROWTH STAGES ===== */
@@ -792,7 +769,7 @@ footer p{font-size:13px;color:var(--muted)}
 
   /* Hero */
   .hero{padding:0}
-  .hero-body{grid-template-columns:1fr;gap:0;padding:40px 1.5rem 48px;min-height:auto}
+  .hero-body{grid-template-columns:1fr;gap:0;padding:72px 1.5rem 48px;min-height:auto}
   .hero-glow{width:280px;height:280px;left:50%;transform:translate(-50%,-50%)}
   .hero-char-area{display:none}
   .hero-text{text-align:center}
@@ -859,7 +836,7 @@ footer p{font-size:13px;color:var(--muted)}
   header .btn-main{padding:9px 16px;font-size:12px}
 
   /* Hero */
-  .hero-body{padding:32px 1.25rem 40px}
+  .hero-body{padding:64px 1.25rem 40px}
   .hero-form-card{border-radius:16px}
   .hero-text h1{font-size:clamp(2rem,8vw,2.8rem)}
 
@@ -921,7 +898,7 @@ footer p{font-size:13px;color:var(--muted)}
   header{padding:0 1rem}
 
   /* Hero */
-  .hero-body{padding:28px 1rem 36px}
+  .hero-body{padding:62px 1rem 36px}
   .hero-text h1{font-size:clamp(1.8rem,7.5vw,2.4rem)}
   .hero-form-card{border-radius:12px}
   .hfc-head{padding:14px 16px}
@@ -1111,7 +1088,7 @@ footer p{font-size:13px;color:var(--muted)}
   .hero-quote-main { font-size: 15px }
   .hero-quote-sub  { font-size: 13px }
   .hero-service-tag { font-size: 10.5px; padding: 5px 12px; white-space: nowrap; max-width: 100%; overflow: visible }
-  .hero-body { padding-bottom: 72px }  /* スティッキーバー分のみ確保 */
+  .hero-body { padding-bottom: 72px; padding-top: 72px !important }  /* ヘッダー高さ分 + スティッキーバー確保 */
 }
 @media(max-width:640px){
   .hero-text h1 { font-size: clamp(2rem, 9.5vw, 2.8rem) !important }
@@ -1166,8 +1143,8 @@ footer p{font-size:13px;color:var(--muted)}
     padding: 18px 16px;
     border-radius: 14px;
   }
-  .cc2 h3 { font-size: 15px; line-height: 1.3; margin-bottom: 8px }
-  .cc2 p  { font-size: 12.5px; line-height: 1.6 }
+  .cc2 h3 { font-size: 14.5px; line-height: 1.3; margin-bottom: 8px }
+  .cc2 p  { font-size: 13px; line-height: 1.6 }
   .cc2-en { font-size: 10px; margin-bottom: 8px; letter-spacing: .12em }
 }
 
@@ -1177,8 +1154,8 @@ footer p{font-size:13px;color:var(--muted)}
 @media(max-width:860px){
   .prob-grid { grid-template-columns: 1fr !important; gap: 10px }
   .prob-card { padding: 18px 16px; border-radius: 12px }
-  .prob-card h3 { font-size: 15px; margin-bottom: 7px }
-  .prob-card p  { font-size: 12.5px; line-height: 1.65 }
+  .prob-card h3 { font-size: 14.5px; margin-bottom: 7px }
+  .prob-card p  { font-size: 13px; line-height: 1.65 }
   .prob-num { font-size: 10px; margin-bottom: 8px }
 }
 
@@ -1213,8 +1190,8 @@ footer p{font-size:13px;color:var(--muted)}
     padding-top: 1px;
     color: var(--blue);
   }
-  .svc-row h3 { font-size: 14.5px; margin-bottom: 5px }
-  .svc-row p  { font-size: 12.5px; line-height: 1.65 }
+  .svc-row h3 { font-size: 14px; margin-bottom: 5px }
+  .svc-row p  { font-size: 13px; line-height: 1.65 }
   .svc-row p br { display: none }
 }
 
@@ -1245,7 +1222,7 @@ footer p{font-size:13px;color:var(--muted)}
   .f-period{ font-size: 10px; color: var(--muted); margin-bottom: 6px }
   .f-ttl   { font-size: 13px; font-weight: 900; color: var(--navy); line-height: 1.3; margin-bottom: 6px }
   .f-kpi   { font-size: 10px; padding: 3px 7px; margin-bottom: 5px }
-  .f-body  { font-size: 11.5px; line-height: 1.55 }
+  .f-body  { font-size: 12px; line-height: 1.55 }
 }
 
 /* ================================================================
@@ -1262,7 +1239,7 @@ footer p{font-size:13px;color:var(--muted)}
   .why-card:nth-child(2) .why-num { color: var(--navy) }
   .why-card:nth-child(3) .why-num { color: var(--orange) }
   .why-card h3 { font-size: 13.5px; line-height: 1.35; margin-bottom: 7px }
-  .why-card p  { font-size: 12px; line-height: 1.6 }
+  .why-card p  { font-size: 13px; line-height: 1.6 }
 }
 @media(max-width:480px){
   .why-grid { grid-template-columns: 1fr !important }
@@ -1273,7 +1250,8 @@ footer p{font-size:13px;color:var(--muted)}
    COMPARISON (比較表) — スクロール補助
    ================================================================ */
 @media(max-width:860px){
-  .cmp-wrap { border-radius: 12px; overflow: hidden; border: 1px solid var(--line) }
+  .cmp-wrap { border-radius: 12px; overflow-x: auto !important; border: 1px solid var(--line) }
+  .cmp-table { min-width: 520px }
 }
 
 /* ================================================================
@@ -1290,7 +1268,7 @@ footer p{font-size:13px;color:var(--muted)}
    ================================================================ */
 @media(max-width:640px){
   header { height: 52px }
-  .hd-logo img { height: 34px }
+  .hd-logo img { height: 20px }
   header .btn-out { display: none }
   header .btn-main { padding: 7px 12px; font-size: 11px; white-space: nowrap }
 }
@@ -1303,19 +1281,55 @@ footer p{font-size:13px;color:var(--muted)}
    ================================================================ */
 @media(max-width:860px){
   .line-stats {
-    width: auto;
-    max-width: 320px;
-    margin: 16px auto 0 !important;
+    width: 100%;
+    max-width: 100%;
+    margin: 20px 0 0 !important;
+    padding: 18px 24px !important;
+    box-sizing: border-box;
   }
-  #line-cnt1, #line-cnt2 { font-size: 2rem !important }
+  #line-cnt1, #line-cnt2 { font-size: 1.9rem !important }
   .line-lbl { font-size: 12px !important }
+  .line-stat { padding: 0 16px !important }
+  .line-stat:first-of-type { padding-left: 0 !important }
 }
 @media(max-width:420px){
-  .line-stats { flex-direction: column; align-items: flex-start; gap: 10px; padding: 14px 16px }
+  .line-stats { flex-direction: column; align-items: flex-start; gap: 12px; padding: 16px 18px !important }
   .line-div   { display: none }
-  .line-stat  { padding: 0 }
+  .line-stat  { padding: 0 !important }
 }
 
+
+/* ================================================================
+   FV申し込みフロー3枚カード（スマホ表示用）
+   ================================================================ */
+@media(max-width:860px){
+  .fv-flow { display: flex; gap: 8px; margin-top: 16px; width: 100% }
+  .fv-flow-card {
+    flex: 1;
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-top: 2.5px solid var(--orange);
+    border-radius: 10px;
+    padding: 10px 8px;
+    text-align: center;
+  }
+  .fv-flow-n {
+    font-size: 9px;font-weight:900;color:var(--orange);
+    letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px;
+  }
+  .fv-flow-ttl {
+    font-size: 11.5px;font-weight:800;color:var(--navy);line-height:1.3;
+    margin-bottom: 3px;
+  }
+  .fv-flow-sub { font-size: 10px; color: var(--muted); line-height: 1.4 }
+  .fv-flow-arr {
+    flex-shrink:0;color:var(--line);font-size:14px;
+    display:flex;align-items:center;padding-top:4px;
+  }
+}
+@media(min-width:861px){
+  .fv-flow { display: none }
+}
 
 </style>
 </head>
@@ -1895,12 +1909,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- LONGTERM -->
 <section class="sec bg2">
   <div class="wrap">
-    <div class="lt-inner">
-      <div class="lt-badge">長期インターン紹介も対応</div>
-      <h2 class="lt-title">大学1・2年生から、<br>本気でビジネスを経験できる。</h2>
-      <div class="lt-body">
-        <div class="lt-poke">
-          <svg viewBox="0 0 220 244" xmlns="http://www.w3.org/2000/svg" style="width:120px;height:auto;">
+    <div class="lt-wrap">
+      <div class="lt-poke" style="flex-shrink:0"><svg viewBox="0 0 220 244" xmlns="http://www.w3.org/2000/svg" style="width:72px;height:auto;">
   <ellipse cx="110" cy="237" rx="62" ry="8" fill="#1A3050" opacity="0.06"/>
   <path d="M96,188 L92,214" stroke="#233A63" stroke-width="16" fill="none" stroke-linecap="round"/>
   <path d="M96,188 L92,214" stroke="#fff" stroke-width="9" fill="none" stroke-linecap="round"/>
@@ -1924,13 +1934,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <circle cx="96" cy="142" r="1.6" fill="#fff"/>
   <circle cx="128" cy="142" r="1.6" fill="#fff"/>
   <path d="M104,161 Q112,168 120,161" fill="none" stroke="#233A63" stroke-width="3" stroke-linecap="round"/>
-</svg>
-        </div>
-        <div class="lt-text">
-          <p>長く・深く関われるから、業務体験で終わらない。<br>「就活より早く、本物のビジネスに関わりたい」という意識高い大学1・2年生が、貴社の現場で即戦力として成長します。<br><br>採用前から学生と深い信頼を築ける——それが長期インターンの強みです。</p>
-        </div>
-      </div>
-      <div class="lt-cta-row">
+</svg></div>
+      <div>
+        <div class="lt-badge">長期インターン紹介も対応</div>
+        <h3>大学1・2年生から、<br>本気でビジネスを経験できる。</h3>
+        <p>就活より早く、本物のビジネスに関わりたい意識高い1・2年生を長期インターンで紹介。長く・深く関わるから即戦力になり、採用前から貴社のファンが育ちます。</p>
         <a href="https://ssuzuki-ops.github.io/aoharu-intern-lp-meta1/" target="_blank" class="lt-cta-btn">サービスサイトはこちら →</a>
       </div>
     </div>
