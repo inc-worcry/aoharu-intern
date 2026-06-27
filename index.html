@@ -132,8 +132,8 @@ header{
   display:flex;align-items:center;gap:0;
   background:#fff;border:1.5px solid #C6F6D5;
   border-left:4px solid #06C755;
-  border-radius:10px;padding:14px 20px;
-  width:fit-content;
+  border-radius:10px;padding:16px 24px;
+  width:100%;
   box-shadow:0 2px 12px rgba(6,199,85,.08);
 }
 .line-icon{
@@ -145,7 +145,7 @@ header{
 .line-stat:first-of-type{padding-left:0}
 .line-num{
   font-size:clamp(1.5rem,3vw,2rem);font-weight:900;
-  color:#1A3050;letter-spacing:-0.04em;line-height:1;
+  color:#059862;letter-spacing:-0.04em;line-height:1;
 }
 .line-num small{font-size:.48em;font-weight:700}
 .line-lbl{font-size:11px;color:#828A9E;margin-top:3px;line-height:1.4}
@@ -697,7 +697,7 @@ footer p{font-size:13px;color:var(--muted)}
 /* ====== JOURNEY ====== */
 .journey-sec{background:var(--bg2);padding:72px 0 80px}
 .journey-wide-wrap{max-width:1160px}
-.journey-lead{font-size:16px;color:var(--muted);margin-top:-12px;margin-bottom:52px;font-weight:500}
+.journey-lead{font-size:15px;color:var(--muted);margin-top:-8px;margin-bottom:40px;font-weight:500}
 .journey-track{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative}
 .journey-track::before{content:'';position:absolute;top:124px;left:10%;right:10%;height:2px;background:linear-gradient(to right,#06C755,#3DA0E3,#F7941D,#1A3050);z-index:0;border-radius:2px}
 .jstep{display:flex;flex-direction:column;align-items:center;text-align:center;position:relative;z-index:1}
@@ -713,11 +713,11 @@ footer p{font-size:13px;color:var(--muted)}
 .jstep-txt{font-size:12px;color:var(--muted);line-height:1.75;text-align:left}
 .jstep-arrow{font-size:22px;color:var(--line);position:absolute;right:-12px;top:105px;z-index:2}
 .jstep--last .jstep-arrow{display:none}
-.journey-foot{margin-top:44px}
-.journey-foot-inner{display:flex;align-items:center;justify-content:center;gap:14px;background:var(--bg);border:1.5px solid var(--line);border-left:4px solid var(--orange);padding:18px 28px;border-radius:12px;flex-wrap:wrap}
-.journey-foot-label{font-size:13px;color:var(--muted)}
+.journey-foot{margin-top:44px;text-align:center}
+.journey-foot-inner{display:inline-flex;align-items:center;gap:12px;padding:12px 24px;border-radius:100px;border:1.5px solid var(--line);background:var(--white);flex-wrap:wrap}
+.journey-foot-label{font-size:12.5px;color:var(--muted)}
 .journey-foot-arrow{font-size:18px;color:var(--orange)}
-.journey-foot-highlight{font-size:15px;font-weight:800;color:var(--navy)}
+.journey-foot-highlight{font-size:14px;font-weight:800;color:var(--navy)}
 .journey-foot-note{font-size:13px;color:var(--ink)}
 .journey-foot-note strong{color:var(--orange)}
 
@@ -1258,8 +1258,8 @@ footer p{font-size:13px;color:var(--muted)}
    Journey compact
    ================================================================ */
 @media(max-width:860px){
-  .journey-sec { padding: 40px 0 48px }
-  .journey-lead { font-size: 13px; margin-bottom: 36px }
+  .journey-sec { padding: 32px 0 40px }
+  .journey-lead { font-size: 12.5px; margin-bottom: 24px }
   .journey-foot-inner { margin-top: 24px }
 }
 
@@ -1284,7 +1284,7 @@ footer p{font-size:13px;color:var(--muted)}
     width: 100%;
     max-width: 100%;
     margin: 20px 0 0 !important;
-    padding: 18px 24px !important;
+    padding: 18px 28px !important;
     box-sizing: border-box;
   }
   #line-cnt1, #line-cnt2 { font-size: 1.9rem !important }
@@ -1376,6 +1376,26 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
       </div>
       <!-- poke removed -->
+      <!-- FV申し込みフロー（スマホのみ表示） -->
+      <div class="fv-flow">
+        <div class="fv-flow-card">
+          <div class="fv-flow-n">STEP 1</div>
+          <div class="fv-flow-ttl">お問い合わせ</div>
+          <div class="fv-flow-sub">資料請求・<br>個別相談</div>
+        </div>
+        <div class="fv-flow-arr">›</div>
+        <div class="fv-flow-card">
+          <div class="fv-flow-n">STEP 2</div>
+          <div class="fv-flow-ttl">初回MTG</div>
+          <div class="fv-flow-sub">要件確認・<br>プラン提案</div>
+        </div>
+        <div class="fv-flow-arr">›</div>
+        <div class="fv-flow-card">
+          <div class="fv-flow-n">STEP 3</div>
+          <div class="fv-flow-ttl">掲載開始</div>
+          <div class="fv-flow-sub">最短1週間<br>でスタート</div>
+        </div>
+      </div>
       </div>
 
     <!-- 右: フォームカード -->
