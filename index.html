@@ -386,7 +386,7 @@ header{
 }
 
 /* ====== PHOTOS CAROUSEL ====== */
-.carousel-sec{background:var(--bg2);padding:52px 0;overflow:hidden}
+.carousel-sec{background:var(--bg2);padding:40px 0 48px;overflow:hidden}
 .carousel-lbl{font-size:10.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);text-align:center;margin-bottom:28px}
 .carousel-track-outer{width:100%;overflow:hidden;mask-image:linear-gradient(to right,transparent 0,black 6%,black 94%,transparent 100%)}
 .carousel-track{
@@ -396,14 +396,14 @@ header{
 }
 .carousel-track:hover{animation-play-state:paused}
 .c-item{
-  flex:none;width:300px;height:200px;
+  flex:none;width:320px;height:180px;
   border-radius:12px;overflow:hidden;
   box-shadow:0 4px 16px rgba(26,48,80,.08);
 }
 .c-item img{
   width:100%;height:100%;
   object-fit:cover;
-  object-position:center 20%;
+  object-position:center center;
   display:block;
   transition:transform .4s;
 }
@@ -434,16 +434,55 @@ header{
 .pi p{font-size:15px;color:var(--muted);line-height:1.72;font-weight:500}
 
 /* ====== LONGTERM ====== */
-.lt-wrap{
-  max-width:760px;margin:0 auto;
-  display:flex;gap:28px;align-items:center;
-  background:var(--white);border:1px solid var(--line);
-  border-radius:12px;padding:32px 36px;
+.lt-inner{ max-width:760px; margin:0 auto; }
+.lt-badge{
+  display:inline-block;
+  font-size:11.5px;font-weight:700;
+  background:rgba(247,148,29,.12);color:var(--orange);
+  border:1px solid rgba(247,148,29,.3);
+  padding:4px 13px;border-radius:4px;
+  margin-bottom:16px;
 }
-.lt-badge{display:inline-block;font-size:11.5px;font-weight:700;background:var(--bg2);color:var(--navy);border:1px solid var(--line);padding:4px 13px;border-radius:4px;margin-bottom:11px}
-.lt-wrap h3{font-size:21px;font-weight:900;color:var(--navy);margin-bottom:9px;letter-spacing:-.02em}
-.lt-wrap p{font-size:16px;color:var(--muted);line-height:1.85;font-weight:500}
-.lt-link{display:inline-flex;align-items:center;gap:4px;font-size:13px;font-weight:700;color:var(--blue);border-bottom:1.5px solid var(--blue);padding-bottom:1px;margin-top:10px}
+.lt-title{
+  font-size:clamp(1.55rem,3.5vw,2.1rem);
+  font-weight:900;color:var(--navy);
+  line-height:1.28;letter-spacing:-.03em;
+  margin-bottom:32px;
+  width:100%;
+}
+.lt-body{
+  display:flex;
+  gap:32px;
+  align-items:flex-start;
+  margin-bottom:32px;
+}
+.lt-poke{
+  flex-shrink:0;
+  display:flex;align-items:center;
+}
+.lt-text p{
+  font-size:15.5px;color:var(--muted);
+  line-height:1.9;font-weight:500;
+}
+.lt-cta-row{ text-align:center }
+.lt-cta-btn{
+  display:inline-block;
+  background:var(--orange);color:#fff;
+  font-size:16px;font-weight:700;
+  padding:16px 44px;border-radius:8px;
+  text-decoration:none;
+  letter-spacing:.04em;
+  transition:all .18s;
+  box-shadow:0 4px 18px rgba(247,148,29,.28);
+}
+.lt-cta-btn:hover{ background:#e07c0e; box-shadow:0 6px 26px rgba(247,148,29,.42); transform:translateY(-1px) }
+
+@media(max-width:640px){
+  .lt-title{ font-size:clamp(1.35rem,6vw,1.7rem); margin-bottom:22px }
+  .lt-body { flex-direction:column; gap:18px; align-items:center }
+  .lt-text p{ font-size:14px; line-height:1.8 }
+  .lt-cta-btn{ font-size:15px; padding:14px 32px; display:block; text-align:center }
+}
 
 /* ====== CTA ====== */
 .cta-sec{background:var(--white);padding:92px 0;text-align:center}
@@ -779,8 +818,7 @@ footer p{font-size:13px;color:var(--muted)}
   .cmp-table th,.cmp-table td{padding:10px 8px}
 
   /* カルーセル */
-  .c-item{width:200px}
-  .c-item img{height:130px}
+  .c-item{width:230px;height:130px}
 
   /* Journey */
   .journey-track{grid-template-columns:1fr 1fr;gap:28px 12px}
@@ -850,8 +888,7 @@ footer p{font-size:13px;color:var(--muted)}
   .journey-foot-highlight{font-size:14px}
 
   /* carousel */
-  .c-item{width:180px}
-  .c-item img{height:115px}
+  .c-item{width:200px;height:113px}
   .carousel-sec{padding:48px 0}
 
   /* CTA */
@@ -912,8 +949,7 @@ footer p{font-size:13px;color:var(--muted)}
   .cmp-table th,.cmp-table td{padding:7px 5px}
 
   /* carousel */
-  .c-item{width:160px}
-  .c-item img{height:105px}
+  .c-item{width:180px;height:101px}
 
   /* sh */
   .sh{font-size:clamp(1.4rem,5vw,1.8rem)}
@@ -1074,7 +1110,7 @@ footer p{font-size:13px;color:var(--muted)}
   .hero-quote { margin-bottom: 20px }
   .hero-quote-main { font-size: 15px }
   .hero-quote-sub  { font-size: 13px }
-  .hero-service-tag { font-size: 11px; padding: 5px 14px }
+  .hero-service-tag { font-size: 10.5px; padding: 5px 12px; white-space: nowrap; max-width: 100%; overflow: visible }
   .hero-body { padding-bottom: 72px }  /* スティッキーバー分のみ確保 */
 }
 @media(max-width:640px){
@@ -1254,16 +1290,30 @@ footer p{font-size:13px;color:var(--muted)}
    ================================================================ */
 @media(max-width:640px){
   header { height: 52px }
-  .hd-logo img { height: 36px }
-  header .btn-out { display: none }    /* 学生向けリンクをヘッダーから非表示 */
-  header .btn-main { padding: 8px 14px; font-size: 11.5px }
+  .hd-logo img { height: 34px }
+  header .btn-out { display: none }
+  header .btn-main { padding: 7px 12px; font-size: 11px; white-space: nowrap }
+}
+@media(max-width:400px){
+  header .btn-main { font-size: 10.5px; padding: 6px 10px; letter-spacing: 0 }
 }
 
 /* ================================================================
    LINE統計カード — 460px以下で縦並び
    ================================================================ */
+@media(max-width:860px){
+  .line-stats {
+    width: auto;
+    max-width: 320px;
+    margin: 16px auto 0 !important;
+  }
+  #line-cnt1, #line-cnt2 { font-size: 2rem !important }
+  .line-lbl { font-size: 12px !important }
+}
 @media(max-width:420px){
-  .line-stats { grid-template-columns: 1fr !important }
+  .line-stats { flex-direction: column; align-items: flex-start; gap: 10px; padding: 14px 16px }
+  .line-div   { display: none }
+  .line-stat  { padding: 0 }
 }
 
 
@@ -1655,7 +1705,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="sec bgw" id="compare">
   <div class="wrap">
     <div class="stag">他社比較</div>
-    <h2 class="sh">なぜ、AOHARUインターンなのか？</h2>
+    <h2 class="sh">なぜ、AOHARUインターン？</h2>
     <p class="sl">サマーインターンへの集客力と、<br>内定承諾まで繋がる質を両立した唯一のサービスです。</p>
     <div class="cmp-wrap">
       <table class="cmp-table">
@@ -1845,8 +1895,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- LONGTERM -->
 <section class="sec bg2">
   <div class="wrap">
-    <div class="lt-wrap">
-      <div style="flex-shrink:0"><svg viewBox="0 0 220 244" xmlns="http://www.w3.org/2000/svg" style="width:64px;height:auto;">
+    <div class="lt-inner">
+      <div class="lt-badge">長期インターン紹介も対応</div>
+      <h2 class="lt-title">大学1・2年生から、<br>本気でビジネスを経験できる。</h2>
+      <div class="lt-body">
+        <div class="lt-poke">
+          <svg viewBox="0 0 220 244" xmlns="http://www.w3.org/2000/svg" style="width:120px;height:auto;">
   <ellipse cx="110" cy="237" rx="62" ry="8" fill="#1A3050" opacity="0.06"/>
   <path d="M96,188 L92,214" stroke="#233A63" stroke-width="16" fill="none" stroke-linecap="round"/>
   <path d="M96,188 L92,214" stroke="#fff" stroke-width="9" fill="none" stroke-linecap="round"/>
@@ -1870,12 +1924,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <circle cx="96" cy="142" r="1.6" fill="#fff"/>
   <circle cx="128" cy="142" r="1.6" fill="#fff"/>
   <path d="M104,161 Q112,168 120,161" fill="none" stroke="#233A63" stroke-width="3" stroke-linecap="round"/>
-</svg></div>
-      <div>
-        <div class="lt-badge">長期インターン紹介も対応</div>
-        <h3>「採用前育成」としての長期インターンも</h3>
-        <p>大学1・2年生向けの長期インターン紹介サービスも運営しています。<br>意識高い大学1・2年生と一緒に働きたいという企業にオススメです。</p>
-        <a href="https://ssuzuki-ops.github.io/aoharu-intern-lp-meta1/" target="_blank" class="lt-link">サービスサイトを見る →</a>
+</svg>
+        </div>
+        <div class="lt-text">
+          <p>長く・深く関われるから、業務体験で終わらない。<br>「就活より早く、本物のビジネスに関わりたい」という意識高い大学1・2年生が、貴社の現場で即戦力として成長します。<br><br>採用前から学生と深い信頼を築ける——それが長期インターンの強みです。</p>
+        </div>
+      </div>
+      <div class="lt-cta-row">
+        <a href="https://ssuzuki-ops.github.io/aoharu-intern-lp-meta1/" target="_blank" class="lt-cta-btn">サービスサイトはこちら →</a>
       </div>
     </div>
   </div>
