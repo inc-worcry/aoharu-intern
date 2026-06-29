@@ -130,11 +130,11 @@ header{
 
 .line-stats{
   display:flex;align-items:center;gap:0;
-  background:#fff;border:1.5px solid #C6F6D5;
-  border-left:4px solid #06C755;
-  border-radius:10px;padding:16px 24px;
+  background:#fff;border:2px solid #06C755;
+  border-left:5px solid #06C755;
+  border-radius:12px;padding:16px 24px;
   width:100%;
-  box-shadow:0 2px 12px rgba(6,199,85,.08);
+  box-shadow:0 2px 16px rgba(6,199,85,.12);
 }
 .line-icon{
   font-size:11px;font-weight:900;color:#fff;
@@ -442,7 +442,7 @@ header{
 }
 .lt-badge{display:inline-block;font-size:11.5px;font-weight:700;background:var(--bg2);color:var(--navy);border:1px solid var(--line);padding:4px 13px;border-radius:4px;margin-bottom:10px}
 .lt-wrap h3{font-size:19px;font-weight:900;color:var(--navy);margin-bottom:8px;letter-spacing:-.02em;line-height:1.3}
-.lt-wrap p{font-size:14.5px;color:var(--muted);line-height:1.8;font-weight:500;margin-bottom:14px}
+.lt-wrap p{font-size:13.5px;color:var(--muted);line-height:1.8;font-weight:500;margin-bottom:14px}
 .lt-cta-btn{
   display:inline-block;
   background:var(--orange);color:#fff;
@@ -696,7 +696,7 @@ footer p{font-size:13px;color:var(--muted)}
 
 /* ====== JOURNEY ====== */
 .journey-sec{background:var(--bg2);padding:72px 0 80px}
-.journey-wide-wrap{max-width:1160px}
+.journey-wide-wrap{max-width:1160px;width:100%}
 .journey-lead{font-size:15px;color:var(--muted);margin-top:-8px;margin-bottom:40px;font-weight:500}
 .journey-track{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative}
 .journey-track::before{content:'';position:absolute;top:124px;left:10%;right:10%;height:2px;background:linear-gradient(to right,#06C755,#3DA0E3,#F7941D,#1A3050);z-index:0;border-radius:2px}
@@ -709,17 +709,17 @@ footer p{font-size:13px;color:var(--muted)}
 .jstep-card:hover{box-shadow:0 6px 28px rgba(26,48,80,.12)}
 .jstep-card--last{border-color:var(--navy);box-shadow:0 4px 24px rgba(26,48,80,.14)}
 .jstep-icon{margin-bottom:14px}
-.jstep-h{font-size:15px;font-weight:800;color:var(--navy);margin-bottom:10px;line-height:1.4;letter-spacing:-.01em}
-.jstep-txt{font-size:12px;color:var(--muted);line-height:1.75;text-align:left}
+.jstep-h{font-size:14.5px;font-weight:800;color:var(--navy);margin-bottom:8px;line-height:1.35;letter-spacing:-.01em}
+.jstep-txt{font-size:12.5px;color:var(--muted);line-height:1.7;text-align:left}
 .jstep-arrow{font-size:22px;color:var(--line);position:absolute;right:-12px;top:105px;z-index:2}
 .jstep--last .jstep-arrow{display:none}
-.journey-foot{margin-top:44px;text-align:center}
-.journey-foot-inner{display:inline-flex;align-items:center;gap:12px;padding:12px 24px;border-radius:100px;border:1.5px solid var(--line);background:var(--white);flex-wrap:wrap}
-.journey-foot-label{font-size:12.5px;color:var(--muted)}
-.journey-foot-arrow{font-size:18px;color:var(--orange)}
-.journey-foot-highlight{font-size:14px;font-weight:800;color:var(--navy)}
-.journey-foot-note{font-size:13px;color:var(--ink)}
-.journey-foot-note strong{color:var(--orange)}
+.journey-foot{margin-top:28px;text-align:center}
+.journey-foot-inner{display:inline-block;background:var(--bg2);border-radius:8px;padding:8px 16px;font-size:12.5px;line-height:1.7;text-align:center}
+.journey-foot-label{font-size:12.5px;color:var(--muted);display:inline}
+.journey-foot-arrow{font-size:13px;color:var(--muted);display:inline;margin:0 3px}
+.journey-foot-highlight{font-size:12.5px;font-weight:800;color:var(--navy);display:inline}
+.journey-foot-note{font-size:12.5px;color:var(--ink);display:inline;margin-left:4px}
+.journey-foot-note strong{color:var(--orange);display:inline}
 
 
 /* ===== POKEKUN GROWTH STAGES ===== */
@@ -798,11 +798,22 @@ footer p{font-size:13px;color:var(--muted)}
   .c-item{width:230px;height:130px}
 
   /* Journey */
-  .journey-track{grid-template-columns:1fr 1fr;gap:28px 12px}
+  .journey-track{
+    display:flex !important;
+    flex-direction:row !important;
+    overflow-x:auto !important;
+    gap:10px !important;
+    padding-bottom:8px;
+    -webkit-overflow-scrolling:touch;
+    scrollbar-width:none;
+    grid-template-columns:unset !important;
+  }
+  .journey-track::-webkit-scrollbar{display:none}
+  .jstep{min-width:72vw;flex:0 0 72vw}
   .journey-track::before{display:none}
   .jstep-arrow{display:none}
-  .jstep-card{width:95%}
-  .journey-foot-inner{flex-direction:column;text-align:center;gap:8px;padding:16px 20px}
+  .jstep-card{width:100%;padding:14px 12px !important;width:100%}
+  .journey-foot-inner{text-align:center}
 
   /* Flow */
   .flow-wrap{grid-template-columns:1fr 1fr;gap:24px}
@@ -962,7 +973,7 @@ footer p{font-size:13px;color:var(--muted)}
     width:100%;
     margin-top:4px;
   }
-  .line-icon{display:none}
+  .line-icon{font-size:10px;padding:3px 6px;margin-right:10px}
   .line-div{display:none}
   .line-stat{
     background:var(--white);
@@ -1088,7 +1099,7 @@ footer p{font-size:13px;color:var(--muted)}
   .hero-quote-main { font-size: 15px }
   .hero-quote-sub  { font-size: 13px }
   .hero-service-tag { font-size: 10.5px; padding: 5px 12px; white-space: nowrap; max-width: 100%; overflow: visible }
-  .hero-body { padding-bottom: 72px; padding-top: 72px !important }  /* ヘッダー高さ分 + スティッキーバー確保 */
+  .hero-body { padding-bottom: 60px; padding-top: 72px !important }  /* ヘッダー高さ分 + スティッキーバー確保 */
 }
 @media(max-width:640px){
   .hero-text h1 { font-size: clamp(2rem, 9.5vw, 2.8rem) !important }
@@ -1289,11 +1300,11 @@ footer p{font-size:13px;color:var(--muted)}
   }
   #line-cnt1, #line-cnt2 { font-size: 1.9rem !important }
   .line-lbl { font-size: 12px !important }
-  .line-stat { padding: 0 16px !important }
+  .line-stat { padding: 0 12px !important }
   .line-stat:first-of-type { padding-left: 0 !important }
 }
 @media(max-width:420px){
-  .line-stats { flex-direction: column; align-items: flex-start; gap: 12px; padding: 16px 18px !important }
+  .line-stats { display: flex !important; flex-direction: row !important; align-items: center !important; padding: 14px 16px !important }
   .line-div   { display: none }
   .line-stat  { padding: 0 !important }
 }
@@ -1303,7 +1314,7 @@ footer p{font-size:13px;color:var(--muted)}
    FV申し込みフロー3枚カード（スマホ表示用）
    ================================================================ */
 @media(max-width:860px){
-  .fv-flow { display: flex; gap: 8px; margin-top: 16px; width: 100% }
+  .fv-flow { display: flex; gap: 6px; margin-top: 14px; margin-bottom: 0; width: 100% }
   .fv-flow-card {
     flex: 1;
     background: var(--white);
@@ -1331,6 +1342,9 @@ footer p{font-size:13px;color:var(--muted)}
   .fv-flow { display: none }
 }
 
+@media(max-width:860px){
+  footer { padding-bottom: calc(32px + 72px) !important }
+}
 </style>
 </head>
 <body>
@@ -1392,8 +1406,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="fv-flow-arr">›</div>
         <div class="fv-flow-card">
           <div class="fv-flow-n">STEP 3</div>
-          <div class="fv-flow-ttl">掲載開始</div>
-          <div class="fv-flow-sub">最短1週間<br>でスタート</div>
+          <div class="fv-flow-ttl">支援開始</div>
+          <div class="fv-flow-sub">伴走サポート<br>スタート</div>
         </div>
       </div>
       </div>
