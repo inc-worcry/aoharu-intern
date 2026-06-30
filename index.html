@@ -1353,6 +1353,52 @@ footer p{font-size:13px;color:var(--muted)}
   .hero h1 { margin-bottom: 14px !important }
   .hero-service-tag { margin-bottom: 12px !important }
 }
+
+/* ================================================================
+   スマホ FV H1 — 大きく & 立体感
+   ================================================================ */
+@media(max-width:860px){
+  .hero-text h1 {
+    font-size: clamp(2.6rem, 11vw, 3.4rem) !important;
+    line-height: 1.1 !important;
+    letter-spacing: -0.04em !important;
+    text-shadow:
+      2px 2px 0 rgba(247,148,29,.18),
+      4px 4px 0 rgba(26,48,80,.06),
+      0 6px 24px rgba(26,48,80,.10) !important;
+  }
+  .hero-text h1 em {
+    color: var(--orange) !important;
+    text-shadow:
+      2px 2px 0 rgba(247,148,29,.35),
+      4px 4px 0 rgba(247,148,29,.15),
+      0 6px 20px rgba(247,148,29,.20) !important;
+  }
+}
+@media(max-width:640px){
+  .hero-text h1 {
+    font-size: clamp(2.4rem, 10.5vw, 3rem) !important;
+  }
+}
+@media(max-width:420px){
+  .hero-text h1 {
+    font-size: clamp(2.2rem, 10vw, 2.8rem) !important;
+  }
+}
+
+/* ================================================================
+   セクション余白 — 少し広げる（スマホ）
+   ================================================================ */
+@media(max-width:860px){
+  section.sec, section.bgw, section.bg2 { padding: 52px 0 !important }
+}
+@media(max-width:640px){
+  section.sec, section.bgw, section.bg2 { padding: 48px 0 !important }
+  .sh { margin-bottom: 10px !important }
+}
+@media(max-width:480px){
+  section.sec, section.bgw, section.bg2 { padding: 44px 0 !important }
+}
 </style>
 </head>
 <body>
@@ -1388,13 +1434,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="line-stats">
         <span class="line-icon">LINE</span>
         <div class="line-stat">
-          <span class="line-num" id="line-cnt1">2,300<small>人</small></span>
-          <span class="line-lbl">大学1・2年生のLINE友達登録数</span>
+          <span class="line-num" id="line-cnt1">4,600<small>人</small></span>
+          <span class="line-lbl">大学2年生のLINE登録人数</span>
         </div>
         <div class="line-div"></div>
         <div class="line-stat">
           <span class="line-num" id="line-cnt2">500<small>〜600名/月</small></span>
-          <span class="line-lbl">月間新規LINE登録</span>
+          <span class="line-lbl">平均月間新規LINE登録数</span>
         </div>
       </div>
       <!-- poke removed -->
