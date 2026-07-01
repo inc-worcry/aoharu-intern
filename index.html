@@ -1992,6 +1992,195 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
+<!-- STUDENT PROFILE STATS -->
+<section class="sec bgw" id="student-profile-stats">
+<style>
+/* ── student-profile stats (scoped) ── */
+#student-profile-stats .sp-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px 24px;
+}
+#student-profile-stats .sp-sub {
+  text-align: center;
+  color: var(--muted);
+  font-size: 13.5px;
+  margin-top: 8px;
+  line-height: 1.8;
+}
+/* stat grid */
+#student-profile-stats .sp-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-bottom: 32px;
+}
+#student-profile-stats .sp-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 28px 16px 24px;
+  text-align: center;
+  box-shadow: 0 2px 12px rgba(0,0,0,.07), 0 0 0 1px rgba(0,0,0,.04);
+  border-top: 4px solid var(--orange);
+  display: flex; flex-direction: column; align-items: center; gap: 7px;
+}
+#student-profile-stats .sp-card.b  { border-top-color: var(--blue); }
+#student-profile-stats .sp-card.n  { border-top-color: var(--navy); }
+#student-profile-stats .sp-card.g  { border-top-color: #94A3B8; }
+#student-profile-stats .sp-num {
+  font-size: 52px; font-weight: 800; line-height: 1;
+  color: var(--orange);
+}
+#student-profile-stats .sp-card.b .sp-num { color: var(--blue); }
+#student-profile-stats .sp-card.n .sp-num { color: var(--navy); }
+#student-profile-stats .sp-card.g .sp-num { color: #94A3B8; }
+#student-profile-stats .sp-unit { font-size: 24px; font-weight: 700; }
+#student-profile-stats .sp-lbl {
+  font-size: 13px; font-weight: 700; color: var(--ink); line-height: 1.4;
+}
+#student-profile-stats .sp-note { font-size: 11px; color: var(--muted); }
+#student-profile-stats .sp-chips {
+  display: flex; gap: 5px; justify-content: center; flex-wrap: wrap; margin-top: 2px;
+}
+#student-profile-stats .sp-chip {
+  font-size: 10px; font-weight: 600; padding: 2px 9px;
+  border-radius: 10px;
+}
+#student-profile-stats .sp-chip.o { background: #FFF4E6; color: var(--orange); }
+#student-profile-stats .sp-chip.b { background: #EFF8FD; color: var(--blue); }
+
+/* TOP15 */
+#student-profile-stats .sp-flow-label {
+  font-size: 11px; font-weight: 700; color: var(--muted);
+  letter-spacing: .06em; margin-bottom: 14px;
+  display: flex; align-items: center; gap: 10px;
+}
+#student-profile-stats .sp-flow-label::before,
+#student-profile-stats .sp-flow-label::after {
+  content: ''; flex: 1; height: 1px; background: var(--line);
+}
+#student-profile-stats .sp-univ-grid {
+  background: #fff;
+  border-radius: 14px;
+  padding: 14px 22px;
+  box-shadow: 0 2px 8px rgba(0,0,0,.06);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0 28px;
+  margin-bottom: 32px;
+}
+#student-profile-stats .sp-ui {
+  display: flex; align-items: center; gap: 8px;
+  padding: 7px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 12px;
+}
+#student-profile-stats .sp-ui:nth-last-child(-n+3) { border-bottom: none; }
+#student-profile-stats .sp-rank { font-size: 10px; color: var(--muted); width: 18px; text-align: right; flex-shrink: 0; }
+#student-profile-stats .sp-uname { flex: 1; color: var(--ink); font-weight: 500; }
+#student-profile-stats .sp-upct  { font-size: 12px; font-weight: 700; color: var(--orange); }
+
+/* detail CTA */
+#student-profile-stats .sp-detail-cta {
+  text-align: center;
+  margin-top: 4px;
+}
+#student-profile-stats .sp-detail-cta p {
+  font-size: 13px; color: var(--muted); margin-bottom: 14px;
+}
+#student-profile-stats .sp-detail-btn {
+  display: inline-block;
+  background: var(--navy); color: #fff;
+  font-weight: 700; font-size: 13.5px;
+  padding: 12px 32px; border-radius: 28px;
+  text-decoration: none; letter-spacing: .04em;
+  transition: opacity .2s;
+}
+#student-profile-stats .sp-detail-btn:hover { opacity: .82; }
+
+/* responsive */
+@media (max-width: 860px) {
+  #student-profile-stats .sp-grid { grid-template-columns: repeat(2, 1fr); }
+  #student-profile-stats .sp-univ-grid { grid-template-columns: repeat(2, 1fr); }
+  #student-profile-stats .sp-ui:nth-last-child(-n+3) { border-bottom: 1px solid var(--line); }
+  #student-profile-stats .sp-ui:nth-last-child(-n+2) { border-bottom: none; }
+}
+@media (max-width: 480px) {
+  #student-profile-stats .sp-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  #student-profile-stats .sp-num { font-size: 42px; }
+  #student-profile-stats .sp-univ-grid { grid-template-columns: 1fr; }
+  #student-profile-stats .sp-ui:nth-last-child(-n+2) { border-bottom: 1px solid var(--line); }
+  #student-profile-stats .sp-ui:last-child { border-bottom: none; }
+}
+</style>
+
+  <div class="wrap">
+    <div class="stag">学生データ</div>
+    <h2 class="sh">数字で見る、AOHARUの学生品質</h2>
+    <p class="sp-sub">流入数ではなく、実際に面談を完了した学生のみを集計。<br>厳選された母集団が、採用の効率を高めます。</p>
+  </div>
+
+  <div class="sp-inner">
+    <!-- stat cards -->
+    <div class="sp-grid">
+      <div class="sp-card">
+        <div class="sp-num">77<span class="sp-unit">%</span></div>
+        <div class="sp-lbl">MARCH以上の学生比率</div>
+        <div class="sp-note">早慶上智 + MARCH</div>
+        <div class="sp-chips">
+          <span class="sp-chip o">早慶上智 35%</span>
+          <span class="sp-chip b">MARCH 42%</span>
+        </div>
+      </div>
+      <div class="sp-card b">
+        <div class="sp-num">63<span class="sp-unit">%</span></div>
+        <div class="sp-lbl">高校偏差値 60以上</div>
+        <div class="sp-note">難関・上位高校出身</div>
+        <div class="sp-chips">
+          <span class="sp-chip o">S難関 22%</span>
+          <span class="sp-chip b">A上位 41%</span>
+        </div>
+      </div>
+      <div class="sp-card n">
+        <div class="sp-num">77<span class="sp-unit">%</span></div>
+        <div class="sp-lbl">文系比率</div>
+        <div class="sp-note">理系 23%</div>
+      </div>
+      <div class="sp-card g">
+        <div class="sp-num">48<span class="sp-unit">%</span></div>
+        <div class="sp-lbl">体育会・スポーツ系</div>
+        <div class="sp-note">体育会 20% ／ スポーツサークル 28%</div>
+      </div>
+    </div>
+
+    <!-- TOP15 -->
+    <div class="sp-flow-label">参考：流入ベース 大学別 TOP 15（LINE友だち登録者）</div>
+    <div class="sp-univ-grid">
+      <div class="sp-ui"><span class="sp-rank">1</span><span class="sp-uname">慶應義塾大学</span><span class="sp-upct">8.8%</span></div>
+      <div class="sp-ui"><span class="sp-rank">1</span><span class="sp-uname">青山学院大学</span><span class="sp-upct">8.8%</span></div>
+      <div class="sp-ui"><span class="sp-rank">3</span><span class="sp-uname">早稲田大学</span><span class="sp-upct">7.3%</span></div>
+      <div class="sp-ui"><span class="sp-rank">4</span><span class="sp-uname">日本大学</span><span class="sp-upct" style="color:var(--blue)">4.2%</span></div>
+      <div class="sp-ui"><span class="sp-rank">5</span><span class="sp-uname">法政大学</span><span class="sp-upct">3.2%</span></div>
+      <div class="sp-ui"><span class="sp-rank">6</span><span class="sp-uname">立教大学</span><span class="sp-upct">3.0%</span></div>
+      <div class="sp-ui"><span class="sp-rank">6</span><span class="sp-uname">東京都立大学</span><span class="sp-upct" style="color:var(--blue)">3.0%</span></div>
+      <div class="sp-ui"><span class="sp-rank">8</span><span class="sp-uname">明治大学</span><span class="sp-upct">2.8%</span></div>
+      <div class="sp-ui"><span class="sp-rank">9</span><span class="sp-uname">成蹊大学</span><span class="sp-upct">2.7%</span></div>
+      <div class="sp-ui"><span class="sp-rank">10</span><span class="sp-uname">中央大学</span><span class="sp-upct">2.5%</span></div>
+      <div class="sp-ui"><span class="sp-rank">11</span><span class="sp-uname">東洋大学</span><span class="sp-upct" style="color:#94A3B8">2.2%</span></div>
+      <div class="sp-ui"><span class="sp-rank">12</span><span class="sp-uname">上智大学</span><span class="sp-upct">1.3%</span></div>
+      <div class="sp-ui"><span class="sp-rank">13</span><span class="sp-uname">東京大学</span><span class="sp-upct" style="color:var(--blue)">1.2%</span></div>
+      <div class="sp-ui"><span class="sp-rank">14</span><span class="sp-uname">駒澤大学</span><span class="sp-upct" style="color:#CBD5E1">1.1%</span></div>
+      <div class="sp-ui"><span class="sp-rank">14</span><span class="sp-uname">専修大学</span><span class="sp-upct" style="color:#CBD5E1">1.1%</span></div>
+    </div>
+
+    <!-- detail CTA -->
+    <div class="sp-detail-cta">
+      <p>大学帯別・高校学力・志向・課外活動など、詳細な分析データは資料でご確認いただけます。</p>
+      <a href="#footer-cta" class="sp-detail-btn">▶ 詳細資料をダウンロード</a>
+    </div>
+  </div>
+</section>
+
 <!-- LONGTERM -->
 <section class="sec bg2">
   <div class="wrap">
