@@ -370,6 +370,58 @@ footer p{font-size:13px;color:var(--muted)}
   .cmp-c{font-size:10.5px;padding:12px 6px}
   .price-card{padding:34px 22px}
 }
+
+/* ===== MATCHING EVENT DIAGRAM ===== */
+.me-diagram{margin:6px 0 28px}
+.me-dlabel{font-size:12px;font-weight:900;letter-spacing:.06em;color:var(--navy);margin-bottom:14px;display:flex;align-items:center;gap:10px}
+.me-dlabel span{background:var(--blue);color:#fff;font-size:11px;padding:3px 11px;border-radius:5px}
+.me-stage{display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:center;background:var(--white);border:1px solid var(--line);border-radius:16px;padding:22px;box-shadow:0 4px 18px rgba(26,48,80,.05);margin-bottom:18px}
+.me-main{background:var(--navy);color:#fff;border-radius:12px;padding:20px 14px;text-align:center;min-width:100px}
+.me-main b{display:block;font-size:14px;font-weight:900;letter-spacing:.1em}
+.me-main span{font-size:10.5px;color:rgba(255,255,255,.72)}
+.me-rooms{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+.me-room{background:var(--bg2);border:1px solid #D4E6F2;border-radius:10px;padding:11px 6px;text-align:center}
+.me-room .rlbl{font-size:9.5px;font-weight:800;color:var(--muted);margin-bottom:7px;letter-spacing:.04em}
+.me-room .pair{display:flex;flex-direction:column;gap:4px;align-items:stretch}
+.me-room .chip{font-size:10.5px;font-weight:800;border-radius:6px;padding:4px 0}
+.me-room .chip.co{background:var(--blue);color:#fff}
+.me-room .chip.st{background:#fff;color:var(--navy);border:1px solid #D4E6F2}
+.me-rooms-cap{grid-column:1/-1;text-align:center;font-size:11.5px;font-weight:700;color:var(--navy);margin-top:10px;line-height:1.5}
+.me-steps{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;align-items:stretch}
+.me-step{background:var(--white);border:1px solid var(--line);border-top:4px solid var(--blue);border-radius:12px;padding:20px 16px;text-align:center;box-shadow:0 3px 14px rgba(26,48,80,.05)}
+.me-step .no{font-size:11px;font-weight:900;color:var(--blue);letter-spacing:.12em;margin-bottom:7px}
+.me-step b{display:block;font-size:15px;font-weight:900;color:var(--navy);margin-bottom:6px}
+.me-step span{font-size:12px;color:var(--muted);line-height:1.6}
+.me-sarrow{display:flex;align-items:center;justify-content:center;color:var(--blue);font-weight:900;font-size:22px;padding:0 8px}
+
+/* ===== NEW-GRAD CARD ===== */
+.newgrad-card{position:relative;overflow:hidden;background:linear-gradient(135deg,#1A3050 0%,#24457320 100%),linear-gradient(135deg,#1A3050,#22406b);border-radius:22px;padding:48px 46px;color:#fff;box-shadow:0 18px 50px rgba(26,48,80,.24);display:grid;grid-template-columns:1fr auto;gap:34px;align-items:center}
+.newgrad-card::before{content:'';position:absolute;width:380px;height:380px;background:radial-gradient(circle,rgba(41,171,226,.34),transparent 65%);top:-130px;right:-70px;border-radius:50%;pointer-events:none}
+.ng-body{position:relative}
+.ng-tag{display:inline-block;font-size:11px;font-weight:900;letter-spacing:.14em;background:var(--blue);color:#fff;padding:5px 14px;border-radius:999px;margin-bottom:16px}
+.ng-body h3{font-size:clamp(1.6rem,3.4vw,2.2rem);font-weight:900;line-height:1.3;letter-spacing:-.02em;margin-bottom:14px}
+.ng-body p{font-size:15px;color:rgba(255,255,255,.84);line-height:1.9;font-weight:500;max-width:600px}
+.ng-cta{position:relative;flex-shrink:0}
+.ng-cta a{display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:#fff;font-size:15px;font-weight:800;padding:17px 30px;border-radius:999px;text-decoration:none;white-space:nowrap;box-shadow:0 8px 26px rgba(41,171,226,.45);transition:transform .15s,box-shadow .15s}
+.ng-cta a:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(41,171,226,.55)}
+
+/* ===== MATCHING / NEWGRAD RESPONSIVE ===== */
+@media(max-width:860px){
+  .me-stage{grid-template-columns:1fr;gap:14px}
+  .me-main{min-width:0;padding:14px}
+  .me-steps{grid-template-columns:1fr}
+  .me-sarrow{transform:rotate(90deg);padding:6px 0}
+  .newgrad-card{grid-template-columns:1fr;gap:24px;padding:36px 28px;text-align:center}
+  .ng-cta a{width:100%;justify-content:center}
+  .ng-body p{margin:0 auto}
+}
+@media(max-width:480px){
+  .me-rooms{gap:5px}
+  .me-room{padding:9px 3px}
+  .me-room .rlbl{font-size:8.5px}
+  .me-room .chip{font-size:9px}
+  .me-main{padding:12px}
+}
 </style>
 </head>
 <body>
@@ -397,7 +449,7 @@ footer p{font-size:13px;color:var(--muted)}
       <div class="line-stats">
         <span class="line-icon">LINE</span>
         <div class="line-stat">
-          <span class="line-num">2,292<small>名</small></span>
+          <span class="line-num">4,600<small>名</small></span>
           <span class="line-lbl">大学1・2年生の友だち登録数</span>
         </div>
         <div class="line-div"></div>
@@ -409,7 +461,31 @@ footer p{font-size:13px;color:var(--muted)}
     </div>
     <div class="hero-form-card">
       <div class="hfc-head">
-        <div class="hfc-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 4H18A2 2 0 0 1 20 6V13A2 2 0 0 1 18 15H10L6.5 18.5V15H6A2 2 0 0 1 4 13V6A2 2 0 0 1 6 4Z" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/><circle cx="8.5" cy="9.5" r="1.05" fill="#fff"/><circle cx="12" cy="9.5" r="1.05" fill="#fff"/><circle cx="15.5" cy="9.5" r="1.05" fill="#fff"/></svg></div>
+        <div class="hfc-icon" style="background:#fff;overflow:hidden;padding:2px"><svg viewBox="0 0 220 244" style="width:30px;height:auto;display:block">
+  <ellipse cx="110" cy="237" rx="62" ry="8" fill="#1A3050" opacity="0.06"/>
+  <path d="M96,188 L92,214" stroke="#233A63" stroke-width="16" fill="none" stroke-linecap="round"/>
+  <path d="M96,188 L92,214" stroke="#fff" stroke-width="9" fill="none" stroke-linecap="round"/>
+  <path d="M126,188 L130,214" stroke="#233A63" stroke-width="16" fill="none" stroke-linecap="round"/>
+  <path d="M126,188 L130,214" stroke="#fff" stroke-width="9" fill="none" stroke-linecap="round"/>
+  <ellipse cx="88" cy="220" rx="15" ry="8.5" fill="#4C6699" stroke="#233A63" stroke-width="3.5"/>
+  <ellipse cx="134" cy="220" rx="15" ry="8.5" fill="#4C6699" stroke="#233A63" stroke-width="3.5"/>
+  <path d="M164,150 Q190,118 198,92" stroke="#233A63" stroke-width="16" fill="none" stroke-linecap="round"/>
+  <path d="M164,150 Q190,118 198,92" stroke="#fff" stroke-width="9" fill="none" stroke-linecap="round"/>
+  <path d="M58,150 Q32,118 24,92" stroke="#233A63" stroke-width="16" fill="none" stroke-linecap="round"/>
+  <path d="M58,150 Q32,118 24,92" stroke="#fff" stroke-width="9" fill="none" stroke-linecap="round"/>
+  <path d="M53,88 H167 L159,168 Q159,207 110,207 Q61,207 61,168 Z" fill="#6E90C9" stroke="#233A63" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M66,98 V163 Q66,196 110,196 Q154,196 154,163 V98" fill="none" stroke="#CFE0F5" stroke-width="2.2" stroke-dasharray="5 6" stroke-linecap="round"/>
+  <path d="M50,62 H170 Q175,62 175,67 V92 Q175,97 170,97 H50 Q45,97 45,92 V67 Q45,62 50,62 Z" fill="#7C9BD0" stroke="#233A63" stroke-width="4"/>
+  <path d="M54,69 H166" stroke="#CFE0F5" stroke-width="2.2" stroke-dasharray="5 6" stroke-linecap="round"/>
+  <circle cx="110" cy="79" r="9" fill="#F4C430" stroke="#C9971F" stroke-width="2.5"/>
+  <ellipse cx="96" cy="143" rx="9.5" ry="12" fill="#fff" stroke="#233A63" stroke-width="3"/>
+  <ellipse cx="128" cy="143" rx="9.5" ry="12" fill="#fff" stroke="#233A63" stroke-width="3"/>
+  <circle cx="98" cy="145" r="5" fill="#1B2B4A"/>
+  <circle cx="130" cy="145" r="5" fill="#1B2B4A"/>
+  <circle cx="96" cy="142" r="1.6" fill="#fff"/>
+  <circle cx="128" cy="142" r="1.6" fill="#fff"/>
+  <path d="M104,161 Q112,168 120,161" fill="none" stroke="#233A63" stroke-width="3" stroke-linecap="round"/>
+</svg></div>
         <div>
           <div class="hfc-ttl">まずはお気軽にご相談を！</div>
           <div class="hfc-sub">資料請求はこちら / 1営業日以内に返信</div>
@@ -517,14 +593,14 @@ footer p{font-size:13px;color:var(--muted)}
 <section class="sec bg2">
   <div class="wrap">
     <div class="stag">COMPARISON ／ 比較</div>
-    <h2 class="sh">AOHARUインターンは、<br>大学1〜2年生に特化。</h2>
-    <p class="sl">長期的に育成できるうえ、カルチャーフィットまで見据えた伴走体制が整っています。</p>
+    <h2 class="sh">「ここまでやる」紹介会社は、<br>多くありません。</h2>
+    <p class="sl">紹介前に“全員”と面談する。入社後の定着まで伴走する。<br>大学1・2年生に特化しているからこそ、他社にはない深さで採用に寄り添います。</p>
     <div class="cmp">
       <div class="cmp-grid">
         <div class="cmp-h lbl">比較項目</div>
         <div class="cmp-h b">AOHARUインターン</div>
-        <div class="cmp-h g">他社</div>
-        <div class="cmp-c lbl">大学1〜2年生</div><div class="cmp-c win"><span class="cmp-mark good">◎</span>早期から育成が可能</div><div class="cmp-c"><span class="cmp-mark bad">✕</span>3〜4年生が大半で短期間のみ</div><div class="cmp-c lbl">卒業後の即戦力</div><div class="cmp-c win"><span class="cmp-mark good">◎</span>2〜3年の長期インターンで育成可能</div><div class="cmp-c"><span class="cmp-mark mid">△</span>成果は見えても即戦力化までは難しい</div><div class="cmp-c lbl">カルチャーフィット</div><div class="cmp-c win"><span class="cmp-mark good">◎</span>理念への共感まで醸成できる</div><div class="cmp-c"><span class="cmp-mark bad">✕</span>就活対策が中心になりがち</div><div class="cmp-c lbl">導入のしやすさ</div><div class="cmp-c win"><span class="cmp-mark good">◎</span>求人票作成・紹介まで継続伴走</div><div class="cmp-c"><span class="cmp-mark mid">△</span>求人原稿作成・学生探しは企業主体のことも</div><div class="cmp-c lbl">導入後のフォロー</div><div class="cmp-c win"><span class="cmp-mark good">◎</span>面談・教育設計・カウンセリングまで</div><div class="cmp-c"><span class="cmp-mark bad">✕</span>教育コストやフォローは企業任せ</div>
+        <div class="cmp-h g">一般的な他社</div>
+        <div class="cmp-c lbl">対象学年</div><div class="cmp-c win"><span class="cmp-mark good">◎</span>大学1・2年生から早期に育成</div><div class="cmp-c"><span class="cmp-mark bad">✕</span>3〜4年生が中心・短期のみ</div><div class="cmp-c lbl">学生の見極め</div><div class="cmp-c win"><span class="cmp-mark good">◎</span>紹介前に“全員”と面談・カウンセリング</div><div class="cmp-c"><span class="cmp-mark bad">✕</span>求人サイトに掲載し、学生任せ</div><div class="cmp-c lbl">マッチ精度</div><div class="cmp-c win"><span class="cmp-mark good">◎</span>貴社に合う人材だけを厳選紹介</div><div class="cmp-c"><span class="cmp-mark mid">△</span>応募は来るが、合うかは運次第</div><div class="cmp-c lbl">入社後のフォロー</div><div class="cmp-c win"><span class="cmp-mark good">◎</span>定着・戦力化まで継続伴走</div><div class="cmp-c"><span class="cmp-mark bad">✕</span>教育・フォローは企業任せ</div><div class="cmp-c lbl">カルチャーフィット</div><div class="cmp-c win"><span class="cmp-mark good">◎</span>理念への共感まで醸成</div><div class="cmp-c"><span class="cmp-mark bad">✕</span>就活対策が中心になりがち</div><div class="cmp-c lbl">費用</div><div class="cmp-c win"><span class="cmp-mark good">◎</span>初期費用0・完全成果報酬</div><div class="cmp-c"><span class="cmp-mark mid">△</span>掲載料・固定費がかかることも</div>
       </div>
     </div>
   </div>
@@ -591,14 +667,27 @@ footer p{font-size:13px;color:var(--muted)}
 <section class="sec bgw">
   <div class="wrap">
     <div class="stag">MATCHING EVENT ／ マッチングイベント</div>
-    <h2 class="sh">必ず母集団をキープする、<br>マッチングイベント。</h2>
-    <p class="sl">月2回開催のオンラインイベント。企業5社 × 候補者10名で、「集める」と「見極める」を一度に。求人票では伝わらない自社の魅力も、対話で直接届けられます。</p>
-    <div class="me-grid">
-      <div class="me-card"><h4>形式</h4><p>ZOOMのブレイクアウト方式。12分×5セッションで、全企業と候補者が順番に対話します。</p></div>
-      <div class="me-card"><h4>規模</h4><p>企業5社 × 候補者10名。毎回しっかりと母集団を確保した状態でスタートします。</p></div>
-      <div class="me-card"><h4>厳選接点</h4><p>マッチングは1名につき最大2社まで。双方の熱量を守る、密度の高い接点設計です。</p></div>
-      <div class="me-card"><h4>双方マッチング</h4><p>興味度を5段階で相互評価。希望が合った組み合わせから、面接日程の調整へ進みます。</p></div>
+    <h2 class="sh">「集める」と「見極める」を、<br>一度に。</h2>
+    <p class="sl">月2回開催のオンラインイベント。企業5社 × 候補者10名で、<br>求人票では伝わらない自社の魅力を、対話で直接届けられます。</p>
+
+    <div class="me-diagram">
+      <div class="me-dlabel"><span>当日の流れ</span>ZOOMブレイクアウト方式</div>
+      <div class="me-stage">
+        <div class="me-main"><b>MAIN</b><span>全員集合</span></div>
+        <div class="me-rooms">
+          <div class="me-room"><div class="rlbl">ROOM 1</div><div class="pair"><span class="chip co">企業</span><span class="chip st">学生</span></div></div><div class="me-room"><div class="rlbl">ROOM 2</div><div class="pair"><span class="chip co">企業</span><span class="chip st">学生</span></div></div><div class="me-room"><div class="rlbl">ROOM 3</div><div class="pair"><span class="chip co">企業</span><span class="chip st">学生</span></div></div><div class="me-room"><div class="rlbl">ROOM 4</div><div class="pair"><span class="chip co">企業</span><span class="chip st">学生</span></div></div><div class="me-room"><div class="rlbl">ROOM 5</div><div class="pair"><span class="chip co">企業</span><span class="chip st">学生</span></div></div>
+          <div class="me-rooms-cap">12分 × 5セッション ／ 全企業を順番に対話（マッチングは1名につき最大2社まで）</div>
+        </div>
+      </div>
+      <div class="me-steps">
+        <div class="me-step"><div class="no">STEP 01</div><b>興味度アンケート</b><span>5段階＋理由記述で相互評価</span></div>
+        <div class="me-sarrow">→</div>
+        <div class="me-step"><div class="no">STEP 02</div><b>双方マッチング</b><span>企業・学生、互いの希望を確認</span></div>
+        <div class="me-sarrow">→</div>
+        <div class="me-step"><div class="no">STEP 03</div><b>面接日程調整</b><span>合意した組み合わせから面接へ</span></div>
+      </div>
     </div>
+
     <div class="me-merit">
       <div class="me-m"><b>母集団形成</b><span>複数候補者へ一度にアプローチ</span></div>
       <div class="me-m"><b>マッチング最大化</b><span>組み合わせを最適に設計</span></div>
@@ -645,14 +734,13 @@ footer p{font-size:13px;color:var(--muted)}
 <section class="sec bg2">
   <div class="wrap">
     <div class="stag">TRACTION ／ 実績</div>
-    <h2 class="sh">サービス開始6ヶ月の実績</h2>
-    <p class="stats-note">2026年5月時点。<em style="color:var(--orange);font-style:normal;font-weight:700">オレンジ</em>は今期末の見込み数値です。</p>
+    <h2 class="sh">6ヶ月で、<br>これだけの実績。</h2>
     <div class="s-grid">
-      <div class="s-item"><div class="s-num">50<small>名</small></div><div class="s-lbl">決定数</div><div class="s-fore">今期末見込 250名</div></div>
-      <div class="s-item"><div class="s-num">120<small>名</small></div><div class="s-lbl">面談セット数</div><div class="s-fore">今期末見込 660名</div></div>
-      <div class="s-item"><div class="s-num">240<small>名</small></div><div class="s-lbl">面談数</div><div class="s-fore">今期末見込 1,300名</div></div>
-      <div class="s-item"><div class="s-num">2,292<small>名</small></div><div class="s-lbl">LINE登録数</div><div class="s-fore">今期末見込 14,000名</div></div>
-      <div class="s-item"><div class="s-num">75<small>件</small></div><div class="s-lbl">掲載求人数</div><div class="s-fore">今期末見込 200件</div></div>
+      <div class="s-item"><div class="s-num">100<small>名</small></div><div class="s-lbl">決定数</div></div>
+      <div class="s-item"><div class="s-num">240<small>名</small></div><div class="s-lbl">面談セット数</div></div>
+      <div class="s-item"><div class="s-num">480<small>名</small></div><div class="s-lbl">面談数</div></div>
+      <div class="s-item"><div class="s-num">4,600<small>名</small></div><div class="s-lbl">LINE登録数</div></div>
+      <div class="s-item"><div class="s-num">150<small>件</small></div><div class="s-lbl">掲載求人数</div></div>
     </div>
     <div class="data-grid">
       <div>
@@ -690,17 +778,13 @@ footer p{font-size:13px;color:var(--muted)}
 <!-- 関連（軽い言及） -->
 <section class="sec bg2">
   <div class="wrap">
-    <div class="slim-grid">
-      <div class="slim2">
-        <span class="tag">長期 → 新卒</span>
-        <h4>長期インターンから、新卒採用への接続もサポート</h4>
-        <p>長期インターンで一緒に働いた学生を、そのまま新卒採用へ。<br>ご希望に応じて接続もお手伝いします。</p>
+    <div class="newgrad-card">
+      <div class="ng-body">
+        <span class="ng-tag">NEW-GRAD ／ 新卒採用</span>
+        <h3>大学2年生から始める、<br>新卒採用。</h3>
+        <p>長期インターンで一緒に働いた学生を、そのまま新卒へ。<br>さらに、2年生秋・冬インターンからの早期接点づくりに特化した新卒採用支援もご用意しています。</p>
       </div>
-      <div class="slim2">
-        <span class="tag">大学2年生〜</span>
-        <h4>大学2年生から始める新卒採用</h4>
-        <p>2年生秋・冬インターンから、早期接点づくりに特化した新卒採用支援（<a href="https://ssuzuki-ops.github.io/aoharu-intern-lp/" target="_blank">短期インターン送客</a>）もご用意しています。</p>
-      </div>
+      <div class="ng-cta"><a href="https://inc-worcry.github.io/aoharu-intern/" target="_blank" rel="noopener">新卒採用支援を見る →</a></div>
     </div>
   </div>
 </section>
