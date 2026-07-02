@@ -8,6 +8,16 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="AOHARUインターン｜長期インターン紹介">
+<meta property="og:description" content="大学1・2年生に特化した長期インターン紹介。全員面談で、貴社に合う人材だけを紹介。">
+<meta property="og:image" content="https://inc-worcry.github.io/aoharu-intern/long-intern/og.png">
+<meta property="og:url" content="https://inc-worcry.github.io/aoharu-intern/long-intern/">
+<meta name="twitter:card" content="summary_large_image">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -309,6 +319,56 @@ footer p{font-size:13px;color:var(--muted)}
 .form-done strong{display:block;font-size:18px;color:var(--blue);margin-bottom:6px}
 .form-done span{font-size:14px;color:var(--muted)}
 @keyframes fadein{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+/* ===== STICKY CTA BAR (mobile) ===== */
+.sp-cta-bar{display:none}
+/* ===== COMPLETION MODAL ===== */
+#dl-modal-overlay{display:none;position:fixed;inset:0;background:rgba(26,48,80,.55);z-index:9999;align-items:center;justify-content:center;padding:20px}
+#dl-modal-overlay.active{display:flex}
+#dl-modal{background:#fff;border-radius:18px;padding:36px 28px 30px;max-width:440px;width:100%;position:relative;box-shadow:0 12px 48px rgba(26,48,80,.2);text-align:center}
+#dl-modal .modal-close{position:absolute;top:14px;right:18px;background:none;border:none;font-size:20px;color:var(--muted);cursor:pointer;line-height:1;padding:4px}
+#dl-modal .modal-close:hover{color:var(--ink)}
+#dl-modal .modal-icon{width:56px;height:56px;background:rgba(41,171,226,.12);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 18px;font-size:26px}
+#dl-modal .modal-title{font-size:20px;font-weight:900;color:var(--navy);margin-bottom:8px}
+#dl-modal .modal-sub{font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:22px}
+#dl-modal .modal-dl-btn{display:block;width:100%;background:var(--blue);color:#fff;font-size:15px;font-weight:800;padding:15px 20px;border-radius:999px;text-decoration:none;box-shadow:0 4px 18px rgba(41,171,226,.35);margin-bottom:10px;transition:transform .15s,box-shadow .15s}
+#dl-modal .modal-dl-btn:hover{transform:translateY(-1px);box-shadow:0 6px 22px rgba(41,171,226,.45)}
+#dl-modal .modal-spir-btn{display:block;width:100%;background:#fff;color:var(--navy);border:1.5px solid var(--line);font-size:14px;font-weight:700;padding:13px 20px;border-radius:999px;text-decoration:none;transition:border-color .15s,color .15s}
+#dl-modal .modal-spir-btn:hover{border-color:var(--blue);color:var(--blue)}
+/* ===== RESPONSIVE (header / hero form / breakpoints) ===== */
+@media(max-width:860px){
+  header{padding:0 1.5rem}
+  header .btn-out{display:none}
+  header .btn-main{padding:9px 16px;font-size:12.5px}
+  .hero-form-card{display:none}
+  .hero-body{padding-bottom:96px}
+  .hero-text{text-align:left}
+  .sp-cta-bar{display:flex;align-items:center;justify-content:space-between;position:fixed;bottom:0;left:0;right:0;background:var(--white);border-top:1px solid var(--line);padding:12px 18px calc(12px + env(safe-area-inset-bottom));z-index:999;box-shadow:0 -4px 20px rgba(26,48,80,.1)}
+  .sp-cta-text{font-size:12px;color:var(--muted);line-height:1.4}
+  .sp-cta-text strong{display:block;font-size:13px;color:var(--navy);font-weight:700}
+  .sp-cta-btn{background:var(--blue);color:#fff;font-size:13px;font-weight:700;padding:12px 20px;border-radius:999px;text-decoration:none;white-space:nowrap;box-shadow:0 4px 14px rgba(41,171,226,.4);flex-shrink:0}
+}
+@media(max-width:640px){
+  header{padding:0 1.25rem}
+  .wrap{padding:0 1.25rem}
+  .sec{padding:56px 0}
+  .hero h1{font-size:clamp(2rem,8vw,2.8rem)}
+  .sh{font-size:clamp(1.6rem,5.5vw,2.2rem)}
+  .cycle-wrap,.flow-wrap{grid-template-columns:1fr}
+  .cycle-wrap .cy-item,.flow-wrap .f-item{padding-right:0}
+  .me-grid,.me-merit{grid-template-columns:1fr 1fr}
+  .s-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:480px){
+  header{padding:0 1rem}
+  .wrap{padding:0 1rem}
+  .sec{padding:44px 0}
+  .s-grid{grid-template-columns:1fr}
+  .me-grid,.me-merit{grid-template-columns:1fr}
+  .cmp-grid{grid-template-columns:.8fr 1.1fr 1.1fr}
+  .cmp-c{font-size:10.5px;padding:12px 6px}
+  .price-card{padding:34px 22px}
+}
 </style>
 </head>
 <body>
@@ -378,10 +438,10 @@ footer p{font-size:13px;color:var(--muted)}
   <path d="M126,188 L130,214" stroke="#fff" stroke-width="9" fill="none" stroke-linecap="round"/>
   <ellipse cx="88" cy="220" rx="15" ry="8.5" fill="#4C6699" stroke="#233A63" stroke-width="3.5"/>
   <ellipse cx="134" cy="220" rx="15" ry="8.5" fill="#4C6699" stroke="#233A63" stroke-width="3.5"/>
-  <path d="M164,150 Q196,142 210,136" stroke="#233A63" stroke-width="16" fill="none" stroke-linecap="round"/>
-  <path d="M164,150 Q196,142 210,136" stroke="#fff" stroke-width="9" fill="none" stroke-linecap="round"/>
-  <path d="M58,150 Q36,162 40,185" stroke="#233A63" stroke-width="16" fill="none" stroke-linecap="round"/>
-  <path d="M58,150 Q36,162 40,185" stroke="#fff" stroke-width="9" fill="none" stroke-linecap="round"/>
+  <path d="M164,150 Q190,118 198,92" stroke="#233A63" stroke-width="16" fill="none" stroke-linecap="round"/>
+  <path d="M164,150 Q190,118 198,92" stroke="#fff" stroke-width="9" fill="none" stroke-linecap="round"/>
+  <path d="M58,150 Q32,118 24,92" stroke="#233A63" stroke-width="16" fill="none" stroke-linecap="round"/>
+  <path d="M58,150 Q32,118 24,92" stroke="#fff" stroke-width="9" fill="none" stroke-linecap="round"/>
   <path d="M53,88 H167 L159,168 Q159,207 110,207 Q61,207 61,168 Z" fill="#6E90C9" stroke="#233A63" stroke-width="4" stroke-linejoin="round"/>
   <path d="M66,98 V163 Q66,196 110,196 Q154,196 154,163 V98" fill="none" stroke="#CFE0F5" stroke-width="2.2" stroke-dasharray="5 6" stroke-linecap="round"/>
   <path d="M50,62 H170 Q175,62 175,67 V92 Q175,97 170,97 H50 Q45,97 45,92 V67 Q45,62 50,62 Z" fill="#7C9BD0" stroke="#233A63" stroke-width="4"/>
@@ -490,10 +550,10 @@ footer p{font-size:13px;color:var(--muted)}
   <path d="M126,188 L130,214" stroke="#fff" stroke-width="9" fill="none" stroke-linecap="round"/>
   <ellipse cx="88" cy="220" rx="15" ry="8.5" fill="#4C6699" stroke="#233A63" stroke-width="3.5"/>
   <ellipse cx="134" cy="220" rx="15" ry="8.5" fill="#4C6699" stroke="#233A63" stroke-width="3.5"/>
-  <path d="M164,150 Q196,142 210,136" stroke="#233A63" stroke-width="16" fill="none" stroke-linecap="round"/>
-  <path d="M164,150 Q196,142 210,136" stroke="#fff" stroke-width="9" fill="none" stroke-linecap="round"/>
-  <path d="M58,150 Q36,162 40,185" stroke="#233A63" stroke-width="16" fill="none" stroke-linecap="round"/>
-  <path d="M58,150 Q36,162 40,185" stroke="#fff" stroke-width="9" fill="none" stroke-linecap="round"/>
+  <path d="M164,150 Q190,118 198,92" stroke="#233A63" stroke-width="16" fill="none" stroke-linecap="round"/>
+  <path d="M164,150 Q190,118 198,92" stroke="#fff" stroke-width="9" fill="none" stroke-linecap="round"/>
+  <path d="M58,150 Q32,118 24,92" stroke="#233A63" stroke-width="16" fill="none" stroke-linecap="round"/>
+  <path d="M58,150 Q32,118 24,92" stroke="#fff" stroke-width="9" fill="none" stroke-linecap="round"/>
   <path d="M53,88 H167 L159,168 Q159,207 110,207 Q61,207 61,168 Z" fill="#6E90C9" stroke="#233A63" stroke-width="4" stroke-linejoin="round"/>
   <path d="M66,98 V163 Q66,196 110,196 Q154,196 154,163 V98" fill="none" stroke="#CFE0F5" stroke-width="2.2" stroke-dasharray="5 6" stroke-linecap="round"/>
   <path d="M50,62 H170 Q175,62 175,67 V92 Q175,97 170,97 H50 Q45,97 45,92 V67 Q45,62 50,62 Z" fill="#7C9BD0" stroke="#233A63" stroke-width="4"/>
@@ -658,10 +718,10 @@ footer p{font-size:13px;color:var(--muted)}
   <path d="M126,188 L130,214" stroke="#fff" stroke-width="9" fill="none" stroke-linecap="round"/>
   <ellipse cx="88" cy="220" rx="15" ry="8.5" fill="#4C6699" stroke="#233A63" stroke-width="3.5"/>
   <ellipse cx="134" cy="220" rx="15" ry="8.5" fill="#4C6699" stroke="#233A63" stroke-width="3.5"/>
-  <path d="M164,150 Q196,142 210,136" stroke="#233A63" stroke-width="16" fill="none" stroke-linecap="round"/>
-  <path d="M164,150 Q196,142 210,136" stroke="#fff" stroke-width="9" fill="none" stroke-linecap="round"/>
-  <path d="M58,150 Q36,162 40,185" stroke="#233A63" stroke-width="16" fill="none" stroke-linecap="round"/>
-  <path d="M58,150 Q36,162 40,185" stroke="#fff" stroke-width="9" fill="none" stroke-linecap="round"/>
+  <path d="M164,150 Q190,118 198,92" stroke="#233A63" stroke-width="16" fill="none" stroke-linecap="round"/>
+  <path d="M164,150 Q190,118 198,92" stroke="#fff" stroke-width="9" fill="none" stroke-linecap="round"/>
+  <path d="M58,150 Q32,118 24,92" stroke="#233A63" stroke-width="16" fill="none" stroke-linecap="round"/>
+  <path d="M58,150 Q32,118 24,92" stroke="#fff" stroke-width="9" fill="none" stroke-linecap="round"/>
   <path d="M53,88 H167 L159,168 Q159,207 110,207 Q61,207 61,168 Z" fill="#6E90C9" stroke="#233A63" stroke-width="4" stroke-linejoin="round"/>
   <path d="M66,98 V163 Q66,196 110,196 Q154,196 154,163 V98" fill="none" stroke="#CFE0F5" stroke-width="2.2" stroke-dasharray="5 6" stroke-linecap="round"/>
   <path d="M50,62 H170 Q175,62 175,67 V92 Q175,97 170,97 H50 Q45,97 45,92 V67 Q45,62 50,62 Z" fill="#7C9BD0" stroke="#233A63" stroke-width="4"/>
@@ -701,23 +761,42 @@ footer p{font-size:13px;color:var(--muted)}
   <p style="margin-top:4px">© 2026 WorCry Inc. All Rights Reserved.</p>
 </footer>
 
+<!-- スマホ用スティッキーCTAバー -->
+<div class="sp-cta-bar">
+  <div class="sp-cta-text"><strong>まずはお気軽にご相談を</strong>1営業日以内に返信</div>
+  <a href="#cta" class="sp-cta-btn">資料請求する →</a>
+</div>
+
+<!-- 送信完了モーダル -->
+<div id="dl-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="dl-modal-title">
+  <div id="dl-modal">
+    <button class="modal-close" onclick="closeDlModal()" aria-label="閉じる">×</button>
+    <div class="modal-icon">📄</div>
+    <div class="modal-title" id="dl-modal-title">送信ありがとうございます！</div>
+    <p class="modal-sub">担当者より1営業日以内にご連絡します。<br>資料・日程調整もあわせてご利用ください。</p>
+    <a href="DOCUMENT_URL_PLACEHOLDER" target="_blank" rel="noopener" class="modal-dl-btn">資料ダウンロードはこちら</a>
+    <a href="https://app.spirinc.com/t/H_vQ01vClf0LmLgUwmVWY/as/XMn5n8Z_s_rK6GUlabUGi/confirm" target="_blank" rel="noopener" class="modal-spir-btn">日程を調整する（オンライン面談）</a>
+  </div>
+</div>
+
 <script>
+function openDlModal(){var o=document.getElementById('dl-modal-overlay');if(o){o.classList.add('active');document.body.style.overflow='hidden';}}
+function closeDlModal(){var o=document.getElementById('dl-modal-overlay');if(o){o.classList.remove('active');document.body.style.overflow='';}}
+document.addEventListener('DOMContentLoaded',function(){
+  var o=document.getElementById('dl-modal-overlay');
+  if(o)o.addEventListener('click',function(e){if(e.target===this)closeDlModal();});
+});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeDlModal();});
 (function(){
-  function done(form){
-    var d=document.createElement('div');
-    d.className='form-done';
-    d.innerHTML='<strong>送信しました。</strong><span>担当者より1営業日以内にご連絡いたします。</span>';
-    form.parentNode.replaceChild(d, form);
-  }
   document.querySelectorAll('form[data-gas]').forEach(function(form){
-    form.addEventListener('submit', function(ev){
+    form.addEventListener('submit',function(ev){
       ev.preventDefault();
       var btn=form.querySelector('button[type=submit]');
-      if(btn){btn.disabled=true; btn.textContent='送信中…';}
+      var old=btn?btn.textContent:'';
+      if(btn){btn.disabled=true;btn.textContent='送信中…';}
       var body=new URLSearchParams(new FormData(form));
-      fetch(form.action,{method:'POST',mode:'no-cors',body:body})
-        .then(function(){done(form);})
-        .catch(function(){done(form);});
+      fetch(form.action,{method:'POST',mode:'no-cors',body:body}).then(finish).catch(finish);
+      function finish(){openDlModal();form.reset();if(btn){btn.disabled=false;btn.textContent=old;}}
     });
   });
 })();
