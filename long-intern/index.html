@@ -90,10 +90,7 @@ header{position:fixed;inset:0 0 auto;z-index:300;height:60px;display:flex;align-
 .sl{font-size:17px;color:var(--muted);line-height:1.9;margin-bottom:52px;max-width:560px;}
 
 /* POKE BRIDGE */
-.poke-bridge{background:var(--white);display:flex;justify-content:center;padding:8px 0 4px}
-.pb-inner{display:flex;flex-direction:column;align-items:center;gap:12px}
-.pb-bubble{position:relative;background:var(--navy);color:#fff;font-size:13.5px;font-weight:700;padding:10px 22px;border-radius:999px;box-shadow:0 8px 20px rgba(26,48,80,.16);letter-spacing:.02em}
-.pb-bubble::after{content:'';position:absolute;bottom:-7px;left:50%;transform:translateX(-50%);border-left:8px solid transparent;border-right:8px solid transparent;border-top:8px solid var(--navy)}
+.poke-bridge{background:var(--white);display:flex;justify-content:center;padding:0;margin-bottom:-34px;position:relative;z-index:2}
 .pokekun-img{animation:poke-float 3s ease-in-out infinite;filter:drop-shadow(0 6px 16px rgba(26,48,80,.12));}
 @keyframes poke-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
 
@@ -558,10 +555,7 @@ footer p{font-size:13px;color:var(--muted)}
 </section>
 
 <!-- POKE BRIDGE -->
-<div class="poke-bridge">
-  <div class="pb-inner">
-    <div class="pb-bubble">まずは、お気軽に資料請求を！</div>
-    <div class="pokekun-img"><svg viewBox="0 0 220 244" xmlns="http://www.w3.org/2000/svg" style="width:104px;height:auto;">
+<div class="poke-bridge"><div class="pokekun-img"><svg viewBox="0 0 220 244" xmlns="http://www.w3.org/2000/svg" style="width:92px;height:auto;">
   <ellipse cx="110" cy="237" rx="62" ry="8" fill="#1A3050" opacity="0.06"/>
   <path d="M96,188 L92,214" stroke="#233A63" stroke-width="16" fill="none" stroke-linecap="round"/>
   <path d="M96,188 L92,214" stroke="#fff" stroke-width="9" fill="none" stroke-linecap="round"/>
@@ -585,9 +579,7 @@ footer p{font-size:13px;color:var(--muted)}
   <circle cx="96" cy="142" r="1.6" fill="#fff"/>
   <circle cx="128" cy="142" r="1.6" fill="#fff"/>
   <path d="M104,161 Q112,168 120,161" fill="none" stroke="#233A63" stroke-width="3" stroke-linecap="round"/>
-</svg></div>
-  </div>
-</div>
+</svg></div></div>
 
 <!-- CONCEPT -->
 <section class="sec bgw">
