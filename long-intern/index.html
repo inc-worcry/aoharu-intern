@@ -258,8 +258,8 @@ footer p{font-size:13px;color:var(--muted)}
 .diff-stat-txt p{font-size:14.5px;color:rgba(255,255,255,.82);line-height:1.85;font-weight:500}
 
 /* COMPARISON */
-.cmp{margin-top:8px;border-radius:16px;overflow:hidden;border:1px solid var(--line);box-shadow:0 4px 20px rgba(26,48,80,.05)}
-.cmp-grid{display:grid;grid-template-columns:1fr 1.35fr 1.35fr}
+.cmp{margin-top:8px;border-radius:16px;overflow-x:auto;border:1px solid var(--line);box-shadow:0 4px 20px rgba(26,48,80,.05)}
+.cmp-grid{display:grid;grid-template-columns:1.05fr 1.4fr 1.15fr 1.15fr;min-width:0}
 .cmp-h{padding:20px 16px;text-align:center;font-weight:900;font-size:16px}
 .cmp-h.lbl{background:#EEF5FB;color:var(--navy)}
 .cmp-h.b{background:var(--blue);color:#fff;font-size:17px}
@@ -307,7 +307,7 @@ footer p{font-size:13px;color:var(--muted)}
 @media(max-width:860px){
   .diff-cols,.me-grid,.me-merit,.study-wrap{grid-template-columns:1fr}
   .diff-stat{flex-direction:column;text-align:center;gap:18px;padding:30px 22px}
-  .cmp-grid{grid-template-columns:.9fr 1.2fr 1.2fr}
+  .cmp-grid{min-width:700px;grid-template-columns:1fr 1.3fr 1fr 1fr}
   .cmp-h{font-size:13px}.cmp-h.b{font-size:13.5px}
   .cmp-c{font-size:11.5px;padding:16px 8px}.cmp-c.lbl{font-size:12.5px}
   .cmp-mark{font-size:20px}
@@ -366,7 +366,7 @@ footer p{font-size:13px;color:var(--muted)}
   .sec{padding:44px 0}
   .s-grid{grid-template-columns:1fr}
   .me-grid,.me-merit{grid-template-columns:1fr}
-  .cmp-grid{grid-template-columns:.8fr 1.1fr 1.1fr}
+  .cmp-grid{min-width:660px;grid-template-columns:1fr 1.25fr 1fr 1fr}
   .cmp-c{font-size:10.5px;padding:12px 6px}
   .price-card{padding:34px 22px}
 }
@@ -423,6 +423,43 @@ footer p{font-size:13px;color:var(--muted)}
   .me-room .chip{font-size:9px}
   .me-main{padding:12px}
 }
+
+/* ===== MATCHING EVENT (compact) ===== */
+.mev{background:var(--white);border:1px solid var(--line);border-radius:16px;padding:26px 28px;box-shadow:0 4px 20px rgba(26,48,80,.05)}
+.mev-top{display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:center}
+.mev-scale{text-align:center;flex-shrink:0}
+.mev-num{font-size:22px;font-weight:900;color:var(--navy);letter-spacing:-.02em;white-space:nowrap;line-height:1}
+.mev-num b{font-size:40px;color:var(--navy)}
+.mev-num em{font-style:normal;color:var(--orange);margin:0 6px;font-size:26px}
+.mev-scap{font-size:11.5px;color:var(--muted);margin-top:8px}
+.mev-rooms{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.mev-room{background:var(--bg2);border:1px solid var(--line);border-radius:10px;padding:12px 6px;text-align:center}
+.mev-room .rn{display:block;font-size:9.5px;font-weight:800;color:var(--muted);letter-spacing:.04em;margin-bottom:9px}
+.mev-room .ppl{display:flex;justify-content:center;gap:4px}
+.mev-room i,.mev-legend i{display:inline-block;width:12px;height:12px;border-radius:50%}
+.mev-room i.co,.mev-legend i.co{background:var(--navy)}
+.mev-room i.st,.mev-legend i.st{background:var(--orange)}
+.mev-legend{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin:16px 0 20px;padding-top:16px;border-top:1px dashed var(--line);font-size:12px;font-weight:700;color:var(--navy)}
+.mev-legend span{display:inline-flex;align-items:center;gap:6px}
+.mev-legend .mev-legend-note{font-weight:600;color:var(--muted);font-size:11.5px}
+.mev-steps{display:flex;align-items:stretch;gap:0;flex-wrap:nowrap}
+.mev-step{display:flex;align-items:center;gap:12px;background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:14px 16px;flex:1}
+.mev-step .n{flex-shrink:0;width:30px;height:30px;border-radius:50%;background:var(--navy);color:#fff;font-size:13px;font-weight:900;display:flex;align-items:center;justify-content:center}
+.mev-step b{display:block;font-size:14px;font-weight:900;color:var(--navy);line-height:1.3}
+.mev-step small{font-size:11px;color:var(--muted)}
+.mev-ar{display:flex;align-items:center;color:var(--blue);font-weight:900;font-size:18px;padding:0 8px}
+@media(max-width:860px){
+  .mev-top{grid-template-columns:1fr;gap:18px}
+  .mev-steps{flex-direction:column}
+  .mev-ar{transform:rotate(90deg);padding:4px 0;justify-content:center}
+}
+@media(max-width:480px){
+  .mev{padding:20px 16px}
+  .mev-rooms{gap:6px}
+  .mev-room{padding:9px 3px}
+  .mev-room i,.mev-legend i{width:9px;height:9px}
+  .mev-num b{font-size:32px}
+}
 </style>
 </head>
 <body>
@@ -455,8 +492,8 @@ footer p{font-size:13px;color:var(--muted)}
         </div>
         <div class="line-div"></div>
         <div class="line-stat">
-          <span class="line-num">84<small>% 決定率</small></span>
-          <span class="line-lbl">内定からの決定率（厳選紹介の結果）</span>
+          <span class="line-num">56<small>% 承諾率</small></span>
+          <span class="line-lbl">面接実施からの内定承諾率</span>
         </div>
       </div>
     </div>
@@ -507,40 +544,13 @@ footer p{font-size:13px;color:var(--muted)}
   </div>
 </section>
 
-<!-- POKE BRIDGE -->
-<div class="poke-bridge"><div class="pokekun-img"><svg viewBox="0 0 220 244" xmlns="http://www.w3.org/2000/svg" style="width:96px;height:auto;">
-  <ellipse cx="110" cy="237" rx="62" ry="8" fill="#1A3050" opacity="0.06"/>
-  <path d="M96,188 L92,214" stroke="#233A63" stroke-width="16" fill="none" stroke-linecap="round"/>
-  <path d="M96,188 L92,214" stroke="#fff" stroke-width="9" fill="none" stroke-linecap="round"/>
-  <path d="M126,188 L130,214" stroke="#233A63" stroke-width="16" fill="none" stroke-linecap="round"/>
-  <path d="M126,188 L130,214" stroke="#fff" stroke-width="9" fill="none" stroke-linecap="round"/>
-  <ellipse cx="88" cy="220" rx="15" ry="8.5" fill="#4C6699" stroke="#233A63" stroke-width="3.5"/>
-  <ellipse cx="134" cy="220" rx="15" ry="8.5" fill="#4C6699" stroke="#233A63" stroke-width="3.5"/>
-  <path d="M164,150 Q190,118 198,92" stroke="#233A63" stroke-width="16" fill="none" stroke-linecap="round"/>
-  <path d="M164,150 Q190,118 198,92" stroke="#fff" stroke-width="9" fill="none" stroke-linecap="round"/>
-  <path d="M58,150 Q32,118 24,92" stroke="#233A63" stroke-width="16" fill="none" stroke-linecap="round"/>
-  <path d="M58,150 Q32,118 24,92" stroke="#fff" stroke-width="9" fill="none" stroke-linecap="round"/>
-  <path d="M53,88 H167 L159,168 Q159,207 110,207 Q61,207 61,168 Z" fill="#6E90C9" stroke="#233A63" stroke-width="4" stroke-linejoin="round"/>
-  <path d="M66,98 V163 Q66,196 110,196 Q154,196 154,163 V98" fill="none" stroke="#CFE0F5" stroke-width="2.2" stroke-dasharray="5 6" stroke-linecap="round"/>
-  <path d="M50,62 H170 Q175,62 175,67 V92 Q175,97 170,97 H50 Q45,97 45,92 V67 Q45,62 50,62 Z" fill="#7C9BD0" stroke="#233A63" stroke-width="4"/>
-  <path d="M54,69 H166" stroke="#CFE0F5" stroke-width="2.2" stroke-dasharray="5 6" stroke-linecap="round"/>
-  <circle cx="110" cy="79" r="9" fill="#F4C430" stroke="#C9971F" stroke-width="2.5"/>
-  <ellipse cx="96" cy="143" rx="9.5" ry="12" fill="#fff" stroke="#233A63" stroke-width="3"/>
-  <ellipse cx="128" cy="143" rx="9.5" ry="12" fill="#fff" stroke="#233A63" stroke-width="3"/>
-  <circle cx="98" cy="145" r="5" fill="#1B2B4A"/>
-  <circle cx="130" cy="145" r="5" fill="#1B2B4A"/>
-  <circle cx="96" cy="142" r="1.6" fill="#fff"/>
-  <circle cx="128" cy="142" r="1.6" fill="#fff"/>
-  <path d="M104,161 Q112,168 120,161" fill="none" stroke="#233A63" stroke-width="3" stroke-linecap="round"/>
-</svg></div></div>
-
 <!-- CONCEPT -->
 <section class="sec bgw">
   <div class="wrap">
     <div class="concept-head">
       <div class="stag">CONCEPT ／ サービスの考え方</div>
       <h2 class="sh">“未来の仲間”と一緒に、<br>会社も育つ。</h2>
-      <p class="c-body">成長意欲の高い大学1・2年生だけを厳選し、スタートアップ・ベンチャー企業へご紹介。早期から育て、長く関わる——“成長支援型”の長期インターン紹介サービスです。</p>
+      <p class="c-body">成長意欲の高い大学1・2年生だけを厳選し、スタートアップ・ベンチャー企業へご紹介。<br>早期から育て、長く関わる——“成長支援型”の長期インターン紹介サービスです。</p>
     </div>
     <div class="concept-cards-row">
       <div class="cc2"><div class="cc2-en">EARLY</div><h3>大学1・2年生に特化</h3><p>就活が本格化する前の早い段階で、行動力・成長意欲の高い優秀層と接点を持てます。</p></div>
@@ -558,8 +568,8 @@ footer p{font-size:13px;color:var(--muted)}
     <p class="sl">「優秀な学生に早く出会い、長く育てたい」。<br>でも、従来の長期インターン紹介では、こんな壁にぶつかります。</p>
     <div class="prob-grid">
       <div class="prob-card"><div class="prob-num">課題 01</div><h3>戦力になった頃には、<br>もう卒業してしまう</h3><p>3・4年生からの短期接点では、育って戦力になった頃には就活・卒業。じっくり育てる時間が取れません。</p></div>
-      <div class="prob-card"><div class="prob-num">課題 02</div><h3>掲載型では、自社に<br>合うか分からない</h3><p>求人サイトに載せて学生が勝手にエントリーする方式では、母集団は集まってもマッチ度は運任せになりがちです。</p></div>
-      <div class="prob-card"><div class="prob-num">課題 03</div><h3>面接だけでは“自走力”を<br>見抜けない</h3><p>短時間の面接では主体性やカルチャーフィットを見極めきれず、ミスマッチや早期離職につながります。</p></div>
+      <div class="prob-card"><div class="prob-num">課題 02</div><h3>掲載しても、“良い学生”と<br>出会えていない</h3><p>求人サイトに載せるだけでは、狙った層の応募が集まらない。母集団形成の入り口で、つまずいてしまいます。</p></div>
+      <div class="prob-card"><div class="prob-num">課題 03</div><h3>数は集まっても、<br>マッチ精度が上がらない</h3><p>母集団はいても、自社に本当に合う学生を見極めきれない。全員に会えないから、マッチが運任せになりがちです。</p></div>
     </div>
   </div>
 </section>
@@ -581,10 +591,10 @@ footer p{font-size:13px;color:var(--muted)}
       </div>
     </div>
     <div class="diff-stat">
-      <div class="diff-stat-num">84<small>%</small></div>
+      <div class="diff-stat-num">56<small>%</small></div>
       <div class="diff-stat-txt">
-        <h3>内定からの決定率 84%</h3>
-        <p>「合う人材だけを厳選してご紹介する」から、内定後の決定率はこの水準。<br>ミスマッチを抑え、入社後の定着まで見据えた紹介を実現しています。</p>
+        <h3>面接実施からの内定承諾率 56%</h3>
+        <p>面接まで進んだ学生との“合意度”が高いから、承諾率はこの水準。<br>ミスマッチを抑え、入社後の定着まで見据えた紹介を実現しています。</p>
       </div>
     </div>
   </div>
@@ -600,10 +610,12 @@ footer p{font-size:13px;color:var(--muted)}
       <div class="cmp-grid">
         <div class="cmp-h lbl">比較項目</div>
         <div class="cmp-h b">AOHARUインターン</div>
-        <div class="cmp-h g">一般的な他社</div>
-        <div class="cmp-c lbl">対象学年</div><div class="cmp-c win"><span class="cmp-mark good">◎</span>大学1・2年生から早期に育成</div><div class="cmp-c"><span class="cmp-mark bad">✕</span>3〜4年生が中心・短期のみ</div><div class="cmp-c lbl">学生の見極め</div><div class="cmp-c win"><span class="cmp-mark good">◎</span>紹介前に“全員”と面談・カウンセリング</div><div class="cmp-c"><span class="cmp-mark bad">✕</span>求人サイトに掲載し、学生任せ</div><div class="cmp-c lbl">マッチ精度</div><div class="cmp-c win"><span class="cmp-mark good">◎</span>貴社に合う人材だけを厳選紹介</div><div class="cmp-c"><span class="cmp-mark mid">△</span>応募は来るが、合うかは運次第</div><div class="cmp-c lbl">入社後のフォロー</div><div class="cmp-c win"><span class="cmp-mark good">◎</span>定着・戦力化まで継続伴走</div><div class="cmp-c"><span class="cmp-mark bad">✕</span>教育・フォローは企業任せ</div><div class="cmp-c lbl">カルチャーフィット</div><div class="cmp-c win"><span class="cmp-mark good">◎</span>理念への共感まで醸成</div><div class="cmp-c"><span class="cmp-mark bad">✕</span>就活対策が中心になりがち</div><div class="cmp-c lbl">費用</div><div class="cmp-c win"><span class="cmp-mark good">◎</span>初期費用0・完全成果報酬</div><div class="cmp-c"><span class="cmp-mark mid">△</span>掲載料・固定費がかかることも</div>
+        <div class="cmp-h g">求人サイト掲載型</div>
+        <div class="cmp-h g">他社エージェント</div>
+        <div class="cmp-c lbl">対象学年</div><div class="cmp-c win"><span class="cmp-mark good">◎</span>大学1・2年生から早期育成</div><div class="cmp-c"><span class="cmp-mark bad">✕</span>3〜4年生・短期が中心</div><div class="cmp-c"><span class="cmp-mark mid">△</span>3年生が中心</div><div class="cmp-c lbl">学生の見極め</div><div class="cmp-c win"><span class="cmp-mark good">◎</span>紹介前に“全員”と面談</div><div class="cmp-c"><span class="cmp-mark bad">✕</span>掲載のみ・学生任せ</div><div class="cmp-c"><span class="cmp-mark mid">△</span>一部のみ面談</div><div class="cmp-c lbl">母集団形成</div><div class="cmp-c win"><span class="cmp-mark good">◎</span>LINE・イベントで能動形成</div><div class="cmp-c"><span class="cmp-mark mid">△</span>掲載頼み・質は運次第</div><div class="cmp-c"><span class="cmp-mark mid">△</span>登録者数に依存</div><div class="cmp-c lbl">マッチ精度</div><div class="cmp-c win"><span class="cmp-mark good">◎</span>合う人材だけを厳選紹介</div><div class="cmp-c"><span class="cmp-mark bad">✕</span>応募任せでミスマッチ</div><div class="cmp-c"><span class="cmp-mark mid">△</span>量重視になりがち</div><div class="cmp-c lbl">入社後フォロー</div><div class="cmp-c win"><span class="cmp-mark good">◎</span>定着・戦力化まで伴走</div><div class="cmp-c"><span class="cmp-mark bad">✕</span>企業任せ</div><div class="cmp-c"><span class="cmp-mark bad">✕</span>紹介して終わり</div><div class="cmp-c lbl">費用</div><div class="cmp-c win"><span class="cmp-mark good">◎</span>初期0・完全成果報酬</div><div class="cmp-c"><span class="cmp-mark mid">△</span>掲載料・固定費</div><div class="cmp-c"><span class="cmp-mark mid">△</span>高額な成果報酬</div>
       </div>
     </div>
+    <p class="me-note" style="text-align:left;margin-top:14px">※ 一般的なサービス類型との比較（自社調べ）。</p>
   </div>
 </section>
 
@@ -649,52 +661,35 @@ footer p{font-size:13px;color:var(--muted)}
   </div>
 </section>
 
-<!-- CYCLE -->
-<section class="sec bg2">
-  <div class="wrap">
-    <div class="stag">ORIGINALITY ／ WorCryの独自性</div>
-    <h2 class="sh">経験を、市場価値に変える<br>「成長サイクル」。</h2>
-    <p class="sl">単なる体験で終わらせず、再現可能なスキルへ変換する。この循環があるから、貴社にとって“育った戦力”を紹介できます。</p>
-    <div class="cycle-wrap">
-      <div class="cy-item"><div class="cy-dot"></div><div class="cy-step">STEP 01 ／ 挑戦</div><div class="cy-ttl">現場実務に<br>コミット</div><div class="cy-body">大学低学年から、責任ある実務に早期から挑戦します。</div></div>
-      <div class="cy-item"><div class="cy-dot"></div><div class="cy-step">STEP 02 ／ 成果</div><div class="cy-ttl">自己効力感の<br>向上</div><div class="cy-body">具体的な実績を積み、「できる」という手応えを得ます。</div></div>
-      <div class="cy-item"><div class="cy-dot"></div><div class="cy-step">STEP 03 ／ 言語化</div><div class="cy-ttl">強みと学びを<br>整理</div><div class="cy-body">カウンセリングで、自身の強みと学びを言葉にします。</div></div>
-      <div class="cy-item"><div class="cy-dot"></div><div class="cy-step">STEP 04 ／ 市場価値</div><div class="cy-ttl">再現可能な<br>スキルへ</div><div class="cy-body">どこでも通用する力として定着。貴社の戦力になります。</div></div>
-    </div>
-  </div>
-</section>
-
 <!-- MATCHING EVENT -->
-<section class="sec bgw">
+<section class="sec bg2">
   <div class="wrap">
     <div class="stag">MATCHING EVENT ／ マッチングイベント</div>
     <h2 class="sh">「集める」と「見極める」を、<br>一度に。</h2>
-    <p class="sl">月2回開催のオンラインイベント。企業5社 × 候補者10名で、<br>求人票では伝わらない自社の魅力を、対話で直接届けられます。</p>
+    <p class="sl">月2回のオンラインイベントで、企業5社 × 候補者10名が出会う。<br>求人票では伝わらない魅力を、対話で直接届けられます。</p>
 
-    <div class="me-diagram">
-      <div class="me-dlabel"><b style="color:var(--blue)">ZOOM</b>セッション構成（ブレイクアウト方式）</div>
-      <div class="me-svg"><svg viewBox="0 0 880 560" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block"><rect x="286" y="16" width="308" height="266" rx="20" fill="#1A3050"/><text x="440.0" y="56" text-anchor="middle" fill="rgba(255,255,255,.72)" font-size="15" font-weight="700" letter-spacing="3" font-family="Noto Sans JP, sans-serif">MAIN SESSION</text><g transform="translate(320,82) scale(1.7)"><circle cx="12" cy="7.5" r="4.4" fill="#F7941D"/><path d="M4.2,21 C4.2,14.5 19.8,14.5 19.8,21 Z" fill="#F7941D"/></g><line x1="364" y1="78" x2="364" y2="166" stroke="rgba(255,255,255,.22)" stroke-width="2"/><g transform="translate(386,76) scale(1.55)"><circle cx="12" cy="7.5" r="4.4" fill="#D7DEEA"/><path d="M4.2,21 C4.2,14.5 19.8,14.5 19.8,21 Z" fill="#D7DEEA"/></g><g transform="translate(432,76) scale(1.55)"><circle cx="12" cy="7.5" r="4.4" fill="#D7DEEA"/><path d="M4.2,21 C4.2,14.5 19.8,14.5 19.8,21 Z" fill="#D7DEEA"/></g><g transform="translate(478,76) scale(1.55)"><circle cx="12" cy="7.5" r="4.4" fill="#D7DEEA"/><path d="M4.2,21 C4.2,14.5 19.8,14.5 19.8,21 Z" fill="#D7DEEA"/></g><g transform="translate(524,76) scale(1.55)"><circle cx="12" cy="7.5" r="4.4" fill="#D7DEEA"/><path d="M4.2,21 C4.2,14.5 19.8,14.5 19.8,21 Z" fill="#D7DEEA"/></g><g transform="translate(386,120) scale(1.55)"><circle cx="12" cy="7.5" r="4.4" fill="#D7DEEA"/><path d="M4.2,21 C4.2,14.5 19.8,14.5 19.8,21 Z" fill="#D7DEEA"/></g><g transform="translate(432,120) scale(1.55)"><circle cx="12" cy="7.5" r="4.4" fill="#F7941D"/><path d="M4.2,21 C4.2,14.5 19.8,14.5 19.8,21 Z" fill="#F7941D"/></g><g transform="translate(478,120) scale(1.55)"><circle cx="12" cy="7.5" r="4.4" fill="#F7941D"/><path d="M4.2,21 C4.2,14.5 19.8,14.5 19.8,21 Z" fill="#F7941D"/></g><g transform="translate(524,120) scale(1.55)"><circle cx="12" cy="7.5" r="4.4" fill="#F7941D"/><path d="M4.2,21 C4.2,14.5 19.8,14.5 19.8,21 Z" fill="#F7941D"/></g><g transform="translate(432,164) scale(1.55)"><circle cx="12" cy="7.5" r="4.4" fill="#F7941D"/><path d="M4.2,21 C4.2,14.5 19.8,14.5 19.8,21 Z" fill="#F7941D"/></g><g transform="translate(478,164) scale(1.55)"><circle cx="12" cy="7.5" r="4.4" fill="#F7941D"/><path d="M4.2,21 C4.2,14.5 19.8,14.5 19.8,21 Z" fill="#F7941D"/></g><text x="440.0" y="256" text-anchor="middle" fill="#fff" font-size="21" font-weight="900" font-family="Noto Sans JP, sans-serif">メインZOOM（全員集合）</text><path d="M440.0,290 V312" stroke="#C4CFDD" stroke-width="2" fill="none"/><path d="M90.4,312 H789.6" stroke="#C4CFDD" stroke-width="2" fill="none"/><path d="M90.4,312 V356" stroke="#C4CFDD" stroke-width="2" fill="none"/><path d="M265.20000000000005,312 V356" stroke="#C4CFDD" stroke-width="2" fill="none"/><path d="M440.0,312 V356" stroke="#C4CFDD" stroke-width="2" fill="none"/><path d="M614.8000000000001,312 V356" stroke="#C4CFDD" stroke-width="2" fill="none"/><path d="M789.6,312 V356" stroke="#C4CFDD" stroke-width="2" fill="none"/><rect x="14.0" y="356" width="152.8" height="176" rx="12" fill="#ffffff" stroke="#E2DDD4"/><path d="M14.0,368 a12,12 0 0 1 12,-12 H154.8 a12,12 0 0 1 12,12 V396 H14.0 Z" fill="#EEF5FB"/><text x="90.4" y="382" text-anchor="middle" fill="#1A3050" font-size="13.5" font-weight="800" font-family="Noto Sans JP, sans-serif">ルーム 1</text><g transform="translate(50.400000000000006,426) scale(1.5)"><circle cx="12" cy="7.5" r="4.4" fill="#1A3050"/><path d="M4.2,21 C4.2,14.5 19.8,14.5 19.8,21 Z" fill="#1A3050"/></g><text x="88.4" y="448" text-anchor="middle" fill="#1A3050" font-size="12.5" font-weight="700" font-family="Noto Sans JP, sans-serif">企業</text><g transform="translate(38.400000000000006,472) scale(1.5)"><circle cx="12" cy="7.5" r="4.4" fill="#F7941D"/><path d="M4.2,21 C4.2,14.5 19.8,14.5 19.8,21 Z" fill="#F7941D"/></g><g transform="translate(74.4,472) scale(1.5)"><circle cx="12" cy="7.5" r="4.4" fill="#F7941D"/><path d="M4.2,21 C4.2,14.5 19.8,14.5 19.8,21 Z" fill="#F7941D"/></g><text x="106.4" y="494" text-anchor="middle" fill="#1A3050" font-size="12.5" font-weight="700" font-family="Noto Sans JP, sans-serif">学生</text><rect x="188.8" y="356" width="152.8" height="176" rx="12" fill="#ffffff" stroke="#E2DDD4"/><path d="M188.8,368 a12,12 0 0 1 12,-12 H329.6 a12,12 0 0 1 12,12 V396 H188.8 Z" fill="#EEF5FB"/><text x="265.20000000000005" y="382" text-anchor="middle" fill="#1A3050" font-size="13.5" font-weight="800" font-family="Noto Sans JP, sans-serif">ルーム 2</text><g transform="translate(225.20000000000005,426) scale(1.5)"><circle cx="12" cy="7.5" r="4.4" fill="#1A3050"/><path d="M4.2,21 C4.2,14.5 19.8,14.5 19.8,21 Z" fill="#1A3050"/></g><text x="263.20000000000005" y="448" text-anchor="middle" fill="#1A3050" font-size="12.5" font-weight="700" font-family="Noto Sans JP, sans-serif">企業</text><g transform="translate(213.20000000000005,472) scale(1.5)"><circle cx="12" cy="7.5" r="4.4" fill="#F7941D"/><path d="M4.2,21 C4.2,14.5 19.8,14.5 19.8,21 Z" fill="#F7941D"/></g><g transform="translate(249.20000000000005,472) scale(1.5)"><circle cx="12" cy="7.5" r="4.4" fill="#F7941D"/><path d="M4.2,21 C4.2,14.5 19.8,14.5 19.8,21 Z" fill="#F7941D"/></g><text x="281.20000000000005" y="494" text-anchor="middle" fill="#1A3050" font-size="12.5" font-weight="700" font-family="Noto Sans JP, sans-serif">学生</text><rect x="363.6" y="356" width="152.8" height="176" rx="12" fill="#ffffff" stroke="#E2DDD4"/><path d="M363.6,368 a12,12 0 0 1 12,-12 H504.4000000000001 a12,12 0 0 1 12,12 V396 H363.6 Z" fill="#EEF5FB"/><text x="440.0" y="382" text-anchor="middle" fill="#1A3050" font-size="13.5" font-weight="800" font-family="Noto Sans JP, sans-serif">ルーム 3</text><g transform="translate(400.0,426) scale(1.5)"><circle cx="12" cy="7.5" r="4.4" fill="#1A3050"/><path d="M4.2,21 C4.2,14.5 19.8,14.5 19.8,21 Z" fill="#1A3050"/></g><text x="438.0" y="448" text-anchor="middle" fill="#1A3050" font-size="12.5" font-weight="700" font-family="Noto Sans JP, sans-serif">企業</text><g transform="translate(388.0,472) scale(1.5)"><circle cx="12" cy="7.5" r="4.4" fill="#F7941D"/><path d="M4.2,21 C4.2,14.5 19.8,14.5 19.8,21 Z" fill="#F7941D"/></g><g transform="translate(424.0,472) scale(1.5)"><circle cx="12" cy="7.5" r="4.4" fill="#F7941D"/><path d="M4.2,21 C4.2,14.5 19.8,14.5 19.8,21 Z" fill="#F7941D"/></g><text x="456.0" y="494" text-anchor="middle" fill="#1A3050" font-size="12.5" font-weight="700" font-family="Noto Sans JP, sans-serif">学生</text><rect x="538.4000000000001" y="356" width="152.8" height="176" rx="12" fill="#ffffff" stroke="#E2DDD4"/><path d="M538.4000000000001,368 a12,12 0 0 1 12,-12 H679.2 a12,12 0 0 1 12,12 V396 H538.4000000000001 Z" fill="#EEF5FB"/><text x="614.8000000000001" y="382" text-anchor="middle" fill="#1A3050" font-size="13.5" font-weight="800" font-family="Noto Sans JP, sans-serif">ルーム 4</text><g transform="translate(574.8000000000001,426) scale(1.5)"><circle cx="12" cy="7.5" r="4.4" fill="#1A3050"/><path d="M4.2,21 C4.2,14.5 19.8,14.5 19.8,21 Z" fill="#1A3050"/></g><text x="612.8000000000001" y="448" text-anchor="middle" fill="#1A3050" font-size="12.5" font-weight="700" font-family="Noto Sans JP, sans-serif">企業</text><g transform="translate(562.8000000000001,472) scale(1.5)"><circle cx="12" cy="7.5" r="4.4" fill="#F7941D"/><path d="M4.2,21 C4.2,14.5 19.8,14.5 19.8,21 Z" fill="#F7941D"/></g><g transform="translate(598.8000000000001,472) scale(1.5)"><circle cx="12" cy="7.5" r="4.4" fill="#F7941D"/><path d="M4.2,21 C4.2,14.5 19.8,14.5 19.8,21 Z" fill="#F7941D"/></g><text x="630.8000000000001" y="494" text-anchor="middle" fill="#1A3050" font-size="12.5" font-weight="700" font-family="Noto Sans JP, sans-serif">学生</text><rect x="713.2" y="356" width="152.8" height="176" rx="12" fill="#ffffff" stroke="#E2DDD4"/><path d="M713.2,368 a12,12 0 0 1 12,-12 H854.0 a12,12 0 0 1 12,12 V396 H713.2 Z" fill="#EEF5FB"/><text x="789.6" y="382" text-anchor="middle" fill="#1A3050" font-size="13.5" font-weight="800" font-family="Noto Sans JP, sans-serif">ルーム 5</text><g transform="translate(749.6,426) scale(1.5)"><circle cx="12" cy="7.5" r="4.4" fill="#1A3050"/><path d="M4.2,21 C4.2,14.5 19.8,14.5 19.8,21 Z" fill="#1A3050"/></g><text x="787.6" y="448" text-anchor="middle" fill="#1A3050" font-size="12.5" font-weight="700" font-family="Noto Sans JP, sans-serif">企業</text><g transform="translate(737.6,472) scale(1.5)"><circle cx="12" cy="7.5" r="4.4" fill="#F7941D"/><path d="M4.2,21 C4.2,14.5 19.8,14.5 19.8,21 Z" fill="#F7941D"/></g><g transform="translate(773.6,472) scale(1.5)"><circle cx="12" cy="7.5" r="4.4" fill="#F7941D"/><path d="M4.2,21 C4.2,14.5 19.8,14.5 19.8,21 Z" fill="#F7941D"/></g><text x="805.6" y="494" text-anchor="middle" fill="#1A3050" font-size="12.5" font-weight="700" font-family="Noto Sans JP, sans-serif">学生</text></svg></div>
-      <div class="me-steps">
-        <div class="me-step"><div class="no">STEP 01</div><b>興味度アンケート</b><span>5段階＋理由記述で相互評価</span></div>
-        <div class="me-sarrow">→</div>
-        <div class="me-step"><div class="no">STEP 02</div><b>双方マッチング</b><span>企業・学生、互いの希望を確認</span></div>
-        <div class="me-sarrow">→</div>
-        <div class="me-step"><div class="no">STEP 03</div><b>面接日程調整</b><span>合意した組み合わせから面接へ</span></div>
+    <div class="mev">
+      <div class="mev-top">
+        <div class="mev-scale">
+          <div class="mev-num"><b>5</b>社<em>×</em><b>10</b>名</div>
+          <div class="mev-scap">企業 × 候補者／1回あたり</div>
+        </div>
+        <div class="mev-rooms"><div class="mev-room"><span class="rn">ROOM 1</span><span class="ppl"><i class="co"></i><i class="st"></i><i class="st"></i></span></div><div class="mev-room"><span class="rn">ROOM 2</span><span class="ppl"><i class="co"></i><i class="st"></i><i class="st"></i></span></div><div class="mev-room"><span class="rn">ROOM 3</span><span class="ppl"><i class="co"></i><i class="st"></i><i class="st"></i></span></div><div class="mev-room"><span class="rn">ROOM 4</span><span class="ppl"><i class="co"></i><i class="st"></i><i class="st"></i></span></div><div class="mev-room"><span class="rn">ROOM 5</span><span class="ppl"><i class="co"></i><i class="st"></i><i class="st"></i></span></div></div>
+      </div>
+      <div class="mev-legend"><span><i class="co"></i>企業</span><span><i class="st"></i>学生</span><span class="mev-legend-note">ZOOMブレイクアウト方式｜12分×5で全社と対話｜1名につき最大2社</span></div>
+      <div class="mev-steps">
+        <div class="mev-step"><span class="n">01</span><div><b>興味度アンケート</b><small>5段階＋理由記述</small></div></div>
+        <span class="mev-ar">→</span>
+        <div class="mev-step"><span class="n">02</span><div><b>双方マッチング</b><small>互いの希望を確認</small></div></div>
+        <span class="mev-ar">→</span>
+        <div class="mev-step"><span class="n">03</span><div><b>面接日程調整</b><small>合意した組合せから面接へ</small></div></div>
       </div>
     </div>
-
-    <div class="me-merit">
-      <div class="me-m"><b>母集団形成</b><span>複数候補者へ一度にアプローチ</span></div>
-      <div class="me-m"><b>マッチング最大化</b><span>組み合わせを最適に設計</span></div>
-      <div class="me-m"><b>理解深化</b><span>求人票で伝わらない魅力を直接</span></div>
-      <div class="me-m"><b>志望度向上</b><span>“興味”を“ここで働きたい”へ</span></div>
-    </div>
-    <div class="me-note">※ 参加費用は無料。費用は採用成果報酬のみ（契約内容に準じます）。</div>
   </div>
 </section>
 
 <!-- FLOW -->
-<section class="sec bg2">
+<section class="sec bgw">
   <div class="wrap">
     <div class="stag">FLOW ／ 紹介の流れ</div>
     <h2 class="sh">母集団形成から定着まで、<br>一気通貫で伴走します。</h2>
@@ -709,7 +704,7 @@ footer p{font-size:13px;color:var(--muted)}
 </section>
 
 <!-- STUDY（学業との両立） -->
-<section class="sec bgw">
+<section class="sec bg2">
   <div class="wrap">
     <div class="stag">SUPPORT ／ 学業との両立</div>
     <h2 class="sh">本当に1〜2年生で<br>大丈夫？</h2>
@@ -726,10 +721,10 @@ footer p{font-size:13px;color:var(--muted)}
 </section>
 
 <!-- TRACTION -->
-<section class="sec bg2">
+<section class="sec bgw">
   <div class="wrap">
     <div class="stag">TRACTION ／ 実績</div>
-    <h2 class="sh">6ヶ月で、<br>これだけの実績。</h2>
+    <h2 class="sh">これまでの実績。</h2>
     <div class="s-grid">
       <div class="s-item"><div class="s-num">100<small>名</small></div><div class="s-lbl">決定数</div></div>
       <div class="s-item"><div class="s-num">240<small>名</small></div><div class="s-lbl">面談セット数</div></div>
@@ -752,7 +747,7 @@ footer p{font-size:13px;color:var(--muted)}
 
 
 <!-- PRICE -->
-<section class="sec bgw">
+<section class="sec bg2">
   <div class="wrap">
     <div class="price-wrap">
       <div class="price-card">
@@ -771,7 +766,7 @@ footer p{font-size:13px;color:var(--muted)}
 </section>
 
 <!-- 関連（軽い言及） -->
-<section class="sec bg2">
+<section class="sec bgw">
   <div class="wrap">
     <div class="newgrad-card">
       <div class="ng-body">
