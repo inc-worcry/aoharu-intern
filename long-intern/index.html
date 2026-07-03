@@ -471,6 +471,20 @@ footer p{font-size:13px;color:var(--muted)}
   .mev-room i,.mev-legend i{width:9px;height:9px}
   .mev-num b{font-size:32px}
 }
+
+/* ===== JOBS carousel ===== */
+.jobs-carousel{overflow:hidden;margin-top:8px}
+.carousel-track-outer{width:100%;overflow:hidden;-webkit-mask-image:linear-gradient(to right,transparent 0,#000 6%,#000 94%,transparent 100%);mask-image:linear-gradient(to right,transparent 0,#000 6%,#000 94%,transparent 100%)}
+.carousel-track{display:flex;gap:16px;width:max-content;animation:scroll-left 40s linear infinite}
+.carousel-track:hover{animation-play-state:paused}
+.c-item{flex:none;width:300px;height:182px;border-radius:14px;overflow:hidden;box-shadow:0 4px 16px rgba(26,48,80,.08);background:#fff}
+.c-item img{width:100%;height:100%;object-fit:cover;object-position:center 28%;display:block;transition:transform .4s}
+.c-item:hover img{transform:scale(1.04)}
+@keyframes scroll-left{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.jobs-cta{text-align:center;margin-top:30px}
+.jobs-btn{display:inline-flex;align-items:center;gap:8px;background:#fff;color:var(--navy);border:1.5px solid var(--line);font-size:15px;font-weight:800;padding:15px 30px;border-radius:999px;text-decoration:none;box-shadow:0 4px 14px rgba(26,48,80,.06);transition:all .18s}
+.jobs-btn:hover{border-color:var(--blue);color:var(--blue);transform:translateY(-1px)}
+@media(max-width:640px){.c-item{width:220px;height:140px}}
 </style>
 </head>
 <body>
@@ -784,8 +798,23 @@ footer p{font-size:13px;color:var(--muted)}
 </section>
 
 
-<!-- PRICE -->
+<!-- JOBS -->
 <section class="sec bg2">
+  <div class="wrap">
+    <div class="stag">JOBS ／ 求人サイト</div>
+    <h2 class="sh">学生が集まる、<br>求人サイト。</h2>
+    <p class="sl">成長意欲の高い大学1・2年生が集まる、AOHARUインターンの求人サイト。<br>掲載して終わり、ではなく——集まった学生に、私たちが会いに行きます。</p>
+  </div>
+  <div class="jobs-carousel">
+    <div class="carousel-track-outer">
+      <div class="carousel-track"><div class="c-item"><img src="https://aoharu-intern-media.s3.ap-northeast-1.amazonaws.com/job_files/0d96c043-819c-453c-b72b-9685767e0c25.png" alt="掲載中の求人・活動シーン" loading="lazy"></div><div class="c-item"><img src="https://aoharu-intern-media.s3.ap-northeast-1.amazonaws.com/job_files/112ff93c-d87e-4666-af5b-eabbd0c815d4.png" alt="掲載中の求人・活動シーン" loading="lazy"></div><div class="c-item"><img src="https://aoharu-intern-media.s3.ap-northeast-1.amazonaws.com/job_files/287a8bf5-d96b-45ae-b2d9-5ef15add9ddb.jpg" alt="掲載中の求人・活動シーン" loading="lazy"></div><div class="c-item"><img src="https://aoharu-intern-media.s3.ap-northeast-1.amazonaws.com/job_files/381fb974-df88-4437-b058-6ce29fd1bc64.jpg" alt="掲載中の求人・活動シーン" loading="lazy"></div><div class="c-item"><img src="https://aoharu-intern-media.s3.ap-northeast-1.amazonaws.com/job_files/3edf51b8-53c3-4bda-a6dc-d6e4f3e0b1b7.webp" alt="掲載中の求人・活動シーン" loading="lazy"></div><div class="c-item"><img src="https://aoharu-intern-media.s3.ap-northeast-1.amazonaws.com/job_files/5acd2e23-ef5f-4cc4-a6e8-db808212f861.jpg" alt="掲載中の求人・活動シーン" loading="lazy"></div><div class="c-item"><img src="https://aoharu-intern-media.s3.ap-northeast-1.amazonaws.com/job_files/8743d7c8-a6dd-441f-9dea-bd65fe2e12ff.jpg" alt="掲載中の求人・活動シーン" loading="lazy"></div><div class="c-item"><img src="https://aoharu-intern-media.s3.ap-northeast-1.amazonaws.com/job_files/88e40046-c943-48c9-90ef-e70f40eaa01b.png" alt="掲載中の求人・活動シーン" loading="lazy"></div><div class="c-item"><img src="https://aoharu-intern-media.s3.ap-northeast-1.amazonaws.com/job_files/8bc79c53-ef47-4b5f-b6ad-9d740f762264.png" alt="掲載中の求人・活動シーン" loading="lazy"></div><div class="c-item"><img src="https://aoharu-intern-media.s3.ap-northeast-1.amazonaws.com/job_files/902355dd-807f-4ec1-8fa1-e5dda1211dab.jpg" alt="掲載中の求人・活動シーン" loading="lazy"></div><div class="c-item"><img src="https://aoharu-intern-media.s3.ap-northeast-1.amazonaws.com/job_files/b0173da9-cb0a-4ddf-b6f4-52b1f3912d01.png" alt="掲載中の求人・活動シーン" loading="lazy"></div><div class="c-item"><img src="https://aoharu-intern-media.s3.ap-northeast-1.amazonaws.com/job_files/b1a129cf-0f6d-4baf-af03-5ad335b5114f.jpg" alt="掲載中の求人・活動シーン" loading="lazy"></div><div class="c-item"><img src="https://aoharu-intern-media.s3.ap-northeast-1.amazonaws.com/job_files/cd6fb237-fe36-49d8-9e2b-2740a783b647.jpg" alt="掲載中の求人・活動シーン" loading="lazy"></div><div class="c-item"><img src="https://aoharu-intern-media.s3.ap-northeast-1.amazonaws.com/job_files/e2d50c59-e4c1-412d-977d-1ab5e2bac8e2.webp" alt="掲載中の求人・活動シーン" loading="lazy"></div><div class="c-item"><img src="https://aoharu-intern-media.s3.ap-northeast-1.amazonaws.com/job_files/f11ed6c8-f026-45ff-848d-8ab4d205f611.png" alt="掲載中の求人・活動シーン" loading="lazy"></div><div class="c-item"><img src="https://aoharu-intern-media.s3.ap-northeast-1.amazonaws.com/job_files/f5d38c5f-41c4-4a89-9911-308282f27f8a.webp" alt="掲載中の求人・活動シーン" loading="lazy"></div><div class="c-item"><img src="https://aoharu-intern-media.s3.ap-northeast-1.amazonaws.com/job_files/0d96c043-819c-453c-b72b-9685767e0c25.png" alt="掲載中の求人・活動シーン" loading="lazy"></div><div class="c-item"><img src="https://aoharu-intern-media.s3.ap-northeast-1.amazonaws.com/job_files/112ff93c-d87e-4666-af5b-eabbd0c815d4.png" alt="掲載中の求人・活動シーン" loading="lazy"></div><div class="c-item"><img src="https://aoharu-intern-media.s3.ap-northeast-1.amazonaws.com/job_files/287a8bf5-d96b-45ae-b2d9-5ef15add9ddb.jpg" alt="掲載中の求人・活動シーン" loading="lazy"></div><div class="c-item"><img src="https://aoharu-intern-media.s3.ap-northeast-1.amazonaws.com/job_files/381fb974-df88-4437-b058-6ce29fd1bc64.jpg" alt="掲載中の求人・活動シーン" loading="lazy"></div><div class="c-item"><img src="https://aoharu-intern-media.s3.ap-northeast-1.amazonaws.com/job_files/3edf51b8-53c3-4bda-a6dc-d6e4f3e0b1b7.webp" alt="掲載中の求人・活動シーン" loading="lazy"></div><div class="c-item"><img src="https://aoharu-intern-media.s3.ap-northeast-1.amazonaws.com/job_files/5acd2e23-ef5f-4cc4-a6e8-db808212f861.jpg" alt="掲載中の求人・活動シーン" loading="lazy"></div><div class="c-item"><img src="https://aoharu-intern-media.s3.ap-northeast-1.amazonaws.com/job_files/8743d7c8-a6dd-441f-9dea-bd65fe2e12ff.jpg" alt="掲載中の求人・活動シーン" loading="lazy"></div><div class="c-item"><img src="https://aoharu-intern-media.s3.ap-northeast-1.amazonaws.com/job_files/88e40046-c943-48c9-90ef-e70f40eaa01b.png" alt="掲載中の求人・活動シーン" loading="lazy"></div><div class="c-item"><img src="https://aoharu-intern-media.s3.ap-northeast-1.amazonaws.com/job_files/8bc79c53-ef47-4b5f-b6ad-9d740f762264.png" alt="掲載中の求人・活動シーン" loading="lazy"></div><div class="c-item"><img src="https://aoharu-intern-media.s3.ap-northeast-1.amazonaws.com/job_files/902355dd-807f-4ec1-8fa1-e5dda1211dab.jpg" alt="掲載中の求人・活動シーン" loading="lazy"></div><div class="c-item"><img src="https://aoharu-intern-media.s3.ap-northeast-1.amazonaws.com/job_files/b0173da9-cb0a-4ddf-b6f4-52b1f3912d01.png" alt="掲載中の求人・活動シーン" loading="lazy"></div><div class="c-item"><img src="https://aoharu-intern-media.s3.ap-northeast-1.amazonaws.com/job_files/b1a129cf-0f6d-4baf-af03-5ad335b5114f.jpg" alt="掲載中の求人・活動シーン" loading="lazy"></div><div class="c-item"><img src="https://aoharu-intern-media.s3.ap-northeast-1.amazonaws.com/job_files/cd6fb237-fe36-49d8-9e2b-2740a783b647.jpg" alt="掲載中の求人・活動シーン" loading="lazy"></div><div class="c-item"><img src="https://aoharu-intern-media.s3.ap-northeast-1.amazonaws.com/job_files/e2d50c59-e4c1-412d-977d-1ab5e2bac8e2.webp" alt="掲載中の求人・活動シーン" loading="lazy"></div><div class="c-item"><img src="https://aoharu-intern-media.s3.ap-northeast-1.amazonaws.com/job_files/f11ed6c8-f026-45ff-848d-8ab4d205f611.png" alt="掲載中の求人・活動シーン" loading="lazy"></div><div class="c-item"><img src="https://aoharu-intern-media.s3.ap-northeast-1.amazonaws.com/job_files/f5d38c5f-41c4-4a89-9911-308282f27f8a.webp" alt="掲載中の求人・活動シーン" loading="lazy"></div></div>
+    </div>
+  </div>
+  <div class="wrap jobs-cta"><a href="https://aoharu-intern.com/jobs" target="_blank" rel="noopener" class="jobs-btn">求人サイトを見る →</a></div>
+</section>
+
+<!-- PRICE -->
+<section class="sec bgw">
   <div class="wrap">
     <div class="price-wrap">
       <div class="price-card">
@@ -804,7 +833,7 @@ footer p{font-size:13px;color:var(--muted)}
 </section>
 
 <!-- 関連（軽い言及） -->
-<section class="sec bgw">
+<section class="sec bg2">
   <div class="wrap">
     <div class="newgrad-wrap">
     <div class="newgrad-card">
