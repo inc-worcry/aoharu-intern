@@ -342,11 +342,18 @@ footer p{font-size:13px;color:var(--muted)}
   header{padding:0 1.5rem}
   header .btn-out{display:none}
   header .btn-main{padding:9px 16px;font-size:12.5px}
-  .hero-form-card{display:block;margin-top:26px;max-width:560px;margin-left:auto;margin-right:auto}
-  .hero-body{padding-bottom:48px}
+  .hero-form-card{display:none}
+  .hero-body{padding-bottom:40px}
   .hero-text{text-align:left}
-  body{padding-bottom:72px}
-  .line-stats{flex-wrap:wrap}
+  body{padding-bottom:74px}
+  /* LINE統計を2カード化（inc-worcry踏襲） */
+  .line-stats{display:grid;grid-template-columns:1fr 1fr;gap:10px;background:transparent;border:none;box-shadow:none;padding:0;width:100%;margin-top:4px}
+  .line-icon,.line-div{display:none}
+  .line-stat{background:var(--white);border:1px solid var(--line);border-radius:12px;padding:14px 16px;display:flex;flex-direction:column;box-shadow:0 2px 10px rgba(26,48,80,.06)}
+  .line-stat:first-of-type{border-top:3px solid #06C755}
+  .line-stat:last-of-type{border-top:3px solid var(--blue)}
+  .line-num{font-size:clamp(1.3rem,5vw,1.7rem)}
+  .line-lbl{font-size:11px;margin-top:4px}
   .sp-cta-bar{display:flex;align-items:center;justify-content:space-between;position:fixed;bottom:0;left:0;right:0;background:var(--white);border-top:1px solid var(--line);padding:12px 18px calc(12px + env(safe-area-inset-bottom));z-index:999;box-shadow:0 -4px 20px rgba(26,48,80,.1)}
   .sp-cta-text{font-size:12px;color:var(--muted);line-height:1.4}
   .sp-cta-text strong{display:block;font-size:13px;color:var(--navy);font-weight:700}
