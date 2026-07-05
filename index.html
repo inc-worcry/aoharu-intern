@@ -1065,9 +1065,9 @@ footer p{font-size:13px;color:var(--muted)}
 }
 #dl-modal .modal-close:hover{color:var(--ink);}
 #dl-modal .modal-icon{
-  width:56px;height:56px;background:rgba(61,160,227,.12);
-  border-radius:50%;display:flex;align-items:center;justify-content:center;
-  margin:0 auto 18px;font-size:26px;
+  width:64px;height:64px;background:rgba(61,160,227,.12);
+  border-radius:50%;display:flex;align-items:flex-end;justify-content:center;
+  margin:0 auto 16px;overflow:hidden;
 }
 #dl-modal .modal-title{
   font-size:20px;font-weight:800;color:var(--navy);
@@ -1084,7 +1084,7 @@ footer p{font-size:13px;color:var(--muted)}
   box-shadow:0 4px 18px rgba(247,148,29,.35);
   transition:transform .15s,box-shadow .15s;letter-spacing:.02em;
 }
-#dl-modal .modal-spir-btn{display:block;width:100%;background:#fff;color:var(--navy);border:1.5px solid var(--line);font-size:14px;font-weight:700;padding:13px 20px;border-radius:999px;text-decoration:none;text-align:center;transition:border-color .15s,color .15s;margin-top:10px;}
+#dl-modal .modal-spir-btn{display:block;width:100%;background:#fff;color:var(--navy);border:1.5px solid var(--line);font-family:inherit;cursor:pointer;font-size:14px;font-weight:700;padding:13px 20px;border-radius:999px;text-decoration:none;text-align:center;transition:border-color .15s,color .15s;margin-top:10px;}
 #dl-modal .modal-spir-btn:hover{border-color:var(--orange);color:var(--orange);}
 #dl-modal .modal-dl-btn:hover{
   transform:translateY(-1px);
@@ -2344,6 +2344,7 @@ function closeDlModal() {
   document.getElementById('dl-modal-overlay').classList.remove('active');
   document.body.style.overflow = '';
 }
+function ackDocs(btn){btn.disabled=true;btn.textContent='✓ 問い合わせを受け付けました';btn.style.color='#06C755';btn.style.borderColor='#06C755';btn.style.background='#F2FBF5';btn.style.cursor='default';}
 // オーバーレイ外クリックで閉じる
 document.addEventListener('DOMContentLoaded', function() {
   document.getElementById('dl-modal-overlay').addEventListener('click', function(e) {
@@ -2406,14 +2407,35 @@ function submitCta(e) {
 <div id="dl-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="dl-modal-title">
   <div id="dl-modal">
     <button class="modal-close" onclick="closeDlModal()" aria-label="閉じる">×</button>
-    <div class="modal-icon">📄</div>
+    <div class="modal-icon"><svg viewBox="0 0 220 244" xmlns="http://www.w3.org/2000/svg" style="width:42px;height:auto;display:block">
+  <ellipse cx="110" cy="237" rx="62" ry="8" fill="#1A3050" opacity="0.06"/>
+  <path d="M96,188 L92,214" stroke="#233A63" stroke-width="16" fill="none" stroke-linecap="round"/>
+  <path d="M96,188 L92,214" stroke="#fff" stroke-width="9" fill="none" stroke-linecap="round"/>
+  <path d="M126,188 L130,214" stroke="#233A63" stroke-width="16" fill="none" stroke-linecap="round"/>
+  <path d="M126,188 L130,214" stroke="#fff" stroke-width="9" fill="none" stroke-linecap="round"/>
+  <ellipse cx="88" cy="220" rx="15" ry="8.5" fill="#4C6699" stroke="#233A63" stroke-width="3.5"/>
+  <ellipse cx="134" cy="220" rx="15" ry="8.5" fill="#4C6699" stroke="#233A63" stroke-width="3.5"/>
+  <path d="M164,150 Q196,142 210,136" stroke="#233A63" stroke-width="16" fill="none" stroke-linecap="round"/>
+  <path d="M164,150 Q196,142 210,136" stroke="#fff" stroke-width="9" fill="none" stroke-linecap="round"/>
+  <path d="M58,150 Q36,162 40,185" stroke="#233A63" stroke-width="16" fill="none" stroke-linecap="round"/>
+  <path d="M58,150 Q36,162 40,185" stroke="#fff" stroke-width="9" fill="none" stroke-linecap="round"/>
+  <path d="M53,88 H167 L159,168 Q159,207 110,207 Q61,207 61,168 Z" fill="#6E90C9" stroke="#233A63" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M66,98 V163 Q66,196 110,196 Q154,196 154,163 V98" fill="none" stroke="#CFE0F5" stroke-width="2.2" stroke-dasharray="5 6" stroke-linecap="round"/>
+  <path d="M50,62 H170 Q175,62 175,67 V92 Q175,97 170,97 H50 Q45,97 45,92 V67 Q45,62 50,62 Z" fill="#7C9BD0" stroke="#233A63" stroke-width="4"/>
+  <path d="M54,69 H166" stroke="#CFE0F5" stroke-width="2.2" stroke-dasharray="5 6" stroke-linecap="round"/>
+  <circle cx="110" cy="79" r="9" fill="#F4C430" stroke="#C9971F" stroke-width="2.5"/>
+  <ellipse cx="96" cy="143" rx="9.5" ry="12" fill="#fff" stroke="#233A63" stroke-width="3"/>
+  <ellipse cx="128" cy="143" rx="9.5" ry="12" fill="#fff" stroke="#233A63" stroke-width="3"/>
+  <circle cx="98" cy="145" r="5" fill="#1B2B4A"/>
+  <circle cx="130" cy="145" r="5" fill="#1B2B4A"/>
+  <circle cx="96" cy="142" r="1.6" fill="#fff"/>
+  <circle cx="128" cy="142" r="1.6" fill="#fff"/>
+  <path d="M104,161 Q112,168 120,161" fill="none" stroke="#233A63" stroke-width="3" stroke-linecap="round"/>
+</svg></div>
     <div class="modal-title" id="dl-modal-title">回答ありがとうございます！</div>
-    <p class="modal-sub">担当者より1営業日以内にご連絡します。<br>資料のご確認・日程調整もあわせてご利用ください。</p>
-    <a href="DOCUMENT_URL_PLACEHOLDER" target="_blank" rel="noopener" class="modal-dl-btn"
-       onclick="trackDlClick()">
-      資料ダウンロードはこちら
-    </a>
-    <a href="https://app.spirinc.com/t/H_vQ01vClf0LmLgUwmVWY/as/XMn5n8Z_s_rK6GUlabUGi/confirm" target="_blank" rel="noopener" class="modal-spir-btn">📅 日程を調整する（オンライン面談）</a>
+    <p class="modal-sub">担当者より1営業日以内にご連絡します。<br>お急ぎの方は、この場で日程調整もできます。</p>
+    <a href="https://app.spirinc.com/t/H_vQ01vClf0LmLgUwmVWY/as/XMn5n8Z_s_rK6GUlabUGi/confirm" target="_blank" rel="noopener" class="modal-dl-btn">📅 日程を調整する（オンライン面談）</a>
+    <button type="button" class="modal-spir-btn" onclick="ackDocs(this)">サービス・資料について問い合わせる</button>
   </div>
 </div>
 
