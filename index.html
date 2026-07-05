@@ -147,9 +147,9 @@ header{
 .line-stat:first-of-type{padding-left:0}
 .line-num{
   font-size:clamp(1.5rem,3vw,2rem);font-weight:900;
-  color:#059862;letter-spacing:-0.04em;line-height:1;
+  color:#059862;letter-spacing:-0.04em;line-height:1;white-space:nowrap;
 }
-.line-num small{font-size:.48em;font-weight:700;white-space:nowrap}
+.line-num small{font-size:.46em;font-weight:700;white-space:nowrap}
 .line-lbl{font-size:11px;color:#828A9E;margin-top:3px;line-height:1.4}
 .line-div{width:1px;height:36px;background:#E2DDD4;margin:0 4px}
 .hero-quote{
@@ -997,6 +997,8 @@ footer p{font-size:13px;color:var(--muted)}
     padding:12px 14px !important;
     display:flex !important;
     flex-direction:column !important;
+    align-items:flex-start !important;
+    text-align:left !important;
     box-shadow:0 2px 10px rgba(6,199,85,.1) !important;
   }
   .line-num{font-size:clamp(1.35rem,6vw,1.8rem) !important;color:#059862 !important}
@@ -1440,7 +1442,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
         <div class="line-div"></div>
         <div class="line-stat">
-          <span class="line-num" id="line-cnt2">500<small>〜600名/月</small></span>
+          <span class="line-num" id="line-cnt2">500<small>〜600名</small></span>
           <span class="line-lbl">平均月間新規LINE登録数</span>
         </div>
       </div>
@@ -2391,7 +2393,7 @@ function submitCta(e) {
   var c2=document.getElementById('line-cnt2');
   onVisible(c1,function(){
     animCount(c1,4587,'人',1400);
-    setTimeout(function(){animCount(c2,500,'〜600名/月',1200);},200);
+    setTimeout(function(){animCount(c2,500,'〜600名',1200);},200);
   });
 })();
 </script>
