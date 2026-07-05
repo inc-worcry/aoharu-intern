@@ -335,7 +335,7 @@ footer p{font-size:13px;color:var(--muted)}
 #dl-modal .modal-sub{font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:22px}
 #dl-modal .modal-dl-btn{display:block;width:100%;background:var(--blue);color:#fff;font-size:15px;font-weight:800;padding:15px 20px;border-radius:999px;text-decoration:none;box-shadow:0 4px 18px rgba(41,171,226,.35);margin-bottom:10px;transition:transform .15s,box-shadow .15s}
 #dl-modal .modal-dl-btn:hover{transform:translateY(-1px);box-shadow:0 6px 22px rgba(41,171,226,.45)}
-#dl-modal .modal-spir-btn{display:block;width:100%;background:#fff;color:var(--navy);border:1.5px solid var(--line);font-size:14px;font-weight:700;padding:13px 20px;border-radius:999px;text-decoration:none;transition:border-color .15s,color .15s}
+#dl-modal .modal-spir-btn{display:block;width:100%;background:#fff;color:var(--navy);border:1.5px solid var(--line);font-family:inherit;cursor:pointer;font-size:14px;font-weight:700;padding:13px 20px;border-radius:999px;text-decoration:none;transition:border-color .15s,color .15s}
 #dl-modal .modal-spir-btn:hover{border-color:var(--blue);color:var(--blue)}
 /* ===== RESPONSIVE (header / hero form / breakpoints) ===== */
 @media(max-width:860px){
@@ -983,13 +983,14 @@ footer p{font-size:13px;color:var(--muted)}
     <div class="modal-title" id="dl-modal-title">送信ありがとうございます！</div>
     <p class="modal-sub">担当者より1営業日以内にご連絡します。<br>お急ぎの方は、この場で日程調整もできます。</p>
     <a href="https://app.spirinc.com/t/H_vQ01vClf0LmLgUwmVWY/as/XMn5n8Z_s_rK6GUlabUGi/confirm" target="_blank" rel="noopener" class="modal-dl-btn">オンライン面談の日程を調整する</a>
-    <a href="mailto:saiyou@worcry.com?subject=サービス資料の請求&body=サービス資料の送付を希望します。%0D%0A（会社名・お名前をご記入ください）" class="modal-spir-btn">サービス・資料について問い合わせる</a>
+    <button type="button" class="modal-spir-btn" onclick="ackDocs(this)">サービス・資料について問い合わせる</button>
   </div>
 </div>
 
 <script>
 function openDlModal(){var o=document.getElementById('dl-modal-overlay');if(o){o.classList.add('active');document.body.style.overflow='hidden';}}
 function closeDlModal(){var o=document.getElementById('dl-modal-overlay');if(o){o.classList.remove('active');document.body.style.overflow='';}}
+function ackDocs(btn){btn.disabled=true;btn.textContent='✓ 問い合わせを受け付けました';btn.style.color='#06C755';btn.style.borderColor='#06C755';btn.style.background='#F2FBF5';btn.style.cursor='default';}
 document.addEventListener('DOMContentLoaded',function(){
   var o=document.getElementById('dl-modal-overlay');
   if(o)o.addEventListener('click',function(e){if(e.target===this)closeDlModal();});
