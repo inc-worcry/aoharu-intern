@@ -485,6 +485,20 @@ footer p{font-size:13px;color:var(--muted)}
 .jobs-btn{display:inline-flex;align-items:center;gap:8px;background:#fff;color:var(--navy);border:1.5px solid var(--line);font-size:15px;font-weight:800;padding:15px 30px;border-radius:999px;text-decoration:none;box-shadow:0 4px 14px rgba(26,48,80,.06);transition:all .18s}
 .jobs-btn:hover{border-color:var(--blue);color:var(--blue);transform:translateY(-1px)}
 @media(max-width:640px){.c-item{width:220px;height:140px}}
+
+/* ===== 新卒採用 案内カード ===== */
+.lt-card{max-width:840px;margin:0 auto;display:flex;gap:34px;align-items:center;background:var(--white);border:1px solid var(--line);border-radius:16px;padding:36px 42px;box-shadow:0 4px 20px rgba(26,48,80,.05)}
+.lt-poke{flex-shrink:0;width:112px;display:flex;justify-content:center}
+.lt-badge{display:inline-block;font-size:12px;font-weight:700;background:var(--bg2);color:var(--navy);border:1px solid var(--line);padding:5px 14px;border-radius:6px;margin-bottom:14px}
+.lt-body h3{font-size:23px;font-weight:900;color:var(--navy);line-height:1.35;margin-bottom:12px;letter-spacing:-.02em}
+.lt-body p{font-size:15px;color:var(--muted);line-height:1.85;font-weight:500;margin-bottom:22px}
+.lt-btn{display:inline-flex;align-items:center;gap:8px;background:var(--orange);color:#fff;font-size:15px;font-weight:800;padding:15px 30px;border-radius:8px;text-decoration:none;box-shadow:0 6px 18px rgba(247,148,29,.28);transition:all .18s}
+.lt-btn:hover{background:#e07c0e;transform:translateY(-1px);box-shadow:0 8px 22px rgba(247,148,29,.38)}
+@media(max-width:640px){
+  .lt-card{flex-direction:column;text-align:center;gap:18px;padding:28px 22px}
+  .lt-poke{width:92px}
+  .lt-btn{width:100%;justify-content:center}
+}
 </style>
 </head>
 <body>
@@ -836,15 +850,38 @@ footer p{font-size:13px;color:var(--muted)}
 <!-- 関連（軽い言及） -->
 <section class="sec bg2">
   <div class="wrap">
-    <div class="newgrad-wrap">
-    <div class="newgrad-card">
-      <div class="ng-body">
-        <span class="ng-tag">NEW-GRAD ／ 新卒採用</span>
-        <h3>大学2年生から始める、<br>新卒採用。</h3>
-        <p>長期インターンで一緒に働いた学生を、そのまま新卒へ。<br>さらに、2年生秋・冬インターンからの早期接点づくりに特化した新卒採用支援もご用意しています。</p>
+    <div class="lt-card">
+      <div class="lt-poke"><svg viewBox="0 0 220 244" xmlns="http://www.w3.org/2000/svg" style="width:108px;height:auto;">
+  <ellipse cx="110" cy="237" rx="62" ry="8" fill="#1A3050" opacity="0.06"/>
+  <path d="M96,188 L92,214" stroke="#233A63" stroke-width="16" fill="none" stroke-linecap="round"/>
+  <path d="M96,188 L92,214" stroke="#fff" stroke-width="9" fill="none" stroke-linecap="round"/>
+  <path d="M126,188 L130,214" stroke="#233A63" stroke-width="16" fill="none" stroke-linecap="round"/>
+  <path d="M126,188 L130,214" stroke="#fff" stroke-width="9" fill="none" stroke-linecap="round"/>
+  <ellipse cx="88" cy="220" rx="15" ry="8.5" fill="#4C6699" stroke="#233A63" stroke-width="3.5"/>
+  <ellipse cx="134" cy="220" rx="15" ry="8.5" fill="#4C6699" stroke="#233A63" stroke-width="3.5"/>
+  <path d="M164,150 Q190,118 198,92" stroke="#233A63" stroke-width="16" fill="none" stroke-linecap="round"/>
+  <path d="M164,150 Q190,118 198,92" stroke="#fff" stroke-width="9" fill="none" stroke-linecap="round"/>
+  <path d="M58,150 Q32,118 24,92" stroke="#233A63" stroke-width="16" fill="none" stroke-linecap="round"/>
+  <path d="M58,150 Q32,118 24,92" stroke="#fff" stroke-width="9" fill="none" stroke-linecap="round"/>
+  <path d="M53,88 H167 L159,168 Q159,207 110,207 Q61,207 61,168 Z" fill="#6E90C9" stroke="#233A63" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M66,98 V163 Q66,196 110,196 Q154,196 154,163 V98" fill="none" stroke="#CFE0F5" stroke-width="2.2" stroke-dasharray="5 6" stroke-linecap="round"/>
+  <path d="M50,62 H170 Q175,62 175,67 V92 Q175,97 170,97 H50 Q45,97 45,92 V67 Q45,62 50,62 Z" fill="#7C9BD0" stroke="#233A63" stroke-width="4"/>
+  <path d="M54,69 H166" stroke="#CFE0F5" stroke-width="2.2" stroke-dasharray="5 6" stroke-linecap="round"/>
+  <circle cx="110" cy="79" r="9" fill="#F4C430" stroke="#C9971F" stroke-width="2.5"/>
+  <ellipse cx="96" cy="143" rx="9.5" ry="12" fill="#fff" stroke="#233A63" stroke-width="3"/>
+  <ellipse cx="128" cy="143" rx="9.5" ry="12" fill="#fff" stroke="#233A63" stroke-width="3"/>
+  <circle cx="98" cy="145" r="5" fill="#1B2B4A"/>
+  <circle cx="130" cy="145" r="5" fill="#1B2B4A"/>
+  <circle cx="96" cy="142" r="1.6" fill="#fff"/>
+  <circle cx="128" cy="142" r="1.6" fill="#fff"/>
+  <path d="M104,161 Q112,168 120,161" fill="none" stroke="#233A63" stroke-width="3" stroke-linecap="round"/>
+</svg></div>
+      <div class="lt-body">
+        <span class="lt-badge">新卒採用支援も対応</span>
+        <h3>大学2年生から、<br>早期に出会う新卒採用。</h3>
+        <p>長期インターンで一緒に働いた学生を、そのまま新卒へ。2年生秋・冬インターンからの早期接点づくりに特化した新卒採用支援もご用意しています。</p>
+        <a href="https://inc-worcry.github.io/aoharu-intern/" target="_blank" rel="noopener" class="lt-btn">サービスサイトはこちら →</a>
       </div>
-      <div class="ng-cta"><a href="https://inc-worcry.github.io/aoharu-intern/" target="_blank" rel="noopener">新卒採用支援を見る →</a></div>
-    </div>
     </div>
   </div>
 </section>
