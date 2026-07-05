@@ -1084,6 +1084,8 @@ footer p{font-size:13px;color:var(--muted)}
   box-shadow:0 4px 18px rgba(247,148,29,.35);
   transition:transform .15s,box-shadow .15s;letter-spacing:.02em;
 }
+#dl-modal .modal-spir-btn{display:block;width:100%;background:#fff;color:var(--navy);border:1.5px solid var(--line);font-size:14px;font-weight:700;padding:13px 20px;border-radius:999px;text-decoration:none;text-align:center;transition:border-color .15s,color .15s;margin-top:10px;}
+#dl-modal .modal-spir-btn:hover{border-color:var(--orange);color:var(--orange);}
 #dl-modal .modal-dl-btn:hover{
   transform:translateY(-1px);
   box-shadow:0 6px 22px rgba(247,148,29,.45);
@@ -2406,11 +2408,12 @@ function submitCta(e) {
     <button class="modal-close" onclick="closeDlModal()" aria-label="閉じる">×</button>
     <div class="modal-icon">📄</div>
     <div class="modal-title" id="dl-modal-title">回答ありがとうございます！</div>
-    <p class="modal-sub">担当者より３営業日以内にご連絡します。<br>資料もあわせてご確認ください。</p>
+    <p class="modal-sub">担当者より1営業日以内にご連絡します。<br>資料のご確認・日程調整もあわせてご利用ください。</p>
     <a href="DOCUMENT_URL_PLACEHOLDER" target="_blank" rel="noopener" class="modal-dl-btn"
        onclick="trackDlClick()">
       資料ダウンロードはこちら
     </a>
+    <a href="https://app.spirinc.com/t/H_vQ01vClf0LmLgUwmVWY/as/XMn5n8Z_s_rK6GUlabUGi/confirm" target="_blank" rel="noopener" class="modal-spir-btn">📅 日程を調整する（オンライン面談）</a>
   </div>
 </div>
 
