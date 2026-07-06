@@ -619,6 +619,18 @@ footer p{font-size:13px;color:var(--muted)}
   .fv-flow-arr{flex-shrink:0;color:#C6CDD8;font-size:15px;display:flex;align-items:center}
 }
 
+
+/* --- STUDY: リードを上・4カードをPC横1列/スマホ2×2 --- */
+.study-wrap{display:block}
+.study-lead{max-width:none;margin-bottom:26px}
+.study-list{display:grid !important;grid-template-columns:repeat(4,1fr);gap:12px;flex-direction:row}
+.study-item{align-items:flex-start}
+.study-item p{font-size:13.5px;line-height:1.55}
+@media(max-width:860px){
+  .study-list{grid-template-columns:1fr 1fr !important;gap:10px}
+  .study-item p{font-size:13px}
+}
+
 </style>
 </head>
 <body>
@@ -908,7 +920,7 @@ footer p{font-size:13px;color:var(--muted)}
     <div class="stag">SUPPORT ／ 学業との両立</div>
     <h2 class="sh">本当に1〜2年生で<br>大丈夫？</h2>
     <div class="study-wrap">
-      <p class="study-lead">“大学1〜2年生に特化”と聞くと、<b>「授業や試験で忙しくて、途中で来られなくなるのでは？」</b>——そんな不安を感じる企業さまも少なくありません。<br><br>AOHARUインターンでは、学生が無理なく続けられるよう<b>学業との両立を支えています。</b></p>
+      <p class="study-lead">「大学1〜2年生に特化」と聞くと、<b>「授業や試験で忙しくて、途中で来られなくなるのでは？」</b>——そんな不安を感じる企業さまも少なくありません。<br><br>AOHARUインターンでは、学生が無理なく続けられるよう<b>学業との両立を支えています。</b></p>
       <div class="study-list">
         <div class="study-item"><div class="study-check">✓</div><p>企業と学生、双方の希望を踏まえてマッチング</p></div>
         <div class="study-item"><div class="study-check">✓</div><p>週3日前後の稼働を前提に、カウンセリングを実施</p></div>
@@ -926,9 +938,9 @@ footer p{font-size:13px;color:var(--muted)}
     <h2 class="sh">これまでの実績。</h2>
     <p class="stats-note">※ 数値は2026年7月現在</p>
     <div class="s-grid">
-      <div class="s-item"><div class="s-num">100<small>名</small></div><div class="s-lbl">決定数</div></div>
-      <div class="s-item"><div class="s-num">240<small>名</small></div><div class="s-lbl">面談セット数</div></div>
-      <div class="s-item"><div class="s-num">480<small>名</small></div><div class="s-lbl">面談数</div></div>
+      <div class="s-item"><div class="s-num">92<small>名</small></div><div class="s-lbl">決定数</div></div>
+      <div class="s-item"><div class="s-num">131<small>名</small></div><div class="s-lbl">面談セット数</div></div>
+      <div class="s-item"><div class="s-num">164<small>名</small></div><div class="s-lbl">面談数</div></div>
       <div class="s-item"><div class="s-num">4,587<small>名</small></div><div class="s-lbl">LINE登録数</div></div>
       <div class="s-item"><div class="s-num">150<small>件</small></div><div class="s-lbl">掲載求人数</div></div>
     </div>
