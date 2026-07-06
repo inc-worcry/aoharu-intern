@@ -1165,21 +1165,15 @@ footer p{font-size:13px;color:var(--muted)}
   }
   .concept-head .c-body { font-size: 13px !important; line-height: 1.7 }
 
-  /* カード: 横スクロール */
+  /* カード: 縦積み */
   .concept-cards-row {
     display: flex !important;
-    flex-direction: row !important;
-    overflow-x: auto !important;
-    gap: 10px !important;
-    padding-bottom: 8px;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
+    flex-direction: column !important;
+    gap: 12px !important;
     grid-template-columns: unset !important;
   }
-  .concept-cards-row::-webkit-scrollbar { display: none }
   .cc2 {
-    min-width: 220px;
-    flex: 0 0 220px;
+    width: 100%;
     padding: 18px 16px;
     border-radius: 14px;
   }
