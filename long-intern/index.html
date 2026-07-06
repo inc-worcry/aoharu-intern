@@ -501,6 +501,88 @@ footer p{font-size:13px;color:var(--muted)}
   .lt-btn{width:100%;justify-content:center}
 }
 .line-asof{font-size:11px;color:var(--muted);margin-top:10px;font-weight:500}
+
+/* ============================================================
+   MOBILE OVERHAUL v3 — 短期LP準拠：コンパクト・統一・部分横スクロール
+   ============================================================ */
+@media(max-width:860px){
+  /* サイドの取りすぎ余白を圧縮（幅を広く使う） */
+  .wrap{padding:0 1.5rem}
+  /* 本文を少しだけ小さく（統一） */
+  body{font-size:15.5px;line-height:1.75}
+  /* セクション余白を一定・コンパクトに */
+  .sec{padding:56px 0}
+  .cta-sec{padding:56px 0}
+  /* 見出し・リード文サイズ／余白の統一 */
+  .sh{font-size:clamp(1.7rem,5.6vw,2.2rem);margin-bottom:12px;letter-spacing:-.03em}
+  .concept-head .sh{font-size:clamp(1.7rem,5.6vw,2.2rem);margin-bottom:14px}
+  .sl{font-size:14.5px;line-height:1.8;margin-bottom:26px;max-width:100%}
+  .sl br{display:none}
+  .concept-head .c-body{font-size:14.5px;line-height:1.85}
+  /* 段落サイズを揃えて少し小さく */
+  .cc2 p,.svc-row p,.study-lead{font-size:14px;line-height:1.8}
+  .prob-card p,.me-card p,.slim2 p,.cy-body,.pi p,.diff-stat-txt p{font-size:13.5px;line-height:1.7}
+  /* カード余白を圧縮（間延び解消） */
+  .cc2{padding:26px 22px}
+  .prob-card{padding:22px 20px}
+  .diff-card{padding:24px 22px}
+  .price-card{padding:36px 26px}
+  .newgrad-card{padding:32px 24px}
+  .study-item{padding:15px 16px}
+  .pi{padding:18px 18px}
+  .lt-card{padding:26px 22px}
+  .slim2{padding:24px 22px}
+  .mev{padding:22px 20px}
+  /* HERO：短期同様に詰める（フォーム非表示＋スティッキーCTA運用） */
+  .hero-body{padding:22px 1.5rem 44px}
+  .hero h1,.hero-text h1{font-size:clamp(2rem,8.5vw,2.9rem);line-height:1.2}
+  .hero-quote{margin-bottom:16px}
+  .hero-quote-sub br{display:none}
+}
+
+/* 部分的に横スクロール：カード群を短期LP風のカルーセルに */
+@media(max-width:860px){
+  .concept-cards-row,.prob-grid,.me-merit{
+    display:flex;flex-wrap:nowrap;gap:12px;
+    overflow-x:auto;overflow-y:hidden;
+    scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;
+    margin-left:-1.5rem;margin-right:-1.5rem;
+    padding:4px 1.5rem 14px;scrollbar-width:none;
+  }
+  .concept-cards-row::-webkit-scrollbar,
+  .prob-grid::-webkit-scrollbar,
+  .me-merit::-webkit-scrollbar{height:0;display:none}
+  .concept-cards-row>*,.prob-grid>*{flex:0 0 80%;scroll-snap-align:center}
+  .me-merit>*{flex:0 0 44%;scroll-snap-align:center}
+}
+
+@media(max-width:640px){
+  body{font-size:15px}
+  .sec{padding:46px 0}
+  .cta-sec{padding:46px 0}
+  .sl{margin-bottom:22px}
+  .concept-cards-row,.prob-grid,.me-merit{margin-left:-1.25rem;margin-right:-1.25rem;padding:4px 1.25rem 12px}
+  .s-grid{grid-template-columns:1fr 1fr}
+}
+
+@media(max-width:480px){
+  .sec{padding:38px 0}
+  .cta-sec{padding:38px 0}
+  .sh{font-size:clamp(1.5rem,6.2vw,1.85rem)}
+  .concept-head .sh{font-size:clamp(1.5rem,6.2vw,1.85rem)}
+  .sl{font-size:13.5px;margin-bottom:20px}
+  .hero-body{padding:20px 1rem 40px}
+  .hero h1,.hero-text h1{font-size:clamp(1.85rem,8.2vw,2.35rem)}
+  .concept-cards-row,.prob-grid,.me-merit{margin-left:-1rem;margin-right:-1rem;padding:4px 1rem 12px}
+  .concept-cards-row>*,.prob-grid>*{flex:0 0 84%}
+  .me-merit>*{flex:0 0 60%}
+  .price-card{padding:30px 20px}
+  .newgrad-card{padding:26px 18px}
+  /* 統計は480でも2列でコンパクトに（1列で伸びるのを防止） */
+  .s-grid{grid-template-columns:1fr 1fr}
+  .s-item{padding:22px 12px}
+}
+
 </style>
 </head>
 <body>
