@@ -462,6 +462,7 @@ header{
 .lt-cta-btn:hover{ background:#e07c0e; box-shadow:0 4px 16px rgba(247,148,29,.35); transform:translateY(-1px) }
 
 @media(max-width:640px){
+  .sp-only{display:inline !important}
   .lt-wrap { grid-template-columns:1fr; gap:16px; padding:20px 18px }
   .lt-poke { display:flex; justify-content:center }
   .lt-wrap p { font-size:13px }
@@ -849,6 +850,7 @@ footer p{font-size:13px;color:var(--muted)}
   .photo-grid{grid-template-columns:1fr 1fr}
 }
 
+.sp-only{display:none}
 /* ---------- 640px: スマホ大 ---------- */
 @media(max-width:640px){
   .wrap{padding:0 1.25rem}
@@ -907,6 +909,8 @@ footer p{font-size:13px;color:var(--muted)}
 
   /* profile */
   .profile-list{grid-template-columns:1fr}
+  .pi{padding:14px 16px;gap:12px}
+  .pi p{font-size:13px;line-height:1.65}
 
   /* sh（セクション見出し）*/
   .sh{font-size:clamp(1.6rem,5.5vw,2.2rem)}
@@ -1006,6 +1010,8 @@ footer p{font-size:13px;color:var(--muted)}
     align-items:flex-start !important;
     text-align:left !important;
     box-shadow:0 2px 10px rgba(6,199,85,.1) !important;
+    min-height:72px !important;
+    height:100% !important;
   }
   .line-num{font-size:clamp(1.35rem,6vw,1.8rem) !important;color:#059862 !important}
   .line-lbl{font-size:10.5px !important;color:var(--muted) !important;margin-top:4px !important;line-height:1.4 !important}
@@ -2129,7 +2135,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <div class="wrap">
     <div class="stag">学生データ</div>
-    <h2 class="sh">数字で見る、AOHARUの学生品質</h2>
+    <h2 class="sh">数字で見る、<br class="sp-only">AOHARUの学生品質</h2>
     <p class="sp-sub">流入数ではなく、実際に面談を完了した学生のみを集計。<br>厳選された母集団が、採用の効率を高めます。</p>
   </div>
 
