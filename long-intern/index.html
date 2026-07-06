@@ -1001,6 +1001,8 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')closeDlModal
   document.querySelectorAll('form[data-gas]').forEach(function(form){
     form.addEventListener('submit',function(ev){
       ev.preventDefault();
+      var consent=form.querySelector('input[name="_consent"]');
+      if(consent&&!consent.checked){if(consent.reportValidity){consent.reportValidity();}else{alert('プライバシーポリシーに同意してください');}return;}
       var btn=form.querySelector('button[type=submit]');
       var old=btn?btn.textContent:'';
       if(btn){btn.disabled=true;btn.textContent='送信中…';}
