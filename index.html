@@ -210,6 +210,7 @@ header{
   cursor:pointer;transition:all .18s;margin-top:4px;letter-spacing:.02em;
 }
 .hfc-submit:hover{background:#e07c0e;box-shadow:0 4px 16px rgba(247,148,29,.3)}
+.hfc-submit:disabled,.fi-submit:disabled{background:#ccc;cursor:not-allowed;box-shadow:none}
 .hfc-note{font-size:11px;color:var(--muted);text-align:center;margin-top:9px}
 .pp-check{display:flex;align-items:center;gap:6px;font-size:12px;color:#828A9E;cursor:pointer;margin-bottom:10px;line-height:1.5}
 .pp-check input[type="checkbox"]{width:15px;height:15px;cursor:pointer;accent-color:#F7941D;flex-shrink:0}
@@ -1493,7 +1494,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="hfc-fl"><label>メールアドレス</label><input class="hfc-fi" type="email" name="email" placeholder="taro@company.co.jp" required></div>
         <div class="hfc-fl"><label>電話番号</label><input class="hfc-fi" type="tel" name="tel" placeholder="03-0000-0000" required></div>
         <div class="hfc-fl"><label>備考（任意）</label><textarea class="hfc-fi" name="message" rows="2" placeholder="資料請求・個別相談など"></textarea></div>
-        <label class="pp-check"><input type="checkbox" id="hfc-agree"> <a href="https://www.worcry.com/privacy-policy" target="_blank" rel="noopener">プライバシーポリシー</a>に同意する</label><button class="hfc-submit" id="hfc-btn" type="button" onclick="submitHfc()">資料請求する →</button>
+        <label class="pp-check"><input type="checkbox" id="hfc-agree" onchange="document.getElementById('hfc-btn').disabled=!this.checked"> <a href="https://www.worcry.com/privacy-policy" target="_blank" rel="noopener">プライバシーポリシー</a>に同意する</label><button class="hfc-submit" id="hfc-btn" type="button" onclick="submitHfc()" disabled>資料請求する →</button>
         <div id="hfc-done" style="display:none;color:#2a7a3b;font-size:13px;font-weight:700;text-align:center;padding:8px 0;">✅ 送信しました！担当者より連絡いたします。</div>
         <div class="hfc-note" id="hfc-note">30秒で完了 · 翌営業日以内に返信</div>
       </div>
@@ -2273,7 +2274,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="fl"><label>電話番号</label><input class="fi" type="tel" name="tel" placeholder="03-0000-0000" required></div>
       </div>
       <div class="fl"><label>備考（任意）</label><textarea class="fi" name="message" rows="3" placeholder="資料請求・個別相談など、お気軽にどうぞ"></textarea></div>
-      <label class="pp-check"><input type="checkbox" id="cta-agree"> <a href="https://www.worcry.com/privacy-policy" target="_blank" rel="noopener">プライバシーポリシー</a>に同意する</label><button class="fi-submit" type="submit">資料請求する</button>
+      <label class="pp-check"><input type="checkbox" id="cta-agree" onchange="document.getElementById('cta-btn').disabled=!this.checked"> <a href="https://www.worcry.com/privacy-policy" target="_blank" rel="noopener">プライバシーポリシー</a>に同意する</label><button class="fi-submit" id="cta-btn" type="submit" disabled>資料請求する</button>
       <div id="cta-done" style="display:none;color:#2a7a3b;font-size:13px;font-weight:700;text-align:center;padding:10px 0;">✅ 送信しました！担当者より連絡いたします。</div>
       <div class="fi-note" id="cta-note">送信後、担当者より1営業日以内にご連絡いたします。</div>
     </form>
