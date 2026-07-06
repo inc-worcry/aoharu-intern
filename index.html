@@ -1401,10 +1401,10 @@ footer p{font-size:13px;color:var(--muted)}
 }
 
 /* ================================================================
-   セクション背景 — よくある課題（モバイルで少し濃いベージュに）
+   セクション背景 — よくある課題のみ濃いベージュ（flow/whyに影響させない）
    ================================================================ */
 @media(max-width:860px){
-  section.sec.bg2 { background: #E6E0D3 !important; }
+  #problem-sec { background: #E6E0D3; }
 }
 
 /* ================================================================
@@ -1664,7 +1664,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </section>
 
 <!-- PROBLEM -->
-<section class="sec bg2">
+<section class="sec bg2" id="problem-sec">
   <div class="wrap">
     <div class="stag">よくある課題</div>
     <h2 class="sh">こんな新卒採用の課題、<br>ありませんか？</h2>
