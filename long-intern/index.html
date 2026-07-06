@@ -607,6 +607,18 @@ footer p{font-size:13px;color:var(--muted)}
   .hero-body{padding:16px 1rem 36px}
 }
 
+
+/* --- FV STEP カード（スクショ準拠・スマホのみ表示／水色アクセント） --- */
+.fv-flow{display:none}
+@media(max-width:860px){
+  .fv-flow{display:flex;gap:6px;margin-top:14px;width:100%}
+  .fv-flow-card{flex:1;background:var(--white);border:1px solid var(--line);border-top:3px solid var(--blue);border-radius:8px;padding:10px 6px 11px;text-align:center;box-shadow:0 1px 6px rgba(26,48,80,.05)}
+  .fv-flow-n{font-size:8.5px;font-weight:900;color:var(--blue);letter-spacing:.1em;text-transform:uppercase;margin-bottom:3px}
+  .fv-flow-ttl{font-size:11px;font-weight:800;color:var(--navy);line-height:1.2;margin-bottom:3px}
+  .fv-flow-sub{font-size:9.5px;color:var(--muted);line-height:1.4}
+  .fv-flow-arr{flex-shrink:0;color:#C6CDD8;font-size:15px;display:flex;align-items:center}
+}
+
 </style>
 </head>
 <body>
@@ -628,7 +640,7 @@ footer p{font-size:13px;color:var(--muted)}
       <span class="hero-badge">大学1・2年生特化 ／ 長期インターン紹介</span>
       <h1>優秀な学生に、<br>いちばん<br><em>早く出会う。</em></h1>
       <div class="hero-quote">
-        <span class="hero-quote-main">“いい学生”は、待っていても来ない。</span>
+        <span class="hero-quote-main">こちらから、会いに行く採用へ。</span>
         <span class="hero-quote-sub">求人を丁寧にヒアリングし、学生全員と面談。<br>貴社に“本当に合う”大学1・2年生だけを、ご紹介します。</span>
       </div>
       <div class="line-stats">
@@ -644,6 +656,25 @@ footer p{font-size:13px;color:var(--muted)}
         </div>
       </div>
       <div class="line-asof">※ LINE登録数は2026年7月現在</div>
+      <div class="fv-flow">
+        <div class="fv-flow-card">
+          <div class="fv-flow-n">STEP 1</div>
+          <div class="fv-flow-ttl">お問い合わせ</div>
+          <div class="fv-flow-sub">資料請求・<br>個別相談</div>
+        </div>
+        <div class="fv-flow-arr">›</div>
+        <div class="fv-flow-card">
+          <div class="fv-flow-n">STEP 2</div>
+          <div class="fv-flow-ttl">面談・紹介</div>
+          <div class="fv-flow-sub">全員面談で<br>厳選紹介</div>
+        </div>
+        <div class="fv-flow-arr">›</div>
+        <div class="fv-flow-card">
+          <div class="fv-flow-n">STEP 3</div>
+          <div class="fv-flow-ttl">採用開始</div>
+          <div class="fv-flow-sub">伴走<br>サポート</div>
+        </div>
+      </div>
     </div>
     <div class="hero-form-card">
       <div class="hfc-head">
