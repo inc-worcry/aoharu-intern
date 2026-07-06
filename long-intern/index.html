@@ -631,6 +631,60 @@ footer p{font-size:13px;color:var(--muted)}
   .study-item p{font-size:13px}
 }
 
+
+/* ============ MOBILE 微調整 v4（スマホ・バッチ調整） ============ */
+.cmp-scroll-hint{display:none}
+@media(max-width:860px){
+  /* FV LINE：バッジ表示／4587は緑／承諾率カードは青・高さ揃え・ラベル1行 */
+  .line-icon{display:inline-block !important;grid-column:1 / -1;width:fit-content;font-size:10.5px;font-weight:900;color:#fff;background:#06C755;padding:3px 9px;border-radius:5px;letter-spacing:.04em;margin:0 0 2px}
+  .line-stats{align-items:stretch}
+  .line-stat{height:100%;justify-content:center}
+  .line-stat:first-of-type{border:1.5px solid #06C755;border-top:3px solid #06C755}
+  .line-stat:first-of-type .line-num{color:#059862}
+  .line-stat:last-of-type{border:1px solid var(--line);border-top:3px solid var(--blue)}
+  .line-lbl{font-size:10px;line-height:1.35;margin-top:4px}
+  .line-stat:last-of-type .line-lbl{white-space:nowrap;font-size:9.5px}
+  /* FV→ポケくんの余白を詰める */
+  .hero-body{padding-bottom:22px}
+  .poke-bridge{margin-top:0}
+  /* CONCEPT 本文を小さく */
+  .concept-head .c-body,.c-body{font-size:13px;line-height:1.72}
+  /* DIFF：AOHARUを上・一般を下 */
+  .diff-cols{display:flex;flex-direction:column;gap:14px}
+  .diff-card.win{order:-1}
+  .diff-card{padding:22px 20px}
+  /* 比較表：小さく＋スクロール明示 */
+  .cmp-scroll-hint{display:block;font-size:11px;color:var(--blue);font-weight:700;text-align:right;margin:0 0 8px}
+  .cmp-grid{min-width:600px;grid-template-columns:1fr 1.2fr 1fr 1fr}
+  .cmp-h{font-size:11.5px;padding:12px 6px}
+  .cmp-h.b{font-size:12px}
+  .cmp-c{font-size:10px;padding:11px 6px;line-height:1.45}
+  .cmp-c.lbl{font-size:11px}
+  .cmp-mark{font-size:17px;margin-bottom:3px}
+  /* SERVICE 本文を小さく・コンパクト */
+  .svc-row{padding:16px 0;gap:12px}
+  .svc-row h3{font-size:15px}
+  .svc-row p{font-size:12.5px;line-height:1.62}
+  .svc-n{font-size:30px;min-width:40px}
+  /* FLOW 本文を小さく */
+  .flow-wrap{gap:16px 10px;margin-top:24px}
+  .f-ttl{font-size:13.5px;margin-bottom:4px}
+  .f-body{font-size:12px;line-height:1.55}
+  .f-dot{margin-bottom:10px}
+  /* 全体さらにコンパクト */
+  .sec,.cta-sec{padding:42px 0}
+  .sl{margin-bottom:20px}
+}
+@media(max-width:640px){
+  .sec,.cta-sec{padding:36px 0}
+  .cmp-grid{min-width:560px}
+  .cmp-c{font-size:9.5px}
+}
+@media(max-width:480px){
+  .sec,.cta-sec{padding:30px 0}
+  .cmp-grid{min-width:520px;grid-template-columns:.9fr 1.15fr .95fr .95fr}
+}
+
 </style>
 </head>
 <body>
@@ -664,7 +718,7 @@ footer p{font-size:13px;color:var(--muted)}
         <div class="line-div"></div>
         <div class="line-stat">
           <span class="line-num">56<small>% 承諾率</small></span>
-          <span class="line-lbl">面談実施してからの内定承諾率</span>
+          <span class="line-lbl">面談実施からの内定承諾率</span>
         </div>
       </div>
       <div class="line-asof">※ LINE登録数は2026年7月現在</div>
@@ -768,7 +822,7 @@ footer p{font-size:13px;color:var(--muted)}
     <div class="concept-head">
       <div class="stag">CONCEPT ／ サービスの考え方</div>
       <h2 class="sh">“未来の仲間”と一緒に、<br>会社も育つ。</h2>
-      <p class="c-body">成長意欲の高い大学1・2年生だけを厳選し、スタートアップ・ベンチャー企業へご紹介。<br>早期から育て、長く関わる——“成長支援型”の長期インターン紹介サービスです。</p>
+      <p class="c-body">成長意欲の高い大学1・2年生だけを厳選し、<br>スタートアップ・ベンチャー企業へご紹介。早期から育て、長く関わる——<br>“成長支援型”の長期インターン紹介サービスです。</p>
     </div>
     <div class="concept-cards-row">
       <div class="cc2"><div class="cc2-en">EARLY</div><h3>大学1・2年生に特化</h3><p>就活が本格化する前の早い段階で、行動力・成長意欲の高い優秀層と接点を持てます。</p></div>
@@ -817,6 +871,7 @@ footer p{font-size:13px;color:var(--muted)}
     <div class="stag">COMPARISON ／ 比較</div>
     <h2 class="sh">「ここまでやる」紹介会社は、<br>多くありません。</h2>
     <p class="sl">紹介前に“全員”と面談する。入社後の定着まで伴走する。<br>大学1・2年生に特化し、中長期にわたって腰を据えて働ける学生だけを厳選してご紹介します。</p>
+    <p class="cmp-scroll-hint">← 横スクロールで比較 →</p>
     <div class="cmp">
       <div class="cmp-grid">
         <div class="cmp-h lbl">比較項目</div>
@@ -1004,10 +1059,10 @@ footer p{font-size:13px;color:var(--muted)}
   <path d="M126,188 L130,214" stroke="#fff" stroke-width="9" fill="none" stroke-linecap="round"/>
   <ellipse cx="88" cy="220" rx="15" ry="8.5" fill="#4C6699" stroke="#233A63" stroke-width="3.5"/>
   <ellipse cx="134" cy="220" rx="15" ry="8.5" fill="#4C6699" stroke="#233A63" stroke-width="3.5"/>
-  <path d="M164,150 Q190,118 198,92" stroke="#233A63" stroke-width="16" fill="none" stroke-linecap="round"/>
-  <path d="M164,150 Q190,118 198,92" stroke="#fff" stroke-width="9" fill="none" stroke-linecap="round"/>
-  <path d="M58,150 Q32,118 24,92" stroke="#233A63" stroke-width="16" fill="none" stroke-linecap="round"/>
-  <path d="M58,150 Q32,118 24,92" stroke="#fff" stroke-width="9" fill="none" stroke-linecap="round"/>
+  <path d="M164,150 Q200,152 212,134" stroke="#233A63" stroke-width="16" fill="none" stroke-linecap="round"/>
+  <path d="M164,150 Q200,152 212,134" stroke="#fff" stroke-width="9" fill="none" stroke-linecap="round"/>
+  <path d="M58,150 Q22,152 10,134" stroke="#233A63" stroke-width="16" fill="none" stroke-linecap="round"/>
+  <path d="M58,150 Q22,152 10,134" stroke="#fff" stroke-width="9" fill="none" stroke-linecap="round"/>
   <path d="M53,88 H167 L159,168 Q159,207 110,207 Q61,207 61,168 Z" fill="#6E90C9" stroke="#233A63" stroke-width="4" stroke-linejoin="round"/>
   <path d="M66,98 V163 Q66,196 110,196 Q154,196 154,163 V98" fill="none" stroke="#CFE0F5" stroke-width="2.2" stroke-dasharray="5 6" stroke-linecap="round"/>
   <path d="M50,62 H170 Q175,62 175,67 V92 Q175,97 170,97 H50 Q45,97 45,92 V67 Q45,62 50,62 Z" fill="#7C9BD0" stroke="#233A63" stroke-width="4"/>
