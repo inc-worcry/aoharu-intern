@@ -583,6 +583,30 @@ footer p{font-size:13px;color:var(--muted)}
   .s-item{padding:22px 12px}
 }
 
+
+/* --- FV/コンパクト微調整 v3.1（コンセプトは縦積み・余白さらに圧縮） --- */
+@media(max-width:860px){
+  /* サービスコンセプトだけ横スクロールをやめ、縦1列に */
+  .concept-cards-row{display:flex !important;flex-direction:column;gap:14px;overflow:visible;margin:0 !important;padding:0 !important}
+  .concept-cards-row>*{flex:0 0 auto !important;width:100%}
+  /* 余白をさらに削ってコンパクトに */
+  .sec{padding:48px 0}
+  .cta-sec{padding:48px 0}
+  .hero-body{padding:18px 1.5rem 40px}
+  .sl{margin-bottom:22px}
+  /* FVサブ文：若干小さく＋2行の改行を活かす */
+  .hero-quote-sub{font-size:13.5px;line-height:1.7}
+  .hero-quote-sub br{display:inline}
+}
+@media(max-width:640px){
+  .sec,.cta-sec{padding:40px 0}
+  .hero-quote-sub{font-size:13px}
+}
+@media(max-width:480px){
+  .sec,.cta-sec{padding:32px 0}
+  .hero-body{padding:16px 1rem 36px}
+}
+
 </style>
 </head>
 <body>
@@ -616,7 +640,7 @@ footer p{font-size:13px;color:var(--muted)}
         <div class="line-div"></div>
         <div class="line-stat">
           <span class="line-num">56<small>% 承諾率</small></span>
-          <span class="line-lbl">面接実施からの内定承諾率</span>
+          <span class="line-lbl">面談実施してからの内定承諾率</span>
         </div>
       </div>
       <div class="line-asof">※ LINE登録数は2026年7月現在</div>
