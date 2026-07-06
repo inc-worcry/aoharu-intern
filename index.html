@@ -1487,11 +1487,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
       <div class="hfc-body">
         <div class="hfc-row2">
-          <div class="hfc-fl"><label>会社名</label><input class="hfc-fi" type="text" name="company" placeholder="株式会社○○"></div>
-          <div class="hfc-fl"><label>お名前</label><input class="hfc-fi" type="text" name="name" placeholder="山田 太郎"></div>
+          <div class="hfc-fl"><label>会社名</label><input class="hfc-fi" type="text" name="company" placeholder="株式会社○○" required></div>
+          <div class="hfc-fl"><label>お名前</label><input class="hfc-fi" type="text" name="name" placeholder="山田 太郎" required></div>
         </div>
-        <div class="hfc-fl"><label>メールアドレス</label><input class="hfc-fi" type="email" name="email" placeholder="taro@company.co.jp"></div>
-        <div class="hfc-fl"><label>電話番号</label><input class="hfc-fi" type="tel" name="tel" placeholder="03-0000-0000"></div>
+        <div class="hfc-fl"><label>メールアドレス</label><input class="hfc-fi" type="email" name="email" placeholder="taro@company.co.jp" required></div>
+        <div class="hfc-fl"><label>電話番号</label><input class="hfc-fi" type="tel" name="tel" placeholder="03-0000-0000" required></div>
         <div class="hfc-fl"><label>備考（任意）</label><textarea class="hfc-fi" name="message" rows="2" placeholder="資料請求・個別相談など"></textarea></div>
         <label class="pp-check"><input type="checkbox" id="hfc-agree"> <a href="https://www.worcry.com/privacy-policy" target="_blank" rel="noopener">プライバシーポリシー</a>に同意する</label><button class="hfc-submit" id="hfc-btn" type="button" onclick="submitHfc()">資料請求する →</button>
         <div id="hfc-done" style="display:none;color:#2a7a3b;font-size:13px;font-weight:700;text-align:center;padding:8px 0;">✅ 送信しました！担当者より連絡いたします。</div>
@@ -2265,12 +2265,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </svg></div>
     <form class="cta-form" id="cta-form" onsubmit="submitCta(event)">
       <div class="fl2">
-        <div class="fl"><label>会社名</label><input class="fi" type="text" name="company" placeholder="株式会社○○"></div>
-        <div class="fl"><label>お名前</label><input class="fi" type="text" name="name" placeholder="山田 太郎"></div>
+        <div class="fl"><label>会社名</label><input class="fi" type="text" name="company" placeholder="株式会社○○" required></div>
+        <div class="fl"><label>お名前</label><input class="fi" type="text" name="name" placeholder="山田 太郎" required></div>
       </div>
       <div class="fl2">
-        <div class="fl"><label>メールアドレス</label><input class="fi" type="email" name="email" placeholder="taro@company.co.jp"></div>
-        <div class="fl"><label>電話番号</label><input class="fi" type="tel" name="tel" placeholder="03-0000-0000"></div>
+        <div class="fl"><label>メールアドレス</label><input class="fi" type="email" name="email" placeholder="taro@company.co.jp" required></div>
+        <div class="fl"><label>電話番号</label><input class="fi" type="tel" name="tel" placeholder="03-0000-0000" required></div>
       </div>
       <div class="fl"><label>備考（任意）</label><textarea class="fi" name="message" rows="3" placeholder="資料請求・個別相談など、お気軽にどうぞ"></textarea></div>
       <label class="pp-check"><input type="checkbox" id="cta-agree"> <a href="https://www.worcry.com/privacy-policy" target="_blank" rel="noopener">プライバシーポリシー</a>に同意する</label><button class="fi-submit" type="submit">資料請求する</button>
@@ -2368,7 +2368,7 @@ function trackDlClick() {
 function submitHfc() {
   if (!document.getElementById('hfc-agree').checked) { alert('プライバシーポリシーへの同意が必要です。'); return; }
   const data = collectForm('hfc');
-  if (!data.company || !data.email) { alert('会社名とメールアドレスは必須です。'); return; }
+  if (!data.company || !data.name || !data.email || !data.tel) { alert('会社名・お名前・メールアドレス・電話番号は必須です。'); return; }
   sendToGas(data, 'hfc-done', 'hfc-note', 'hfc-btn');
 }
 
@@ -2376,7 +2376,7 @@ function submitCta(e) {
   e.preventDefault();
   if (!document.getElementById('cta-agree').checked) { alert('プライバシーポリシーへの同意が必要です。'); return; }
   const data = collectForm('cta');
-  if (!data.company || !data.email) { alert('会社名とメールアドレスは必須です。'); return; }
+  if (!data.company || !data.name || !data.email || !data.tel) { alert('会社名・お名前・メールアドレス・電話番号は必須です。'); return; }
   sendToGas(data, 'cta-done', 'cta-note', null);
 }
 </script>
