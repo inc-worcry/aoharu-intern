@@ -700,6 +700,28 @@ footer p{font-size:13px;color:var(--muted)}
   .poke-bridge svg{width:64px !important}
 }
 
+
+/* --- v4.3 FV以外の文字をスマホで一段縮小（約0.5〜1px） --- */
+@media(max-width:860px){
+  .sh,.concept-head .sh{font-size:clamp(1.6rem,5.3vw,2.05rem)}
+  .stag{font-size:10.5px}
+  .sl,.study-lead{font-size:13.5px;line-height:1.75}
+  .cc2 p,.svc-row p{font-size:13px}
+  .c-body,.prob-card p,.me-card p,.slim2 p,.cy-body,.pi p,.study-item p{font-size:12.5px}
+  .cc2 h3{font-size:16px}
+  .prob-card h3{font-size:16px}
+  .svc-row h3{font-size:15px}
+  .dstep{font-size:14px}
+  .f-ttl{font-size:13px}
+  .f-body{font-size:11.5px}
+  .cmp-c{font-size:9.5px}
+  .cmp-c.lbl{font-size:10.5px}
+  .study-item p{font-size:12.5px}
+}
+@media(max-width:480px){
+  .sh,.concept-head .sh{font-size:clamp(1.45rem,5.8vw,1.72rem)}
+}
+
 </style>
 </head>
 <body>
