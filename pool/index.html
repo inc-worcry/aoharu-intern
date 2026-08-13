@@ -336,6 +336,66 @@ footer{background:#0F1018;color:rgba(255,255,255,.7);padding:52px 0 30px;font-si
 .pr-note{font-size:11px;color:var(--sub);margin-top:14px;text-align:center;line-height:1.7}
 @media(max-width:900px){.price-grid{grid-template-columns:1fr;gap:26px}.pr-cards{grid-template-columns:1fr}}
 
+
+/* ==== FV (BizReach-style) ==== */
+.hero{padding:60px 0 54px;color:#fff;background:
+  radial-gradient(120% 130% at 92% 0%,rgba(247,148,29,.5),transparent 52%),
+  radial-gradient(90% 90% at 4% 100%,rgba(255,255,255,.12),transparent 55%),
+  linear-gradient(118deg,#0C79B0 0%,#1B95CE 46%,#F5900F 120%)}
+.hero-grid{grid-template-columns:1fr 430px;gap:44px;align-items:center}
+.hero-left{max-width:600px}
+.hero .eyebrow{background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.3);color:#fff;box-shadow:none;backdrop-filter:blur(4px)}
+.hero h1.hero-term{color:#fff;margin:18px 0 4px;text-shadow:0 2px 18px rgba(0,0,0,.12)}
+.hero .grad-text{background:none!important;-webkit-text-fill-color:#FFE39A;color:#FFE39A}
+.hero .acc-haru{color:#FFE39A}
+.hero .term-en{color:rgba(255,255,255,.82)}
+.hero-oneline{font-size:clamp(14px,1.7vw,17px);font-weight:600;color:rgba(255,255,255,.95);margin:8px 0 26px;line-height:1.75}
+.hm-divider{width:64px;height:3px;background:rgba(255,255,255,.65);border-radius:3px;margin:2px 0 18px}
+.hm-row{display:flex;gap:40px;flex-wrap:wrap}
+.hm{display:flex;flex-direction:column;gap:3px}
+.hm-l{font-size:12px;font-weight:700;color:rgba(255,255,255,.9)}
+.hm-n{font-weight:900;font-size:clamp(32px,4.6vw,50px);line-height:1;color:#FFE7BD}
+.hm-n .u{font-size:.4em;margin-left:3px;font-weight:800}
+.hm-note{font-size:11px;color:rgba(255,255,255,.72);margin-top:12px}
+.hero-right .formcard{max-width:430px;margin-left:auto}
+.form-badge{margin-bottom:14px;line-height:1.9}
+.form-badge span{font-weight:800;font-size:14.5px;background:linear-gradient(transparent 58%,rgba(41,171,226,.24) 58%);padding:1px 3px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.form-badge b{color:var(--haru-d);font-size:1.12em}
+.pstep-lbl{text-align:right;margin:5px 0 15px}
+.fstep select{width:100%;padding:13px 15px;border:1.5px solid var(--line);border-radius:12px;font-size:15px;font-family:inherit;color:var(--ink);background:#fff}
+.fstep select:focus{outline:none;border-color:var(--ao);box-shadow:0 0 0 4px rgba(41,171,226,.12)}
+@media(max-width:860px){.hero-grid{grid-template-columns:1fr;gap:30px}.hero-right .formcard{margin:0 auto}.hero-left{max-width:none}}
+/* ==== FV service bars ==== */
+.fvbars{background:#fff;padding:26px 0}
+.fvbars-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.fvbar{position:relative;display:block;border-radius:16px;padding:22px 54px 22px 26px;color:#fff;overflow:hidden;transition:.25s;box-shadow:var(--shadow-sm)}
+.fvbar.long{background:linear-gradient(135deg,#29ABE2,#1E8FC4)}
+.fvbar.shin{background:linear-gradient(135deg,#F7941D,#E07E0A)}
+.fvbar:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.fvbar-h{display:block;font-size:18px;font-weight:900}
+.fvbar-s{display:block;font-size:12px;font-weight:600;opacity:.92;margin-top:5px}
+.fvbar-arw{position:absolute;right:24px;top:50%;transform:translateY(-50%);font-size:20px;font-weight:900}
+@media(max-width:820px){.fvbars-grid{grid-template-columns:1fr}}
+/* ==== about narrative ==== */
+.about-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center}
+.about-copy p{font-size:15px;font-weight:500;color:#33384a;line-height:1.95;margin-bottom:16px}
+.about-copy p b{color:var(--ink)}
+.about-copy b.grad-text{font-weight:900}
+.about-punch{font-size:clamp(16px,1.9vw,19px)!important;font-weight:700!important;color:var(--ink)!important;line-height:1.85!important;border-left:4px solid var(--ao);padding-left:18px;margin-top:24px!important}
+.about-punch b{color:var(--ao-d)}
+.about-media{display:flex;flex-direction:column;gap:18px}
+.about-photo{width:100%;border-radius:18px;box-shadow:var(--shadow);object-fit:cover;aspect-ratio:3/2}
+@media(max-width:860px){.about-grid{grid-template-columns:1fr;gap:30px}}
+/* ==== modal 料金表 ==== */
+.modal{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;padding:20px}
+.modal.open{display:flex}
+.modal-bg{position:absolute;inset:0;background:rgba(15,16,24,.62)}
+.modal-card{position:relative;background:#fff;border-radius:20px;max-width:660px;width:100%;max-height:88vh;overflow:auto;padding:30px 28px 26px;box-shadow:0 40px 90px -30px rgba(0,0,0,.5);animation:pop .3s}
+@keyframes pop{from{opacity:0;transform:translateY(16px) scale(.98)}to{opacity:1;transform:none}}
+.modal-x{position:absolute;top:14px;right:16px;background:var(--bg2);border:0;width:34px;height:34px;border-radius:50%;font-size:20px;color:var(--sub);cursor:pointer;line-height:1}
+.modal-x:hover{background:#e7ecf2}
+.modal-title{font-size:20px;font-weight:900;text-align:center;margin:2px 0 16px}
+
 </style>
 </head>
 <body>
@@ -349,13 +409,13 @@ footer{background:#0F1018;color:rgba(255,255,255,.7);padding:52px 0 30px;font-si
     <nav class="nav-links">
       <a href="#about">とは</a>
       <a href="#services">2つのサービス</a>
-      <a href="#pricing">料金表</a>
+      <a href="#top">料金表</a>
       <a href="#data">実績</a>
       <a href="#faq">FAQ</a>
     </nav>
     <div class="nav-cta">
       <a href="#services" class="btn btn-ghost btn-sm">サービスを見る</a>
-      <a href="#pricing" class="btn btn-primary btn-sm">30秒で料金表</a>
+      <a href="#top" class="btn btn-primary btn-sm">30秒で料金表</a>
     </div>
     <button class="hamb" id="hamb" aria-label="menu"><span></span><span></span><span></span></button>
   </div>
@@ -363,154 +423,118 @@ footer{background:#0F1018;color:rgba(255,255,255,.7);padding:52px 0 30px;font-si
 <div class="mmenu" id="mmenu">
   <a href="#about">新卒タレントプール採用とは</a>
   <a href="#services">2つのサービス</a>
-  <a href="#pricing">料金表（30秒で公開）</a>
+  <a href="#top">料金表（30秒で公開）</a>
   <a href="#data">実績データ</a>
   <a href="#voice">導入企業の声</a>
   <a href="#faq">よくある質問</a>
-  <a href="#pricing" class="btn btn-primary">30秒入力で料金表を見る</a>
+  <a href="#top" class="btn btn-primary">30秒入力で料金表を見る</a>
 </div>
 
 <!-- ===== HERO ===== -->
 <section class="hero" id="top">
   <div class="wrap hero-grid">
-    <div>
+    <div class="hero-left">
       <span class="eyebrow">WorCry が提唱する、新しい採用のかたち</span>
       <h1 class="hero-term">新卒<span class="grad-text">タレントプール</span>採用<span class="acc-haru">。</span></h1>
       <span class="term-en">SHINSOTSU TALENT-POOL RECRUITING</span>
-      <p class="lead"><b>“見込みで採る”</b>を、終わらせる。就活が始まる<b>前</b>——大学1・2年から、学生と企業が一緒に働き、確かめ合う。母集団を毎年ゼロから集めるのではなく、<b>年々積み上がる“資産”に。</b>フロー型から、ストック型の新卒採用へ。</p>
-      <div class="hero-cta">
-        <a href="#pricing" class="btn btn-primary btn-lg">30秒入力で料金表を見る →</a>
-        <a href="#services" class="btn btn-ghost btn-lg">2つのサービスを見る</a>
-      </div>
-      <div class="trust">
-        <span class="stars">★★★★★</span>
-        <span>内定承諾率 <b>56%</b> ／ LINE登録 <b>4,587名</b> ── もう始めている企業があります。</span>
+      <p class="hero-oneline">“見込みで採る”を、終わらせる。<br>大学1・2年から確かめ合う、ストック型の新卒採用へ。</p>
+      <div class="hero-metric">
+        <div class="hm-divider"></div>
+        <div class="hm-row">
+          <div class="hm"><span class="hm-l">確かめ合う母集団 ／ LINE登録</span><span class="hm-n">4,587<span class="u">名</span></span></div>
+          <div class="hm"><span class="hm-l">面談 → 内定承諾率</span><span class="hm-n">56<span class="u">%</span></span></div>
+        </div>
+        <div class="hm-note">※2026年7月現在</div>
       </div>
     </div>
-
-    <div class="hero-visual">
-      <div class="pool-card">
-        <h4>TALENT POOL <span class="pool-sub">— 年々積み上がる、確かめ合った母集団</span></h4>
-        <svg class="pool-svg" viewBox="0 0 460 250" xmlns="http://www.w3.org/2000/svg" aria-label="タレントプールの積み上がりイメージ">
-          <defs>
-            <linearGradient id="g" x1="0" y1="0" x2="1" y2="0">
-              <stop offset="0" stop-color="#29ABE2"/><stop offset="1" stop-color="#F7941D"/>
-            </linearGradient>
-          </defs>
-          <!-- baseline -->
-          <line x1="30" y1="210" x2="440" y2="210" stroke="#E7ECF2" stroke-width="2"/>
-          <!-- stage labels -->
-          <text x="70" y="234" text-anchor="middle" font-size="11" fill="#5B6472" font-weight="700">大学1・2年</text>
-          <text x="185" y="234" text-anchor="middle" font-size="11" fill="#5B6472" font-weight="700">3年 夏</text>
-          <text x="300" y="234" text-anchor="middle" font-size="11" fill="#5B6472" font-weight="700">本選考</text>
-          <text x="410" y="234" text-anchor="middle" font-size="11" fill="#5B6472" font-weight="700">入社</text>
-          <!-- rising bars -->
-          <rect x="46" y="150" width="48" height="60" rx="7" fill="#29ABE2" opacity=".22"/>
-          <rect x="161" y="118" width="48" height="92" rx="7" fill="#29ABE2" opacity=".38"/>
-          <rect x="276" y="86" width="48" height="124" rx="7" fill="#F7941D" opacity=".38"/>
-          <rect x="386" y="54" width="48" height="156" rx="7" fill="url(#g)"/>
-          <!-- rising curve -->
-          <path d="M70 150 Q120 140 185 118 T300 86 T410 54" fill="none" stroke="url(#g)" stroke-width="3.5" stroke-linecap="round"/>
-          <circle cx="70" cy="150" r="6" fill="#29ABE2"/>
-          <circle cx="185" cy="118" r="6" fill="#29ABE2"/>
-          <circle cx="300" cy="86" r="6" fill="#F7941D"/>
-          <circle cx="410" cy="54" r="7" fill="#F7941D" stroke="#fff" stroke-width="2.5"/>
-          <!-- title -->
-          <text x="30" y="30" font-size="13" fill="#1A1A2A" font-weight="900">確かめ合うほど、母集団は“資産”になる</text>
-          <text x="30" y="48" font-size="10.5" fill="#5B6472">育てて → 繋ぐ</text>
-        </svg>
-        <div class="metric-row">
-          <div class="metric"><div class="n ao">4,587<span style="font-size:.5em">名</span></div><div class="l">LINE登録者数</div></div>
-          <div class="metric"><div class="n haru">56<span style="font-size:.5em">%</span></div><div class="l">面談→内定承諾率</div></div>
-          <div class="metric"><div class="n ao">92<span style="font-size:.5em">名</span></div><div class="l">採用決定数</div></div>
-        </div>
+    <div class="hero-right">
+      <div class="formcard" id="formcard">
+        <div class="form-badge"><span><b>30秒</b>のかんたん入力で料金表を見られます</span></div>
+        <div class="pbar"><i id="pbar"></i></div>
+        <div class="pstep-lbl" id="pstepLbl">1 / 5</div>
+        <form id="leadForm" autocomplete="on" novalidate>
+          <div class="fstep on" data-step="1">
+            <label for="role">あなたの役職を選択してください</label>
+            <select id="role" name="role" required>
+              <option value="">選択してください</option>
+              <option>経営者・役員</option>
+              <option>人事・採用担当</option>
+              <option>現場マネージャー</option>
+              <option>その他</option>
+            </select>
+          </div>
+          <div class="fstep" data-step="2"><label for="company">会社名</label><input id="company" type="text" placeholder="株式会社◯◯" required></div>
+          <div class="fstep" data-step="3"><label for="name">お名前</label><input id="name" type="text" placeholder="山田 太郎" required></div>
+          <div class="fstep" data-step="4"><label for="email">メールアドレス</label><input id="email" type="email" placeholder="you@example.com" required><span class="hint">料金表の閲覧・資料の送付先として利用します</span></div>
+          <div class="fstep" data-step="5"><label for="tel">電話番号（任意）</label><input id="tel" type="tel" placeholder="09012345678"><label class="consent"><input type="checkbox" id="agree" required><span>個人情報の取り扱いに同意します。</span></label></div>
+          <div class="frow">
+            <button type="button" class="fbtn back" id="backBtn" style="display:none">←</button>
+            <button type="button" class="fbtn next" id="nextBtn">次へ →</button>
+          </div>
+        </form>
       </div>
     </div>
   </div>
 </section>
+
+<!-- under-hero service bars -->
+<div class="fvbars">
+  <div class="wrap fvbars-grid">
+    <a class="fvbar long" href="https://aoharu-intern.worcry.com/long-intern/">
+      <span class="fvbar-h">長期インターン紹介はこちら</span>
+      <span class="fvbar-s">大学1〜2年特化・採用直結型 ／ AOHARUインターン</span>
+      <span class="fvbar-arw">→</span>
+    </a>
+    <a class="fvbar shin" href="https://aoharu-intern.worcry.com/">
+      <span class="fvbar-h">新卒採用支援はこちら</span>
+      <span class="fvbar-s">2年秋冬インターン → 本選考接続 ／ 会って、育てて、つなぐ</span>
+      <span class="fvbar-arw">→</span>
+    </a>
+  </div>
+</div>
 
 <!-- ===== ABOUT (とは) ===== -->
 <section class="blk" id="about">
   <div class="wrap">
-    <div class="define reveal">
-      <div class="define-head">
-        <span class="kicker">What is it?</span>
-        <h2>「新卒<span class="grad-text">タレントプール</span>採用」とは。</h2>
+    <div class="sec-head reveal" style="margin-bottom:42px">
+      <span class="kicker">What is Talent Pool?</span>
+      <h2>そもそも、「<span class="grad-text">タレントプール</span>」とは。</h2>
+      <p>この考え方こそ、これからの新卒採用に必要だと考えました。</p>
+    </div>
+    <div class="about-grid">
+      <div class="about-copy reveal">
+        <p><b>タレントプール（Talent Pool）</b>とは、いますぐ採用しないとしても、<b>「いつか一緒に働きたい人材」とつながり続け、関係を育てておく“人材の貯蔵庫”</b>のこと。中途採用では、いい人がいたら会っておく・つながっておくのが、当たり前になってきました。</p>
+        <p>では、新卒は?——多くの企業はいまも、3年生の解禁後に<b>ゼロから母集団を集め</b>、数回の面接と限られた情報で「合うはず」と<b>見込みで採って</b>います。だから「入ってみたら違った」が起き、内定辞退も早期離職も、その“ずれ”から生まれる。</p>
+        <p>もし、その“貯蔵庫”の発想を<b>新卒にも</b>持ち込めたら?——就活が始まる<b>前</b>、大学1・2年からつながり、一緒に働き、対話し、時間をかけて確かめ合う。母集団は毎年ゼロからではなく、<b class="grad-text">年々積み上がる“資産”</b>になる。</p>
+        <p class="about-punch">私たちは、そう考えました。<br>「本当に合うのか」を、賭けずに、確かめる。<br>それこそ、これからの時代に必要な新卒採用だと。<br><b>——それが、新卒タレントプール採用。</b></p>
       </div>
-      <div class="define-body">
-        <p class="define-lead">新卒採用の多くは、数回の面接と限られた情報で「合うはず」と信じて、採るかどうかを決めている。だから、<b>「入ってみたら違った」</b>が起きる。内定辞退も、早期離職も、その“ずれ”の結果だ。</p>
-        <p class="define-lead">私たちは、そのずれを、入社の<b>“前”</b>になくしたい。就活が始まる前——大学1・2年から、学生と企業が、少しずつ知り合う。一緒に働き、対話し、時間をかけて確かめ合う。<b>「本当に合うのか」を、賭けずに、確かめる。</b></p>
-        <p class="define-lead">母集団は、毎年ゼロから集め直すものではなく、1・2年から育て、年々積み上がる<b class="grad-text">“資産”</b>になる。<br>それが、<b>新卒タレントプール採用。</b></p>
-      </div>
-      <div class="define-cards">
-        <div class="dc reveal"><span class="dc-n">01</span><b>確かめて、採る</b><span class="d">見込みではなく、一緒に働いて見極める。素顔でマッチング。</span></div>
-        <div class="dc reveal"><span class="dc-n">02</span><b>育てて、繋ぐ</b><span class="d">1・2年から関係を育て、本選考・入社・戦力化まで伴走。</span></div>
-        <div class="dc reveal"><span class="dc-n">03</span><b>資産に、する</b><span class="d">母集団は毎年ゼロからではなく、年々積み上がる採用資産へ。</span></div>
+      <div class="about-media reveal">
+        <div class="pool-card">
+          <h4>TALENT POOL <span class="pool-sub">年々積み上がる、確かめ合った母集団</span></h4>
+          <svg class="pool-svg" viewBox="0 0 460 250" xmlns="http://www.w3.org/2000/svg" aria-label="タレントプールの積み上がりイメージ">
+            <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#29ABE2"/><stop offset="1" stop-color="#F7941D"/></linearGradient></defs>
+            <line x1="30" y1="210" x2="440" y2="210" stroke="#E7ECF2" stroke-width="2"/>
+            <text x="70" y="234" text-anchor="middle" font-size="11" fill="#5B6472" font-weight="700">大学1・2年</text>
+            <text x="185" y="234" text-anchor="middle" font-size="11" fill="#5B6472" font-weight="700">3年 夏</text>
+            <text x="300" y="234" text-anchor="middle" font-size="11" fill="#5B6472" font-weight="700">本選考</text>
+            <text x="410" y="234" text-anchor="middle" font-size="11" fill="#5B6472" font-weight="700">入社</text>
+            <rect x="46" y="150" width="48" height="60" rx="7" fill="#29ABE2" opacity=".22"/>
+            <rect x="161" y="118" width="48" height="92" rx="7" fill="#29ABE2" opacity=".38"/>
+            <rect x="276" y="86" width="48" height="124" rx="7" fill="#F7941D" opacity=".38"/>
+            <rect x="386" y="54" width="48" height="156" rx="7" fill="url(#g)"/>
+            <path d="M70 150 Q120 140 185 118 T300 86 T410 54" fill="none" stroke="url(#g)" stroke-width="3.5" stroke-linecap="round"/>
+            <circle cx="70" cy="150" r="6" fill="#29ABE2"/><circle cx="185" cy="118" r="6" fill="#29ABE2"/>
+            <circle cx="300" cy="86" r="6" fill="#F7941D"/><circle cx="410" cy="54" r="7" fill="#F7941D" stroke="#fff" stroke-width="2.5"/>
+            <text x="30" y="30" font-size="13" fill="#1A1A2A" font-weight="900">確かめ合うほど、母集団は“資産”になる</text>
+            <text x="30" y="48" font-size="10.5" fill="#5B6472">育てて → 繋ぐ</text>
+          </svg>
+        </div>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- ===== WHY / Flow vs Stock ===== -->
-<section class="blk tint" id="why">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="kicker">Flow → Stock</span>
-      <h2>なぜ、いま「タレントプール」なのか</h2>
-      <p>内定辞退も、早期離職も、多くは入社“前”に生まれた“ずれ”の結果。私たちはそのずれを、<b>入社の前になくす</b>。従来の新卒採用との違いは、たったひとつの発想の転換にあります。</p>
-    </div>
-    <div class="compare">
-      <div class="cmp cmp-old reveal">
-        <span class="tagline">従来の新卒採用</span>
-        <h3>フロー型</h3>
-        <p class="oneline">集めて、選ぶ。</p>
-        <ul>
-          <li><span class="ic">×</span><span>3年解禁後に、毎年ゼロから母集団を集め直す</span></li>
-          <li><span class="ic">×</span><span>数回の面接と限られた情報で「合うはず」と<b style="color:#9aa3af">見込みで採る</b></span></li>
-          <li><span class="ic">×</span><span>“いい顔”をした面接だけでは、素顔が見えない</span></li>
-          <li><span class="ic">×</span><span>入ってみたら違った → 内定辞退・早期離職に</span></li>
-        </ul>
-      </div>
-      <div class="vs-badge">VS</div>
-      <div class="cmp cmp-new reveal">
-        <span class="tagline">新卒タレントプール採用</span>
-        <h3>ストック型</h3>
-        <p class="oneline">育てて、繋ぐ。</p>
-        <ul>
-          <li><span class="ic">◎</span><span>大学1・2年から母集団を<b>“資産”として積み上げる</b></span></li>
-          <li><span class="ic">◎</span><span>一緒に働き、対話し、時間をかけて<b>確かめて採る</b></span></li>
-          <li><span class="ic">◎</span><span>素顔でマッチング。仮面を被らない状態で見極める</span></li>
-          <li><span class="ic">◎</span><span>初日から、もう戦力で、もう馴染んでいる</span></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== PROBLEMS ===== -->
-<section class="blk" id="problem">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="kicker">Issues</span>
-      <h2>こんな採用課題、ありませんか？</h2>
-      <p>大手・準大手・メガベンチャーが、いま直面している“構造的な”課題。</p>
-    </div>
-    <div class="prob-grid">
-      <div class="prob reveal">
-        <div class="no">01</div>
-        <h3>優秀層との接点不足</h3>
-        <p>秋冬インターンから動く早期学生にリーチできていない。本選考解禁時には、優秀層はもう他社に囲われている。自社に合う有効母集団の形成が年々難しい。</p>
-      </div>
-      <div class="prob reveal">
-        <div class="no">02</div>
-        <h3>選考後の離脱・内定辞退</h3>
-        <p>競合と横並びの選考では志望度が高まりにくく、優秀層ほど他社へ流れる。アトラクト不足で、条件や知名度争いに巻き込まれてしまう。</p>
-      </div>
-      <div class="prob reveal">
-        <div class="no">03</div>
-        <h3>採用工数の増大</h3>
-        <p>インターン設計・学生フォロー・エージェント管理・スカウト送信と工数は膨らむ一方。限られたチームリソースでは回しきれない。</p>
-      </div>
+    <div class="define-cards" style="margin-top:44px">
+      <div class="dc reveal"><span class="dc-n">01</span><b>確かめて、採る</b><span class="d">見込みではなく、一緒に働いて見極める。素顔でマッチング。</span></div>
+      <div class="dc reveal"><span class="dc-n">02</span><b>育てて、繋ぐ</b><span class="d">1・2年から関係を育て、本選考・入社・戦力化まで伴走。</span></div>
+      <div class="dc reveal"><span class="dc-n">03</span><b>資産に、する</b><span class="d">母集団は毎年ゼロからではなく、年々積み上がる採用資産へ。</span></div>
     </div>
   </div>
 </section>
@@ -589,127 +613,6 @@ footer{background:#0F1018;color:rgba(255,255,255,.7);padding:52px 0 30px;font-si
   </div>
 </section>
 
-<!-- ===== PRICING / 30sec form ===== -->
-<section class="blk tint" id="pricing">
-  <div class="wrap">
-    <div class="sec-head reveal" style="margin-bottom:40px">
-      <span class="kicker">Pricing</span>
-      <h2>30秒の入力で、料金表をその場で公開。</h2>
-      <p>お問い合わせの前に、まず料金感を知りたい——そんな声にお応えして。かんたんな入力だけで、2サービスの料金表をすぐにご覧いただけます。</p>
-    </div>
-    <div class="price-grid">
-      <div class="price-pitch reveal">
-        <span class="kicker" style="color:var(--ao-d)">Simple &amp; Fast</span>
-        <h2>「まず、いくら？」に<br>いちばん早く答える。</h2>
-        <p>資料請求のハードルは高い。でも料金感は今すぐ知りたい。だから、5項目・約30秒の入力で、料金表を即公開する形にしました。</p>
-        <ul>
-          <li><span class="ck">✓</span>入力はたった5項目・約30秒</li>
-          <li><span class="ck">✓</span>長期インターン紹介／新卒採用支援の料金を一覧で</li>
-          <li><span class="ck">✓</span>初期費用0円プラン・完全成果報酬プランも掲載</li>
-          <li><span class="ck">✓</span>そのまま個別相談・お見積りにもお進みいただけます</li>
-        </ul>
-      </div>
-      <div class="reveal">
-        <div class="formcard" id="formcard">
-          <h3>料金表をすぐに見る</h3>
-          <div class="sub">かんたん入力（約30秒）で料金表を公開します</div>
-          <div class="pbar"><i id="pbar"></i></div>
-          <div class="pstep-lbl" id="pstepLbl">STEP 1 / 5</div>
-          <form id="leadForm" autocomplete="on" novalidate>
-            <div class="fstep on" data-step="1">
-              <label>あなたの役職を教えてください</label>
-              <div class="opt-grid" data-field="role">
-                <div class="opt" data-val="経営者・役員">経営者・役員</div>
-                <div class="opt" data-val="人事・採用担当">人事・採用担当</div>
-                <div class="opt" data-val="現場マネージャー">現場マネージャー</div>
-                <div class="opt" data-val="その他">その他</div>
-              </div>
-            </div>
-            <div class="fstep" data-step="2">
-              <label for="company">会社名</label>
-              <input id="company" name="company" type="text" placeholder="株式会社◯◯" required>
-            </div>
-            <div class="fstep" data-step="3">
-              <label for="name">お名前</label>
-              <input id="name" name="name" type="text" placeholder="山田 太郎" required>
-            </div>
-            <div class="fstep" data-step="4">
-              <label for="email">メールアドレス</label>
-              <input id="email" name="email" type="email" placeholder="you@example.com" required>
-              <span class="hint">料金表の閲覧に加え、詳細資料の送付先としても利用します</span>
-            </div>
-            <div class="fstep" data-step="5">
-              <label for="tel">電話番号（任意）</label>
-              <input id="tel" name="tel" type="tel" placeholder="09012345678">
-              <label class="consent"><input type="checkbox" id="agree" required><span>個人情報の取り扱いに同意します。入力情報はご案内の目的で利用します。</span></label>
-            </div>
-            <div class="frow">
-              <button type="button" class="fbtn back" id="backBtn" style="display:none">←</button>
-              <button type="button" class="fbtn next" id="nextBtn">次へ →</button>
-            </div>
-          </form>
-        </div>
-        <div class="price-reveal formcard" id="priceReveal">
-          <div class="pr-done"><span class="badge">✓ 送信ありがとうございます。料金表はこちら</span></div>
-          <div class="pr-cards">
-            <div class="pr-card pr-long">
-              <div class="pr-top">長期インターン紹介 ｜ 初期費用0円・完全成果報酬</div>
-              <div class="pr-body">
-                <div class="pr-row"><span class="k">週1プラン<small>週1日・月20時間稼働</small></span><span class="v">10万円<small style="font-weight:600;color:var(--sub)"> /人</small></span></div>
-                <div class="pr-row"><span class="k">レギュラープラン<small>週2日以上・月30時間／人気No.1</small></span><span class="v">15万円<small style="font-weight:600;color:var(--sub)"> /人</small></span></div>
-                <div class="pr-row"><span class="k">早期退職保証<small>入社1ヶ月未満の退職</small></span><span class="v">50%返金</span></div>
-              </div>
-            </div>
-            <div class="pr-card pr-shin">
-              <div class="pr-top">新卒採用支援 ｜ 大学2年生からの新卒採用</div>
-              <div class="pr-body">
-                <div class="pr-row"><span class="k">初期費用<small>1・2年の母集団形成・早期接点を内包</small></span><span class="v">30万円</span></div>
-                <div class="pr-row"><span class="k">成果報酬<small>内定承諾時のみ／完全成果報酬</small></span><span class="v">60万円</span></div>
-                <div class="pr-row"><span class="k">フルパッケージ<small>送客〜サマー誘導〜内定者フォロー内包</small></span><span class="v">250万円<small style="font-weight:600;color:var(--sub)"> /年</small></span></div>
-              </div>
-            </div>
-          </div>
-          <p class="pr-note">※表示価格は全て税抜。スポットプラン（2年秋冬インターン紹介 10,000円/人 ほか）もご用意しています。<br>詳細・お見積り・最適プランのご提案は、個別にご案内します。</p>
-          <div class="frow"><a href="#contact" class="fbtn next" style="text-align:center;text-decoration:none;line-height:1.2">この内容で個別相談する →</a></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== VALUE 4 ===== -->
-<section class="blk" id="value">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="kicker">Why WorCry</span>
-      <h2>“ここまでやる”を、両サービス共通で。</h2>
-      <p>載せて終わり・送って終わり、ではありません。母集団形成から定着・戦力化まで、一気通貫で伴走します。</p>
-    </div>
-    <div class="val-grid">
-      <div class="val reveal">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#1E8FC4" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
-        <h3>早期接触</h3>
-        <p>大学1・2年という早い段階から優秀層と接点を持ち、長期的な信頼関係を構築。</p>
-      </div>
-      <div class="val reveal">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#E07E0A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20v-6a8 8 0 0 1 16 0v6"/><path d="M2 20h20"/><circle cx="12" cy="6" r="3"/></svg></div>
-        <h3>エージェント型</h3>
-        <p>母集団形成→面談アトラクト→紹介→日程調整→クロージングまで一気通貫でフルサポート。</p>
-      </div>
-      <div class="val reveal">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#1E8FC4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg></div>
-        <h3>見極めの場</h3>
-        <p>全員面談・マッチングイベント・実務。「集める」と「見極める」を、同時に。</p>
-      </div>
-      <div class="val reveal">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#E07E0A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg></div>
-        <h3>コスト最適化</h3>
-        <p>フロー型からストック型へ。長期の採用効率を高め、トータルコストを削減。</p>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ===== DATA ===== -->
 <section class="blk tint" id="data">
   <div class="wrap">
@@ -755,19 +658,7 @@ footer{background:#0F1018;color:rgba(255,255,255,.7);padding:52px 0 30px;font-si
         <p>履歴書と面接だけの頃は、正直“賭け”でした。実際の業務を一緒にやると、活躍するかどうかがはっきり見える。ミスマッチが目に見えて減りました。</p>
         <div class="who">SaaS ／ 人事マネージャー</div>
       </div>
-      <div class="voice reveal">
-        <div class="mark">“</div>
-        <h3>知名度がなくても、“ファン”が増える</h3>
-        <p>インターン生が学内で“あの会社いいよ”って広めてくれる。無名のうちでも、自然とファンが増える。しかも学生目線が社内に入るので、採用広報の質まで上がりました。</p>
-        <div class="who">広告代理店 ／ 代表取締役社長</div>
-      </div>
-      <div class="voice reveal">
-        <div class="mark">“</div>
-        <h3>“暗黙知”が、勝手に言語化された</h3>
-        <p>学生に任せるには、ベテランの頭の中を言語化するしかない。結果、業務がマニュアル化・構造化されて、育成や引き継ぎまでラクに。思わぬ副産物でした。</p>
-        <div class="who">IT ／ COO</div>
-      </div>
-      <div class="voice reveal" style="background:linear-gradient(150deg,#F4FAFE,#FFF6EC);border:none">
+                  <div class="voice reveal" style="background:linear-gradient(150deg,#F4FAFE,#FFF6EC);border:none">
         <div class="mark">＋</div>
         <h3>あなたの会社でも、確かめ合う採用を。</h3>
         <p>「まだ誰にも取られていない優秀な学生に、先に会う権利」を。まずは自社に合うか、30秒の資料請求・個別相談からご確認ください。</p>
@@ -833,6 +724,36 @@ footer{background:#0F1018;color:rgba(255,255,255,.7);padding:52px 0 30px;font-si
   <small>DRAMATIC WORK, EMOTIONAL LIFE.</small>
 </div>
 
+<!-- ===== PRICE MODAL ===== -->
+<div class="modal" id="priceModal" aria-hidden="true">
+  <div class="modal-bg" data-close></div>
+  <div class="modal-card">
+    <button class="modal-x" data-close aria-label="閉じる">×</button>
+    <div class="pr-done"><span class="badge">✓ 送信ありがとうございます。料金表はこちら</span></div>
+    <div class="modal-title">新卒タレントプール採用 料金表</div>
+    <div class="pr-cards">
+      <div class="pr-card pr-long">
+        <div class="pr-top">長期インターン紹介 ｜ 初期費用0円・完全成果報酬</div>
+        <div class="pr-body">
+          <div class="pr-row"><span class="k">週1プラン<small>週1日・月20時間稼働</small></span><span class="v">10万円<small style="font-weight:600;color:var(--sub)"> /人</small></span></div>
+          <div class="pr-row"><span class="k">レギュラープラン<small>週2日以上・月30時間／人気No.1</small></span><span class="v">15万円<small style="font-weight:600;color:var(--sub)"> /人</small></span></div>
+          <div class="pr-row"><span class="k">早期退職保証<small>入社1ヶ月未満の退職</small></span><span class="v">50%返金</span></div>
+        </div>
+      </div>
+      <div class="pr-card pr-shin">
+        <div class="pr-top">新卒採用支援 ｜ 大学2年生からの新卒採用</div>
+        <div class="pr-body">
+          <div class="pr-row"><span class="k">初期費用<small>1・2年の母集団形成・早期接点を内包</small></span><span class="v">30万円</span></div>
+          <div class="pr-row"><span class="k">成果報酬<small>内定承諾時のみ／完全成果報酬</small></span><span class="v">60万円</span></div>
+          <div class="pr-row"><span class="k">フルパッケージ<small>送客〜サマー誘導〜内定者フォロー内包</small></span><span class="v">250万円<small style="font-weight:600;color:var(--sub)"> /年</small></span></div>
+        </div>
+      </div>
+    </div>
+    <p class="pr-note">※表示価格は全て税抜。スポットプラン（2年秋冬インターン紹介 10,000円/人 ほか）もご用意しています。詳細・お見積りは個別にご案内します。</p>
+    <div class="frow"><a href="#contact" class="fbtn next" data-close style="text-align:center;text-decoration:none;line-height:1.2">この内容で個別相談する →</a></div>
+  </div>
+</div>
+
 <!-- ===== FOOTER ===== -->
 <footer>
   <div class="wrap">
@@ -877,47 +798,38 @@ mmenu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>mmenu.clas
 const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
 document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=(i%3*70)+'ms';io.observe(el)});
 
-// ---- 30sec lead form → 料金表 ----
+// ---- 30sec lead form -> price modal ----
 (function(){
-  var GAS_ENDPOINT=""; // ← ここにGAS WebアプリのURLを入れると、入力データを記録できます（空なら料金表の即時表示のみ）
+  var GAS_ENDPOINT="";
   var form=document.getElementById('leadForm'); if(!form) return;
   var steps=Array.prototype.slice.call(form.querySelectorAll('.fstep'));
   var bar=document.getElementById('pbar'),lbl=document.getElementById('pstepLbl');
   var nextBtn=document.getElementById('nextBtn'),backBtn=document.getElementById('backBtn');
+  var roleSel=document.getElementById('role');
   var cur=0,data={};
-  var roleOpts=form.querySelectorAll('.opt-grid .opt');
-  roleOpts.forEach(function(o){o.addEventListener('click',function(){
-    roleOpts.forEach(function(x){x.classList.remove('sel')});o.classList.add('sel');data.role=o.dataset.val;
-    setTimeout(function(){ if(cur<steps.length-1){cur++;render();} },170);
-  })});
   function render(){
     steps.forEach(function(sp,i){sp.classList.toggle('on',i===cur)});
     bar.style.width=((cur+1)/steps.length*100)+'%';
-    lbl.textContent='STEP '+(cur+1)+' / '+steps.length;
+    lbl.textContent=(cur+1)+' / '+steps.length;
     backBtn.style.display=cur===0?'none':'block';
     nextBtn.textContent=cur===steps.length-1?'料金表を見る →':'次へ →';
   }
-  function collect(){['company','name','email','tel'].forEach(function(id){var el=document.getElementById(id);if(el)data[id]=el.value.trim();});}
+  function collect(){if(roleSel)data.role=roleSel.value;['company','name','email','tel'].forEach(function(id){var el=document.getElementById(id);if(el)data[id]=el.value.trim();});}
   function valid(){
-    if(cur===0) return !!data.role;
+    if(cur===0){if(!roleSel.value){roleSel.focus();return false;}return true;}
     var inp=steps[cur].querySelector('input[required]');
     if(inp&&!inp.checkValidity()){inp.reportValidity();return false;}
     if(cur===steps.length-1){var ag=document.getElementById('agree');if(!ag.checked){ag.reportValidity();return false;}}
     return true;
   }
-  nextBtn.addEventListener('click',function(){
-    if(!valid())return; collect();
-    if(cur<steps.length-1){cur++;render();} else submit();
-  });
+  nextBtn.addEventListener('click',function(){if(!valid())return;collect();if(cur<steps.length-1){cur++;render();}else submit();});
   backBtn.addEventListener('click',function(){if(cur>0){cur--;render();}});
   form.querySelectorAll('input').forEach(function(inp){inp.addEventListener('keydown',function(e){if(e.key==='Enter'){e.preventDefault();nextBtn.click();}})});
-  function submit(){
-    collect(); data.source='pool-lp'; data.page='新卒タレントプール採用';
-    if(GAS_ENDPOINT){try{fetch(GAS_ENDPOINT,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(data)});}catch(e){}}
-    document.getElementById('formcard').style.display='none';
-    var pr=document.getElementById('priceReveal'); pr.classList.add('on');
-    pr.scrollIntoView({behavior:'smooth',block:'center'});
-  }
+  var modal=document.getElementById('priceModal');
+  function closeModal(){modal.classList.remove('open');modal.setAttribute('aria-hidden','true');document.body.style.overflow='';}
+  function openModal(){modal.classList.add('open');modal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';}
+  if(modal){modal.querySelectorAll('[data-close]').forEach(function(el){el.addEventListener('click',closeModal)});document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal()});}
+  function submit(){collect();data.source='pool-lp';data.page='shinsotsu-talent-pool';if(GAS_ENDPOINT){try{fetch(GAS_ENDPOINT,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(data)});}catch(e){}}openModal();}
   render();
 })();
 </script>
