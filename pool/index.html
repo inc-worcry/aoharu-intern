@@ -396,6 +396,21 @@ footer{background:#0F1018;color:rgba(255,255,255,.7);padding:52px 0 30px;font-si
 .modal-x:hover{background:#e7ecf2}
 .modal-title{font-size:20px;font-weight:900;text-align:center;margin:2px 0 16px}
 
+
+/* --- visibility & polish fixes --- */
+.formcard{color:var(--ink)}
+.hero h1.hero-term{font-size:clamp(30px,5vw,52px);word-break:keep-all;line-break:strict}
+.btn-primary{background:linear-gradient(135deg,var(--ao-d),var(--haru-d));text-shadow:0 1px 1px rgba(0,0,0,.18)}
+.fbtn.next{background:linear-gradient(135deg,var(--ao-d),var(--haru-d));text-shadow:0 1px 1px rgba(0,0,0,.16)}
+.fvbar-h{text-shadow:0 1px 2px rgba(0,0,0,.15)}
+/* footer: match worcry.com charcoal (#4D5156), keep content */
+footer{background:#4D5156;color:rgba(255,255,255,.82)}
+.foot-top{border-bottom-color:rgba(255,255,255,.2)}
+.foot-col h5{color:#fff}
+.foot-col a{color:rgba(255,255,255,.8)}
+.foot-brand p{color:rgba(255,255,255,.74)}
+.foot-bottom{color:rgba(255,255,255,.62);border-top:1px solid rgba(255,255,255,.14);margin-top:4px;padding-top:20px}
+
 </style>
 </head>
 <body>
@@ -435,7 +450,7 @@ footer{background:#0F1018;color:rgba(255,255,255,.7);padding:52px 0 30px;font-si
   <div class="wrap hero-grid">
     <div class="hero-left">
       <span class="eyebrow">WorCry が提唱する、新しい採用のかたち</span>
-      <h1 class="hero-term">新卒<span class="grad-text">タレントプール</span>採用<span class="acc-haru">。</span></h1>
+      <h1 class="hero-term">新卒<span class="grad-text">タレントプール</span><br>採用<span class="acc-haru">。</span></h1>
       <span class="term-en">SHINSOTSU TALENT-POOL RECRUITING</span>
       <p class="hero-oneline">“見込みで採る”を、終わらせる。<br>大学1・2年から確かめ合う、ストック型の新卒採用へ。</p>
       <div class="hero-metric">
@@ -767,11 +782,11 @@ footer{background:#0F1018;color:rgba(255,255,255,.7);padding:52px 0 30px;font-si
           <h5>サービス</h5>
           <a href="https://aoharu-intern.worcry.com/long-intern/">長期インターン紹介</a>
           <a href="https://aoharu-intern.worcry.com/">新卒採用支援</a>
-          <a href="#services">新卒タレントプール採用とは</a>
+          <a href="#about">新卒タレントプール採用とは</a>
         </div>
         <div class="foot-col">
           <h5>コンテンツ</h5>
-          <a href="#why">なぜ今タレントプールか</a>
+          <a href="#top">料金表（30秒で公開）</a>
           <a href="#data">実績データ</a>
           <a href="#voice">導入企業の声</a>
           <a href="#faq">よくある質問</a>
@@ -797,6 +812,7 @@ mmenu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>mmenu.clas
 // scroll reveal
 const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
 document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=(i%3*70)+'ms';io.observe(el)});
+setTimeout(function(){document.querySelectorAll('.reveal:not(.in)').forEach(function(e){e.classList.add('in')})},1600);
 
 // ---- 30sec lead form -> price modal ----
 (function(){
