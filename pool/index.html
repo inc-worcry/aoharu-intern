@@ -521,6 +521,21 @@ footer{background:#4D5156;color:rgba(255,255,255,.82)}
   radial-gradient(120% 120% at -8% 118%,rgba(255,255,255,.3),transparent 62%),
   linear-gradient(122deg,#1C8AC4 0%,#33A6DA 30%,#84C4DF 58%,#F8BC70 90%,#F7A63E 120%)}
 
+
+/* numbered, readable coverflow */
+.tpc-stage{height:412px}
+.tpc-card{padding:30px 34px}
+.tpc-no{display:block;font-size:30px;font-weight:900;color:var(--ao-d);line-height:1;margin-bottom:4px}
+.tpc-payoff .tpc-no{color:var(--haru-d)}
+.tpc-card h3{margin-bottom:12px}
+.tpc-card p{font-size:14px;line-height:1.85}
+.tpc-lead{display:inline-block;margin-top:8px;color:var(--ao-d);font-weight:800}
+.tpc-payoff .tpc-lead{color:var(--haru-d)}
+.tpc-dots{gap:12px}
+.tpc-dots button{width:auto;height:auto;min-width:24px;border-radius:0;background:none;color:#a9bccb;font-size:17px;font-weight:800;padding:0 3px;line-height:1;transition:.2s}
+.tpc-dots button.on{width:auto;background:none;color:var(--ao-d);transform:scale(1.2)}
+@media(max-width:640px){.tpc-stage{height:496px}}
+
 </style>
 </head>
 <body>
@@ -613,25 +628,28 @@ footer{background:#4D5156;color:rgba(255,255,255,.82)}
       <button class="tpc-nav prev" id="tpcPrev" aria-label="前へ">&lsaquo;</button>
       <div class="tpc-stage" id="tpcStage">
         <article class="tpc-slide"><div class="tpc-card">
+          <span class="tpc-no">①</span>
           <div class="tpc-kick">Talent Pool ／ タレントプールとは</div>
           <h3>そもそも「<span class="grad-text">タレントプール</span>」とは？</h3>
-          <p>いますぐ採用しなくても、「いつか一緒に働きたい」人材と<b>つながり続け、関係を育てておく</b>——それが「タレントプール（人材の貯蔵庫）」です。中途採用では、良い人がいればまず会っておくのが当たり前に。<b>必要になる前から関係をつくる</b>——採用を「点」ではなく「線」で捉える発想です。</p>
+          <p>いますぐ採用しなくても、「いつか一緒に働きたい」人材と<b>つながり続け、関係を育てておく</b>——それが「タレントプール（人材の貯蔵庫）」です。中途採用では、良い人がいればまず会っておくのが当たり前になってきました。<br><b class="tpc-lead">——では、新卒採用ではどうでしょう？</b></p>
         </div></article>
         <article class="tpc-slide"><div class="tpc-card">
+          <span class="tpc-no">②</span>
           <div class="tpc-kick">The Problem ／ 新卒採用の現実</div>
-          <h3>でも、新卒は&ldquo;見込み&rdquo;で採っている。</h3>
-          <p>多くの企業は今も、3年生の解禁後に<b>ゼロから母集団を集め</b>、限られた情報で「たぶん合うはず」と決める。だから<b>「入ってみたら違った」</b>が起きる。内定辞退も早期離職も、その&ldquo;ずれ&rdquo;の結果。短い時間で見極めるほど、ミスマッチのリスクは大きくなります。</p>
+          <h3>ところが新卒は、&ldquo;見込み&rdquo;のまま。</h3>
+          <p>新卒採用の多くは今も、3年生の解禁後に<b>ゼロから母集団を集め</b>、限られた情報で「たぶん合うはず」と決めています。だから<b>「入ってみたら違った」</b>が起きる。内定辞退も早期離職も、その&ldquo;ずれ&rdquo;の結果です。<br><b class="tpc-lead">——この&ldquo;ずれ&rdquo;は、どうすれば無くせるのか？</b></p>
         </div></article>
         <article class="tpc-slide"><div class="tpc-card">
+          <span class="tpc-no">③</span>
           <div class="tpc-kick">The Idea ／ 発想の転換</div>
-          <h3>その発想を、新卒にも。</h3>
-          <p>就活が始まる<b>&ldquo;前&rdquo;</b>、大学1・2年から出会い、<b>一緒に働き、対話し、確かめ合う。</b>母集団は毎年ゼロからではなく、1・2年から育てる<b class="grad-text">&ldquo;資産&rdquo;</b>に。早く出会うほど相手を深く知れて、志望度も自然と育ちます。</p>
+          <h3>その&ldquo;つながり続ける&rdquo;を、新卒にも。</h3>
+          <p>カギは、タレントプールの発想を新卒にも持ち込むこと。就活が始まる<b>&ldquo;前&rdquo;</b>、大学1・2年から出会い、<b>一緒に働き、対話し、確かめ合う。</b>母集団は毎年ゼロからではなく、1・2年から育てる<b class="grad-text">&ldquo;資産&rdquo;</b>に変わります。<br><b class="tpc-lead">——私たちは、これを一つのかたちにしました。</b></p>
         </div></article>
         <article class="tpc-slide"><div class="tpc-card tpc-payoff">
+          <span class="tpc-no">④</span>
           <div class="tpc-kick">Our Answer ／ わたしたちの答え</div>
           <h3>だから、<span class="grad-text">新卒タレントプール採用</span>。</h3>
-          <p>「本当に合うのか」を、<b>時間をかけて確かめてから決める。</b>入社初日から<b>&ldquo;もう戦力で、もう馴染んでいる&rdquo;</b>状態をつくる。<b>長期インターン紹介</b>と<b>超早期新卒紹介</b>、2つのサービスで伴走します。</p>
-          <div class="tpc-keys"><span>確かめて採る</span><span>育てて繋ぐ</span><span>母集団を資産化</span></div>
+          <p>「本当に合うのか」を、時間をかけて<b>確かめてから採る。</b>大学1・2年から<b>育てて、本選考へ繋ぐ。</b>そして母集団は、毎年ゼロからではなく<b>年々積み上がる&ldquo;資産&rdquo;に。</b>入社初日から&ldquo;もう戦力で、もう馴染んでいる&rdquo;状態を、<b>長期インターン紹介</b>と<b>超早期新卒紹介</b>の2つでつくります。</p>
         </div></article>
       </div>
       <button class="tpc-nav next" id="tpcNext" aria-label="次へ">&rsaquo;</button>
@@ -894,7 +912,7 @@ setTimeout(function(){document.querySelectorAll('.reveal:not(.in)').forEach(func
   var dotsWrap=document.getElementById('tpcDots');
   var tpc=document.getElementById('tpc');
   var n=slides.length, cur=0, timer=null;
-  slides.forEach(function(s,i){var b=document.createElement('button');b.setAttribute('aria-label',(i+1)+'枚目へ');b.addEventListener('click',function(){go(i)});dotsWrap.appendChild(b);});
+  slides.forEach(function(s,i){var b=document.createElement('button');b.textContent=['①','②','③','④'][i]||String(i+1);b.setAttribute('aria-label',(i+1)+'番目へ');b.addEventListener('click',function(){go(i)});dotsWrap.appendChild(b);});
   var dots=[].slice.call(dotsWrap.children);
   function layout(){
     slides.forEach(function(s,i){
@@ -912,7 +930,7 @@ setTimeout(function(){document.querySelectorAll('.reveal:not(.in)').forEach(func
   var nx=document.getElementById('tpcNext'),pv=document.getElementById('tpcPrev');
   if(nx)nx.addEventListener('click',next); if(pv)pv.addEventListener('click',prev);
   slides.forEach(function(s,i){s.addEventListener('click',function(){if(i!==cur)go(i);});});
-  function restart(){if(timer)clearInterval(timer);timer=setInterval(next,5200);}
+  function restart(){if(timer)clearInterval(timer);timer=setInterval(next,9000);}
   if(tpc){tpc.addEventListener('mouseenter',function(){if(timer)clearInterval(timer);});tpc.addEventListener('mouseleave',restart);}
   var sx=null;
   stage.addEventListener('pointerdown',function(e){sx=e.clientX;});
