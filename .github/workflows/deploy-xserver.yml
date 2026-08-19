@@ -25,3 +25,5 @@ jobs:
           port: 21
           local-dir: ./site/long-intern/
           server-dir: /worcry.com/public_html/aoharu-intern.worcry.com/long-intern/
+
+# redeploy trigger: 20260819-114000Z
