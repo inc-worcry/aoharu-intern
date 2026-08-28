@@ -1,14 +1,9 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-4BN9DPSTGV"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-4BN9DPSTGV');
-</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-NXCNC85H');</script>
+<!-- End Google Tag Manager -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>AOHARUインターン｜長期インターン紹介 | 大学1・2年生特化・全員面談で厳選紹介</title>
@@ -771,6 +766,9 @@ footer p{font-size:13px;color:var(--muted)}
 </style>
 </head>
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NXCNC85H" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
 <!-- HEADER -->
 <header>
@@ -1288,7 +1286,7 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')closeDlModal
       if(btn){btn.disabled=true;btn.textContent='送信中…';}
       var body=new URLSearchParams(new FormData(form));
       fetch(form.action,{method:'POST',mode:'no-cors',body:body}).then(finish).catch(finish);
-      function finish(){openDlModal();form.reset();if(btn){btn.disabled=false;btn.textContent=old;}}
+      function finish(){window.dataLayer=window.dataLayer||[];window.dataLayer.push({event:'dl_form_submit'});openDlModal();form.reset();if(btn){btn.disabled=false;btn.textContent=old;}}
     });
   });
 })();
