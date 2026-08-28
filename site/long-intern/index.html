@@ -1295,5 +1295,53 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')closeDlModal
 
 <!-- build: v5-deploy-retry -->
 <!-- deploy: 20260819112656 -->
+
+<!-- 流入元トラッキング（gclid / utm）: フォーム送信に広告情報を同梱する -->
+<script>
+(function(){
+  var KEY = "aoharu_src_v1";
+  var KEYS = ["gclid","wbraid","gbraid","utm_source","utm_medium","utm_campaign","utm_term","utm_content"];
+  function fromUrl(){
+    var q = new URLSearchParams(location.search), o = {};
+    KEYS.forEach(function(k){ var v = q.get(k); if (v) o[k] = v; });
+    if ((o.gclid || o.wbraid || o.gbraid) && !o.utm_source) { o.utm_source = "google"; o.utm_medium = "cpc"; }
+    return o;
+  }
+  function load(){ try { return JSON.parse(sessionStorage.getItem(KEY) || "{}"); } catch(e){ return {}; } }
+  function save(o){ try { sessionStorage.setItem(KEY, JSON.stringify(o)); } catch(e){} }
+
+  var fresh = fromUrl();
+  var src = Object.keys(fresh).length ? fresh : load();
+  if (Object.keys(fresh).length) {
+    src.landing_page = location.pathname + location.search;
+    src.referrer = document.referrer || "";
+    save(src);
+  }
+  if (!src.landing_page) src.landing_page = location.pathname + location.search;
+  if (!src.referrer)     src.referrer = document.referrer || "";
+
+  var parts = [];
+  if (src.utm_source || src.utm_medium) parts.push((src.utm_source || "-") + "/" + (src.utm_medium || "-"));
+  if (src.utm_campaign) parts.push(src.utm_campaign);
+  if (src.gclid)       parts.push("gclid:"  + src.gclid);
+  else if (src.wbraid) parts.push("wbraid:" + src.wbraid);
+  else if (src.gbraid) parts.push("gbraid:" + src.gbraid);
+
+  var FIELDS = KEYS.concat(["landing_page","referrer"]);
+  document.querySelectorAll("form[data-gas]").forEach(function(form){
+    FIELDS.forEach(function(k){
+      if (form.querySelector('[name="' + k + '"]')) return;
+      var i = document.createElement("input");
+      i.type = "hidden"; i.name = k; i.value = src[k] || "";
+      form.appendChild(i);
+    });
+    if (parts.length) {
+      var f = form.querySelector('input[name="_form"]');
+      if (f && f.value.indexOf(" / ") === -1) f.value = f.value + " / " + parts.join(" / ");
+    }
+  });
+})();
+</script>
+
 </body>
 </html>
