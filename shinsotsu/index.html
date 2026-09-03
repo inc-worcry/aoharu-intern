@@ -148,17 +148,27 @@ h1.fvh{font-size:clamp(36px,6.8vw,84px);font-weight:900;line-height:1.24;letter-
 .stnote{font-size:13px;color:var(--sub);margin-top:14px}
 
 /* companies */
-.cnum{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:16px}
+.cnum{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin:20px 0 4px}
 .cnum b{font-size:clamp(38px,6vw,64px);font-weight:900;line-height:1;letter-spacing:-.02em}
 .cnum span{font-size:14px;font-weight:900;color:var(--sub)}
-.tags{display:flex;flex-wrap:wrap;gap:9px}
-.tags i{font-style:normal;font-size:14.5px;font-weight:900;padding:9px 15px;border-radius:8px}
-.tags i:nth-child(6n+1){background:rgba(41,171,226,.13);color:#12719A}
-.tags i:nth-child(6n+2){background:rgba(23,185,166,.14);color:#0C7A6D}
-.tags i:nth-child(6n+3){background:rgba(143,191,63,.18);color:#4E7010}
-.tags i:nth-child(6n+4){background:rgba(255,196,46,.22);color:#8A6100}
-.tags i:nth-child(6n+5){background:rgba(247,148,29,.15);color:#A9600A}
-.tags i:nth-child(6n+6){background:rgba(255,122,89,.15);color:#B24728}
+.cnum .pcsep{font-style:normal;opacity:.5;margin:0 2px}
+.ind{display:grid;grid-template-columns:1fr 1fr;gap:11px 48px;margin:22px 0 0}
+.ind li{list-style:none;display:grid;grid-template-columns:134px 1fr 48px;align-items:center;gap:14px}
+.ind .nm{font-size:14px;font-weight:700;white-space:nowrap}
+.ind .track{height:7px;border-radius:99px;background:rgba(17,17,20,.06);overflow:hidden}
+.ind .track i{display:block;height:100%;border-radius:99px}
+.ind .n{font-size:16px;font-weight:900;text-align:right;letter-spacing:-.02em}
+.ind .n em{font-style:normal;font-size:10.5px;font-weight:700;color:var(--sub);margin-left:1px}
+.ind li:nth-child(9n+1) .track i{background:var(--ao)}      .ind li:nth-child(9n+1) .n{color:#1E8FC4}
+.ind li:nth-child(9n+2) .track i{background:#3FC3B4}        .ind li:nth-child(9n+2) .n{color:#10A292}
+.ind li:nth-child(9n+3) .track i{background:#8FBF3F}        .ind li:nth-child(9n+3) .n{color:#5E8A16}
+.ind li:nth-child(9n+4) .track i{background:var(--ki)}      .ind li:nth-child(9n+4) .n{color:#C08A00}
+.ind li:nth-child(9n+5) .track i{background:var(--haru)}    .ind li:nth-child(9n+5) .n{color:#E07E0A}
+.ind li:nth-child(9n+6) .track i{background:var(--coral)}   .ind li:nth-child(9n+6) .n{color:#D2542F}
+.ind li:nth-child(9n+7) .track i{background:#7FA7E8}        .ind li:nth-child(9n+7) .n{color:#3C6FC4}
+.ind li:nth-child(9n+8) .track i{background:#B79AE0}        .ind li:nth-child(9n+8) .n{color:#7A54BE}
+.ind li:nth-child(9n+9) .track i{background:#C3CBD6}        .ind li:nth-child(9n+9) .n{color:#7C8797}
+.stnote small{font-size:11px;color:var(--sub);opacity:.8}
 
 /* promise + closing */
 .pm{background:#fff;border-radius:var(--r);box-shadow:var(--sh-s);padding:30px 32px;margin-top:6px}
@@ -234,7 +244,13 @@ h1.fvh{font-size:clamp(36px,6.8vw,84px);font-weight:900;line-height:1.24;letter-
   .stnote{font-size:13px}
 
   .cnum b{font-size:40px}
-  .tags i{font-size:14px;padding:9px 13px}
+  .cnum span{font-size:13px}
+  .cnum .pcsep{display:none}
+  .ind{grid-template-columns:1fr;gap:10px;margin-top:18px}
+  .ind li{grid-template-columns:122px 1fr 44px;gap:10px}
+  .ind .nm{font-size:13px}
+  .ind .n{font-size:15px}
+  .ind .track{height:6px}
 
   .band{padding:32px 0 30px}
   .band .huge{font-size:42px;white-space:normal;line-height:1.2;margin-bottom:16px}
@@ -379,14 +395,21 @@ h1.fvh{font-size:clamp(36px,6.8vw,84px);font-weight:900;line-height:1.24;letter-
   <div class="wrap">
     <span class="big c-ki"><i>03</i>COMPANIES</span>
     <h2 class="h2">選択肢は、<br class="sp">業界をまたぎます。</h2>
-    <div class="cnum" style="margin-top:18px">
-      <b class="grad">30社以上</b><span>27卒の紹介先<br class="sp">上場企業から老舗まで</span>
+    <div class="cnum">
+      <b class="grad">240社以上</b><span>27卒の紹介先<i class="pcsep">／</i><br class="sp">上場企業から老舗まで</span>
     </div>
-    <div class="tags">
-      <i>メーカー</i><i>商社</i><i>IT・SaaS</i><i>人材</i><i>金融</i><i>不動産</i>
-      <i>広告・マーケ</i><i>コンサル</i><i>インフラ</i><i>小売・消費財</i>
-    </div>
-    <p class="stnote">1社の内定だけで決めると、この幅を一度も見ないまま社会人になります。</p>
+    <ul class="ind">
+      <li><span class="nm">IT・通信／ネット</span><span class="track"><i style="width:100%"></i></span><span class="n">53<em>社</em></span></li>
+      <li><span class="nm">建設・不動産</span><span class="track"><i style="width:98%"></i></span><span class="n">52<em>社</em></span></li>
+      <li><span class="nm">人材・教育</span><span class="track"><i style="width:60%"></i></span><span class="n">32<em>社</em></span></li>
+      <li><span class="nm">商社</span><span class="track"><i style="width:60%"></i></span><span class="n">32<em>社</em></span></li>
+      <li><span class="nm">メーカー</span><span class="track"><i style="width:45%"></i></span><span class="n">24<em>社</em></span></li>
+      <li><span class="nm">外食・店舗サービス</span><span class="track"><i style="width:32%"></i></span><span class="n">17<em>社</em></span></li>
+      <li><span class="nm">コンサル</span><span class="track"><i style="width:21%"></i></span><span class="n">11<em>社</em></span></li>
+      <li><span class="nm">医薬・医療</span><span class="track"><i style="width:9%"></i></span><span class="n">5<em>社</em></span></li>
+      <li><span class="nm">その他</span><span class="track"><i style="width:38%"></i></span><span class="n">20<em>社</em></span></li>
+    </ul>
+    <p class="stnote">1社の内定だけで決めると、<br class="sp">この幅を一度も見ないまま社会人になります。<br><small>※2026年9月現在</small></p>
   </div>
 </section>
 
