@@ -40,7 +40,13 @@ br.sp{display:none}
 .lg{font-weight:900;font-size:22px;line-height:1;white-space:nowrap}
 .lg .h{color:var(--ao)} .lg .r{color:var(--haru)} .lg .s{font-size:15px;margin-left:.3em}
 .hd-r{display:flex;align-items:center;gap:16px}
-.hd-n{font-size:12px;color:var(--sub);font-weight:700}
+.hd-n{
+  position:relative;font-size:12.5px;font-weight:900;color:#A9600A;
+  background:rgba(247,148,29,.13);padding:7px 13px;border-radius:9px;white-space:nowrap;
+}
+.hd-n::after{content:"";position:absolute;right:-5px;top:50%;transform:translateY(-50%);
+  border-top:5px solid transparent;border-bottom:5px solid transparent;border-left:6px solid rgba(247,148,29,.13)}
+.hd-n b{font-weight:900;color:var(--haru-d);font-size:14px}
 
 .btn{
   display:inline-flex;align-items:center;justify-content:center;font:inherit;
@@ -66,14 +72,11 @@ br.sp{display:none}
 h1.fvh{font-size:clamp(36px,6.8vw,84px);font-weight:900;line-height:1.24;letter-spacing:-.02em;margin-bottom:22px}
 .fvlead{font-size:clamp(16px,2vw,20px);font-weight:900;margin-bottom:8px}
 .fvsub{font-size:14px;color:var(--sub);margin-bottom:24px;line-height:1.85}
-.facts{display:flex;flex-wrap:wrap;gap:10px}
-.facts div{padding:9px 15px;border-radius:9px;line-height:1.35}
-.facts b{display:block;font-size:17px;font-weight:900}
-.facts span{font-size:10.5px;font-weight:700;opacity:.72}
-.f1{background:rgba(41,171,226,.13);color:#12719A}
-.f2c{background:rgba(23,185,166,.14);color:#0C7A6D}
-.f3{background:rgba(255,196,46,.20);color:#8A6100}
-.f4{background:rgba(247,148,29,.15);color:#A9600A}
+.facts{display:flex;flex-wrap:wrap;gap:8px 30px}
+.facts div{line-height:1.35}
+.facts b{display:block;font-size:19px;font-weight:900;letter-spacing:-.01em}
+.facts span{font-size:11px;font-weight:700;color:var(--sub)}
+.f1 b{color:#1E8FC4} .f2c b{color:#10A292} .f3 b{color:#C08A00} .f4 b{color:#E07E0A}
 .fvpk{width:72px;margin:18px 0 0 auto}
 
 /* form card */
@@ -211,9 +214,8 @@ h1.fvh{font-size:clamp(36px,6.8vw,84px);font-weight:900;line-height:1.24;letter-
   h1.fvh{font-size:clamp(38px,10.4vw,54px);line-height:1.22;margin-bottom:16px}
   .fvlead{font-size:17px;margin-bottom:6px}
   .fvsub{font-size:13.5px;margin-bottom:18px;line-height:1.75}
-  .facts{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-  .facts div{padding:10px 14px}
-  .facts b{font-size:16px}
+  .facts{display:grid;grid-template-columns:1fr 1fr;gap:12px 16px}
+  .facts b{font-size:18px}
   .fvpk{width:58px;margin-top:12px}
 
   .fc{min-height:340px;padding:20px 18px 18px;border-radius:16px}
@@ -263,7 +265,7 @@ h1.fvh{font-size:clamp(36px,6.8vw,84px);font-weight:900;line-height:1.24;letter-
   <div class="hd-in">
     <div class="lg">AO<span class="h">H</span>A<span class="r">R</span>U<span class="s">新卒</span></div>
     <div class="hd-r">
-      <span class="hd-n">毎月10名まで・完全無料</span>
+      <span class="hd-n">毎月<b>10名</b>まで／<b>完全無料</b></span>
       <a href="#fc" class="btn btn-sm">相談する</a>
     </div>
   </div>
