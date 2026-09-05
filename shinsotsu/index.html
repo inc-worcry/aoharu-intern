@@ -74,20 +74,25 @@ h1.fvh{font-size:clamp(36px,6.8vw,84px);font-weight:900;line-height:1.24;letter-
 .fvpk{width:74px;flex:0 0 auto;margin:0 0 -4px}
 
 /* form card */
-.fc{background:#fff;border-radius:var(--r);box-shadow:var(--sh);padding:26px 26px 22px}
-.fc-top{margin-bottom:12px}
-.fc-badge{font-size:13px;font-weight:900}
-.fc-badge em{font-style:normal;font-size:21px;color:var(--haru)}
+.fc{background:#fff;border-radius:18px;box-shadow:0 20px 48px -20px rgba(17,17,20,.30);border:1px solid rgba(17,17,20,.06);padding:26px 26px 22px}
+.fc-top{display:flex;justify-content:flex-end;margin-bottom:10px}
+.fc-badge{font-size:12.5px;font-weight:900;color:var(--sub)}
+.fc-badge em{font-style:normal;font-size:17px;color:var(--haru)}
 .fc-cnt{font-size:11.5px;color:var(--sub);font-weight:900}
 
 @keyframes fi{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:none}}
 .q-h{font-size:17.5px;font-weight:900;line-height:1.5;margin-bottom:3px}
+.q-h::before{content:"Q.";color:var(--ao);margin-right:.34em;font-weight:900}
 .hint{font-size:12.5px;color:var(--sub);margin-bottom:15px;font-weight:700}
 .opt{
   display:block;width:100%;text-align:left;background:#F7FAFC;border:0;border-left:5px solid var(--ao);
   border-radius:10px;padding:13px 16px;font:inherit;font-size:15px;font-weight:900;
   cursor:pointer;margin-bottom:9px;transition:.16s;color:var(--ink);
+  position:relative;padding-right:36px;
 }
+.opt::after{content:"";position:absolute;right:16px;top:50%;width:7px;height:7px;border-right:2.5px solid #B9C4D0;border-bottom:2.5px solid #B9C4D0;transform:translateY(-50%) rotate(-45deg);transition:.16s}
+.opt:hover::after{border-color:var(--ao)}
+.opt.sel::after{border-color:var(--haru)}
 .opt.o2{border-left-color:var(--mid)}
 .opt.o3{border-left-color:var(--ki)}
 .opt.o4{border-left-color:var(--haru)}
@@ -149,6 +154,7 @@ h1.fvh{font-size:clamp(36px,6.8vw,84px);font-weight:900;line-height:1.24;letter-
 .stl{margin-top:24px;display:grid;gap:9px}
 .stl li{list-style:none;display:grid;grid-template-columns:82px 1fr;gap:16px;align-items:center;background:var(--tint);border-radius:11px;padding:14px 18px}
 .stl .n{font-size:12px;font-weight:900;letter-spacing:.08em;color:#fff;text-align:center;padding:4px 0;border-radius:6px}
+.stl .n em{font-style:normal}
 .stl li:nth-child(1) .n{background:var(--ao)}
 .stl li:nth-child(2) .n{background:var(--mid)}
 .stl li:nth-child(3) .n{background:#8FBF3F}
@@ -224,7 +230,7 @@ h1.fvh{font-size:clamp(36px,6.8vw,84px);font-weight:900;line-height:1.24;letter-
   .btn-sm{font-size:13px;padding:11px 16px}
   .btn-lg{width:100%;padding:19px 24px;font-size:17px}
 
-  .fv{padding:22px 0 30px}
+  .fv{padding:22px 0 30px;background:linear-gradient(180deg,#fff 0%,#fff 46%,#EEF3F9 100%)}
   .fv-in{grid-template-columns:1fr;gap:22px}
   .tag{margin-bottom:14px}
   h1.fvh{font-size:clamp(38px,10.4vw,54px);line-height:1.22;margin-bottom:16px}
@@ -235,7 +241,7 @@ h1.fvh{font-size:clamp(36px,6.8vw,84px);font-weight:900;line-height:1.24;letter-
   .fvrow .fvsub{flex:1 1 auto;max-width:none}
   .fvpk{width:54px;margin:0 0 -2px}
 
-  .fc{padding:20px 18px 18px;border-radius:16px}
+  .fc{padding:20px 18px 18px;border-radius:18px}
   .cta{width:100%;padding:17px 18px;font-size:16.5px}
   .cta small{font-size:11px}
   .ctamid{margin:22px auto 0;max-width:none}
@@ -251,14 +257,16 @@ h1.fvh{font-size:clamp(36px,6.8vw,84px);font-weight:900;line-height:1.24;letter-
   br.sp{display:inline}
   .h2{font-size:23px;line-height:1.5;letter-spacing:-.01em}
   .two{grid-template-columns:1fr;gap:24px}
-  .vq p{padding:13px 15px;font-size:15.5px;margin-bottom:9px}
+  .vq p{padding:13px 13px;font-size:12.7px;letter-spacing:-.02em;margin-bottom:9px;white-space:nowrap}
   .core{font-size:20.5px;line-height:1.5}
   .core-s{font-size:14.5px}
 
   .stl{gap:8px;margin-top:20px}
-  .stl li{grid-template-columns:72px 1fr;gap:12px;padding:12px 14px}
+  .stl li{grid-template-columns:34px 1fr;gap:10px;padding:12px 14px}
+  .stl .n em{display:none}
+  .stl .n{font-size:12px;letter-spacing:0}
   .stl .n{padding:4px 0;font-size:10.5px}
-  .stl .t{font-size:15px;line-height:1.6}
+  .stl .t{font-size:13px;line-height:1.65;letter-spacing:-.015em}
   .stnote{font-size:13px}
 
   .cnum b{font-size:40px}
@@ -339,9 +347,9 @@ h1.fvh{font-size:clamp(36px,6.8vw,84px);font-weight:900;line-height:1.24;letter-
     <div class="two">
       <div>
         <div class="vq">
-          <p>「内定は出た。<br class="sp">なのに、まったくすっきりしない。」</p>
-          <p>「この時期から動くのは、<br class="sp">もう遅い気がする。」</p>
-          <p>「ここまで良くしてもらったのに、<br class="sp">今さら断れない。」</p>
+          <p>「内定は出た。なのに、まったくすっきりしない。」</p>
+          <p>「この時期から動くのは、もう遅い気がする。」</p>
+          <p>「ここまで良くしてもらったのに、今さら断れない。」</p>
         </div>
         <p class="hit">ひとつでも当てはまったら、話す価値があります。</p>
       </div>
@@ -358,11 +366,11 @@ h1.fvh{font-size:clamp(36px,6.8vw,84px);font-weight:900;line-height:1.24;letter-
     <span class="big c-mid"><i>02</i>WHAT WE DO</span>
     <h2 class="h2">60分で、<br class="sp">判断できる状態にします。</h2>
     <ol class="stl">
-      <li><span class="n">STEP 1</span><span class="t">内定先の求人票、条件、面接で言われた言葉まで、<br class="sp"><b>まるごと洗い出す</b></span></li>
-      <li><span class="n">STEP 2</span><span class="t">採用する側の目線で、<br class="sp"><b>「なぜあなたに内定が出たか」を翻訳する</b></span></li>
-      <li><span class="n">STEP 3</span><span class="t">3年後から逆算して、<br class="sp">あなたの<b>判断軸を3つに絞る</b></span></li>
-      <li><span class="n">STEP 4</span><span class="t">その軸に合う会社を、<br class="sp"><b>多くても5社しか出さない</b></span></li>
-      <li><span class="n">STEP 5</span><span class="t">断るにしても、残るにしても。<br class="sp"><b>伝え方まで一緒に作る</b></span></li>
+      <li><span class="n"><em>STEP </em>1</span><span class="t">内定先の求人票、条件、<br class="sp">面接で言われた言葉まで<b>まるごと洗い出す</b></span></li>
+      <li><span class="n"><em>STEP </em>2</span><span class="t">採用する側の目線で、<br class="sp"><b>なぜあなたに内定が出たかを翻訳する</b></span></li>
+      <li><span class="n"><em>STEP </em>3</span><span class="t">3年後から逆算して、<br class="sp">あなたの<b>判断軸を3つに絞る</b></span></li>
+      <li><span class="n"><em>STEP </em>4</span><span class="t">その軸に合う会社を、<br class="sp"><b>多くても5社しか出さない</b></span></li>
+      <li><span class="n"><em>STEP </em>5</span><span class="t">断るにしても、残るにしても。<br class="sp"><b>伝え方まで一緒に作る</b></span></li>
     </ol>
     <p class="stnote">何十社も並べません。比べられなくなるからです。これを言えるのは、学生を送る側ではなく<b>企業の中で採用を設計してきた13年</b>があるからです。</p>
     <div class="ctamid">
