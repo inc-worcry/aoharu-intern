@@ -1,15 +1,16 @@
-name: Deploy long-intern to Xserver (FTP)
+name: Deploy to Xserver (FTP)
 
 on:
   push:
     branches: [ main ]
     paths:
       - 'site/long-intern/**'
+      - 'shinsotsu/**'
       - '.github/workflows/deploy-xserver.yml'
   workflow_dispatch:
 
 jobs:
-  deploy:
+  long-intern:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -26,4 +27,21 @@ jobs:
           local-dir: ./site/long-intern/
           server-dir: /worcry.com/public_html/aoharu-intern.worcry.com/long-intern/
 
-# redeploy trigger: 20260819-114000Z
+  shinsotsu:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: FTP Deploy to Xserver
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server:   ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
+          port: 21
+          local-dir: ./shinsotsu/
+          server-dir: /worcry.com/public_html/aoharu-intern.worcry.com/shinsotsu/
+
+# redeploy trigger: 20260905-shinsotsu
