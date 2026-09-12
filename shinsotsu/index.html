@@ -155,6 +155,31 @@ h1.fvh{font-size:var(--fs-hero);font-weight:900;line-height:1.24;letter-spacing:
 .ctamid{max-width:460px;margin:26px auto 0}
 .cta-note{font-size:var(--fs-sm);color:var(--sub);text-align:center;margin-top:10px;font-weight:700}
 
+/* ===== choice sheet ===== */
+body.lock{overflow:hidden}
+.sheet{position:fixed;inset:0;z-index:120;display:none}
+.sheet.on{display:block}
+.sheet-bd{position:absolute;inset:0;background:rgba(20,22,26,.55)}
+.sheet-in{position:absolute;left:50%;top:calc(14px + env(safe-area-inset-top, 0px));transform:translateX(-50%);
+  width:calc(100% - 28px);max-width:460px;max-height:calc(100dvh - 28px);overflow-y:auto;
+  background:#fff;border-radius:20px;padding:26px 22px 22px;
+  box-shadow:0 30px 70px -22px rgba(20,22,26,.55);animation:shin .26s cubic-bezier(.2,.8,.3,1)}
+@keyframes shin{from{transform:translateX(-50%) translateY(-14px)}to{transform:translateX(-50%) translateY(0)}}
+.sheet-x{position:absolute;right:10px;top:10px;width:40px;height:40px;border:0;background:none;cursor:pointer;font-size:0;padding:0}
+.sheet-x::before,.sheet-x::after{content:"";position:absolute;left:12px;top:19px;width:16px;height:2.5px;background:#9AA4B1;border-radius:2px}
+.sheet-x::before{transform:rotate(45deg)}
+.sheet-x::after{transform:rotate(-45deg)}
+.sheet-lb{display:block;font-size:var(--fs-xs);font-weight:900;letter-spacing:.08em;color:var(--haru);margin-bottom:7px}
+.sheet-h{font-size:var(--fs-2xl);font-weight:900;letter-spacing:var(--ls-h);line-height:1.45;margin-bottom:13px;padding-right:26px}
+.sheet-r{font-size:var(--fs-md);font-weight:900;color:#0C7A6D;background:rgba(23,185,166,.11);padding:12px 14px;border-radius:10px;line-height:1.65;margin-bottom:15px}
+.sheet-n{font-size:var(--fs-lg);font-weight:700;line-height:1.8;margin-bottom:19px}
+.sheet-cl{display:block;width:100%;margin-top:13px;padding:6px;border:0;background:none;cursor:pointer;
+  font-family:inherit;font-size:var(--fs-sm);font-weight:700;color:var(--sub);text-align:center}
+@media(max-width:720px){
+  .sheet-in{padding:22px 17px 18px}
+  .sheet-n{line-height:1.75;margin-bottom:17px}
+}
+
 /* ===== sections ===== */
 .blk{padding:56px 0}
 .blk.tint{background:var(--tint)}
@@ -167,10 +192,9 @@ h1.fvh{font-size:var(--fs-hero);font-weight:900;line-height:1.24;letter-spacing:
 .h2{font-size:var(--fs-3xl);font-weight:900;line-height:1.4;letter-spacing:var(--ls-h)}
 
 .two{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;margin-top:6px}
-.vq p{font-size:var(--fs-lg);font-weight:900;line-height:1.7;letter-spacing:var(--ls-h);background:#fff;border-radius:11px;padding:15px 18px;margin-bottom:11px;box-shadow:var(--sh-s)}
-.vq p:nth-child(1){border-left:5px solid var(--ao)}
-.vq p:nth-child(2){border-left:5px solid var(--ki)}
-.vq p:nth-child(3){border-left:5px solid var(--coral)}
+.vq p{font-size:var(--fs-lg);font-weight:900;line-height:1.75;letter-spacing:var(--ls-h);background:rgba(41,171,226,.075);border-radius:4px;padding:16px 18px;margin-bottom:10px}
+.vq p:nth-child(2){background:rgba(255,196,46,.14)}
+.vq p:nth-child(3){background:rgba(255,122,89,.10)}
 .hit{font-size:var(--fs-sm);color:var(--sub);margin-top:14px}
 .core{font-size:var(--fs-2xl);font-weight:900;line-height:1.55;letter-spacing:var(--ls-h);margin-bottom:16px}
 .core-s{font-size:var(--fs-md);color:var(--sub);line-height:1.95;font-weight:700}
@@ -286,7 +310,7 @@ h1.fvh{font-size:var(--fs-hero);font-weight:900;line-height:1.24;letter-spacing:
   br.sp{display:inline}
   .h2{line-height:1.5}
   .two{grid-template-columns:1fr;gap:24px}
-  .vq p{padding:13px 12px;margin-bottom:9px;white-space:nowrap;letter-spacing:-.045em}
+  .vq p{padding:14px 13px;margin-bottom:8px;white-space:nowrap;letter-spacing:-.045em}
   .core{line-height:1.5}
   .stl{gap:8px;margin-top:20px}
   .stl li{grid-template-columns:34px 1fr;gap:10px;padding:12px 14px}
@@ -410,10 +434,10 @@ h1.fvh{font-size:var(--fs-hero);font-weight:900;line-height:1.24;letter-spacing:
 
       <h3 class="q-h">今の状況にいちばん近いのは？</h3>
       <p class="hint">選ぶと、次にやることが出ます</p>
-      <button type="button" class="opt" data-r="比べる相手が、ゼロの状態です。" data-s="まず、比べる材料をLINEで渡します">内定を1社持っている</button>
-      <button type="button" class="opt o2" data-r="決め手が足りていないだけかもしれません。" data-s="決め手の作り方をLINEで話します">内定を2社以上持っている</button>
-      <button type="button" class="opt o3" data-r="決まる前に軸を作るほうが、あとが早いです。" data-s="決まる前の準備をLINEで話します">いま最終選考中</button>
-      <button type="button" class="opt o4" data-r="持ち駒の作り方から一緒に考えます。" data-s="持ち駒の作り方をLINEで話します">内定はまだ持っていない</button>
+      <button type="button" class="opt" data-r="比べる相手が、ゼロの状態です。" data-s="まず、比べる材料をLINEで渡します" data-n="いま持っている1社を基準にして、|同じ条件の会社を3社そろえます。">内定を1社持っている</button>
+      <button type="button" class="opt o2" data-r="決め手が足りていないだけかもしれません。" data-s="決め手の作り方をLINEで話します" data-n="2社の違いを、給与や知名度ではなく|3年後の立ち位置で並べ直します。">内定を2社以上持っている</button>
+      <button type="button" class="opt o3" data-r="決まる前に軸を作るほうが、あとが早いです。" data-s="決まる前の準備をLINEで話します" data-n="結果が出る前に、判断軸を決めます。|出てから考えるより、あとが早いです。">いま最終選考中</button>
+      <button type="button" class="opt o4" data-r="持ち駒の作り方から一緒に考えます。" data-s="持ち駒の作り方をLINEで話します" data-n="まだ何も失っていない状態です。|持ち駒の作り方から始めます。">内定はまだ持っていない</button>
       <p class="rc" id="rc"></p>
 
       <div class="cta-wrap">
@@ -533,15 +557,42 @@ h1.fvh{font-size:var(--fs-hero);font-weight:900;line-height:1.24;letter-spacing:
 
 <div class="bar" id="bar"><a class="btn" data-cta="sticky" href="https://s.lmes.jp/landing-qr/2008019424-482x88yd?uLand=2tFhco">LINEで話を聞いてみる</a></div>
 
+<div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="shH">
+  <div class="sheet-bd" data-close></div>
+  <div class="sheet-in">
+    <button type="button" class="sheet-x" data-close aria-label="閉じる"></button>
+    <span class="sheet-lb">あなたの状況</span>
+    <h3 class="sheet-h" id="shH"></h3>
+    <p class="sheet-r" id="shR"></p>
+    <p class="sheet-n" id="shN"></p>
+    <a class="cta" data-cta="sheet" href="https://s.lmes.jp/landing-qr/2008019424-482x88yd?uLand=agmTuO">LINEで話を聞いてみる<small>無料・登録1分／面談は希望者だけ</small></a>
+    <button type="button" class="sheet-cl" data-close>あとで見る</button>
+  </div>
+</div>
+
 <script>
 (function(){
   var sub=document.getElementById('ctaSub'), rc=document.getElementById('rc');
+  var sheet=document.getElementById('sheet'),
+      shH=document.getElementById('shH'), shR=document.getElementById('shR'), shN=document.getElementById('shN');
+  function openSheet(b){
+    shH.textContent=b.textContent.trim();
+    shR.textContent=b.dataset.r||'';
+    shN.innerHTML=(b.dataset.n||'').split('|').join('<br>');
+    sheet.classList.add('on'); document.body.classList.add('lock');
+    window.dataLayer=window.dataLayer||[];
+    window.dataLayer.push({event:'opt_select',opt:b.textContent.trim()});
+  }
+  function closeSheet(){sheet.classList.remove('on'); document.body.classList.remove('lock');}
+  sheet.querySelectorAll('[data-close]').forEach(function(x){x.addEventListener('click',closeSheet);});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeSheet();});
   document.querySelectorAll('.fc .opt').forEach(function(b){
     b.addEventListener('click',function(){
       document.querySelectorAll('.fc .opt').forEach(function(o){o.classList.remove('sel');});
       b.classList.add('sel');
       rc.textContent=b.dataset.r; rc.classList.add('on');
       if(sub) sub.textContent=b.dataset.s;
+      openSheet(b);
     });
   });
   var bar=document.getElementById('bar');
