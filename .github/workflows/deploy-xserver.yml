@@ -26,10 +26,12 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: ftps
           port: 21
+          timeout: 120000
           local-dir: ./site/root/
           server-dir: /worcry.com/public_html/aoharu-intern.worcry.com/
 
   long-intern:
+    needs: root
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -43,10 +45,12 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: ftps
           port: 21
+          timeout: 120000
           local-dir: ./site/long-intern/
           server-dir: /worcry.com/public_html/aoharu-intern.worcry.com/long-intern/
 
   shinsotsu:
+    needs: long-intern
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -60,10 +64,12 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: ftps
           port: 21
+          timeout: 120000
           local-dir: ./shinsotsu/
           server-dir: /worcry.com/public_html/aoharu-intern.worcry.com/shinsotsu/
 
   scout:
+    needs: shinsotsu
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -77,6 +83,7 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: ftps
           port: 21
+          timeout: 120000
           local-dir: ./scout/
           server-dir: /worcry.com/public_html/aoharu-intern.worcry.com/scout/
 
