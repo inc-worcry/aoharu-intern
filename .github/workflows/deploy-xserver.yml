@@ -4,6 +4,7 @@ on:
   push:
     branches: [ main ]
     paths:
+      - 'site/root/**'
       - 'site/long-intern/**'
       - 'shinsotsu/**'
       - 'scout/**'
@@ -11,6 +12,23 @@ on:
   workflow_dispatch:
 
 jobs:
+  root:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: FTP Deploy to Xserver
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server:   ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
+          port: 21
+          local-dir: ./site/root/
+          server-dir: /worcry.com/public_html/aoharu-intern.worcry.com/
+
   long-intern:
     runs-on: ubuntu-latest
     steps:
