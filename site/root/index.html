@@ -1357,6 +1357,11 @@ header{
 @media(min-width:861px){
   .fv-flow { display: none }
 }
+/* SP: FVのSTEP1-3カードとFV下の問い合わせフォームは非表示（ヘッダー/フッターのポップアップに集約） */
+@media(max-width:860px){
+  .fv-flow { display: none !important }
+  #sp-fv-form { display: none !important }
+}
 
 @media(max-width:860px){
   #nft { padding-bottom: 72px !important }
