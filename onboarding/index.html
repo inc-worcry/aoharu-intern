@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AOHARU オンボーディング｜採用してからが、<wbr>スタート。</title>
+<meta name="description" content="入社したばかりの人に、社外のメンターをひとり。原点と、居場所と、これからを一緒につくります。">
+<meta property="og:title" content="AOHARU オンボーディング｜採用してからが、スタート。">
+<meta property="og:description" content="内定承諾の日から、入社半年後まで。新卒の内定者オンボーディングを、御社に合わせて設計します。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://aoharu-intern.worcry.com/onboarding/">
+<meta property="og:site_name" content="AOHARU オンボーディング">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://aoharu-intern.worcry.com/onboarding/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F2F2F2;
+  --bg-w:#FFFFFF;
+  --dark:#242623;
+  --ink:#111111;
+  --sub:#6E6E6C;
+  --line:rgba(17,17,17,.12);
+  --or:#F7941D;
+  --sky:#29ABE2;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:"Noto Sans JP",-apple-system,BlinkMacSystemFont,"Hiragino Sans",sans-serif;
+  background:var(--bg);color:var(--ink);
+  font-size:16px;font-weight:400;line-height:2;letter-spacing:.02em;
+  -webkit-font-smoothing:antialiased;word-break:keep-all;overflow-wrap:break-word;line-break:strict;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--or);color:#fff}
+.w{width:100%;max-width:1160px;margin:0 auto;padding-inline:40px}
+section{padding:130px 0}
+
+/* header */
+.hd{position:fixed;inset:0 0 auto;z-index:70;padding:26px 0;transition:background .35s,padding .35s}
+.hd.on{background:rgba(242,242,242,.94);backdrop-filter:blur(10px);padding:16px 0}
+.hd .in{max-width:1160px;margin:0 auto;padding-inline:40px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.lg{display:flex;align-items:center;gap:10px}
+.lg img{height:21px;width:auto;opacity:.92}
+.lg span{font-size:13.5px;color:var(--sub);letter-spacing:.04em}
+.nv{display:flex;align-items:center;gap:26px}
+.nv a{font-size:14px;color:var(--ink)}
+.nv a:hover{color:var(--or)}
+
+/* buttons */
+.bt{display:inline-flex;align-items:center;gap:14px;font-size:14px;font-weight:500;letter-spacing:.06em;padding:17px 30px;border:1px solid var(--ink);color:var(--ink);background:transparent;font-family:inherit;cursor:pointer;transition:background .3s,color .3s,border-color .3s}
+.bt:hover{background:var(--ink);color:#fff}
+.bt i{font-style:normal;font-size:13px;transition:transform .3s}
+.bt:hover i{transform:translateX(4px)}
+.bt-f,.bt-f:link,.bt-f:visited{background:var(--ink);color:#ffffff!important}
+.bt-f:hover{background:var(--or);border-color:var(--or);color:#fff}
+.bt-s{padding:12px 22px;font-size:13px}
+
+/* FV */
+.fv{min-height:100vh;display:flex;align-items:center;padding:140px 0 92px;position:relative}
+.fv .g{display:grid;grid-template-columns:1fr 372px;gap:76px;align-items:center;width:100%}
+.fv .en-big{display:inline-block;font-size:clamp(34px,4.6vw,62px);font-weight:300;line-height:1.2;letter-spacing:-.01em;white-space:nowrap;
+  background:linear-gradient(92deg,#111 0%,#111 14%,var(--sky) 46%,var(--or) 82%,#FBB040 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:26px}
+.fv .ja{font-size:clamp(20px,2.6vw,30px);font-weight:500;letter-spacing:.06em;line-height:1.8;margin-bottom:22px}
+.fv .sub{font-size:15.5px;line-height:2.25;color:var(--sub);margin-bottom:38px;max-width:560px}
+.fv .sub b{color:var(--ink);font-weight:500;border-bottom:2px solid var(--or);padding-bottom:2px}
+.fv .btns{display:flex;gap:16px;flex-wrap:wrap}
+.fv .vlab{position:absolute;left:40px;top:150px;writing-mode:vertical-rl;font-size:11.5px;font-weight:700;letter-spacing:.3em;color:var(--sub)}
+.fv .sd{position:absolute;left:40px;bottom:54px;display:flex;flex-direction:column;align-items:center;gap:14px}
+.fv .sd span{writing-mode:vertical-rl;font-size:11.5px;letter-spacing:.24em;color:var(--sub)}
+.fv .sd i{display:block;width:1px;height:60px;background:var(--line);position:relative;overflow:hidden}
+.fv .sd i::after{content:"";position:absolute;inset:0;background:var(--or);transform:translateY(-100%);animation:sd 2.4s ease-in-out infinite}
+@keyframes sd{0%{transform:translateY(-100%)}55%{transform:translateY(0)}100%{transform:translateY(100%)}}
+
+/* message */
+.msg{background:var(--bg-w)}
+.msg h2{font-size:clamp(25px,3.3vw,40px);font-weight:500;line-height:1.85;letter-spacing:.05em;margin-bottom:44px}
+.msg p{font-size:16px;line-height:2.35;color:#333;max-width:740px}
+.msg p+p{margin-top:28px}
+
+/* section head */
+.sh{margin-bottom:54px}
+.sh .en{display:block;font-size:13px;font-weight:700;letter-spacing:.2em;color:var(--or);margin-bottom:12px}
+.sh h2{font-size:clamp(24px,3vw,34px);font-weight:500;line-height:1.85;letter-spacing:.05em}
+.sh p{font-size:15.5px;line-height:2.15;color:var(--sub);margin-top:22px;max-width:680px}
+
+/* three */
+.th{display:grid;grid-template-columns:repeat(3,1fr);gap:46px}
+.th .no{font-size:13px;font-weight:700;letter-spacing:.2em;color:var(--or);display:block;margin-bottom:16px;padding-bottom:16px;border-bottom:1px solid var(--line)}
+.th h3{font-size:22px;font-weight:500;line-height:1.85;margin-bottom:16px;letter-spacing:.04em}
+.th p{font-size:15px;line-height:2.1;color:var(--sub)}
+
+/* flow */
+.fw{border-top:1px solid var(--line)}
+.fw .r{display:grid;grid-template-columns:170px 1fr;gap:48px;padding:38px 0;border-bottom:1px solid var(--line);align-items:baseline}
+.fw .mo{font-size:30px;font-weight:500;letter-spacing:.02em;line-height:1.4}
+.fw .mo em{font-style:normal;font-size:13px;font-weight:400;color:var(--sub);margin-left:9px;letter-spacing:.04em}
+.fw h3{font-size:20px;font-weight:500;margin-bottom:10px;line-height:1.8;letter-spacing:.04em}
+.fw p{font-size:15px;line-height:2.1;color:var(--sub);max-width:640px}
+
+/* form (背景に溶け込ませる) */
+.fc{border-left:1px solid var(--line);padding-left:48px}
+.fc .ft{font-size:17px;font-weight:500;letter-spacing:.04em;margin-bottom:10px}
+.fc .fs{font-size:13px;line-height:2;color:var(--sub);margin-bottom:26px}
+.fc input[type=text],.fc input[type=email],.fc select{width:100%;background:transparent;border:none;border-bottom:1px solid var(--line);color:var(--ink);font-family:inherit;font-size:15px;padding:13px 2px;margin-bottom:6px;transition:border-color .3s}
+.fc select{-webkit-appearance:none;appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--sub) 50%),linear-gradient(135deg,var(--sub) 50%,transparent 50%);background-position:calc(100% - 9px) 22px,calc(100% - 4px) 22px;background-size:5px 5px;background-repeat:no-repeat;cursor:pointer}
+.fc input::placeholder{color:rgba(17,17,17,.36)}
+.fc input:focus,.fc select:focus{outline:none;border-bottom-color:var(--or)}
+.fc .ag{display:flex;align-items:flex-start;gap:9px;font-size:12.5px;color:var(--sub);margin:20px 0 20px;line-height:1.9}
+.fc .ag input{width:auto;margin-top:5px}
+.fc button{width:100%;border:none;background:var(--or);color:#fff;font-family:inherit;font-size:15.5px;font-weight:500;letter-spacing:.1em;padding:17px;cursor:pointer;transition:opacity .25s}
+.fc button:hover{opacity:.86}
+.fc .or2{text-align:center;font-size:13px;color:var(--sub);margin-top:15px}
+.fc .or2 a{color:var(--ink);font-weight:500;border-bottom:1px solid var(--sky);padding-bottom:2px}
+
+/* carousel */
+.cw{position:relative;margin-top:44px}
+.cv{overflow:hidden}
+.ct{display:flex;transition:transform .55s cubic-bezier(.4,0,.2,1)}
+.cs{flex:0 0 100%;padding-right:2px}
+.cs .in2{background:var(--bg-w);border:1px solid var(--line);padding:44px 48px}
+.cs .who{font-size:22px;font-weight:500;line-height:1.8;margin-bottom:6px;letter-spacing:.04em}
+.cs .who small{display:block;font-size:13.5px;font-weight:400;color:var(--sub);margin-top:8px}
+.cs dl{display:grid;grid-template-columns:repeat(2,1fr);gap:0 46px;margin-top:26px;border-top:1px solid var(--line)}
+.cs dl>div{padding:14px 0;border-bottom:1px solid var(--line)}
+.cs dl>div:first-child{grid-column:1/-1}
+.cs dt{font-size:12px;font-weight:500;letter-spacing:.1em;color:var(--sub);margin-bottom:5px}
+.cs dd{font-size:15.5px;line-height:2}
+.cs dl>div:first-child dd{font-size:17px;font-weight:500;color:var(--or)}
+.cn{display:flex;align-items:center;gap:18px;margin-top:28px}
+.cn .dots{display:flex;gap:9px}
+.cn .dot{width:26px;height:2px;background:var(--line);border:none;padding:0;cursor:pointer;transition:background .3s}
+.cn .dot.on{background:var(--or)}
+.cn .ix{font-size:13px;color:var(--sub);letter-spacing:.08em}
+.cn .ix b{color:var(--ink);font-weight:700}
+.cn .ar{display:flex;gap:8px;margin-left:auto}
+.cn .ar button{width:42px;height:42px;border:1px solid var(--line);background:transparent;cursor:pointer;font-size:14px;color:var(--ink);transition:background .25s,color .25s,border-color .25s}
+.cn .ar button:hover{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+
+/* price */
+.pr{display:grid;grid-template-columns:1fr 1fr;gap:70px}
+.pr h3{font-size:18px;font-weight:500;margin-bottom:22px;padding-bottom:16px;border-bottom:1px solid var(--line);letter-spacing:.04em}
+.pr li{list-style:none;font-size:15.5px;line-height:2;padding:8px 0}
+.pr .nt{font-size:14px;line-height:2.05;color:var(--sub);margin-top:24px}
+
+/* quote */
+.qt{margin-top:84px;text-align:center}
+.qt p{font-size:clamp(17px,2vw,23px);font-weight:500;line-height:2.25;letter-spacing:.05em}
+.qt cite{display:block;font-style:normal;font-size:13px;font-weight:700;letter-spacing:.14em;color:var(--sub);margin-top:22px}
+
+/* faq */
+.fq details{border-bottom:1px solid var(--line)}
+.fq summary{list-style:none;cursor:pointer;padding:26px 44px 26px 0;font-size:17px;font-weight:500;position:relative;line-height:1.9}
+.fq summary::-webkit-details-marker{display:none}
+.fq summary::after{content:"";position:absolute;right:6px;top:36px;width:13px;height:1px;background:var(--ink)}
+.fq summary::before{content:"";position:absolute;right:12px;top:30px;width:1px;height:13px;background:var(--ink);transition:transform .3s}
+.fq details[open] summary::before{transform:scaleY(0)}
+.fq .a{padding:0 44px 28px 0;font-size:15px;line-height:2.05;color:var(--sub)}
+
+/* cta band */
+.cta{background:var(--dark);color:#fff;text-align:center}
+.cta h2{font-size:clamp(24px,3vw,35px);font-weight:500;line-height:1.85;letter-spacing:.05em;margin-bottom:20px}
+.cta p{font-size:15.5px;line-height:2.15;color:#B7B8B5;margin-bottom:40px}
+.cta .bt{border-color:#fff;color:#fff}
+.cta .bt:hover{background:#fff;color:var(--dark)}
+.cta .bt-f{background:var(--or);border-color:var(--or)}
+.cta .bt-f:hover{background:#fff;border-color:#fff;color:var(--dark)}
+.cta .btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+
+.rv{opacity:0;transform:translateY(18px);transition:opacity .95s ease,transform .95s ease}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1!important;transform:none!important}.fv .sd i::after{animation:none}}
+
+@media (max-width:980px){
+  .w,.hd .in{padding-inline:20px}
+  .nv a:not(.bt){display:none}
+  .nv .bt{padding:10px 14px;font-size:12px;white-space:nowrap;gap:8px}
+  .lg img{height:17px}
+  section{padding:76px 0}
+  .fv{min-height:0;padding:124px 0 62px}
+  .fv .sub br,.msg h2 br,.sh h2 br,.cta h2 br,.qt p br{display:none}
+  .fv .g{grid-template-columns:1fr;gap:38px}
+  .fc{border-left:none;border-top:1px solid var(--line);padding:32px 0 0}
+  .fv .vlab,.fv .sd{display:none}
+  .fv .en-big{font-size:38px;line-height:1.2}
+  .th,.pr{grid-template-columns:1fr;gap:38px}
+  .fw .r{grid-template-columns:1fr;gap:12px;padding:28px 0}
+  .cs .in2{padding:30px 24px}
+  .cs dl{grid-template-columns:1fr;gap:0}
+  .msg h2{font-size:23px;line-height:1.9}
+  .qt{margin-top:54px}
+  .bt{width:100%;justify-content:center}
+  .cn .ar{display:none}
+}
+/* options */
+.op{border-top:1px solid var(--line)}
+.op .o{display:grid;grid-template-columns:300px 190px 1fr;gap:34px;padding:30px 0;border-bottom:1px solid var(--line);align-items:baseline}
+.op .ol{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.op .on{font-size:19px;font-weight:500;letter-spacing:.04em;line-height:1.7}
+.op .tag{font-size:11.5px;font-weight:500;letter-spacing:.08em;color:#fff;background:var(--or);padding:4px 10px;white-space:nowrap}
+.op .ow{font-size:13.5px;color:var(--sub);letter-spacing:.06em}
+.op .od{font-size:15px;line-height:2.05;color:var(--sub)}
+@media (max-width:980px){
+  .op .o{grid-template-columns:1fr;gap:10px;padding:24px 0}
+  .op .on{font-size:18px}
+}
+
+/* 比較図 */
+.cmp{margin-top:64px;border-top:1px solid var(--line);padding-top:34px}
+.cmp-t{font-size:17px;font-weight:500;letter-spacing:.04em;margin-bottom:24px}
+.cmp-ax{display:grid;grid-template-columns:1fr 1fr .6fr .6fr;margin-left:250px;padding-bottom:10px}
+.cmp-ax span{font-size:12.5px;color:var(--sub);position:relative;padding-left:11px}
+.cmp-ax span::before{content:"";position:absolute;left:0;top:9px;width:1px;height:calc(100% + 4px);background:var(--line)}
+.cmp-ax em{font-style:normal;display:block;font-size:11px;color:#9A9A98;margin-top:-6px}
+.cmp-r{display:grid;grid-template-columns:250px 1fr;gap:0;align-items:center;padding:9px 0}
+.cmp-l{font-size:13.5px;line-height:1.7;padding-right:24px}
+.cmp-l em{font-style:normal;display:block;font-size:11.5px;color:var(--sub);margin-top:2px}
+.cmp-bar{display:flex;height:40px}
+.cmp-bar .gap{flex:2;display:flex;align-items:center;justify-content:center;font-size:12px;color:#9A9A98;border:1px dashed var(--line)}
+.cmp-bar .b1{flex:1.2;display:flex;align-items:center;justify-content:center;font-size:12px;color:var(--sub);background:#E3E3E1}
+.cmp-bar .b2{flex:1;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:500;color:#fff;background:var(--or);letter-spacing:.04em}
+@media (max-width:980px){
+  .cmp-ax{display:none}
+  .cmp-r{grid-template-columns:1fr;gap:8px;padding:12px 0}
+  .cmp-l{padding-right:0}
+  .cmp-bar{height:36px}
+  .cmp-bar .gap{font-size:11px}
+}
+
+/* 実績 */
+.st{display:grid;grid-template-columns:repeat(4,1fr);gap:34px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:38px 0}
+.st .n{font-size:clamp(34px,4.4vw,50px);font-weight:500;letter-spacing:-.01em;line-height:1.2}
+.st .n small{font-size:16px;font-weight:500;margin-left:5px;letter-spacing:.02em}
+.st .n.or{color:var(--or)}
+.st .l{font-size:13px;color:var(--sub);margin-top:10px;line-height:1.85}
+.st-note{font-size:11.5px;line-height:1.95;color:#9A9A98;margin-top:20px}
+@media (max-width:980px){.st{grid-template-columns:repeat(2,1fr);gap:26px;padding:28px 0}}
+
+.tag2{margin-top:64px;font-size:17px;font-weight:500;letter-spacing:.1em;color:#fff}
+.tag2 span{color:var(--or)}
+.tag2 em{display:block;font-style:italic;font-size:12.5px;letter-spacing:.14em;color:#8E8F8C;margin-top:9px;font-weight:400}
+
+/* 共通フッター */
+#nft{background:#4D5156;color:#C4C7CB;padding:52px 0 0;font-family:inherit;text-align:center}
+#nft a{text-decoration:none;color:inherit;transition:color .18s,background .18s}
+#nft a:hover{color:#fff}
+.nft-in{max-width:1100px;margin:0 auto;padding:0 40px}
+.nft-head{display:flex;align-items:center;justify-content:space-between;padding-bottom:36px;border-bottom:1px solid rgba(255,255,255,.18);margin-bottom:36px;gap:20px}
+.nft-logo img{height:32px;width:auto;display:block}
+.nft-sns{display:flex;gap:10px;align-items:center;flex-shrink:0}
+.nft-sns a{display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.08);color:#D5D7DA;flex-shrink:0}
+.nft-sns a:hover{background:#29ABE2;color:#fff}
+.nft-sns svg{width:15px;height:15px;fill:currentColor;display:block}
+.nft-nav{display:grid;grid-template-columns:1fr 1.6fr 1.3fr;gap:40px;padding-bottom:36px;border-bottom:1px solid rgba(255,255,255,.18);margin-bottom:24px}
+.nft-col-ttl{font-size:9.5px;font-weight:700;color:#fff;letter-spacing:.18em;text-transform:uppercase;margin-bottom:16px}
+.nft-col a{display:block;font-size:12.5px;color:#D5D7DA;margin-bottom:10px;line-height:1.4}
+.nft-col a:hover{color:#29ABE2}
+.nft-btm{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding:18px 0 36px}
+.nft-legal{display:flex;flex-wrap:wrap;font-size:10.5px;color:#C4C7CB}
+.nft-legal a{padding:0 10px;border-left:1px solid rgba(255,255,255,.3)}
+.nft-legal a:first-child{padding-left:0;border-left:0}
+.nft-copy{font-size:10.5px;color:#C4C7CB;white-space:nowrap}
+@media(max-width:860px){
+.nft-nav{grid-template-columns:1fr 1fr;gap:28px}
+.nft-in{padding:0 24px}
+}
+@media(max-width:640px){
+.nft-head{flex-direction:column;align-items:flex-start;gap:18px}
+.nft-nav{grid-template-columns:1fr 1fr;gap:20px}
+.nft-btm{flex-direction:column;align-items:flex-start;gap:8px}
+}
+.dnote{font-size:clamp(18px,2.2vw,24px);font-weight:500;letter-spacing:.05em;line-height:1.9;margin-bottom:40px}
+.dnote b{font-weight:500;color:var(--or)}
+.dnote span{display:block;font-size:11.5px;font-weight:400;color:#9A9A98;letter-spacing:.02em;line-height:1.9;margin-top:14px}
+
+/* 完了モーダル */
+#done{position:fixed;inset:0;z-index:200;background:rgba(17,17,17,.42);display:flex;align-items:center;justify-content:center;padding:24px;opacity:0;transition:opacity .3s}
+#done.on{opacity:1}
+#done[hidden]{display:none}
+.dm{position:relative;background:var(--bg);max-width:460px;width:100%;padding:46px 44px 40px;max-height:90vh;overflow:auto}
+.dm-x{position:absolute;right:16px;top:12px;border:none;background:none;font-size:24px;line-height:1;color:var(--sub);cursor:pointer;padding:6px}
+.dm-t{font-size:20px;font-weight:500;letter-spacing:.05em;margin-bottom:12px}
+.dm-s{font-size:14px;line-height:2;color:var(--sub);margin-bottom:30px}
+.dm-steps{list-style:none;border-top:1px solid var(--line);margin-bottom:30px}
+.dm-steps li{display:grid;grid-template-columns:34px 1fr;gap:14px;padding:16px 0;border-bottom:1px solid var(--line);align-items:baseline}
+.dm-steps b{font-size:12px;font-weight:700;color:var(--or);letter-spacing:.1em}
+.dm-steps em{display:block;font-style:normal;font-size:15px;font-weight:500;margin-bottom:3px}
+.dm-steps span{font-size:13px;line-height:1.95;color:var(--sub)}
+.dm-spir{display:block;text-align:center;background:var(--or);color:#fff;font-size:15px;font-weight:500;letter-spacing:.08em;padding:17px;transition:opacity .25s}
+.dm-spir:hover{opacity:.87}
+.dm-close{display:block;width:100%;border:none;background:none;font-family:inherit;font-size:13px;color:var(--sub);padding:16px 0 0;cursor:pointer}
+@media (max-width:980px){.dm{padding:38px 24px 32px}}
+
+</style>
+</head>
+<body>
+
+<header class="hd" id="hd">
+  <div class="in">
+    <a href="#" class="lg"><img src="images/logo.png" alt="AOHARU オンボーディング"></a>
+    <nav class="nv">
+      <a href="#about">する<wbr>こと</a>
+      <a href="#flow">半年の<wbr>流れ</a>
+      <a href="#cases">3社の<wbr>違い</a>
+      <a href="#options">できる<wbr>こと</a>
+      <a href="#price">料金</a>
+      <a href="#contact" class="bt bt-s bt-f">資料請求・相談<i>→</i></a>
+    </nav>
+  </div>
+</header>
+
+<section class="fv">
+  <span class="vlab">AOHARU ONBOARDING</span>
+  <div class="w">
+    <div class="g">
+      <div>
+        <p class="en-big">After hiring.</p>
+        <p class="ja">採用してからが、<wbr>スタート。</p>
+        <p class="sub">内定が<wbr>出るのは、<wbr>大学3年の<wbr>秋。<wbr>そこから<wbr>入社まで、<wbr>1年半近い<wbr>時間が<wbr>あります。<br>仕事の<wbr>やり方は、<wbr>配属先が<wbr>教えてくれる。<b>この<wbr>1年半を<wbr>どう<wbr>過ごすか</b>で、<wbr>入社式以降の<wbr>活躍は<wbr>変わります。</p>
+        <div class="btns">
+          <a href="#about" class="bt">サービスを<wbr>見る<i>→</i></a>
+        </div>
+      </div>
+
+      <div class="fc" id="contact-form">
+        <p class="ft">資料を<wbr>ダウンロード</p>
+        <p class="fs">進め方<wbr>・<wbr>お渡しする<wbr>もの<wbr>・料金まで<wbr>掲載しています。<br>1分ほどで、<wbr>その場で<wbr>お受け<wbr>取りいただけます。</p>
+        <form id="lead" novalidate>
+          <input type="hidden" name="_form" value="AOHARU-オンボーディング">
+          <input type="text" id="company" name="会社名" placeholder="会社名" aria-label="会社名" required>
+          <input type="text" id="name" name="お名前" placeholder="お名前" aria-label="お名前" required>
+          <input type="email" id="email" name="email" placeholder="メールアドレス" aria-label="メールアドレス" required>
+          <select id="topic" name="ご相談内容" aria-label="ご相談内容">
+            <option>資料が<wbr>ほしい</option>
+            <option>来春の<wbr>新入社員に<wbr>ついて<wbr>相談したい</option>
+            <option>内定者フォローを<wbr>相談したい</option>
+            <option>若手・リーダー層の<wbr>育成を<wbr>相談したい</option>
+          </select>
+          <label class="ag"><input type="checkbox" id="agree" required><span>プライバシーポリシーに<wbr>同意します</span></label>
+          <button type="submit">資料を<wbr>ダウンロード</button>
+          <p class="or2">または<wbr> <a href="#">30分で<wbr>相談する</a></p>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="sd"><span>SCROLL</span><i></i></div>
+</section>
+
+<section class="msg">
+  <div class="w">
+    <h2 class="rv">入社式を、<br>ゴールに<wbr>しない。</h2>
+    <p class="rv">オンボーディングは<wbr>入社してから、と<wbr>いう<wbr>感覚は、<wbr>もう<wbr>古いのかもしれません。<wbr>就活が<wbr>前倒しに<wbr>なったいま、<wbr>内定が<wbr>出るのは<wbr>大学3年の<wbr>秋です。<wbr>そこから<wbr>入社まで、<wbr>1年半近い<wbr>時間が<wbr>ある。<wbr>究極的には、<wbr>採用面接の<wbr>時点で<wbr>もう<wbr>始まっていると<wbr>思っています。</p>
+    <p class="rv">その<wbr>1年半で、<wbr>何を<wbr>渡しておくか。<wbr>仕事の<wbr>やり方は、<wbr>配属先が<wbr>教えてくれます。<wbr>先に<wbr>渡して<wbr>おきたいのは、<wbr>この<wbr>会社が<wbr>どういう<wbr>会社なのかと<wbr>いう<wbr>カルチャーと、<wbr>どこに<wbr>配属されても<wbr>効いてくる<wbr>基礎の<wbr>ほうです。<wbr>入社式の<wbr>日に<wbr>ゼロから<wbr>始めるのと、<wbr>すでに<wbr>知っている<wbr>状態で<wbr>始めるのとでは、<wbr>立ち<wbr>上がりが<wbr>まるで<wbr>違います。</p>
+    <p class="rv">研修は、<wbr>やり方を<wbr>教える<wbr>場です。<wbr>オンボーディングは、<wbr>早く<wbr>活躍して<wbr>もらう<wbr>ための<wbr>設計<wbr>そのもの。<wbr>だから<wbr>私たちは、<wbr>入社式を<wbr>待たずに<wbr>内定を<wbr>出した<wbr>日から<wbr>関わります。<wbr>形は<wbr>集合研修でも、<wbr>中身は<wbr>1on1と<wbr>同じ<wbr>感覚で。<wbr>誰が<wbr>どこで<wbr>止まっているかを<wbr>その場で<wbr>拾い、<wbr>ペースを<wbr>合わせます。</p>
+    <div class="cmp rv">
+      <p class="cmp-t">私た<wbr>ちが、<wbr>となりに<wbr>いる<wbr>期間。</p>
+      <div class="cmp-ax"><span>内定承諾<em>大学3年 秋</em></span><span>入社<em>4月1日</em></span><span>3ヶ月</span><span>半年</span></div>
+      <div class="cmp-r">
+        <p class="cmp-l">一般的な<wbr>新人研修<em>入社日から</em></p>
+        <div class="cmp-bar"><span class="gap">この<wbr>1年半に、<wbr>誰も<wbr>関わらない</span><span class="b1">入社後の<wbr>数日〜数週間</span></div>
+      </div>
+      <div class="cmp-r">
+        <p class="cmp-l">AOHARU オンボーディング<em>内定承諾の<wbr>日から</em></p>
+        <div class="cmp-bar"><span class="b2">内定承諾 — 入社 — 活躍の<wbr>土台づくりまで</span></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="about">
+  <div class="w">
+    <div class="sh rv">
+      <span class="en">What we do</span>
+      <h2>早く<wbr>活躍して<wbr>もらう<wbr>ために、<br>この<wbr>3つを<wbr>やります。</h2>
+      <p>仕事の<wbr>やり方は、<wbr>配属先が<wbr>教えてくれます。<wbr>私たちが<wbr>時間を<wbr>かけるのは、<wbr>その<wbr>手前に<wbr>ある<wbr>ものです。</p>
+    </div>
+    <div class="th">
+      <div class="rv">
+        <span class="no">01</span>
+        <h3>原点を<wbr>つくる。</h3>
+        <p>な<wbr>ぜ<wbr>この<wbr>会社を<wbr>選んだのか。<wbr>3ヶ月も<wbr>すれば、<wbr>たいてい忘れます。<wbr>だから<wbr>入る<wbr>前に、<wbr>本人の<wbr>言葉で<wbr>残しておく。<wbr>つらくなった<wbr>ときに、<wbr>立ち返る<wbr>場所に<wbr>なります。</p>
+      </div>
+      <div class="rv">
+        <span class="no">02</span>
+        <h3>居場所を<wbr>つくる。</h3>
+        <p>いちばん<wbr>多い<wbr>相談は、<wbr>仕事の<wbr>中身では<wbr>ありません。<wbr>ここに<wbr>いていいのか、と<wbr>いう<wbr>話です。<wbr>月に<wbr>1度、<wbr>必ず<wbr>会う<wbr>人が<wbr>いる。<wbr>それだけで、<wbr>辞めるまでの<wbr>距離は<wbr>変わります。</p>
+      </div>
+      <div class="rv">
+        <span class="no">03</span>
+        <h3>これからを、<wbr>考える。</h3>
+        <p>3年後どうなっていたいか。<wbr>社内では<wbr>聞きにくい話です。<wbr>社外の<wbr>人間だから、<wbr>まっすぐ<wbr>聞ける。<wbr>そのうえで、<wbr>この<wbr>会社の<wbr>中で<wbr>どう<wbr>叶えるかを<wbr>一緒に<wbr>探します。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="msg" id="flow">
+  <div class="w">
+    <div class="sh rv">
+      <span class="en">Six months</span>
+      <h2>集合研修なんだけど、<br>1on1の<wbr>延長で<wbr>関わる。</h2>
+      <p>内定を<wbr>出した<wbr>ところから、<wbr>入社して<wbr>半年後まで。<wbr>月に<wbr>1度、<wbr>直接会います。</p>
+    </div>
+    <div class="fw">
+      <div class="r rv">
+        <p class="mo">09<em>月 — 3月</em></p>
+        <div>
+          <h3>原点を、<wbr>ことばに。</h3>
+          <p>内定者と<wbr>1人ずつ<wbr>面談し、<wbr>月に<wbr>1度の<wbr>ワークショップへ。<wbr>なぜ<wbr>この<wbr>会社を<wbr>選んだのかを<wbr>本人の<wbr>言葉で<wbr>残します。<wbr>同期どうしも、<wbr>ここで<wbr>先に<wbr>知り合う。</p>
+        </div>
+      </div>
+      <div class="r rv">
+        <p class="mo">04<em>月 — 入社</em></p>
+        <div>
+          <h3>立ち<wbr>上がりの<wbr>研修。</h3>
+          <p>4月1日に<wbr>立てる<wbr>状態から、<wbr>任される<wbr>状態へ。<wbr>同じ<wbr>時期に、<wbr>迎える<wbr>側（上司・トレーナー）の<wbr>回も<wbr>実施します。</p>
+        </div>
+      </div>
+      <div class="r rv">
+        <p class="mo">07<em>月 — 3ヶ月</em></p>
+        <div>
+          <h3>再度、<wbr>キックオフ。</h3>
+          <p>社会人に<wbr>慣れ始める<wbr>この頃。<wbr>同期と<wbr>比べ始める<wbr>この<wbr>頃でもあります。<wbr>キャリアを<wbr>しっかり<wbr>考え、<wbr>なんで<wbr>自社に<wbr>入社したんだっけ？と<wbr>問い<wbr>直す、<wbr>絶好の<wbr>機会です。</p>
+        </div>
+      </div>
+      <div class="r rv">
+        <p class="mo">10<em>月 — 半年</em></p>
+        <div>
+          <h3>自走フェーズへ。</h3>
+          <p>人に<wbr>よっては、<wbr>少し<wbr>調子が<wbr>良くなってくる<wbr>時期。<wbr>もう<wbr>一度<wbr>気を<wbr>引き締めて、<wbr>自分の<wbr>なりたい姿を<wbr>言語化します。<wbr>目指せ、<wbr>エースへ。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="cases">
+  <div class="w">
+    <p class="dnote rv">新卒の<b>3人に<wbr>1人</b>が、<wbr>3年以内に<wbr>会社を<wbr>辞めています。<span>大学卒業者の<wbr>就職後<wbr>3年以内<wbr>離職率 33.8%／厚生労働省<wbr>「新規学卒就職者の<wbr>離職状況<wbr>（令和4年3月卒業者）」<wbr>2025年10月公表</span></p>
+    <div class="st rv">
+      <div><p class="n">50<small>社以上</small></p><p class="l">支援実績<br>内定者・新入社員・若手・リーダー層</p></div>
+      <div><p class="n">300<small>名以上</small></p><p class="l">のべ対象人数</p></div>
+      <div><p class="n">4.8<small>/5.0</small></p><p class="l">研修アンケート平均<br>WorCry設立以降</p></div>
+      <div><p class="n or">100<small>%</small></p><p class="l">定着率<br>直近1年・実施3社／202<wbr>6年入社</p></div>
+    </div>
+    <p class="st-note rv">※ 支援社数・対象人数は、<wbr>代表・鈴木の<wbr>前職在籍時に<wbr>おける<wbr>登壇・支援実績を<wbr>含みます。<wbr>　※ 顧客満足度・定着率は、<wbr>株式会社WorCry設立以降の<wbr>実績です。</p>
+
+    <div class="sh rv" style="margin-top:86px">
+      <span class="en">Three companies</span>
+      <h2>同じ<wbr>研修を、<wbr>二度やった<wbr>ことがありません。</h2>
+      <p>会社が<wbr>違えば、<wbr>目指す状態も、<wbr>つまずく<wbr>場所も<wbr>違います。<wbr>実際に<wbr>ご一緒した<wbr>3社を<wbr>並べてみます。</p>
+    </div>
+    <div class="cw rv">
+      <div class="cv">
+        <div class="ct" id="ct">
+          <div class="cs">
+            <div class="in2">
+              <p class="who">製造業<small>180名／営業・製造　2<wbr>6年<wbr>入社：12名</small></p>
+              <dl>
+                <div><dt>伴走した<wbr>期間</dt><dd>4年生10月 — 入社3ヶ月まで</dd></div>
+                <div><dt>集合研修</dt><dd>月1回90分／2ヶ月に<wbr>1回、<wbr>1on1も<wbr>実施</dd></div>
+                <div><dt>研修テーマ</dt><dd>マインド面<wbr>（社会人に<wbr>なる上での<wbr>心構え）</dd></div>
+              </dl>
+            </div>
+          </div>
+          <div class="cs">
+            <div class="in2">
+              <p class="who">物流業<small>1,250名／倉庫管理・営業　2<wbr>6年<wbr>入社：120名</small></p>
+              <dl>
+                <div><dt>伴走した<wbr>期間</dt><dd>4年生4月 — 入社式まで</dd></div>
+                <div><dt>集合研修</dt><dd>月1回120分／継続コンテンツ</dd></div>
+                <div><dt>研修テーマ</dt><dd>ビジネスマナー／内定者同士の<wbr>チームビルディング</dd></div>
+              </dl>
+            </div>
+          </div>
+          <div class="cs">
+            <div class="in2">
+              <p class="who">放送業<small>50名／AD・撮影技術　新卒採用：4名</small></p>
+              <dl>
+                <div><dt>伴走した<wbr>期間</dt><dd>4年生12月 — 入社6ヶ月まで</dd></div>
+                <div><dt>集合研修</dt><dd>月1回300分／内定者プロジェクト伴走</dd></div>
+                <div><dt>研修テーマ</dt><dd>プロジェクトファシリテーター</dd></div>
+              </dl>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="cn">
+        <div class="dots" id="dots"></div>
+        <p class="ix"><b id="ixn">1</b> / 3</p>
+        <div class="ar">
+          <button type="button" id="pv" aria-label="前へ">←</button>
+          <button type="button" id="nx" aria-label="次へ">→</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="msg" id="options">
+  <div class="w">
+    <div class="sh rv">
+      <span class="en">Options</span>
+      <h2>こういう<wbr>ことも、<wbr>できます。</h2>
+      <p>決まった型は<wbr>ありません。<wbr>得意なのは<wbr>新卒の<wbr>内定者オンボーディングですが、<wbr>必要な<wbr>ところだけでも<wbr>お受けします。</p>
+    </div>
+    <div class="op">
+      <div class="o rv">
+        <div class="ol"><p class="on">内定者オンボーディング</p><span class="tag">いちばん<wbr>得意</span></div>
+        <p class="ow">内定承諾 — 入社前</p>
+        <p class="od">月に<wbr>1度の<wbr>ワークショップ。<wbr>集合の<wbr>形でも、<wbr>1人ずつに<wbr>返します。<wbr>辞退を<wbr>防ぎながら、<wbr>4月1日に<wbr>立てる<wbr>状態を<wbr>つくります。<wbr>内定式の<wbr>あと、<wbr>10月から<wbr>3月の<wbr>6回でも<wbr>組めます。</p>
+      </div>
+      <div class="o rv">
+        <div class="ol"><p class="on">入社後オンボーディング</p></div>
+        <p class="ow">入社 — 半年</p>
+        <p class="od">立ち<wbr>上がりの<wbr>研修と、<wbr>1ヶ月後・3ヶ月後・<wbr>半年後の<wbr>フォロー。<wbr>つまずく<wbr>時期に<wbr>合わせて<wbr>戻ってきます。</p>
+      </div>
+      <div class="o rv">
+        <div class="ol"><p class="on">迎える<wbr>側の<wbr>研修</p></div>
+        <p class="ow">上司・トレーナー向け</p>
+        <p class="od">任せる<wbr>範囲の<wbr>決め方、<wbr>声の<wbr>かけ方、<wbr>できていない<wbr>ときの<wbr>伝え方。<wbr>新人側だけを<wbr>変えても、<wbr>現場に<wbr>戻れば<wbr>元に<wbr>戻ります。</p>
+      </div>
+      <div class="o rv">
+        <div class="ol"><p class="on">若手・リーダー層</p></div>
+        <p class="ow">2年目 — 主任クラス</p>
+        <p class="od">言われた<wbr>ことを<wbr>やる<wbr>側から、<wbr>自分で<wbr>決める<wbr>側へ。<wbr>後輩を<wbr>持つ前後に<wbr>必要な<wbr>考え方を<wbr>扱います。</p>
+      </div>
+      <div class="o rv">
+        <div class="ol"><p class="on">単発での<wbr>ご依頼</p></div>
+        <p class="ow">1回から</p>
+        <p class="od">目指す状態を<wbr>決める<wbr>ワークショップだけ、<wbr>内定者の<wbr>面談だけ、と<wbr>いった<wbr>形でも<wbr>お受けします。<wbr>まず1回だけ試すことも<wbr>できます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="price">
+  <div class="w">
+    <div class="sh rv">
+      <span class="en">Price</span>
+      <h2>料金設定は、<wbr>あえてしていません。</h2>
+      <p>決まった<wbr>パッケージを<wbr>当てはめるのではなく、<wbr>貴社の<wbr>ニーズを<wbr>うかがって<wbr>アジェンダを<wbr>作成します。<wbr>そのうえで<wbr>ご提案し、<wbr>相互に<wbr>納得したうえで<wbr>確定させます。</p>
+    </div>
+    <div class="pr">
+      <div class="rv">
+        <h3>毎回、<wbr>お渡しする<wbr>もの</h3>
+        <ul>
+          <li>その<wbr>日、<wbr>誰に<wbr>何が<wbr>起きたかの<wbr>レポート</li>
+          <li>その<wbr>場で<wbr>拾った本音<wbr>（言いにくい<wbr>話ほど）</li>
+          <li>目指す状態に<wbr>対する、<wbr>いまの<wbr>現在地</li>
+          <li>次に<wbr>現場・人事・<wbr>私たちが<wbr>何を<wbr>するか</li>
+        </ul>
+        <p class="nt">当日<wbr>その<wbr>場に<wbr>いなかった<wbr>人事の<wbr>方が、<wbr>何が<wbr>起きたかを<wbr>分かる<wbr>状態に<wbr>して<wbr>返します。</p>
+      </div>
+      <div class="rv">
+        <h3>ご提案までの<wbr>流れ</h3>
+        <ul>
+          <li>今年の<wbr>新人の<wbr>状況と、<wbr>困りごとを<wbr>うかが<wbr>う</li>
+          <li>目指す状態を、<wbr>人事の<wbr>方と<wbr>一緒に<wbr>決める</li>
+          <li>回数・時間・対象・<wbr>進め方を<wbr>設計して<wbr>ご提案</li>
+          <li>内容とお見積りに<wbr>納得いただけたら、<wbr>開始</li>
+        </ul>
+        <p class="nt">目安の<wbr>金額は<wbr>資料に<wbr>載せています。<wbr>単発での<wbr>ご依頼や、<wbr>1回だけ試していただく<wbr>ことも<wbr>できます。</p>
+      </div>
+    </div>
+    <div class="qt rv">
+      <p>研修後の<wbr>レポートが<wbr>深い。<br>なんで<wbr>ここまで<wbr>分かるの？と<wbr>いう<wbr>情報まで<wbr>拾ってくれて、<br>必ず次の<wbr>アクションを<wbr>明示してくれる。</p>
+      <cite>人事ご担当者より</cite>
+    </div>
+  </div>
+</section>
+
+<section class="fq msg">
+  <div class="w" style="max-width:840px">
+    <div class="sh rv"><span class="en">FAQ</span><h2>よく<wbr>ある<wbr>ご質問</h2></div>
+    <details><summary>何名から<wbr>お願い<wbr>できますか？</summary><div class="a">1名から<wbr>お受けしています。<wbr>会社単位の<wbr>料金に<wbr>しているのは、<wbr>少人数で<wbr>採用している<wbr>会社さまほど<wbr>1人あたり課金では<wbr>頼みにくくなる<wbr>ためです。</div></details>
+    <details><summary>研修の<wbr>カリキュラムが<wbr>自社に<wbr>ありませんが、<wbr>大丈夫ですか？</summary><div class="a">むしろ<wbr>その<wbr>状態から<wbr>ご一緒する<wbr>ことが<wbr>多いです。<wbr>目指す状態を<wbr>決める<wbr>ところから<wbr>始めるので、<wbr>教材も<wbr>制度もなくて<wbr>構いません。</div></details>
+    <details><summary>採用支援を<wbr>受けていなくても<wbr>依頼できますか？</summary><div class="a">できます。<wbr>その<wbr>場合は<wbr>内定者面談から<wbr>入らせていただき、<wbr>採用時の<wbr>情報を<wbr>こちらで<wbr>拾い<wbr>直します。</div></details>
+    <details><summary>途中から<wbr>でも<wbr>入れますか？</summary><div class="a">入れます。<wbr>すでに<wbr>数ヶ月が<wbr>経っている<wbr>場合は、<wbr>現状の<wbr>聞き取りから<wbr>始め、<wbr>残りの<wbr>期間で<wbr>何を<wbr>整えるかを<wbr>組み直します。</div></details>
+  </div>
+</section>
+
+<section class="cta" id="contact">
+  <div class="w">
+    <h2>まず、<wbr>今年の<wbr>新人の<wbr>話を<wbr>聞かせてください。</h2>
+    <p>必要か<wbr>どうかから<wbr>お答えします。<wbr>売り込みは<wbr>しません。</p>
+    <div class="btns">
+      <a href="#" class="bt bt-f">資料を<wbr>ダウンロード<i>→</i></a>
+      <a href="#" class="bt">30分で<wbr>相談する<i>→</i></a>
+    </div>
+    <p class="tag2">&quot;は<wbr>たらく<wbr>&quot;に、<span>青春</span>を。<em>Dramatic Work, Emotional Life.</em></p>
+  </div>
+</section>
+
+<footer id="nft">
+  <div class="nft-in">
+    <div class="nft-head">
+      <a href="https://www.worcry.com/" class="nft-logo"><img src="data:image/png;base64,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" alt="WorCry"></a>
+      <div class="nft-sns">
+        <a href="https://x.com/worcry_official" aria-label="X" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.747l7.73-8.835L1.254 2.25H8.08l4.259 5.63 5.905-5.63zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        <a href="https://www.instagram.com/worcry_official/" aria-label="Instagram" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+        <a href="https://www.tiktok.com/@worcry" aria-label="TikTok" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.28 6.28 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.66a8.25 8.25 0 004.83 1.55V6.77a4.85 4.85 0 01-1.06-.08z"/></svg></a>
+        <a href="https://www.youtube.com/@worcry" aria-label="YouTube" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+        <a href="https://lin.ee/worcry" aria-label="LINE" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.105.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg></a>
+        <a href="https://note.com/worcry" aria-label="note" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M18.5 0h-13C2.46 0 0 2.46 0 5.5v13C0 21.54 2.46 24 5.5 24h13c3.04 0 5.5-2.46 5.5-5.5v-13C24 2.46 21.54 0 18.5 0zM7.5 7h9a.75.75 0 010 1.5h-9A.75.75 0 017.5 7zm0 4.5h9a.75.75 0 010 1.5h-9a.75.75 0 010-1.5zm0 4.5h5a.75.75 0 010 1.5h-5a.75.75 0 010-1.5z"/></svg></a>
+      </div>
+    </div>
+    <div class="nft-nav">
+      <div class="nft-col">
+        <div class="nft-col-ttl">学生の<wbr>方<wbr>へ</div>
+        <a href="https://intern.worcry.com/hp/">長期インターンを<wbr>探す</a>
+      </div>
+      <div class="nft-col">
+        <div class="nft-col-ttl">採用担当者の<wbr>方<wbr>へ</div>
+        <a href="https://aoharu-intern.worcry.com/long-intern/">長期インターン紹介</a>
+        <a href="https://aoharu-intern.worcry.com/">新卒採用支援</a>
+        <a href="https://aoharu-intern.worcry.com/scout/">スカウト採用</a>
+        <a href="https://aoharu-intern.worcry.com/shinsotsu/">新卒紹介</a>
+      </div>
+      <div class="nft-col">
+        <div class="nft-col-ttl">会社情報</div>
+        <a href="https://www.worcry.com/">運営会社</a>
+        <a href="https://www.worcry.com/contact">CONTACT</a>
+      </div>
+    </div>
+    <div class="nft-btm">
+      <div class="nft-legal">
+        <a href="https://www.worcry.com/privacy-policy">プライバシーポリシー</a>
+        <a href="https://www.worcry.com/kiyaku">人材紹介サービス利用規約</a>
+        <a href="https://www.worcry.com/kiyaku-scl">特定商取引法に<wbr>基づく<wbr>表記</a>
+      </div>
+      <div class="nft-copy">© 2026 WorCry Inc. All rights reserved.</div>
+    </div>
+  </div>
+</footer>
+
+<div id="done" role="dialog" aria-modal="true" aria-labelledby="done-t" hidden>
+  <div class="dm">
+    <button class="dm-x" type="button" aria-label="閉じる">&times;</button>
+    <p class="dm-t">送信ありがとうございます。</p>
+    <p class="dm-s" id="done-t">資料をお送りしました。1営業日以内に、担当よりご連絡します。</p>
+    <ol class="dm-steps">
+      <li><b>01</b><span><em>日程を決める</em>このまま候補日をお選びいただけます。</span></li>
+      <li><b>02</b><span><em>30分の打ち合わせ</em>今年の新人の状況と、困りごとをうかがいます。</span></li>
+      <li><b>03</b><span><em>ご提案</em>目指す状態と、組み方をお出しします。</span></li>
+    </ol>
+    <a class="dm-spir" href="https://app.spirinc.com/t/H_vQ01vClf0LmLgUwmVWY/as/XMn5n8Z_s_rK6GUlabUGi/confirm" target="_blank" rel="noopener">日程を選んで予約する</a>
+    <button class="dm-close" type="button">閉じる</button>
+  </div>
+</div>
+
+<script>
+(function(){
+  var hd=document.getElementById('hd');
+  var onS=function(){ hd.classList.toggle('on', window.scrollY>40); };
+  onS(); window.addEventListener('scroll',onS,{passive:true});
+
+  if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    },{rootMargin:'0px 0px -6% 0px',threshold:.06});
+    document.querySelectorAll('.rv').forEach(function(el){ io.observe(el); });
+  } else { document.querySelectorAll('.rv').forEach(function(el){ el.classList.add('in'); }); }
+
+  var ct=document.getElementById('ct'), dots=document.getElementById('dots'), ixn=document.getElementById('ixn');
+  var n=ct.children.length, i=0;
+  for(var k=0;k<n;k++){
+    var d=document.createElement('button');
+    d.type='button'; d.className='dot'+(k===0?' on':''); d.setAttribute('aria-label',(k+1)+'枚目');
+    d.dataset.k=k; dots.appendChild(d);
+  }
+  function go(x){
+    i=(x+n)%n;
+    ct.style.transform='translateX('+(-i*100)+'%)';
+    ixn.textContent=i+1;
+    dots.querySelectorAll('.dot').forEach(function(d,j){ d.classList.toggle('on', j===i); });
+  }
+  dots.addEventListener('click',function(e){ if(e.target.dataset.k!==undefined) go(+e.target.dataset.k); });
+  document.getElementById('nx').addEventListener('click',function(){ go(i+1); });
+  document.getElementById('pv').addEventListener('click',function(){ go(i-1); });
+
+  var GAS_URL='https://script.google.com/macros/s/AKfycbzQ_aDz5yK8rmk0_zzZ4Kh-wTwplAm4ZTXhd0vk0zOXbjivkWjdPPC5Tv2KXYi3zdq_/exec';
+  var f=document.getElementById('lead'), done=document.getElementById('done'), sending=false;
+  function openDone(){ done.hidden=false; requestAnimationFrame(function(){ done.classList.add('on'); }); document.body.style.overflow='hidden'; }
+  function closeDone(){ done.classList.remove('on'); document.body.style.overflow=''; setTimeout(function(){ done.hidden=true; },300); }
+  done.querySelector('.dm-x').addEventListener('click',closeDone);
+  done.querySelector('.dm-close').addEventListener('click',closeDone);
+  done.addEventListener('click',function(e){ if(e.target===done) closeDone(); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape' && !done.hidden) closeDone(); });
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    if(sending) return;
+    if(!f.checkValidity()){ f.reportValidity(); return; }
+    sending=true;
+    var btn=f.querySelector('button[type=submit]'), label=btn?btn.textContent:'';
+    if(btn){ btn.disabled=true; btn.textContent='送信中…'; }
+    var settled=false;
+    fetch(GAS_URL,{method:'POST',mode:'no-cors',body:new URLSearchParams(new FormData(f))}).then(after).catch(after);
+    function after(){
+      if(settled) return;
+      settled=true; sending=false;
+      try{ f.reset(); }catch(_){}
+      if(btn){ btn.disabled=false; btn.textContent=label; }
+      openDone();
+    }
+  });
+
+  document.querySelectorAll('.fq details').forEach(function(dd,i,all){
+    dd.addEventListener('toggle',function(){ if(!dd.open) return; all.forEach(function(o){ if(o!==dd) o.open=false; }); });
+  });
+})();
+</script>
+</body>
+</html>
