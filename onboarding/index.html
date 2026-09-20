@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>AOHARU オンボーディング｜採用してからが、<wbr>スタート。</title>
+<title>AOHARU オンボーディング｜採用してからが、スタート。</title>
 <meta name="description" content="入社したばかりの人に、社外のメンターをひとり。原点と、居場所と、これからを一緒につくります。">
 <meta property="og:title" content="AOHARU オンボーディング｜採用してからが、スタート。">
 <meta property="og:description" content="内定承諾の日から、入社半年後まで。新卒の内定者オンボーディングを、御社に合わせて設計します。">
@@ -199,16 +199,11 @@ section{padding:130px 0}
 }
 /* options */
 .op{border-top:1px solid var(--line)}
-.op .o{display:grid;grid-template-columns:300px 190px 1fr;gap:34px;padding:30px 0;border-bottom:1px solid var(--line);align-items:baseline}
-.op .ol{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
-.op .on{font-size:19px;font-weight:500;letter-spacing:.04em;line-height:1.7}
-.op .tag{font-size:11.5px;font-weight:500;letter-spacing:.08em;color:#fff;background:var(--or);padding:4px 10px;white-space:nowrap}
-.op .ow{font-size:13.5px;color:var(--sub);letter-spacing:.06em}
-.op .od{font-size:15px;line-height:2.05;color:var(--sub)}
-@media (max-width:980px){
-  .op .o{grid-template-columns:1fr;gap:10px;padding:24px 0}
-  .op .on{font-size:18px}
-}
+.op .o{display:grid;grid-template-columns:300px 175px 1fr;gap:28px;padding:19px 0;border-bottom:1px solid var(--line);align-items:baseline}
+.op .on{font-size:17px;font-weight:500;letter-spacing:.03em;line-height:1.7;display:flex;align-items:center;gap:11px;flex-wrap:wrap}
+.op .tag{font-size:11px;font-weight:500;letter-spacing:.06em;color:#fff;background:var(--or);padding:3px 9px;white-space:nowrap}
+.op .ow{font-size:13px;color:var(--sub);letter-spacing:.04em}
+.op .od{font-size:14px;line-height:1.85;color:var(--sub)}
 
 /* 比較図 */
 .cmp{margin-top:64px;border-top:1px solid var(--line);padding-top:34px}
@@ -296,6 +291,26 @@ section{padding:130px 0}
 .dm-close{display:block;width:100%;border:none;background:none;font-family:inherit;font-size:13px;color:var(--sub);padding:16px 0 0;cursor:pointer}
 @media (max-width:980px){.dm{padding:38px 24px 32px}}
 
+/* 問い合わせモーダル */
+#ask{position:fixed;inset:0;z-index:190;background:rgba(17,17,17,.42);display:flex;align-items:center;justify-content:center;padding:24px;opacity:0;transition:opacity .3s}
+#ask.on{opacity:1}
+#ask[hidden]{display:none}
+.am{position:relative;background:var(--bg);max-width:440px;width:100%;padding:44px 42px 38px;max-height:90vh;overflow:auto}
+.am-x{position:absolute;right:16px;top:12px;border:none;background:none;font-size:24px;line-height:1;color:var(--sub);cursor:pointer;padding:6px}
+.am-t{font-size:20px;font-weight:500;letter-spacing:.05em;margin-bottom:10px}
+.am-s{font-size:13px;line-height:2;color:var(--sub);margin-bottom:26px}
+.mform input[type=text],.mform input[type=email],.mform select{width:100%;background:transparent;border:none;border-bottom:1px solid var(--line);color:var(--ink);font-family:inherit;font-size:15px;padding:13px 2px;margin-bottom:6px;transition:border-color .3s}
+.mform select{-webkit-appearance:none;appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--sub) 50%),linear-gradient(135deg,var(--sub) 50%,transparent 50%);background-position:calc(100% - 9px) 22px,calc(100% - 4px) 22px;background-size:5px 5px;background-repeat:no-repeat;cursor:pointer}
+.mform input::placeholder{color:rgba(17,17,17,.36)}
+.mform input:focus,.mform select:focus{outline:none;border-bottom-color:var(--or)}
+.mform .ag{display:flex;align-items:flex-start;gap:9px;font-size:12.5px;color:var(--sub);margin:20px 0 20px;line-height:1.9}
+.mform .ag input{width:auto;margin-top:5px}
+.mform button{width:100%;border:none;background:var(--or);color:#fff;font-family:inherit;font-size:15.5px;font-weight:500;letter-spacing:.1em;padding:17px;cursor:pointer;transition:opacity .25s}
+.mform button:hover{opacity:.86}
+.mform .or2{text-align:center;font-size:13px;color:var(--sub);margin-top:15px}
+.mform .or2 a{color:var(--ink);font-weight:500;border-bottom:1px solid var(--sky);padding-bottom:2px}
+@media (max-width:980px){.am{padding:36px 22px 30px}}
+
 </style>
 </head>
 <body>
@@ -309,7 +324,7 @@ section{padding:130px 0}
       <a href="#cases">3社の<wbr>違い</a>
       <a href="#options">できる<wbr>こと</a>
       <a href="#price">料金</a>
-      <a href="#contact" class="bt bt-s bt-f">資料請求・相談<i>→</i></a>
+      <button type="button" class="bt bt-s bt-f js-ask">資料請求・相談<i>→</i></button>
     </nav>
   </div>
 </header>
@@ -507,35 +522,15 @@ section{padding:130px 0}
   <div class="w">
     <div class="sh rv">
       <span class="en">Options</span>
-      <h2>こういう<wbr>ことも、<wbr>できます。</h2>
-      <p>決まった型は<wbr>ありません。<wbr>得意なのは<wbr>新卒の<wbr>内定者オンボーディングですが、<wbr>必要な<wbr>ところだけでも<wbr>お受けします。</p>
+      <h2>こういうことも、できます。</h2>
+      <p>決まった型はありません。必要なところだけでもお受けします。</p>
     </div>
     <div class="op">
-      <div class="o rv">
-        <div class="ol"><p class="on">内定者オンボーディング</p><span class="tag">いちばん<wbr>得意</span></div>
-        <p class="ow">内定承諾 — 入社前</p>
-        <p class="od">月に<wbr>1度の<wbr>ワークショップ。<wbr>集合の<wbr>形でも、<wbr>1人ずつに<wbr>返します。<wbr>辞退を<wbr>防ぎながら、<wbr>4月1日に<wbr>立てる<wbr>状態を<wbr>つくります。<wbr>内定式の<wbr>あと、<wbr>10月から<wbr>3月の<wbr>6回でも<wbr>組めます。</p>
-      </div>
-      <div class="o rv">
-        <div class="ol"><p class="on">入社後オンボーディング</p></div>
-        <p class="ow">入社 — 半年</p>
-        <p class="od">立ち<wbr>上がりの<wbr>研修と、<wbr>1ヶ月後・3ヶ月後・<wbr>半年後の<wbr>フォロー。<wbr>つまずく<wbr>時期に<wbr>合わせて<wbr>戻ってきます。</p>
-      </div>
-      <div class="o rv">
-        <div class="ol"><p class="on">迎える<wbr>側の<wbr>研修</p></div>
-        <p class="ow">上司・トレーナー向け</p>
-        <p class="od">任せる<wbr>範囲の<wbr>決め方、<wbr>声の<wbr>かけ方、<wbr>できていない<wbr>ときの<wbr>伝え方。<wbr>新人側だけを<wbr>変えても、<wbr>現場に<wbr>戻れば<wbr>元に<wbr>戻ります。</p>
-      </div>
-      <div class="o rv">
-        <div class="ol"><p class="on">若手・リーダー層</p></div>
-        <p class="ow">2年目 — 主任クラス</p>
-        <p class="od">言われた<wbr>ことを<wbr>やる<wbr>側から、<wbr>自分で<wbr>決める<wbr>側へ。<wbr>後輩を<wbr>持つ前後に<wbr>必要な<wbr>考え方を<wbr>扱います。</p>
-      </div>
-      <div class="o rv">
-        <div class="ol"><p class="on">単発での<wbr>ご依頼</p></div>
-        <p class="ow">1回から</p>
-        <p class="od">目指す状態を<wbr>決める<wbr>ワークショップだけ、<wbr>内定者の<wbr>面談だけ、と<wbr>いった<wbr>形でも<wbr>お受けします。<wbr>まず1回だけ試すことも<wbr>できます。</p>
-      </div>
+      <div class="o rv"><p class="on">内定者オンボーディング<span class="tag">いちばん得意</span></p><p class="ow">内定承諾 — 入社前</p><p class="od">月に1度のワークショップ。辞退を防ぎ、4月1日に立てる状態へ。</p></div>
+      <div class="o rv"><p class="on">入社後オンボーディング</p><p class="ow">入社 — 半年</p><p class="od">立ち上がりの研修と、1ヶ月後・3ヶ月後・半年後のフォロー。</p></div>
+      <div class="o rv"><p class="on">迎える側の研修</p><p class="ow">上司・トレーナー向け</p><p class="od">任せる範囲の決め方、声のかけ方、できていないときの伝え方。</p></div>
+      <div class="o rv"><p class="on">若手・リーダー層</p><p class="ow">2年目 — 主任クラス</p><p class="od">言われたことをやる側から、自分で決める側へ。</p></div>
+      <div class="o rv"><p class="on">単発でのご依頼</p><p class="ow">1回から</p><p class="od">目指す状態を決めるワークショップだけ、内定者の面談だけ、でも。</p></div>
     </div>
   </div>
 </section>
@@ -591,7 +586,7 @@ section{padding:130px 0}
     <h2>まず、<wbr>今年の<wbr>新人の<wbr>話を<wbr>聞かせてください。</h2>
     <p>必要か<wbr>どうかから<wbr>お答えします。<wbr>売り込みは<wbr>しません。</p>
     <div class="btns">
-      <a href="#contact-form" class="bt bt-f">資料を<wbr>ダウンロード<i>→</i></a>
+      <button type="button" class="bt bt-f js-ask">資料を<wbr>ダウンロード<i>→</i></button>
       <a href="https://app.spirinc.com/t/H_vQ01vClf0LmLgUwmVWY/as/XMn5n8Z_s_rK6GUlabUGi/confirm" target="_blank" rel="noopener" class="bt">30分で<wbr>相談する<i>→</i></a>
     </div>
     <p class="tag2">&quot;は<wbr>たらく<wbr>&quot;に、<span>青春</span>を。<em>Dramatic Work, Emotional Life.</em></p>
@@ -640,6 +635,29 @@ section{padding:130px 0}
   </div>
 </footer>
 
+<div id="ask" role="dialog" aria-modal="true" aria-labelledby="ask-t" hidden>
+  <div class="am">
+    <button class="am-x" type="button" aria-label="閉じる">&times;</button>
+    <p class="am-t" id="ask-t">資料を<wbr>ダウンロード</p>
+    <p class="am-s">進め方・お渡しするもの・料金まで掲載しています。<br>1分ほどで、その場でお受け取りいただけます。</p>
+    <form id="leadM" class="mform" novalidate>
+      <input type="hidden" name="_form" value="AOHARU-オンボーディング">
+      <input type="text" name="会社名" placeholder="会社名" aria-label="会社名" required>
+      <input type="text" name="お名前" placeholder="お名前" aria-label="お名前" required>
+      <input type="email" name="email" placeholder="メールアドレス" aria-label="メールアドレス" required>
+      <select name="ご相談内容" aria-label="ご相談内容">
+        <option>資料がほしい</option>
+        <option>来春の新入社員について相談したい</option>
+        <option>内定者フォローを相談したい</option>
+        <option>若手・リーダー層の育成を相談したい</option>
+      </select>
+      <label class="ag"><input type="checkbox" name="同意" required><span><a href="https://www.worcry.com/privacy-policy" target="_blank" rel="noopener">個人情報の取り扱い</a>に同意します</span></label>
+      <button type="submit">資料をダウンロード</button>
+      <p class="or2">または <a href="https://app.spirinc.com/t/H_vQ01vClf0LmLgUwmVWY/as/XMn5n8Z_s_rK6GUlabUGi/confirm" target="_blank" rel="noopener">30分で相談する</a></p>
+    </form>
+  </div>
+</div>
+
 <div id="done" role="dialog" aria-modal="true" aria-labelledby="done-t" hidden>
   <div class="dm">
     <button class="dm-x" type="button" aria-label="閉じる">&times;</button>
@@ -686,30 +704,48 @@ section{padding:130px 0}
   document.getElementById('pv').addEventListener('click',function(){ go(i-1); });
 
   var GAS_URL='https://script.google.com/macros/s/AKfycbzQ_aDz5yK8rmk0_zzZ4Kh-wTwplAm4ZTXhd0vk0zOXbjivkWjdPPC5Tv2KXYi3zdq_/exec';
-  var f=document.getElementById('lead'), done=document.getElementById('done'), sending=false;
-  function openDone(){ done.hidden=false; requestAnimationFrame(function(){ done.classList.add('on'); }); document.body.style.overflow='hidden'; }
-  function closeDone(){ done.classList.remove('on'); document.body.style.overflow=''; setTimeout(function(){ done.hidden=true; },300); }
-  done.querySelector('.dm-x').addEventListener('click',closeDone);
-  done.querySelector('.dm-close').addEventListener('click',closeDone);
-  done.addEventListener('click',function(e){ if(e.target===done) closeDone(); });
-  document.addEventListener('keydown',function(e){ if(e.key==='Escape' && !done.hidden) closeDone(); });
-  f.addEventListener('submit',function(e){
-    e.preventDefault();
-    if(sending) return;
-    if(!f.checkValidity()){ f.reportValidity(); return; }
-    sending=true;
-    var btn=f.querySelector('button[type=submit]'), label=btn?btn.textContent:'';
-    if(btn){ btn.disabled=true; btn.textContent='送信中…'; }
-    var settled=false;
-    fetch(GAS_URL,{method:'POST',mode:'no-cors',body:new URLSearchParams(new FormData(f))}).then(after).catch(after);
-    function after(){
-      if(settled) return;
-      settled=true; sending=false;
-      try{ f.reset(); }catch(_){}
-      if(btn){ btn.disabled=false; btn.textContent=label; }
-      openDone();
-    }
+  var done=document.getElementById('done'), ask=document.getElementById('ask');
+
+  function show(el){ el.hidden=false; requestAnimationFrame(function(){ el.classList.add('on'); }); document.body.style.overflow='hidden'; }
+  function hide(el){ el.classList.remove('on'); document.body.style.overflow=''; setTimeout(function(){ el.hidden=true; },300); }
+  function bindClose(el,sel){ el.querySelectorAll(sel).forEach(function(b){ b.addEventListener('click',function(){ hide(el); }); }); el.addEventListener('click',function(e){ if(e.target===el) hide(el); }); }
+  bindClose(done,'.dm-x,.dm-close'); bindClose(ask,'.am-x');
+  document.addEventListener('keydown',function(e){
+    if(e.key!=='Escape') return;
+    if(!ask.hidden) hide(ask);
+    else if(!done.hidden) hide(done);
   });
+  document.querySelectorAll('.js-ask').forEach(function(b){
+    b.addEventListener('click',function(){
+      show(ask);
+      setTimeout(function(){ var i=ask.querySelector('input[type=text]'); if(i) i.focus(); },120);
+    });
+  });
+
+  function wire(f){
+    if(!f) return;
+    var sending=false;
+    f.addEventListener('submit',function(e){
+      e.preventDefault();
+      if(sending) return;
+      if(!f.checkValidity()){ f.reportValidity(); return; }
+      sending=true;
+      var btn=f.querySelector('button[type=submit]'), label=btn?btn.textContent:'';
+      if(btn){ btn.disabled=true; btn.textContent='送信中…'; }
+      var settled=false;
+      fetch(GAS_URL,{method:'POST',mode:'no-cors',body:new URLSearchParams(new FormData(f))}).then(after).catch(after);
+      function after(){
+        if(settled) return;
+        settled=true; sending=false;
+        try{ f.reset(); }catch(_){}
+        if(btn){ btn.disabled=false; btn.textContent=label; }
+        if(!ask.hidden) hide(ask);
+        setTimeout(function(){ show(done); }, ask.hidden?0:320);
+      }
+    });
+  }
+  wire(document.getElementById('lead'));
+  wire(document.getElementById('leadM'));
 
   document.querySelectorAll('.fq details').forEach(function(dd,i,all){
     dd.addEventListener('toggle',function(){ if(!dd.open) return; all.forEach(function(o){ if(o!==dd) o.open=false; }); });
