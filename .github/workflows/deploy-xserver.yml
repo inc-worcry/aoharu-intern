@@ -8,7 +8,6 @@ on:
       - 'site/long-intern/**'
       - 'shinsotsu/**'
       - 'scout/**'
-      - 'onboarding/**'
       - '.github/workflows/deploy-xserver.yml'
   workflow_dispatch:
 
@@ -88,23 +87,5 @@ jobs:
           local-dir: ./scout/
           server-dir: /worcry.com/public_html/aoharu-intern.worcry.com/scout/
 
-  onboarding:
-    needs: scout
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: FTP Deploy to Xserver
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        with:
-          server:   ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          protocol: ftps
-          port: 21
-          timeout: 120000
-          local-dir: ./onboarding/
-          server-dir: /worcry.com/public_html/aoharu-intern.worcry.com/onboarding/
 
 # redeploy trigger: 20260920-onboarding
