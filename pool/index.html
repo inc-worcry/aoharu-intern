@@ -564,6 +564,15 @@ section.blk{padding:84px 0}
 .pool-shot figcaption{max-width:56em;margin:20px auto 0;text-align:center;font-size:13px;color:var(--sub);line-height:1.75}
 .pool-shot figcaption b{color:var(--ink);font-weight:800}
 .pool-shot figcaption small{color:#98A0AC}
+
+/* --- company view benefits (added) --- */
+.pool-benefits{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:1060px;margin:26px auto 0}
+.pool-benefits .pb{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px}
+.pool-benefits .pb h4{font-size:14.5px;font-weight:800;color:var(--ink);margin-bottom:6px}
+.pool-benefits .pb p{font-size:12.5px;color:var(--sub);line-height:1.65}
+.pool-cap{max-width:56em;margin:20px auto 0;text-align:center;font-size:12.5px;color:var(--sub);line-height:1.7}
+.pool-cap small{color:#98A0AC}
+@media(max-width:720px){.pool-benefits{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -702,9 +711,20 @@ section.blk{padding:84px 0}
 <!-- ===== COMPANY VIEW (タレントプール図解) ===== -->
 <section class="blk tint" id="pool-fig">
   <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker">Company View</span>
+      <h2>預けた学生が、いまどうしているか。</h2>
+      <p>毎朝、自動で更新。動くべき学生が出たときは、こちらからお知らせします。人事の方が毎日開く必要はありません。</p>
+    </div>
     <figure class="pool-shot reveal">
-      <img src="company-dashboard.png" alt="企業が見るタレントプールのダッシュボード「御社プールの現在地」（例）" loading="lazy" width="1920" height="1080">
+      <img src="company-dashboard.png" alt="企業が見るタレントプールのダッシュボード「御社プールの現在地」（例）" loading="lazy" width="4320" height="2840">
     </figure>
+    <div class="pool-benefits reveal">
+      <div class="pb"><h4>毎朝、自動で更新</h4><p>面談や就業の記録が入ると、翌朝には画面に反映されます。</p></div>
+      <div class="pb"><h4>見えるのは御社の学生だけ</h4><p>閲覧できるのは、許可したご担当者のアカウントのみです。</p></div>
+      <div class="pb"><h4>動くべき学生は、こちらから連絡</h4><p>インターン終了・学年の切り替わり・志望の変化。タイミングをお知らせします。</p></div>
+    </div>
+    <p class="pool-cap">Looker Studio連携・費用0円・閲覧は許可したアカウントのみ／毎朝自動更新。<small>※画面・数値はすべてサンプルです。</small></p>
   </div>
 </section>
 
