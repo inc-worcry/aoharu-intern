@@ -418,6 +418,20 @@
 .nft-copy{font-size:10.5px;color:#C4C7CB;white-space:nowrap}
 @media(max-width:860px){.nft-nav{grid-template-columns:1fr 1fr;gap:28px}.nft-in{padding:0 24px}}
 @media(max-width:640px){.nft-head{flex-direction:column;align-items:flex-start;gap:18px}.nft-nav{grid-template-columns:1fr 1fr;gap:20px}.nft-btm{flex-direction:column;align-items:flex-start;gap:8px}}
+
+/* ===== 相談ポップアップ ===== */
+.cm{position:fixed;inset:0;z-index:120;display:none;align-items:flex-start;justify-content:center;
+  padding:clamp(16px,4vh,56px) 16px;overflow:auto;background:rgba(18,20,24,.46);backdrop-filter:blur(3px)}
+.cm.on{display:flex}
+.cm-panel{position:relative;width:min(620px,100%);background:#fff;border-radius:18px;
+  box-shadow:0 30px 80px rgba(18,20,24,.24);padding:clamp(22px,3vw,34px)}
+.cm-x{position:absolute;top:12px;right:12px;width:38px;height:38px;border:0;border-radius:10px;background:transparent;
+  color:var(--ink-soft,#5A6478);font-size:20px;line-height:1;cursor:pointer}
+.cm-x:hover{background:#F2F4F6}
+.cm-done{text-align:center;padding:26px 6px 10px}
+.cm-done h3{font-size:1.25rem;font-weight:800;margin-bottom:10px}
+.cm-done p{color:var(--ink-soft,#5A6478);line-height:2}
+@media (max-width:600px){.cm-panel{border-radius:14px;padding:20px 16px 22px}}
 </style>
 </head>
 <body>
@@ -429,7 +443,7 @@
       <a href="https://aoharu-intern.worcry.com/long-intern/" target="_blank" rel="noopener">長期インターン紹介<span class="ex">↗</span></a>
       <a href="https://www.worcry.com/" target="_blank" rel="noopener">会社情報<span class="ex">↗</span></a>
     </nav>
-    <a class="head-cta" href="#contact">相談する</a>
+    <a class="head-cta" href="#contact" data-consult>相談する</a>
   </div>
 </header>
 
@@ -442,7 +456,7 @@
         <h1 class="disp" data-kn><span class="br">学生<span class="kn">が</span>、</span><span class="br">学生<span class="kn">のために</span></span><span class="br"><em>考<span class="kn">える</span></em>新卒採用。</span></h1>
         <p class="lead"><span class="br">スカウトを受け取るのは学生なのに、</span><span class="br"><span class="sp">戦略を立てているのは</span><span class="sp">学生ではない人たちです。</span></span><span class="br">現役の大学生2名が主担当となり、</span><span class="br">御社の新卒ダイレクトリクルーティングを設計から運用まで回します。</span></p>
       </div>
-      <a class="btn hero-btn" href="#contact">相談を申し込む</a>
+      <a class="btn hero-btn" href="#contact" data-consult>相談を申し込む</a>
       <div class="hero-form" id="contact">
         <form id="heroForm" class="form" novalidate>
           <p class="form-h">相談を申し込む</p>
@@ -659,7 +673,7 @@
       <p class="eyebrow">Contact</p>
       <h2 class="disp" data-kn><span class="br"><span class="kn">まず</span>、御社<span class="kn">の</span>今<span class="kn">のスカウト</span>文<span class="kn">を</span></span><span class="br">学生<span class="kn">に</span>読<span class="kn">ませてみませんか</span>。</span></h2>
       <p class="lede"><span class="br">まずは30分、</span><span class="br"><span class="sp">いまの採用状況を</span><span class="sp">うかがうところから。</span></span><span class="br"><span class="sp">合いそうかどうかを</span><span class="sp">一緒に確かめる場だと思ってください。</span></span></p>
-      <p class="closing-cta"><a class="btn" href="#contact">相談を申し込む</a></p>
+      <p class="closing-cta"><a class="btn" href="#contact" data-consult>相談を申し込む</a></p>
       <p class="btn-sub">新卒採用のみ対応しています。</p>
     </div>
   </section>
@@ -833,5 +847,58 @@
   });
 })();
 </script>
+
+<div class="cm" id="cmodal" role="dialog" aria-modal="true" aria-label="相談を申し込む">
+  <div class="cm-panel">
+    <button class="cm-x" type="button" id="cmClose" aria-label="閉じる">×</button>
+    <div id="cmBody"></div>
+  </div>
+</div>
+<script>
+(function(){
+  var GAS='https://script.google.com/macros/s/AKfycbzQ_aDz5yK8rmk0_zzZ4Kh-wTwplAm4ZTXhd0vk0zOXbjivkWjdPPC5Tv2KXYi3zdq_/exec';
+  var modal=document.getElementById('cmodal'), body=document.getElementById('cmBody'), src=document.getElementById('heroForm');
+  if(!modal||!body||!src) return;
+  var built=false, lastFocus=null;
+  function build(){
+    if(built) return;
+    var f=src.cloneNode(true);
+    f.id='cmForm';
+    f.querySelectorAll('[id]').forEach(function(el){
+      var old=el.id; el.id='cm-'+old;
+      var lb=f.querySelector('label[for="'+old+'"]'); if(lb) lb.setAttribute('for','cm-'+old);
+    });
+    f.addEventListener('submit',function(e){
+      e.preventDefault();
+      if(!f.checkValidity()){ f.reportValidity(); return; }
+      var btn=f.querySelector('button[type=submit]');
+      if(btn){ btn.disabled=true; btn.textContent='送信中…'; }
+      var done=false;
+      function after(){ if(done) return; done=true;
+        body.innerHTML='<div class="cm-done"><h3>お申し込みありがとうございます。</h3>'+
+          '<p>担当より1営業日以内にご連絡します。<br>お急ぎの場合は saiyou@worcry.com までご連絡ください。</p></div>';
+      }
+      fetch(GAS,{method:'POST',mode:'no-cors',body:new URLSearchParams(new FormData(f))}).then(after).catch(after);
+      setTimeout(after,4000);
+    });
+    body.appendChild(f); built=true;
+  }
+  function open(){ build(); lastFocus=document.activeElement; modal.classList.add('on');
+    document.body.style.overflow='hidden';
+    var first=body.querySelector('input,textarea'); if(first) first.focus();
+  }
+  function close(){ modal.classList.remove('on'); document.body.style.overflow='';
+    if(lastFocus&&lastFocus.focus) lastFocus.focus();
+  }
+  document.querySelectorAll('[data-consult]').forEach(function(a){
+    a.addEventListener('click',function(e){ e.preventDefault(); open(); });
+  });
+  document.getElementById('cmClose').addEventListener('click',close);
+  modal.addEventListener('click',function(e){ if(e.target===modal) close(); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape'&&modal.classList.contains('on')) close(); });
+  if(location.search.indexOf('consult=open')>-1) open();
+})();
+</script>
+
 </body>
 </html>
