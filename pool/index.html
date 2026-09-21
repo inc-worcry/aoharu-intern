@@ -557,6 +557,13 @@ section.blk{padding:84px 0}
 .proof-note{margin:24px auto 0;text-align:center;font-size:14px;color:var(--sub);line-height:1.75;max-width:42em}
 .proof-note b{color:var(--ink);border-bottom:2px solid var(--haru);padding-bottom:1px;font-weight:800}
 @media(max-width:640px){.proof-grid{gap:20px 26px}.pf{min-width:120px}.proof-note{font-size:13px}}
+
+/* --- company view shot (added) --- */
+.pool-shot{max-width:1060px;margin:0 auto}
+.pool-shot img{width:100%;height:auto;display:block;border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow)}
+.pool-shot figcaption{max-width:56em;margin:20px auto 0;text-align:center;font-size:13px;color:var(--sub);line-height:1.75}
+.pool-shot figcaption b{color:var(--ink);font-weight:800}
+.pool-shot figcaption small{color:#98A0AC}
 </style>
 </head>
 <body>
@@ -689,6 +696,21 @@ section.blk{padding:84px 0}
       <button class="tpc-nav next" id="tpcNext" aria-label="次へ">&rsaquo;</button>
       <div class="tpc-dots" id="tpcDots"></div>
     </div>
+  </div>
+</section>
+
+<!-- ===== COMPANY VIEW (タレントプール図解) ===== -->
+<section class="blk tint" id="pool-fig">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker">Company View</span>
+      <h2>貴社のタレントプールを、ひと目で。</h2>
+      <p>接点を持った学生が、卒業年度・志望・段階つきで一覧に。「いま動ける学生」は自動で抽出。クリックで一人ひとりの記録（カルテ）へ。</p>
+    </div>
+    <figure class="pool-shot reveal">
+      <img src="company-dashboard.png" alt="企業が見るタレントプールのダッシュボード（例）" loading="lazy" width="1920" height="1080">
+      <figcaption>Looker Studio連携・費用0円・閲覧は許可したアカウントのみ／毎朝自動更新。<b>毎年ゼロから集めるのではなく、1・2年からの記録が積み上がる“資産”（ストック型）。</b><br><small>※画面・数値はすべてサンプルです。</small></figcaption>
+    </figure>
   </div>
 </section>
 
