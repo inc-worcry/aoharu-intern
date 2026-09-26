@@ -7,6 +7,7 @@ on:
       - 'site/root/**'
       - 'site/long-intern/**'
       - 'shinsotsu/**'
+      - 'shinsotsu-re/**'
       - 'scout/**'
       - 'pool/**'
       - '.github/workflows/deploy-xserver.yml'
@@ -69,8 +70,27 @@ jobs:
           local-dir: ./shinsotsu/
           server-dir: /worcry.com/public_html/aoharu-intern.worcry.com/shinsotsu/
 
-  scout:
+  shinsotsu-re:
     needs: shinsotsu
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: FTP Deploy to Xserver
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server:   ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
+          port: 21
+          timeout: 120000
+          local-dir: ./shinsotsu-re/
+          server-dir: /worcry.com/public_html/aoharu-intern.worcry.com/shinsotsu-re/
+
+  scout:
+    needs: shinsotsu-re
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -109,3 +129,5 @@ jobs:
 
 
 # redeploy trigger: 20260921-pool
+
+# redeploy trigger: 20260926-url-swap
