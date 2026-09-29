@@ -1481,6 +1481,11 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')closeDlModal
   else if (src.wbraid) parts.push("wbraid:" + src.wbraid);
   else if (src.gbraid) parts.push("gbraid:" + src.gbraid);
 
+  // referrer を _form（シートの「フォーム」列）に相乗りさせる：GAS無改修で参照元を記録
+  var refHost = "direct";
+  try { if (src.referrer) refHost = (new URL(src.referrer)).hostname || src.referrer; } catch(e){ if (src.referrer) refHost = src.referrer; }
+  parts.push("ref:" + refHost);
+
   var FIELDS = KEYS.concat(["landing_page","referrer"]);
   document.querySelectorAll("form[data-gas]").forEach(function(form){
     FIELDS.forEach(function(k){
