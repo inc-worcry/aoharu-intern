@@ -353,6 +353,18 @@ body.lock{overflow:hidden}
 .nft-copy{font-size:10.5px;color:#C4C7CB;white-space:nowrap}
 @media(max-width:860px){.nft-nav{grid-template-columns:1fr 1fr;gap:28px}.nft-in{padding:0 24px}}
 @media(max-width:640px){.nft-head{flex-direction:column;align-items:flex-start;gap:18px}.nft-nav{grid-template-columns:1fr 1fr;gap:20px}.nft-btm{flex-direction:column;align-items:flex-start;gap:8px}}
+
+/* FAQ (restored) */
+.faq .qlist{display:flex;flex-direction:column;gap:12px;margin-top:26px}
+.faq details{background:var(--w);border:1px solid #E7EDF3;border-radius:var(--r);box-shadow:var(--sh-s);overflow:hidden}
+.faq summary{list-style:none;cursor:pointer;display:flex;gap:12px;align-items:flex-start;padding:18px 20px;font-weight:800;font-size:var(--fs-lg);color:var(--ink);letter-spacing:var(--ls)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::before{content:"Q";flex:none;width:26px;height:26px;border-radius:8px;background:var(--ao);color:#fff;font-weight:900;font-size:14px;display:flex;align-items:center;justify-content:center}
+.faq summary .qt{flex:1}
+.faq summary::after{content:"";margin-left:10px;width:10px;height:10px;border-right:2.5px solid var(--sub);border-bottom:2.5px solid var(--sub);transform:rotate(45deg);transition:transform .2s;flex:none;margin-top:5px}
+.faq details[open] summary::after{transform:rotate(-135deg)}
+.faq .a{display:flex;gap:12px;padding:0 20px 20px 62px;color:var(--sub);font-size:var(--fs-md);line-height:1.85}
+.faq .a b{color:var(--ink);font-weight:800}
 </style>
 <script type="application/ld+json">
 {
@@ -523,6 +535,20 @@ body.lock{overflow:hidden}
       <li><span class="nm">その他</span><span class="track"><i style="width:38%"></i></span><span class="n">20<em>社</em></span></li>
     </ul>
     <p class="stnote">1社の内定だけで決めると、<br class="sp">この幅を一度も見ないまま社会人になります。<br><small>※2026年9月現在</small></p>
+  </div>
+</section>
+
+<section class="blk faq">
+  <div class="wrap">
+    <span class="big c-ao"><i>?</i>FAQ</span>
+    <h2 class="h2">よくある質問。</h2>
+    <div class="qlist">
+      <details><summary><span class="qt">費用はかかりますか？</span></summary><div class="a"><span>学生は<b>完全無料</b>です。面談も企業紹介も費用は一切かかりません。毎月10名までのご案内です。</span></div></details>
+      <details><summary><span class="qt">内定を持っていても使えますか？</span></summary><div class="a"><span>はい、むしろ<b>内定がある方にこそ</b>効きます。内定がまだの方も、持ち駒づくりから使えます。「今の内定先でいい」で終わっても構いません。</span></div></details>
+      <details><summary><span class="qt">面談では何をしますか？</span></summary><div class="a"><span><b>60分で5ステップ</b>。①内定先の整理 ②内定理由の分析 ③3年後からの逆算 ④合う会社を最大5社 ⑤伝え方 まで一緒に作ります。</span></div></details>
+      <details><summary><span class="qt">どんな企業を紹介してもらえますか？</span></summary><div class="a"><span>27卒の紹介先は<b>240社以上</b>。IT・建設不動産・商社・メーカーなど業界も幅広く、上場企業から老舗まで対応。</span></div></details>
+      <details><summary><span class="qt">紹介された企業に必ず応募しないといけませんか？</span></summary><div class="a"><span>いいえ。紹介も応募も、その都度<b>同意を得てから</b>進めます。断る場合の伝え方も一緒に考えます。</span></div></details>
+    </div>
   </div>
 </section>
 
