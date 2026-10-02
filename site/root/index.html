@@ -141,6 +141,14 @@ h1,h2,h3{text-wrap:balance}
 
 /* ---------- VALUE（UZUZ IDENTITY型） ---------- */
 .value{background:var(--haru);color:var(--white);padding:clamp(64px,9vw,120px) clamp(20px,5vw,80px)}
+.val-vision{max-width:1080px;margin:0 auto clamp(56px,6.5vw,92px);padding-bottom:clamp(40px,5vw,66px);border-bottom:1px solid rgba(255,255,255,.4)}
+.val-label{margin:0 0 16px;font-family:var(--en);font-weight:600;font-size:12px;letter-spacing:.2em;opacity:.85}
+.val-v1{margin:0;font-family:var(--mincho);font-weight:800;font-size:clamp(27px,3.6vw,48px);line-height:1.5;letter-spacing:.05em}
+.val-v1 em{font-style:normal;background:linear-gradient(transparent 84%,rgba(255,255,255,.65) 84%)}
+.val-v2{margin:18px 0 0;font-size:clamp(15px,1.7vw,19px);font-weight:700;letter-spacing:.06em;opacity:.95}
+.val-omoi{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,3vw,48px);margin:clamp(30px,3.6vw,46px) 0 0}
+.val-omoi p{margin:0;font-size:15px;line-height:2.1;opacity:.95}
+.val-omoi p+p{margin:0}
 .value-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;max-width:1080px;margin:0 auto;background:rgba(255,255,255,.35)}
 .value-cell{background:var(--haru);padding:32px 28px 36px}
 .value-cell .stage{font-family:var(--en);font-weight:600;letter-spacing:.16em;font-size:13px;opacity:.9}
@@ -175,11 +183,6 @@ h1,h2,h3{text-wrap:balance}
 .jr-scroll{overflow-x:auto;padding-bottom:8px}
 .jr{min-width:900px}
 .jr-hint{display:none;margin:0 0 10px;font-size:12px;font-weight:700;color:var(--gray)}
-.jr-vision{margin:34px 0 0;padding-top:26px;border-top:1px solid #DDE3E6}
-.jr-vlabel{margin:0 0 12px;font-family:var(--en);font-weight:600;font-size:12px;letter-spacing:.2em;color:var(--gray)}
-.jr-v1{margin:0;font-family:var(--mincho);font-weight:800;font-size:clamp(24px,3vw,38px);line-height:1.5;letter-spacing:.05em}
-.jr-v1 em{font-style:normal;background:linear-gradient(transparent 68%,var(--haru-pale) 68%)}
-.jr-v2{margin:14px 0 0;font-size:clamp(14px,1.5vw,17px);font-weight:700;letter-spacing:.06em;color:var(--ink-soft)}
 .jr-out{margin:26px 0 0;font-size:clamp(16px,1.6vw,19px);font-weight:900;letter-spacing:.04em;text-align:right}
 .jr-out span{background:linear-gradient(transparent 70%,var(--haru-pale) 70%)}
 .jr-grid{display:grid;grid-template-columns:140px repeat(10,1fr)}
@@ -402,6 +405,7 @@ h1,h2,h3{text-wrap:balance}
   .door h3{font-size:clamp(22px,6.4vw,28px)}
   .value-cell{padding:26px 22px 28px}
   .value-grid{grid-template-columns:1fr}
+  .val-omoi{grid-template-columns:1fr;gap:1em}
   .svc-cols,.svc-wide{grid-template-columns:1fr}
   .svc-wide .go{justify-self:end}
   .split{flex-direction:column}
@@ -519,8 +523,9 @@ h1,h2,h3{text-wrap:balance}
         <h2><span class="ph">1年生で出会った人と、</span><br><span class="ph">4年生になっても、</span><br><span class="ph">つながっている。</span></h2>
         <div>
           <p>新卒採用は、3年生の夏の「はじめまして」から始まるのが当たり前でした。短い期間で集めて、選んで、見込みで採る。だから入社してから「こんなはずじゃなかった」が起きてしまう。</p>
-          <p>AOHARUが目指すのは、大学1年生から4年生まで途切れずにつながり続ける世界。出会いが積み重なり、お互いを確かめてから選べる。私たちはこれを<strong>新卒タレントプール採用</strong>と呼んでいます。</p>
-          <p>新卒採用市場には年間1,533億円が投じられていますが、そのほぼ全額が大学3年生以降に使われています。大学1・2年生に投じられている金額は、統計上ほとんどありません。私たちは採用代行で培った企業側の知見をこの時期に注ぎ込み、新卒領域に特化します。</p>
+          <p>AOHARUが目指すのは、大学1年生から4年生まで途切れずにつながり続ける世界です。選考の場ではなく、長期インターンやイベントで一緒に時間を過ごす。出会いが積み重なり、お互いを確かめてから選べる。私たちはこれを<strong>新卒タレントプール採用</strong>と呼んでいます。</p>
+          <p>学生にとっては、就活という一度きりの勝負ではなく、1年生から続くはたらく時間そのものが青春になる。企業にとっては、毎年ゼロから集め直していた母集団が、年々厚くなっていく資産になる。どちらか片方だけが得をする採用を、私たちはつくりません。</p>
+          <p>新卒採用市場には年間1,533億円が投じられていますが、そのほぼ全額が大学3年生以降に使われています。大学1・2年生に投じられている金額は、統計上ほとんどありません。すぐに成果にならないからこそ誰も手をつけてこなかったこの時期に、私たちは採用代行で培った企業側の知見を注ぎ込みます。</p>
           <a class="jr-more" href="https://inc-worcry.github.io/aoharu-intern/pool/?utm_source=aoharu_site" target="_blank" rel="noopener">企業の方へ：この考え方をくわしく見る ↗</a>
         </div>
       </div>
@@ -543,12 +548,20 @@ h1,h2,h3{text-wrap:balance}
           </div>
         </div>
       </div>
-      <div class="jr-vision"><p class="jr-vlabel">VISION</p><p class="jr-v1"><span class="ph">新卒採用を、</span><span class="ph"><em>いちばん強い事業投資</em>へ。</span></p><p class="jr-v2"><span class="ph">出会いは、</span><span class="ph">積み上がるほど強くなる。</span></p></div>
     </div>
   </section>
 
   <!-- VALUE -->
   <section class="frame value" id="value">
+    <div class="val-vision">
+      <p class="val-label">VISION</p>
+      <p class="val-v1"><span class="ph">新卒採用を、</span><span class="ph"><em>いちばん強い事業投資</em>へ。</span></p>
+      <p class="val-v2"><span class="ph">出会いは、</span><span class="ph">積み上がるほど強くなる。</span></p>
+      <div class="val-omoi">
+        <p><span class="ph">採用は、その年の人数を埋めるための費用ではありません。</span><span class="ph">1年生のころに出会った学生が、</span><span class="ph">数年後に同じ会社ではたらきはじめる。</span><span class="ph">その時間の積み重ねこそ、</span><span class="ph">どんな広告よりも確かな投資だと考えています。</span></p>
+        <p><span class="ph">一度きりの面接では、</span><span class="ph">お互いの何割かしか見えません。</span><span class="ph">だから出会う時期を早め、</span><span class="ph">一緒にはたらく時間を重ね、</span><span class="ph">確かめてから選べるようにする。</span><span class="ph">積み上げた出会いは消えずに残り、</span><span class="ph">翌年の母集団になり、</span><span class="ph">会社の強さになっていきます。</span></p>
+      </div>
+    </div>
     <div class="hd"><p class="hd-en">IDENTITY<b style="color:var(--white)">_</b></p><p class="hd-ja">AOHARUが大切にしていること</p></div>
     <div class="value-grid">
       <div class="value-cell"><span class="stage">EARLY</span><h3>早く出会う</h3><p>就活が始まる前の、大学1・2年生から。選考の場ではなく、成長の場で出会います。</p></div>
@@ -626,12 +639,12 @@ h1,h2,h3{text-wrap:balance}
       <p>長期インターンから新卒採用まで、AOHARUナビに掲載できます。大学1年生から4年生まで、登録した学生にそのまま届きます。</p>
       <span class="btn">AOHARUナビに掲載する</span>
     </a>
-    <a class="door st" id="for-student" href="#service">
+    <a class="door st" id="for-student" href="https://intern.worcry.com/hp/?utm_source=aoharu_site" target="_blank" rel="noopener">
       <img src="img/workshop-group-pose.jpg" alt="" loading="lazy">
       <span class="en">FOR STUDENT</span>
       <h3><span class="ph">1年生から、</span><br><span class="ph">はたらくを試していい。</span></h3>
       <p>やりたいことが決まっていなくても大丈夫。学年ごとに、AOHARUの入口があります。</p>
-      <span class="btn">学年ごとの入口を見る</span>
+      <span class="btn">学生向けサイトを見る ↗</span>
     </a>
   </section>
 
