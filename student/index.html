@@ -730,6 +730,10 @@ body{font-family:"Noto Sans JP","Hiragino Kaku Gothic ProN","Hiragino Sans",sans
   /* 締めの見出し・注記を1行に（画面幅に合わせて縮小） */
   .closing .sec-title{white-space:nowrap;font-size:min(23px,calc((100vw - 36px) / 17.4))}
   .closing .regret{padding:16px 12px}
+  /* FV動画：拡大を抑えて上部に配置、下は地色につなぐ */
+  .fvx5{background:#161a21}
+  .fvx5 .fvx-img{top:0;bottom:auto;height:52%;object-position:56% 50%}
+  .fvx5::after{background:linear-gradient(180deg,rgba(22,26,33,0) 30%,rgba(22,26,33,.75) 44%,#161a21 52%)}
   .closing .regret .regret-sub{white-space:nowrap;font-size:min(12px,calc((100vw - 36px - 26px) / 28.2));letter-spacing:-.01em}
   .fvx .trustbar b{font-size:15px}
   /* 段階4：本文（14pxに統一） */
