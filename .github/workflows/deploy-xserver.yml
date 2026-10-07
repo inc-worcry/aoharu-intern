@@ -11,6 +11,7 @@ on:
       - 'scout/**'
       - 'pool/**'
       - 'student/**'
+      - 'meta/**'
       - '.github/workflows/deploy-xserver.yml'
   workflow_dispatch:
 
@@ -146,6 +147,25 @@ jobs:
           timeout: 120000
           local-dir: ./student/
           server-dir: /worcry.com/public_html/aoharu-intern.worcry.com/student/
+
+  meta:
+    needs: student
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: FTP Deploy to Xserver
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server:   ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
+          port: 21
+          timeout: 120000
+          local-dir: ./meta/
+          server-dir: /worcry.com/public_html/aoharu-intern.worcry.com/meta/
 
 
 # redeploy trigger: 20260921-pool
