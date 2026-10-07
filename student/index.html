@@ -723,6 +723,14 @@ body{font-family:"Noto Sans JP","Hiragino Kaku Gothic ProN","Hiragino Sans",sans
   .faq-list .faq-a{font-size:13px;gap:12px}
   .faq-q .qmark,.faq-a .amark{width:26px;height:26px;font-size:13px}
   .faq-list .faq-q::after{top:21px;right:18px;width:9px;height:9px}
+  /* 流れ：番号の円を小さく */
+  .flow-num{width:40px;height:40px;font-size:16px}
+  .flow::before{left:19px}
+  .flow-step{gap:14px;margin-bottom:18px}
+  /* 締めの見出し・注記を1行に（画面幅に合わせて縮小） */
+  .closing .sec-title{white-space:nowrap;font-size:min(23px,calc((100vw - 36px) / 17.4))}
+  .closing .regret{padding:16px 12px}
+  .closing .regret .regret-sub{white-space:nowrap;font-size:min(12px,calc((100vw - 36px - 26px) / 28.2));letter-spacing:-.01em}
   .fvx .trustbar b{font-size:15px}
   /* 段階4：本文（14pxに統一） */
   .lead-center,.gs-sub,.gs-t,.def-note,.ba-b,.ba-a,.r2card p,.faq-a,.flow-card p,.regret p,.cap-sub{font-size:13.5px;line-height:1.85}
