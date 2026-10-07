@@ -16,6 +16,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- End Google Tag Manager -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
 <title>大学1・2年生特化の長期インターン紹介｜AOHARUインターン</title>
 <meta name="description" content="大学1・2年生向けの長期インターン紹介サービス。未経験OK・給与あり。専任アドバイザーが無料でサポート。まずはLINEで気軽に相談できます。">
 <meta property="og:title" content="大学1・2年生特化の長期インターン紹介｜AOHARUインターン">
@@ -648,6 +651,45 @@ footer .logo{justify-content:center;margin-bottom:12px}
 }
 
 </style>
+
+<!-- === 2026-10-07 改修：フォント／ブランド色／幅統一／スマホ === -->
+<style>
+:root{--blue:#29ABE2;--blue-d:#1C8FC2;--blue-tint:#EAF6FC;--orange:#F7941D;--orange-d:#E07F0A;--orange-tint:#FEF3E6;--ink:#4A4E5A;--ink-h:#2E2F3B;--content:960px}
+body{font-family:"Noto Sans JP","Hiragino Kaku Gothic ProN","Hiragino Sans",sans-serif}
+/* 1) FVコピー */
+.fvx5 .fvx-copy .l1{font-size:62px;font-weight:900;letter-spacing:.01em;line-height:1.3}
+.fvx5 .fvx-copy .l2{font-weight:700}
+.fvx5 .fvx-copy{text-shadow:0 2px 24px rgba(0,0,0,.45),0 1px 3px rgba(0,0,0,.35)}
+/* 2) 英字ラベル（サービスサイト準拠：Barlow Condensed＋罫線＋末尾_） */
+.sec-kicker,.gs-kicker,.cap .cap-k,.tag-service{font-family:"Barlow Condensed","Noto Sans JP",sans-serif;font-weight:700;font-size:19px;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);display:inline-flex;align-items:center;gap:10px;background:none;padding:0;border-radius:0;margin-bottom:10px}
+.sec-kicker::before,.gs-kicker::before,.cap .cap-k::before,.tag-service::before{content:"";width:26px;height:2px;background:var(--orange);flex:none}
+.sec-kicker::after,.gs-kicker::after,.cap .cap-k::after,.tag-service::after{content:"_";color:var(--orange);margin-left:-6px}
+.cap .cap-k{display:flex;justify-content:center;width:max-content;margin:0 auto 10px}
+.cta-band{background:linear-gradient(120deg,rgba(41,171,226,.14),rgba(247,148,29,.14)),#fff}
+/* 3) 横幅を960pxに統一 */
+.wrap,.header-in{max-width:calc(var(--content) + 44px)}
+.whatis .wrap,.hk-sec .wrap{max-width:calc(var(--content) + 44px)!important}
+.gs-grid,.hk-sec .hk-table,.hk-sec .hk-foot,.ba-grid,.r2grid,.faq-list,.flow,.benefit-list,.def-note,.cmp-grid{max-width:100%}
+.fv-carousel .cap{max-width:calc(var(--content) + 44px)}
+.carousel{padding-left:max(22px,calc((100vw - var(--content)) / 2));scroll-padding-left:max(22px,calc((100vw - var(--content)) / 2))}
+.closing .regret{max-width:100%;text-align:center}
+/* 4) 追従CTA（860px以下） */
+@media(max-width:860px){
+  .sticky-cta{transform:translateY(120%);transition:transform .3s ease}
+  .sticky-cta.show{transform:translateY(0)}
+  .fvx5 .fvx-copy .l1{font-size:44px}
+}
+@media(max-width:600px){
+  .wrap,.header-in{padding-left:18px;padding-right:18px}
+  .carousel{padding-left:18px;scroll-padding-left:18px}
+  .fvx5 .fvx-copy .l1{font-size:32px;line-height:1.35}
+  .fvx5 .fvx-copy .l2{font-size:16px}
+  .sec-kicker,.gs-kicker,.cap .cap-k,.tag-service{font-size:16px;gap:8px}
+  .sec-kicker::before,.gs-kicker::before,.cap .cap-k::before,.tag-service::before{width:18px}
+  .closing .regret{text-align:left}
+  .hk-sec .hk-scroll{margin-right:-18px;padding-right:18px}
+}
+</style>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -768,7 +810,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="lb-backdrop" id="lbBackdrop"><div class="lb-card"><button class="lb-close" id="lbClose" aria-label="閉じる">&times;</button><img id="lbImg" src="" alt=""><div class="lb-body"><span class="lb-tag" id="lbTag"></span><h3 id="lbTitle"></h3><p class="lb-meta" id="lbMeta"></p><p class="lb-detail" id="lbDetail"></p></div></div></div>
 <script>(function(){var bd=document.getElementById("lbBackdrop");if(!bd)return;function op(s){var img=s.querySelector("img"),tag=s.querySelector(".tag"),hh=s.querySelector("h4"),ps=s.querySelectorAll("p"),det=s.querySelector(".detail");document.getElementById("lbImg").src=img?img.src:"";document.getElementById("lbTag").textContent=tag?tag.textContent:"";document.getElementById("lbTitle").textContent=hh?hh.textContent:"";document.getElementById("lbMeta").textContent=ps[0]?ps[0].textContent:"";document.getElementById("lbDetail").textContent=det?det.textContent:"";bd.classList.add("open");document.body.style.overflow="hidden";}function cl(){bd.classList.remove("open");document.body.style.overflow="";}document.querySelectorAll("#fvCarousel .slide").forEach(function(s){s.addEventListener("click",function(){op(s);});});document.getElementById("lbClose").addEventListener("click",cl);bd.addEventListener("click",function(e){if(e.target===bd)cl();});document.addEventListener("keydown",function(e){if(e.key==="Escape")cl();});})();</script>
 <script>(function(){document.querySelectorAll(".faq-list .faq-q").forEach(function(q){q.addEventListener("click",function(){q.parentElement.classList.toggle("open");});});})();</script>
-<script>/*__hdrReveal*/(function(){var hd=document.querySelector(".sticky-cta"),hero=document.querySelector(".hero"),closing=document.querySelector(".closing");if(!hd||!hero)return;var closingVisible=false;if(closing&&"IntersectionObserver"in window){new IntersectionObserver(function(entries){closingVisible=entries[0].isIntersecting;upd();},{threshold:0.05}).observe(closing);}function upd(){if(closingVisible){hd.classList.remove("show");return;}if(window.scrollY>60)hd.classList.add("show");else hd.classList.remove("show");}upd();addEventListener("scroll",upd,{passive:true});addEventListener("resize",upd);})();</script>
+<script>/*__stickyCta*/(function(){var hd=document.querySelector(".sticky-cta");if(!hd)return;var top=document.querySelector(".fvx .cta"),end=document.querySelector(".closing .cta");var topVis=true,endVis=false;function upd(){hd.classList.toggle("show",!topVis&&!endVis);}if("IntersectionObserver"in window){if(top)new IntersectionObserver(function(es){topVis=es[0].isIntersecting;upd();}).observe(top);else topVis=false;if(end)new IntersectionObserver(function(es){endVis=es[0].isIntersecting;upd();}).observe(end);}else{addEventListener("scroll",function(){topVis=scrollY<500;upd();},{passive:true});}upd();})();</script>
 <script>
 document.addEventListener('click', function(e){
   var el = e.target.closest('[data-cta]');
