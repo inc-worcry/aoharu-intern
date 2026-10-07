@@ -678,6 +678,21 @@ body{font-family:"Noto Sans JP","Hiragino Kaku Gothic ProN","Hiragino Sans",sans
   .sticky-cta{transform:translateY(120%);transition:transform .3s ease}
   .sticky-cta.show{transform:translateY(0)}
   .fvx5 .fvx-copy .l1{font-size:44px}
+  .header-in .btn-line{display:inline-flex;font-size:12.5px;padding:7px 13px;gap:5px;box-shadow:0 4px 10px rgba(6,199,85,.28)}
+  .header-in .btn-line::before{font-size:10px;padding:1px 4px}
+  .header-in .logo,.header-in .btn-line{white-space:nowrap;flex:none}
+  .header-in .hnav{gap:0}
+}
+@media(max-width:600px){
+  .header-in{height:58px}
+  .header-in .lg-mark{font-size:20px}
+  .header-in .lg-mark .in{font-size:15px;margin-left:5px}
+}
+@media(max-width:360px){
+  .header-in{padding-left:14px;padding-right:14px}
+  .header-in .lg-mark{font-size:18px}
+  .header-in .lg-mark .in{font-size:13px;margin-left:4px}
+  .header-in .btn-line{font-size:11.5px;padding:6px 10px}
 }
 @media(max-width:600px){
   .wrap,.header-in{padding-left:18px;padding-right:18px}
