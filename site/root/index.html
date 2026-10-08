@@ -707,13 +707,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <button class="col-tab" id="colTabCompany" data-cat="company" aria-pressed="false">企業インタビュー</button>
             <button class="col-tab" id="colTabColumn" data-cat="column" aria-pressed="false">コラム</button>
           </div>
-          <a class="col-all" href="https://www.wantedly.com/companies/company_9004359/stories" target="_blank" rel="noopener">すべて読む</a>
+          <a class="col-all" id="colAll" href="https://aoharu-intern.com/companies/a6e86024-7da3-4141-9b2d-fc0f92e3b738/voice" target="_blank" rel="noopener">すべて読む</a>
         </div>
       </div>
 
-      <!-- 新しい記事ほど上に。トップページには最大5件（先頭の1件が大きく表示される） -->
+      <!-- 新しい記事ほど上に。トップページには最大5件（先頭の1件が大きく表示される）
+           AOHARUナビのVOICEを読み込めたら、data-navi="1" の静的カードはナビの記事に置き換わる（読み込めない時は静的カードのまま） -->
       <div class="col-list" id="colList">
-        <a class="ci" data-cat="column" href="https://www.wantedly.com/companies/company_9004359/post_articles/1043143" target="_blank" rel="noopener">
+        <a class="ci" data-navi="1" data-cat="column" href="https://www.wantedly.com/companies/company_9004359/post_articles/1043143" target="_blank" rel="noopener">
           <div class="ci-ph"><img src="img/voice-1043143.jpg" alt="" loading="lazy"></div>
           <div class="ci-body">
             <span class="ci-cat">コラム<span>AOHARUインターン</span></span>
@@ -729,7 +730,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <p class="ci-lead">うまくいかなかった日々の先に、何があったのか。WorCry創業の原点をたどるインタビュー。</p>
           </div>
         </a>
-        <a class="ci" data-cat="student" href="https://www.wantedly.com/companies/company_9004359/post_articles/1087683" target="_blank" rel="noopener">
+        <a class="ci" data-navi="1" data-cat="student" href="https://www.wantedly.com/companies/company_9004359/post_articles/1087683" target="_blank" rel="noopener">
           <div class="ci-ph"><img src="img/voice-1087683.jpg" alt="" loading="lazy"></div>
           <div class="ci-body">
             <span class="ci-cat">学生インタビュー<span>地方私立大学 C.Nさん</span></span>
@@ -737,7 +738,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <p class="ci-lead">地方大学生のリアルVol.3。</p>
           </div>
         </a>
-        <a class="ci" data-cat="student" href="https://www.wantedly.com/companies/company_9004359/post_articles/1086998" target="_blank" rel="noopener">
+        <a class="ci" data-navi="1" data-cat="student" href="https://www.wantedly.com/companies/company_9004359/post_articles/1086998" target="_blank" rel="noopener">
           <div class="ci-ph"><img src="img/voice-1086998.jpg" alt="" loading="lazy"></div>
           <div class="ci-body">
             <span class="ci-cat">学生インタビュー<span>東洋大学1年生 S.Sさん</span></span>
@@ -761,7 +762,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <p class="ci-lead">学生時代に触れた商売の手触りが、いまの仕事につながっている。</p>
           </div>
         </a>
-        <a class="ci" data-cat="student" href="https://www.wantedly.com/companies/company_9004359/post_articles/1082784" target="_blank" rel="noopener">
+        <a class="ci" data-navi="1" data-cat="student" href="https://www.wantedly.com/companies/company_9004359/post_articles/1082784" target="_blank" rel="noopener">
           <div class="ci-ph"><img src="img/voice-1082784.jpg" alt="" loading="lazy"></div>
           <div class="ci-body">
             <span class="ci-cat">学生インタビュー<span>都内私立大学3年生</span></span>
@@ -769,7 +770,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <p class="ci-lead">大学1年の本音Vol.1。やってみて初めて分かったこと。</p>
           </div>
         </a>
-        <a class="ci" data-cat="student" href="https://www.wantedly.com/companies/company_9004359/post_articles/1082112" target="_blank" rel="noopener">
+        <a class="ci" data-navi="1" data-cat="student" href="https://www.wantedly.com/companies/company_9004359/post_articles/1082112" target="_blank" rel="noopener">
           <div class="ci-ph"><img src="img/voice-1082112.jpg" alt="" loading="lazy"></div>
           <div class="ci-body">
             <span class="ci-cat">学生インタビュー<span>早稲田大学3年生</span></span>
@@ -883,11 +884,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   // VOICE：カテゴリで絞り込み、先頭の1件を大きく、最大5件まで表示
   const MAX_COLUMNS = 5;
-  const items = [...document.querySelectorAll('#colList .ci')];
+  const colList = document.getElementById('colList');
   const tabs = [...document.querySelectorAll('.col-tab')];
+  let currentCat = 'all';
   const renderColumns = (cat) => {
+    currentCat = cat;
     let shown = 0;
-    items.forEach((el) => {
+    colList.querySelectorAll('.ci').forEach((el) => {
       const match = cat === 'all' || el.dataset.cat === cat;
       const visible = match && shown < MAX_COLUMNS;
       el.hidden = !visible;
@@ -899,6 +902,47 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   };
   tabs.forEach((t) => t.addEventListener('click', () => renderColumns(t.dataset.cat)));
   renderColumns('all');
+
+  // VOICE：AOHARUナビ（正本）の公開記事を読み込んで差し込む
+  // 分類はタイトルで判定：「〜さんの場合」=学生インタビュー／「社長のボヤキ」=コラム／それ以外=企業インタビュー
+  const NAVI = 'https://aoharu-intern.com';
+  const NAVI_COMPANY = 'a6e86024-7da3-4141-9b2d-fc0f92e3b738';
+  const NAVI_QUERY = 'query($id: ID!){ publicCompany(id:$id){ voices { id title content status publishedAt createdAt files { url } } } }';
+  const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const toCard = (v) => {
+    const raw = v.title.trim();
+    const student = raw.match(/──\s*(.+?)さんの場合\s*$/);
+    const cat = /ボヤキ/.test(raw) ? 'column' : student ? 'student' : 'company';
+    const sub = cat === 'student' ? student[1].trim() + 'さん' : cat === 'column' || /鈴木/.test(raw) ? '代表 鈴木脩平' : /根岸/.test(raw) ? 'COO 根岸勇丞' : 'WorCry';
+    const label = {student:'学生インタビュー', company:'企業インタビュー', column:'コラム'}[cat];
+    const series = (raw.match(/^【(.+?)】/) || [])[1];
+    const title = raw.replace(/^【.+?】\s*/, '').replace(/──\s*.+?の場合\s*$/, '');
+    const firstLine = (v.content || '').split('\n').map((l) => l.replace(/^[#>*\-\s■]+/, '').trim())
+      .find((l) => l && l !== '---' && !/^\[.*\]\(.*\)$/.test(l)) || '';
+    const lead = series ? series + '。' : firstLine.slice(0, 60);
+    const img = v.files && v.files[0] ? v.files[0].url : '';
+    const a = document.createElement('a');
+    a.className = 'ci'; a.dataset.cat = cat; a.dataset.source = 'navi';
+    a.href = `${NAVI}/companies/${NAVI_COMPANY}/voice/${v.id}`; a.target = '_blank'; a.rel = 'noopener';
+    a.innerHTML = `<div class="ci-ph">${img ? `<img src="${esc(img)}" alt="" loading="lazy">` : ''}</div>
+          <div class="ci-body"><span class="ci-cat">${label}<span>${esc(sub)}</span></span>
+          <h3 class="ci-title">${esc(title)}</h3><p class="ci-lead">${esc(lead)}</p></div>`;
+    return a;
+  };
+  fetch(`${NAVI}/api/graphql?query=${encodeURIComponent(NAVI_QUERY)}&variables=${encodeURIComponent(JSON.stringify({id: NAVI_COMPANY}))}`)
+    .then((r) => r.ok ? r.json() : Promise.reject(r.status))
+    .then((json) => {
+      const now = Date.now();
+      const voices = (json.data && json.data.publicCompany && json.data.publicCompany.voices || [])
+        .filter((v) => v.status === 'PUBLISHED' && new Date(v.publishedAt || v.createdAt).getTime() <= now)
+        .sort((a, b) => new Date(b.publishedAt || b.createdAt) - new Date(a.publishedAt || a.createdAt));
+      if (!voices.length) return;
+      colList.querySelectorAll('.ci[data-navi="1"]').forEach((el) => el.remove());
+      const first = colList.querySelector('.ci');
+      voices.forEach((v) => colList.insertBefore(toCard(v), first || document.getElementById('colEmpty')));
+      renderColumns(currentCat);
+    })
+    .catch(() => { /* 読み込めない時は静的カードのまま表示 */ });
 
   // 問い合わせポップアップ
   const modal = document.getElementById('contactModal');
