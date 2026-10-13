@@ -1,0 +1,973 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NXCNC85H');</script>
+<!-- End Google Tag Manager -->
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="大学1年から入社後まで、学生と企業が出会い続けるためのサービスです。長期インターン紹介、新卒採用支援、内定後の選び直し、入社後のオンボーディングまで。">
+<link rel="canonical" href="https://aoharu-intern.worcry.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="AOHARU">
+<meta property="og:title" content="AOHARU｜“はたらく”に、青春を。">
+<meta property="og:description" content="大学1年から入社後まで、学生と企業が出会い続けるためのサービスです。長期インターン紹介、新卒採用支援、内定後の選び直し、入社後のオンボーディングまで。">
+<meta property="og:url" content="https://aoharu-intern.worcry.com/">
+<meta property="og:image" content="https://aoharu-intern.worcry.com/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="https://aoharu-intern.worcry.com/favicon.svg?v=3" type="image/svg+xml">
+<link rel="icon" href="https://aoharu-intern.worcry.com/favicon.ico?v=3" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="https://aoharu-intern.worcry.com/favicon-32.png?v=3">
+<link rel="icon" type="image/png" sizes="192x192" href="https://aoharu-intern.worcry.com/favicon-192.png?v=3">
+<link rel="apple-touch-icon" href="https://aoharu-intern.worcry.com/apple-touch-icon.png?v=3">
+<title>AOHARU｜“はたらく”に、青春を。｜株式会社WorCry</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Noto+Sans+JP:wght@400;500;700;900&family=Shippori+Mincho+B1:wght@700;800&display=swap">
+<style>
+/* 単一テーマ：色ベタのブロックで構成するブランドサイトのため、ライト固定で全色を明示 */
+:root{
+  --sky:#29ABE2; --sky-deep:#1B8FC4; --sky-pale:#E3F2F8;
+  --haru:#F7941D; --haru-pale:#FDEEDB;
+  --ink:#2E2F3B; --ink-soft:#5A5E6A; --gray:#868B93;
+  --paper:#F3F7F8; --white:#FFFFFF;
+  --dusk:#373B42; --foot:#4D5156;
+  --grad:linear-gradient(115deg,#29ABE2 0%,#6CC2E7 36%,#F8C07F 70%,#F7941D 100%);
+  --en:"Barlow Condensed","Arial Narrow",sans-serif;
+  --ja:"Noto Sans JP","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+  --mincho:"Shippori Mincho B1","Hiragino Mincho ProN","Yu Mincho",serif;
+  --rail:84px; --gut:clamp(16px,1.6vw,24px); --r:22px;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--ja);font-size:15px;line-height:1.9;
+  padding-inline:var(--gut);padding-block:var(--gut)}
+img{max-width:100%;display:block}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:3px solid var(--haru);outline-offset:3px}
+/* 改行：文節単位で折り返す（Chrome）＋ .ph で文節を固定（Safari含む全ブラウザ） */
+h1,h2,h3,p,small,b,.hd-ja,.svc-stage,.ci-cat,.btn{word-break:auto-phrase;line-break:strict}
+p{text-wrap:pretty}
+h1,h2,h3{text-wrap:balance}
+.ph{display:inline-block}
+.frame{border-radius:var(--r);overflow:hidden;position:relative}
+.frame + .frame{margin-top:var(--gut)}
+
+/* ---------- 固定ロゴボックス（UZUZ型） ---------- */
+.logo-box{position:fixed;top:var(--gut);left:var(--gut);z-index:40;background:var(--white);
+  width:132px;padding:16px 16px 12px;text-decoration:none;box-shadow:0 6px 24px rgba(26,26,42,.08)}
+.logo-box small{display:block;margin-top:8px;font-family:var(--en);font-size:11px;letter-spacing:.14em;color:var(--gray)}
+
+/* ---------- 右上：企業／学生の入口（TeamMake型） ---------- */
+.hdr{position:fixed;top:var(--gut);right:var(--gut);z-index:40;display:flex;align-items:stretch;gap:8px}
+.hdr-cta{display:flex;flex-direction:column;justify-content:center;text-decoration:none;color:var(--white);
+  padding:9px 20px;min-width:210px;transition:transform .2s}
+.hdr-cta:hover{transform:translateY(-2px)}
+.hdr-cta.co{background:var(--sky)} .hdr-cta.st{background:var(--haru)}
+.hdr-cta small{font-size:11px;font-weight:500;letter-spacing:.08em;line-height:1.5;opacity:.92}
+.hdr-cta b{font-size:14px;font-weight:700;letter-spacing:.06em;line-height:1.5}
+.hdr-cta b::after{content:"  →"}
+.menu-btn{width:62px;min-height:60px;border:0;cursor:pointer;background:var(--ink);color:var(--white);display:flex;
+  flex-direction:column;align-items:center;justify-content:center}
+.menu-btn i{display:block;width:24px;height:2px;background:currentColor;box-shadow:0 7px 0 currentColor,0 -7px 0 currentColor}
+.menu-btn span{font-family:var(--en);font-size:11px;letter-spacing:.14em;font-weight:600;margin-top:12px}
+
+/* ---------- メニュー ---------- */
+.menu{position:fixed;inset:0;z-index:60;background:var(--ink);color:var(--white);overflow:auto;
+  padding:clamp(24px,5vw,72px) var(--gut)}
+.menu-in{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:1fr 2fr;gap:48px}
+.menu-close{position:absolute;top:var(--gut);right:var(--gut);width:60px;height:60px;border:1px solid rgba(255,255,255,.4);
+  background:none;color:var(--white);font-family:var(--en);font-size:12px;letter-spacing:.14em;cursor:pointer}
+.menu nav a{display:block;text-decoration:none;font-family:var(--en);font-size:clamp(32px,4vw,52px);font-weight:600;
+  letter-spacing:.04em;line-height:1.25}
+.menu nav a small{font-family:var(--ja);font-size:12px;margin-left:12px;color:#AEB3BB;letter-spacing:.1em;font-weight:500}
+.menu nav a:hover{color:var(--haru)}
+.menu h3{font-family:var(--en);font-weight:600;letter-spacing:.18em;font-size:13px;color:#AEB3BB;margin:0 0 8px;
+  border-bottom:1px solid rgba(255,255,255,.2);padding-bottom:8px}
+.menu ul{list-style:none;margin:0 0 32px;padding:0}
+.menu li a{display:flex;justify-content:space-between;gap:16px;text-decoration:none;padding:14px 0;
+  border-bottom:1px solid rgba(255,255,255,.12);font-weight:700;font-size:17px}
+.menu li a span{font-family:var(--en);color:var(--sky);font-weight:600}
+.menu li a:hover span{color:var(--haru)}
+
+/* ---------- 見出し ---------- */
+.hd{text-align:center;margin-bottom:clamp(36px,5vw,64px)}
+.hd-en{font-family:var(--en);font-weight:700;font-size:clamp(40px,5.4vw,72px);letter-spacing:.06em;line-height:1;margin:0;
+  display:inline-block;padding-bottom:14px;border-bottom:3px solid currentColor}
+.hd-en b{color:var(--haru);font-weight:700}
+.hd-ja{margin:14px 0 0;font-size:13px;font-weight:700;letter-spacing:.2em}
+
+/* ---------- FV ---------- */
+.fv{margin:calc(var(--gut) * -1) calc(var(--gut) * -1) 0;border-radius:0;height:min(90vh,860px);min-height:580px;background:var(--sky)}
+.fv-photo{position:absolute;inset:0;background:url(https://aoharu-intern.worcry.com/img/fv.jpg) 52% 42%/cover no-repeat;animation:kb 24s ease-out both}
+@keyframes kb{from{transform:scale(1.14)}to{transform:scale(1)}}
+.fv::before{content:"";position:absolute;inset:0;z-index:1;
+  background:linear-gradient(90deg,rgba(10,50,78,.52) 0%,rgba(10,50,78,.14) 48%,rgba(10,50,78,0) 70%),
+             linear-gradient(180deg,rgba(247,148,29,0) 55%,rgba(247,148,29,.38) 100%)}
+.fv::after{content:"";position:absolute;inset:0;z-index:2;opacity:.22;mix-blend-mode:overlay;pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.fv-body{position:absolute;z-index:3;left:clamp(24px,6vw,104px);top:54%;transform:translateY(-50%);color:var(--white);max-width:min(840px,88%)}
+.fv-poem{margin:0 0 30px;font-weight:700;font-size:clamp(13px,1.1vw,15px);line-height:2.3;letter-spacing:.08em;
+  text-shadow:0 1px 12px rgba(0,0,0,.25)}
+.fv-copy{margin:0;font-family:var(--ja);font-weight:900;font-size:clamp(44px,6vw,92px);line-height:1.32;letter-spacing:.04em;
+  text-shadow:0 2px 28px rgba(10,40,60,.3)}
+.fv-copy span{display:block;white-space:nowrap;animation:rise 1.1s cubic-bezier(.2,.7,.2,1) both}
+.fv-copy span:nth-child(2){animation-delay:.3s}
+/* 1行目（受けの言葉）は少し小さく */
+.fv-copy span:first-child{font-size:.7em;letter-spacing:.06em}
+.fv-copy em{font-style:normal;background:linear-gradient(transparent 76%,rgba(247,148,29,.9) 76%, rgba(247,148,29,.9) 92%,transparent 92%)}
+@keyframes rise{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}
+
+/* ---------- マーキー ---------- */
+.marquee{background:var(--grad);color:var(--white);padding-block:18px;white-space:nowrap}
+.marquee-track{display:inline-flex;animation:mq 38s linear infinite}
+.marquee-track span{font-family:var(--en);font-weight:700;font-size:clamp(44px,6vw,86px);letter-spacing:.04em;line-height:1;padding-right:.6em}
+.marquee-track span:nth-child(even){color:transparent;-webkit-text-stroke:1.5px var(--white)}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+/* ---------- CONCEPT ---------- */
+.concept{background:var(--sky-pale);padding:clamp(64px,9vw,128px) clamp(20px,6vw,96px)}
+.concept-grid{display:grid;grid-template-columns:auto 1fr;gap:clamp(32px,6vw,96px);max-width:1080px;margin:0 auto;align-items:start}
+.stack{background:var(--sky);color:var(--white);font-family:var(--en);font-weight:700;font-size:clamp(56px,7vw,104px);
+  line-height:.9;letter-spacing:.02em;padding:22px 26px 26px;width:max-content}
+.stack .r{color:var(--haru-pale)}
+.concept h2{font-family:var(--mincho);font-weight:800;font-size:clamp(30px,3.6vw,48px);line-height:1.45;margin:0 0 28px;
+  letter-spacing:.06em;text-wrap:balance}
+.concept .poem p{margin:0 0 1.2em;font-size:16px;font-weight:500;line-height:2.2;max-width:34em}
+.collage{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:var(--gut);max-width:1080px;margin:clamp(48px,6vw,88px) auto 0;align-items:end}
+.collage img{width:100%;object-fit:cover;border-radius:4px}
+.collage img:nth-child(1){aspect-ratio:4/3}
+.collage img:nth-child(2){aspect-ratio:3/4;transform:translateY(-40px)}
+.collage img:nth-child(3){aspect-ratio:1/1}
+
+/* ---------- VALUE（UZUZ IDENTITY型） ---------- */
+.value{background:var(--haru);color:var(--white);padding:clamp(64px,9vw,120px) clamp(20px,5vw,80px)}
+.val-vision{max-width:1080px;margin:0 auto clamp(48px,5.5vw,72px);padding-bottom:clamp(40px,5vw,66px);border-bottom:1px solid rgba(255,255,255,.4)}
+.val-label{margin:0 0 16px;font-family:var(--en);font-weight:600;font-size:12px;letter-spacing:.2em;opacity:.85}
+.val-v1{margin:0;font-family:var(--mincho);font-weight:800;font-size:clamp(27px,3.6vw,48px);line-height:1.5;letter-spacing:.05em}
+.val-v1 em{font-style:normal;background:linear-gradient(transparent 84%,rgba(255,255,255,.65) 84%)}
+.val-v2{margin:18px 0 0;font-size:clamp(15px,1.7vw,19px);font-weight:700;letter-spacing:.06em;opacity:.95}
+.val-omoi{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,3vw,48px);margin:clamp(30px,3.6vw,46px) 0 0}
+.val-omoi p{margin:0;font-size:15px;line-height:2.1;opacity:.95}
+.val-omoi p+p{margin:0}
+.figures{display:flex;flex-wrap:wrap;justify-content:center;gap:clamp(32px,8vw,120px);margin:0 auto;max-width:1080px}
+.fig{text-align:center}
+.fig b{display:block;font-family:var(--en);font-weight:700;font-size:clamp(64px,8vw,112px);line-height:1;font-variant-numeric:tabular-nums}
+.fig b small{font-size:.4em;margin-left:4px}
+.fig span{font-size:13px;font-weight:700;letter-spacing:.12em}
+.fig em{display:block;margin-top:8px;font-style:normal;font-size:11px;font-weight:500;letter-spacing:.08em;opacity:.85}
+
+/* ---------- サービスロゴ ---------- */
+.svc-logo{display:block;width:auto;align-self:flex-start}
+.svc-logo.lg{height:30px}
+.svc-logo.sm{height:17px}
+.svc-logo.sm.wide{height:14px}
+.svc-sub{font-size:14px;font-weight:700;letter-spacing:.04em;margin-top:-4px}
+/* 濃い背景の上では白いチップに載せる */
+.logo-chip{display:inline-flex;align-self:flex-start;background:var(--white);padding:12px 16px}
+.brand-logo{height:26px;width:auto}
+
+/* ---------- ONE STORY（新卒タレントプール採用の世界観） ---------- */
+.journey{background:var(--white);padding:clamp(64px,9vw,120px) clamp(20px,5vw,80px)}
+.jr-wrap{max-width:1120px;margin:0 auto}
+.jr-head{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(28px,5vw,72px);align-items:center;margin-bottom:clamp(40px,5vw,64px)}
+.jr-head h2{font-family:var(--mincho);font-weight:800;font-size:clamp(28px,3.4vw,46px);line-height:1.55;letter-spacing:.06em;margin:0;text-wrap:balance}
+.jr-head p{margin:0 0 1em;font-size:15px;line-height:2.1;color:var(--ink-soft);max-width:36em}
+.jr-head strong{color:var(--ink);background:linear-gradient(transparent 68%,var(--haru-pale) 68%)}
+.jr-more{font-weight:700;font-size:14px;text-decoration:none;border-bottom:1px solid var(--ink);padding-bottom:2px}
+.jr-more:hover{color:var(--sky-deep);border-color:var(--sky-deep)}
+.jr-scroll{overflow-x:auto;padding-bottom:8px}
+.jr{min-width:900px}
+.jr-hint{display:none;margin:0 0 10px;font-size:12px;font-weight:700;color:var(--gray)}
+.jr-out{margin:26px 0 0;font-size:clamp(16px,1.6vw,19px);font-weight:900;letter-spacing:.04em;text-align:right}
+.jr-out span{background:linear-gradient(transparent 70%,var(--haru-pale) 70%)}
+.jr-grid{display:grid;grid-template-columns:140px repeat(10,1fr)}
+.jr-years span:not(:first-child){grid-column:span 2;border-left:1px solid #DDE3E6;padding:0 0 14px 10px;
+  font-family:var(--en);font-weight:600;font-size:13px;letter-spacing:.14em;color:var(--gray);line-height:1.4}
+.jr-years small{display:block;font-family:var(--ja);font-size:11px;font-weight:700;letter-spacing:.06em;color:var(--ink-soft)}
+.jr-lane{padding-block:26px;border-top:1px solid #DDE3E6;align-items:center}
+.jr-label{grid-column:1;grid-row:1/3;font-size:13px;font-weight:700;letter-spacing:.04em;line-height:1.6;padding-right:14px}
+.jr-label small{display:block;font-family:var(--en);font-weight:600;font-size:11px;letter-spacing:.16em;color:var(--gray)}
+.seg{grid-row:1;display:block}
+.seg-old{grid-column:7/9;height:4px;background:repeating-linear-gradient(90deg,#9EA5AC 0 10px,transparent 10px 16px)}
+.seg-new{grid-column:2/12;height:12px;background:var(--grad);position:relative}
+.seg-new::after{content:"";position:absolute;right:-12px;top:50%;transform:translateY(-50%);
+  border-left:14px solid var(--haru);border-top:13px solid transparent;border-bottom:13px solid transparent}
+.jr-cap{grid-row:2;grid-column:7/12;margin:12px 0 0;font-size:13px;color:var(--gray);font-weight:500}
+.stop{grid-row:2;align-self:start;border-left:2px solid var(--ink);padding:16px 8px 0 12px;display:flex;flex-direction:column;gap:8px}
+.stop small{font-size:12px;font-weight:700;color:var(--ink-soft);line-height:1.6}
+.stop b{font-size:16px;font-weight:900;letter-spacing:.04em;line-height:1.3;white-space:nowrap}
+.jr-lane.old .jr-label{color:var(--gray)}
+
+/* ---------- SERVICE ---------- */
+.service{background:var(--sky-pale);padding:clamp(64px,9vw,120px) clamp(20px,5vw,80px)}
+.svc-wrap{max-width:1120px;margin:0 auto}
+.svc-lead{text-align:center;margin:-24px 0 clamp(36px,4vw,56px);font-size:15px;font-weight:700;color:var(--ink-soft)}
+.svc-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gut)}
+.svc{background:var(--white);text-decoration:none;display:flex;flex-direction:column;overflow:hidden;transition:transform .3s}
+/* 上端の帯は、全体グラデを3分割して学年の位置を表す */
+.svc::before{content:"";display:block;height:8px;background:var(--grad);background-size:300% 100%}
+.svc:nth-child(1)::before{background-position:0% 0} .svc:nth-child(2)::before{background-position:50% 0} .svc:nth-child(3)::before{background-position:100% 0}
+.svc:hover{transform:translateY(-6px)}
+.svc-ph{aspect-ratio:16/10;overflow:hidden}
+.svc-ph img{width:100%;height:100%;object-fit:cover;object-position:50% 50%;transition:transform .8s}
+.svc:hover .svc-ph img{transform:scale(1.05)}
+.svc-body{padding:26px 24px 24px;display:flex;flex-direction:column;gap:14px;flex:1}
+.svc-stage{font-family:var(--en);font-weight:600;font-size:14px;letter-spacing:.14em;color:var(--sky-deep)}
+.svc:nth-child(3) .svc-stage{color:#D97A06}
+.svc-stage small{font-family:var(--ja);font-weight:700;font-size:12px;letter-spacing:.06em;margin-left:10px;color:var(--ink-soft)}
+.svc-desc{margin:0;font-size:14px;line-height:1.95;color:var(--ink-soft)}
+.svc-for{margin:0;padding-top:12px;border-top:1px solid #E3E8EA;font-size:12px;line-height:1.9;color:var(--ink-soft)}
+.svc-for b{color:var(--ink);margin-right:.6em}
+.go{margin-top:auto;align-self:flex-end;font-family:var(--en);font-weight:600;font-size:13px;letter-spacing:.12em;white-space:nowrap}
+.go::after{content:" ↗";font-size:18px}
+.svc-wide{margin-top:var(--gut);background:var(--ink);color:var(--white);text-decoration:none;display:grid;
+  grid-template-columns:auto 1fr auto;gap:28px;align-items:center;padding:28px 30px;transition:background .3s}
+.svc-wide:hover{background:#3C3D4B}
+.svc-wide .svc-stage{color:var(--haru)} .svc-wide .svc-stage small{color:#C8CCD3}
+.svc-wide p{margin:4px 0 0;font-size:14px;color:#D5D8DD}
+.svc-wide .go{align-self:center}
+.svc-wide.navi{background:var(--haru)}
+.svc-wide.navi:hover{background:#E8850F}
+.svc-wide.navi .svc-stage,.svc-wide.navi .svc-stage small{color:var(--white)}
+.svc-wide.navi p{color:rgba(255,255,255,.95)}
+.svc-wide.onb{background:var(--sky)}
+.svc-wide.onb:hover{background:#1B8FC4}
+.svc-wide.onb .svc-stage,.svc-wide.onb .svc-stage small{color:var(--white)}
+.svc-wide.onb p{color:rgba(255,255,255,.95)}
+.svc-note{margin:16px 0 0;font-size:12px;color:var(--gray);text-align:right}
+
+/* ---------- FOR COMPANY / STUDENT ---------- */
+.split{display:flex;gap:var(--gut);background:none;border-radius:0;overflow:visible}
+.door{flex:1;min-height:440px;border-radius:var(--r);overflow:hidden;position:relative;text-decoration:none;color:var(--white);
+  display:flex;flex-direction:column;justify-content:flex-end;padding:clamp(24px,3vw,44px);transition:flex-grow .6s cubic-bezier(.2,.7,.2,1)}
+.door:hover{flex-grow:1.45}
+.door > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform .8s}
+.door:hover > img{transform:scale(1.05)}
+.door::before{content:"";position:absolute;inset:0;z-index:-1}
+.door.co::before{background:linear-gradient(0deg,rgba(27,143,196,.92) 18%,rgba(41,171,226,.25) 75%)}
+.door.st::before{background:linear-gradient(0deg,rgba(231,125,10,.92) 18%,rgba(247,148,29,.25) 75%)}
+.door .en{font-family:var(--en);font-weight:700;font-size:clamp(40px,4.4vw,64px);line-height:1;letter-spacing:.04em}
+.door h3{font-family:var(--mincho);font-weight:800;font-size:clamp(22px,2.2vw,30px);margin:12px 0 10px;letter-spacing:.06em;line-height:1.5}
+.door p{margin:0 0 20px;font-size:14px;max-width:30em}
+.door-logo{display:inline-flex;align-self:flex-start;background:var(--white);padding:13px 20px;margin:18px 0 6px;
+  box-shadow:0 10px 26px rgba(8,36,58,.22)}
+.door-logo img{height:34px;width:auto;display:block}
+.door .btn{align-self:flex-start;border:1px solid var(--white);padding:12px 22px;font-weight:700;font-size:14px;letter-spacing:.08em}
+.door .btn::after{content:"  →"}
+.door:hover .btn{background:var(--white);color:var(--ink)}
+
+
+
+/* ---------- COLUMN ---------- */
+.column{background:var(--dusk);color:var(--white);padding:clamp(64px,9vw,120px) clamp(20px,5vw,80px)}
+.col-wrap{max-width:1120px;margin:0 auto}
+.col-top{display:flex;justify-content:space-between;align-items:flex-end;gap:24px 40px;flex-wrap:wrap;
+  border-bottom:2px solid rgba(255,255,255,.5);padding-bottom:18px;margin-bottom:clamp(28px,4vw,44px)}
+.column .hd{text-align:left;margin:0}
+.col-tools{display:flex;align-items:center;gap:28px;flex-wrap:wrap}
+.col-tabs{display:flex;gap:22px;overflow-x:auto;scrollbar-width:none}
+.col-tab{border:0;background:none;padding:6px 0;cursor:pointer;font-family:var(--ja);font-size:14px;font-weight:700;
+  color:#9AA1A9;white-space:nowrap;border-bottom:2px solid transparent;letter-spacing:.04em}
+.col-tab:hover{color:var(--white)}
+.col-tab[aria-pressed="true"]{color:var(--white);border-bottom-color:var(--haru)}
+.col-all{display:inline-flex;gap:12px;align-items:center;text-decoration:none;font-weight:700;font-size:14px;
+  border:1px solid rgba(255,255,255,.6);padding:10px 18px;white-space:nowrap;transition:background .2s,color .2s}
+.col-all::after{content:"↗";font-family:var(--en);font-size:17px}
+.col-all:hover{background:var(--white);color:var(--ink)}
+.col-list{display:grid;grid-template-columns:1.3fr 1fr;column-gap:clamp(28px,4vw,56px);align-content:start;grid-auto-rows:min-content}
+.ci{grid-column:2;display:grid;grid-template-columns:168px 1fr;gap:18px;align-items:start;text-decoration:none;
+  padding:20px 0;border-bottom:1px solid rgba(255,255,255,.14)}
+.ci.is-feature{grid-column:1;grid-row:1 / span 4;display:flex;flex-direction:column;gap:18px;padding:0;border:0}
+.ci:not(.is-feature):first-of-type,.ci.is-feature + .ci{padding-top:0}
+.ci-ph{position:relative;aspect-ratio:1200/630;overflow:hidden;background:#3A3F47}
+.ci.is-feature .ci-ph{aspect-ratio:1200/630}
+.ci-ph img{width:100%;height:100%;object-fit:cover;transition:transform .7s}
+.ci:hover .ci-ph img{transform:scale(1.05)}
+.ci-sample{position:absolute;right:0;bottom:0;background:rgba(46,47,59,.72);color:var(--white);font-family:var(--en);
+  font-size:10px;font-weight:600;letter-spacing:.14em;padding:2px 7px}
+.ci-body{display:flex;flex-direction:column;gap:6px;min-width:0}
+.ci-cat{font-size:11px;font-weight:700;letter-spacing:.06em;color:#6EC7EE}
+.ci-cat span{color:#9AA1A9;font-weight:500;margin-left:.6em}
+.ci-title{margin:0;font-size:15px;font-weight:700;line-height:1.7;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.ci.is-feature .ci-title{font-size:clamp(20px,2vw,26px);font-weight:900;line-height:1.6;-webkit-line-clamp:4;text-wrap:balance}
+.ci:hover .ci-title{color:var(--haru)}
+.ci-lead{display:none;margin:0;font-size:14px;line-height:1.95;color:#B9BEC5}
+.ci.is-feature .ci-lead{display:block;font-family:var(--mincho);font-weight:700;font-size:clamp(17px,1.7vw,21px);
+  line-height:1.9;letter-spacing:.04em;color:var(--white);border-left:2px solid var(--haru);padding-left:16px}
+.col-empty{grid-column:1 / -1;margin:0;padding:40px 0;font-size:14px;color:#9AA1A9}
+.col-foot{margin:22px 0 0;font-size:12px;color:#8E949B}
+
+/* ---------- CONTACT ---------- */
+.contact{background:var(--grad);color:var(--white);padding:clamp(64px,9vw,120px) clamp(20px,5vw,80px);text-align:center}
+.contact h2{font-family:var(--mincho);font-weight:800;font-size:clamp(28px,3.4vw,46px);letter-spacing:.08em;margin:0 0 40px;line-height:1.5;text-wrap:balance}
+.cta-row{display:grid;grid-template-columns:1fr 1fr;gap:var(--gut);max-width:920px;margin:0 auto}
+.cta{background:var(--white);color:var(--ink);text-decoration:none;padding:28px 30px;text-align:left;display:flex;
+  justify-content:space-between;align-items:center;gap:16px;transition:transform .2s}
+.cta:hover{transform:translateY(-4px)}
+.cta small{display:block;font-family:var(--en);font-weight:600;letter-spacing:.16em;font-size:12px}
+.cta.co small{color:var(--sky-deep)}
+.cta.line{background:#06C755;color:#FFFFFF}
+.cta.line small{color:rgba(255,255,255,.9)}
+.cta-note{margin:14px 0 0;font-size:12px;opacity:.9}
+.cta b{font-size:19px;font-weight:900;letter-spacing:.04em}
+.cta::after{content:"→";font-family:var(--en);font-size:28px}
+
+/* ---------- 問い合わせポップアップ ---------- */
+.cta.as-btn{border:0;font-family:inherit;width:100%;cursor:pointer;text-align:left}
+.modal{position:fixed;inset:0;z-index:80;display:flex;align-items:center;justify-content:center;padding:var(--gut)}
+.modal[hidden]{display:none}
+.modal-back{position:absolute;inset:0;background:rgba(20,26,34,.62);backdrop-filter:blur(3px)}
+.modal-card{position:relative;background:var(--white);color:var(--ink);width:min(560px,100%);max-height:88vh;overflow:auto;
+  padding:clamp(26px,3vw,40px);box-shadow:0 30px 70px rgba(10,30,50,.34);text-align:left}
+.modal-x{position:absolute;top:12px;right:12px;width:38px;height:38px;border:0;background:none;cursor:pointer;
+  font-size:22px;line-height:1;color:var(--gray);font-family:var(--en)}
+.modal-x:hover{color:var(--ink)}
+.modal-eyebrow{margin:0 0 8px;font-family:var(--en);font-weight:600;font-size:12px;letter-spacing:.2em;color:var(--sky-deep)}
+.modal-card h3{margin:0 0 10px;font-size:clamp(21px,2.2vw,26px);font-weight:900;letter-spacing:.03em}
+.modal-lead{margin:0 0 22px;font-size:13.5px;line-height:1.95;color:var(--ink-soft)}
+.modal-card label{display:block;font-size:12.5px;font-weight:700;letter-spacing:.06em;margin-bottom:14px}
+.modal-card input[type=text],.modal-card input[type=email],.modal-card input[type=tel],.modal-card textarea{
+  display:block;width:100%;margin-top:6px;padding:11px 13px;border:1px solid #D9DFE4;background:#FBFCFD;
+  font-family:inherit;font-size:14px;font-weight:400;color:var(--ink)}
+.modal-card textarea{resize:vertical;line-height:1.8}
+.modal-card input:focus,.modal-card textarea:focus{outline:none;border-color:var(--sky);background:var(--white)}
+.modal-agree{display:flex;align-items:flex-start;gap:9px;font-weight:500;font-size:12.5px;color:var(--ink-soft);margin:4px 0 20px}
+.modal-agree input{margin-top:3px}
+.modal-agree a{color:var(--sky-deep);text-decoration:underline}
+.modal-send{width:100%;border:0;background:var(--sky);color:var(--white);font-family:inherit;font-size:15px;font-weight:700;
+  letter-spacing:.08em;padding:15px;cursor:pointer;transition:background .2s}
+.modal-send:hover{background:var(--sky-deep)}
+.modal-note{margin:14px 0 0;font-size:11.5px;color:var(--gray);line-height:1.8}
+
+/* ---------- FOOTER（5枚のLPと共通の #nft ブロック） ---------- */
+#nft{background:#4D5156;color:#C4C7CB;padding:52px 0 0;font-family:inherit;text-align:center}
+#nft a{text-decoration:none;color:inherit;transition:color .18s,background .18s}
+#nft a:hover{color:#fff}
+.nft-in{max-width:1100px;margin:0 auto;padding:0 40px}
+.nft-head{display:flex;align-items:center;justify-content:space-between;padding-bottom:36px;border-bottom:1px solid rgba(255,255,255,.18);margin-bottom:36px;gap:20px}
+.nft-logo img{height:32px;width:auto;display:block}
+.nft-sns{display:flex;gap:10px;align-items:center;flex-shrink:0}
+.nft-sns a{display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.08);color:#D5D7DA;flex-shrink:0}
+.nft-sns a:hover{background:#29ABE2;color:#fff}
+.nft-sns svg{width:15px;height:15px;fill:currentColor;display:block}
+.nft-nav{display:grid;grid-template-columns:1fr 1.6fr 1.3fr;gap:40px;padding-bottom:36px;border-bottom:1px solid rgba(255,255,255,.18);margin-bottom:24px}
+.nft-col-ttl{font-size:9.5px;font-weight:700;color:#fff;letter-spacing:.18em;text-transform:uppercase;margin-bottom:16px}
+.nft-col a{display:block;font-size:12.5px;color:#D5D7DA;margin-bottom:10px;line-height:1.4}
+.nft-col a:hover{color:#29ABE2}
+.nft-btm{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding:18px 0 36px}
+.nft-legal{display:flex;flex-wrap:wrap;font-size:10.5px;color:#C4C7CB}
+.nft-legal a{padding:0 10px;border-left:1px solid rgba(255,255,255,.3)}
+.nft-legal a:first-child{padding-left:0;border-left:0}
+.nft-copy{font-size:10.5px;color:#C4C7CB;white-space:nowrap}
+@media (max-width:900px){
+  .nft-in{padding:0 24px}
+  .nft-head{flex-direction:column;align-items:flex-start;gap:18px}
+  .nft-nav{grid-template-columns:1fr 1fr;gap:20px}
+  .nft-btm{flex-direction:column;align-items:flex-start;gap:8px}
+}
+
+/* ---------- レスポンシブ ---------- */
+@media (max-width:900px){
+  body{padding-inline:var(--gut);padding-bottom:84px}
+  .hdr{top:auto;bottom:0;left:0;right:0;padding:10px var(--gut);background:rgba(243,247,248,.94);backdrop-filter:blur(8px)}
+  .hdr-cta{flex:1;min-width:0;padding:10px 12px}
+  .hdr-cta small{display:none}
+  .hdr-cta b{font-size:13px}
+  .menu-btn{min-height:48px;width:56px}
+  .logo-box{position:absolute;width:auto;padding:12px 14px}
+  .logo-box .wordmark{font-size:24px}
+  .fv{height:auto;min-height:620px}
+  .fv-photo{background-position:82% 38%}
+  /* スマホは文字が下にあるので、下側を暗くして読みやすくする */
+  .fv::before{background:linear-gradient(180deg,rgba(10,50,78,0) 30%,rgba(10,50,78,.5) 62%,rgba(10,50,78,.72) 100%),
+    linear-gradient(180deg,rgba(247,148,29,0) 70%,rgba(247,148,29,.3) 100%)}
+  .fv-body{top:auto;bottom:92px;transform:none}
+  .fv-poem{font-size:12.5px;margin-bottom:18px;line-height:2.1}
+  .fv-copy{font-size:clamp(30px,9vw,48px)}
+  .concept-grid,.menu-in,.jr-head{grid-template-columns:1fr}
+  .col-list{grid-template-columns:1fr}
+  .ci,.ci.is-feature{grid-column:1;grid-row:auto}
+  .ci{grid-template-columns:124px 1fr;gap:14px}
+  .ci.is-feature{padding-bottom:24px;border-bottom:1px solid rgba(255,255,255,.14)}
+  .ci.is-feature + .ci{padding-top:18px}
+  .col-tools{width:100%;justify-content:space-between}
+  .jr-head h2{font-size:clamp(24px,6.8vw,30px)}
+  .jr-hint{display:block}
+  .svc-stage small{display:block;margin:4px 0 0}
+  .svc-wide{gap:16px;padding:22px 20px}
+  .cta{padding:20px}
+  .cta b{font-size:16px}
+  .door h3{font-size:clamp(22px,6.4vw,28px)}
+  .val-omoi{grid-template-columns:1fr;gap:1em}
+  .svc-cols,.svc-wide{grid-template-columns:1fr}
+  .svc-wide .go{justify-self:end}
+  .split{flex-direction:column}
+  .door{min-height:360px}
+  .door:hover{flex-grow:1}
+  .cta-row{grid-template-columns:1fr}
+  .collage{grid-template-columns:1fr 1fr}
+  .collage img:nth-child(2){transform:none}
+  .collage img:nth-child(3){display:none}
+}
+/* タブレット〜小さめPC：サービスカードを横長1列に */
+@media (max-width:1100px){
+  .svc-cols{grid-template-columns:1fr}
+  .svc{display:grid;grid-template-columns:minmax(0,38%) 1fr}
+  .svc::before{grid-column:1/-1}
+  .svc-ph{aspect-ratio:auto;min-height:220px}
+}
+@media (max-width:600px){
+  .svc{display:flex}
+  .svc-ph{aspect-ratio:16/10;min-height:0}
+  .svc-logo.lg{height:24px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .marquee{overflow-x:auto}
+}
+</style>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Organization",
+   "@id": "https://aoharu-intern.worcry.com/#organization",
+   "name": "株式会社WorCry",
+   "alternateName": "WorCry Inc.",
+   "url": "https://www.worcry.com/",
+   "logo": "https://aoharu-intern.worcry.com/og.png",
+   "foundingDate": "2024-12-03",
+   "founder": {
+    "@type": "Person",
+    "name": "鈴木脩平"
+   },
+   "address": {
+    "@type": "PostalAddress",
+    "postalCode": "150-6139",
+    "addressRegion": "東京都",
+    "addressLocality": "渋谷区",
+    "streetAddress": "渋谷2-24-12 渋谷スクランブルスクエア39F",
+    "addressCountry": "JP"
+   },
+   "sameAs": [
+    "https://x.com/Worcry_shuhei",
+    "https://www.instagram.com/aoharu_shinsotsu_official/",
+    "https://www.instagram.com/aoharu_intern_official/",
+    "https://www.tiktok.com/@aoharu_shinsotsu",
+    "https://www.youtube.com/@AOHARU-worcry",
+    "https://note.com/worcry"
+   ]
+  },
+  {
+   "@type": "WebSite",
+   "@id": "https://aoharu-intern.worcry.com/#website",
+   "name": "AOHARU",
+   "alternateName": "AOHARU（アオハル）",
+   "url": "https://aoharu-intern.worcry.com/",
+   "inLanguage": "ja",
+   "publisher": {
+    "@id": "https://aoharu-intern.worcry.com/#organization"
+   }
+  }
+ ]
+}
+</script>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NXCNC85H"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<a class="logo-box" href="#top" aria-label="AOHARU トップへ">
+  <img class="brand-logo" src="https://aoharu-intern.worcry.com/img/logo-aoharu.png" alt="AOHARU">
+  <small>by WorCry</small>
+</a>
+
+<div class="hdr" lang="ja">
+  <a class="hdr-cta co" href="#service"><small>企業の採用ご担当者さまは</small><b>企業向けサービス</b></a>
+  <a class="hdr-cta st" href="https://aoharu-intern.worcry.com/student/?utm_source=aoharu_site" target="_blank" rel="noopener"><small>学生のみなさんは</small><b>学生向けサービス</b></a>
+  <button class="menu-btn" id="menuOpen" aria-controls="menu" aria-expanded="false"><i></i><span>MENU</span></button>
+</div>
+
+<div class="menu" id="menu" lang="ja" hidden>
+  <button class="menu-close" id="menuClose">CLOSE</button>
+  <div class="menu-in">
+    <nav aria-label="サイト内">
+      <a href="#concept">CONCEPT<small>AOHARUとは</small></a>
+      <a href="#journey">ONE STORY<small>4年間、つながり続ける</small></a>
+      <a href="#service">SERVICE<small>サービス</small></a>
+      <a href="#voice">VOICE<small>インタビュー・コラム</small></a>
+      <a href="https://www.worcry.com/" target="_blank" rel="noopener">COMPANY<small>運営会社 ↗</small></a>
+    </nav>
+    <div>
+      <h3>SERVICE ／ 学年ごとのサービス</h3>
+      <ul>
+        <li><a href="https://aoharu-intern.worcry.com/long-intern/?utm_source=aoharu_site" target="_blank" rel="noopener">AOHARU インターン（大学1・2年生）<span>↗</span></a></li>
+        <li><a href="https://aoharu-intern.worcry.com/shinsotsu/?utm_source=aoharu_site" target="_blank" rel="noopener">AOHARU 新卒（大学3年生）<span>↗</span></a></li>
+        <li><a href="https://aoharu-intern.worcry.com/shinsotsu-re/?utm_source=aoharu_site" target="_blank" rel="noopener">AOHARU 新卒Re（大学4年生・内定獲得後）<span>↗</span></a></li>
+      </ul>
+      <h3>FOR STUDENT ／ 学生の方</h3>
+      <ul>
+        <li><a href="https://aoharu-intern.com/?utm_source=aoharu_site" target="_blank" rel="noopener">AOHARUナビ（求人を探す）<span>↗</span></a></li>
+      </ul>
+      <h3>FOR COMPANY ／ 企業の方</h3>
+      <ul>
+        <li><a href="https://aoharu-intern.worcry.com/scout/?utm_source=aoharu_site" target="_blank" rel="noopener">AOHARU 学生RPO<span>↗</span></a></li>
+        <li><a href="https://aoharu-intern.worcry.com/onboarding/?utm_source=aoharu_site" target="_blank" rel="noopener">AOHARU オンボーディング（入社後）<span>↗</span></a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<main id="top" lang="ja">
+  <!-- FV -->
+  <section class="frame fv" aria-label="メインビジュアル">
+    <div class="fv-photo" role="img" aria-label="青空の下、オレンジのポールに付いた2枚のカーブミラー"></div>
+    <div class="fv-body">
+      <p class="fv-poem"><span class="ph">目の前には、</span><span class="ph">いくつもの道がある。</span><br><span class="ph">どの道を選ぶかで、</span><span class="ph">出会う人が変わる。</span><br><span class="ph">いい出会いは、</span><span class="ph">はたらくを面白くする。</span></p>
+      <h1 class="fv-copy"><span>選んだ道の数だけ、</span><span><em>青春</em>がある。</span></h1>
+    </div>  </section>
+
+  <!-- MARQUEE -->
+  <div class="frame marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>Dramatic Work, Emotional Life.</span><span>Dramatic Work, Emotional Life.</span>
+      <span>Dramatic Work, Emotional Life.</span><span>Dramatic Work, Emotional Life.</span>
+      <span>Dramatic Work, Emotional Life.</span><span>Dramatic Work, Emotional Life.</span>
+    </div>
+  </div>
+
+  <!-- CONCEPT -->
+  <section class="frame concept" id="concept">
+    <div class="hd"><p class="hd-en">CONCEPT<b>_</b></p><p class="hd-ja">AOHARUとは</p></div>
+    <div class="concept-grid">
+      <div class="stack" aria-hidden="true">AO<br>HA<br><span class="r">RU</span></div>
+      <div class="poem">
+        <h2>“はたらく”に、青春を。</h2>
+        <p><span class="ph">青春と聞いて浮かぶのは、</span><span class="ph">たいてい学生時代の風景です。</span><br><span class="ph">部活、受験、恋。</span><span class="ph">そして社会に出ると、</span><span class="ph">「あの頃に戻りたい」と言う。</span></p>
+        <p><span class="ph">でも青春とは、</span><span class="ph">夢や目標を持ち、</span><span class="ph">仲間と出会い、</span><br><span class="ph">苦楽を乗り越えて成長し、</span><span class="ph">夢中でやり切ること。</span><br><span class="ph">だとしたら、</span><span class="ph">卒業式で終わるものではありません。</span></p>
+        <p><span class="ph">むしろ、</span><span class="ph">社会に出てからの時間のほうが長い。</span><br><span class="ph">青春は、</span><span class="ph">はたらきはじめてからも続いていきます。</span></p>
+        <p><span class="ph">青は、</span><span class="ph">まだ何者でもない未熟さ。</span><br><span class="ph">春は、</span><span class="ph">何かがはじまる予感。</span></p>
+        <p><span class="ph">人生の多くを費やす仕事が、</span><span class="ph">青春と呼べるものになったら。</span><br><span class="ph">その先に、</span><span class="ph">もっと豊かな社会があるはずです。</span></p>
+      </div>
+    </div>
+    <div class="collage">
+      <img src="https://aoharu-intern.worcry.com/img/workshop-vision-map.jpg" alt="VISION MAPを掲げるワークショップの参加者たち" loading="lazy">
+      <img src="https://aoharu-intern.worcry.com/img/workshop-whiteboard.jpg" alt="模造紙を囲んで書き込む学生たち" loading="lazy">
+      <img src="https://aoharu-intern.worcry.com/img/office-cheers.jpg" alt="オフィスのラウンジで乾杯する様子" loading="lazy">
+    </div>
+  </section>
+
+  <!-- ONE STORY：新卒タレントプール採用の世界観 -->
+  <section class="frame journey" id="journey">
+    <div class="jr-wrap">
+      <div class="hd"><p class="hd-en">ONE STORY<b>_</b></p><p class="hd-ja">4年間、つながり続ける</p></div>
+      <div class="jr-head">
+        <h2><span class="ph">1年生で出会った人と、</span><br><span class="ph">4年生になっても、</span><br><span class="ph">つながっている。</span></h2>
+        <div>
+          <p>AOHARUが目指すのは、大学1年生から4年生まで途切れずにつながり続ける状態です。選考の場ではなく、長期インターンや就業体験の現場で一緒に時間を過ごす。接点が積み重なり、お互いを確かめたうえで意思決定できる。私たちはこれを<strong>新卒タレントプール採用</strong>と呼んでいます。</p>
+          <p>数回の面接で見極められる情報には限りがあります。実際の仕事ぶりを数か月単位で見たうえで判断できれば、内定辞退も、配属後のミスマッチも、早期離職も、確率を下げられる。学生の側も、知名度や条件ではなく仕事の中身で進路を決められます。</p>
+          <p>そして一度つながった学生は、翌年以降も母集団に残ります。毎年ゼロから集め直していた母集団が、学年をまたいで積み上がる採用資産に変わる。新卒採用市場には年間1,533億円が投じられていますが、そのほぼ全額が大学3年生以降です。大学1・2年生への投下額は統計上ほとんどありません。すぐに成果が出ないために空いているこの時期へ、採用代行で培った企業側の知見を注ぎ込みます。</p>
+          <a class="jr-more" href="https://inc-worcry.github.io/aoharu-intern/pool/?utm_source=aoharu_site" target="_blank" rel="noopener">企業の方へ：この考え方をくわしく見る ↗</a>
+        </div>
+      </div>
+      <p class="jr-hint">横にスクロールして見られます →</p>
+      <div class="jr-scroll" tabindex="0" aria-label="大学1年から入社までの図（横にスクロールできます）">
+        <div class="jr">
+          <div class="jr-grid jr-years"><span></span><span>1ST<small>大学1年</small></span><span>2ND<small>大学2年</small></span><span>3RD<small>大学3年</small></span><span>4TH<small>大学4年</small></span><span>ENTRY<small>入社</small></span></div>
+          <div class="jr-grid jr-lane old">
+            <span class="jr-label"><small>FLOW</small>これまでの<br>新卒採用</span>
+            <i class="seg seg-old"></i>
+            <p class="jr-cap">3年生の夏に出会い、半年で決める。</p>
+          </div>
+          <div class="jr-grid jr-lane">
+            <span class="jr-label"><small>STOCK</small>AOHARUが<br>つくる世界</span>
+            <i class="seg seg-new"></i>
+            <div class="stop" style="grid-column:2/6"><img class="svc-logo sm" src="https://aoharu-intern.worcry.com/img/logo-intern.png" alt="AOHARU インターン"><small><span class="ph">就活の前に出会い、</span><span class="ph">素顔を知る</span></small></div>
+            <div class="stop" style="grid-column:6/8"><img class="svc-logo sm" src="https://aoharu-intern.worcry.com/img/logo-shinsotsu.png" alt="AOHARU 新卒"><small>確かめて選ぶ</small></div>
+            <div class="stop" style="grid-column:8/10"><img class="svc-logo sm" src="https://aoharu-intern.worcry.com/img/logo-shinsotsu-re.png" alt="AOHARU 新卒Re"><small><span class="ph">内定のその先も、</span><span class="ph">選び直せる</span></small></div>
+            <div class="stop" style="grid-column:10/12"><img class="svc-logo sm wide" src="https://aoharu-intern.worcry.com/img/logo-onboarding.png" alt="AOHARU オンボーディング"><small><span class="ph">入社後半年まで、</span><span class="ph">立ち上がりに伴走</span></small></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUE -->
+  <section class="frame value" id="value">
+    <div class="val-vision">
+      <p class="val-label">VISION</p>
+      <p class="val-v1"><span class="ph">新卒採用を、</span><span class="ph"><em>いちばん強い事業投資</em>へ。</span></p>
+      <p class="val-v2"><span class="ph">出会いは、</span><span class="ph">積み上がるほど強くなる。</span></p>
+      <div class="val-omoi">
+        <p><span class="ph">採用は、その年の人数を埋めるための費用ではありません。</span><span class="ph">1年生のころに出会った学生が、</span><span class="ph">数年後に同じ会社ではたらきはじめる。</span><span class="ph">その時間の積み重ねこそ、</span><span class="ph">どんな広告よりも確かな投資だと考えています。</span></p>
+        <p><span class="ph">一度きりの面接では、</span><span class="ph">お互いの何割かしか見えません。</span><span class="ph">だから出会う時期を早め、</span><span class="ph">一緒にはたらく時間を重ね、</span><span class="ph">確かめてから選べるようにする。</span><span class="ph">積み上げた出会いは消えずに残り、</span><span class="ph">翌年の母集団になり、</span><span class="ph">会社の強さになっていきます。</span></p>
+      </div>
+    </div>
+    <div class="figures">
+      <div class="fig"><b>4,587<small>名</small></b><span>学生のLINE登録数</span><em>2026年9月現在</em></div>
+      <div class="fig"><b>523<small>名</small></b><span>月の平均LINE登録数</span><em>2026年9月現在</em></div>
+    </div>
+  </section>
+
+  <!-- SERVICE -->
+  <section class="frame service" id="service">
+    <div class="svc-wrap">
+      <div class="hd"><p class="hd-en">SERVICE<b>_</b></p><p class="hd-ja">AOHARUのサービス</p></div>
+
+      <p class="svc-lead">学年ごとに、ちょうどいい出会い方を。</p>
+      <div class="svc-cols">
+        <a class="svc" href="https://aoharu-intern.worcry.com/long-intern/?utm_source=aoharu_site" target="_blank" rel="noopener">
+          <div class="svc-ph"><img src="https://aoharu-intern.worcry.com/img/card-intern.jpg" alt="AOHARU インターンのサイト" loading="lazy"></div>
+          <div class="svc-body">
+            <span class="svc-stage">YEAR 1–2<small>大学1・2年生</small></span>
+            <img class="svc-logo lg" src="https://aoharu-intern.worcry.com/img/logo-intern.png" alt="AOHARU インターン">
+            <span class="svc-sub">長期インターン紹介</span>
+            <p class="svc-desc">就活が始まる前に、一緒にはたらきながら出会う。お互いの素顔を知るための長期インターン。</p>
+            <p class="svc-for"><b>企業</b>成果報酬で、1・2年生と出会える<br><b>学生</b>学業と両立しながら、本気になれる</p>
+            <span class="go">VIEW</span>
+          </div>
+        </a>
+        <a class="svc" href="https://aoharu-intern.worcry.com/shinsotsu/?utm_source=aoharu_site" target="_blank" rel="noopener">
+          <div class="svc-ph"><img src="https://aoharu-intern.worcry.com/img/card-shinsotsu.jpg" alt="AOHARU 新卒のサイト" loading="lazy"></div>
+          <div class="svc-body">
+            <span class="svc-stage">YEAR 3<small>大学3年生</small></span>
+            <img class="svc-logo lg" src="https://aoharu-intern.worcry.com/img/logo-shinsotsu.png" alt="AOHARU 新卒">
+            <span class="svc-sub">早期からの新卒採用支援</span>
+            <p class="svc-desc">本選考の前に、会って、育てて、繋ぐ。インターンから内定承諾まで一気通貫で伴走します。</p>
+            <p class="svc-for"><b>企業</b>選考の前に出会い、内定承諾までつなぐ<br><b>学生</b>自分に合う会社と、早いうちに出会える</p>
+            <span class="go">VIEW</span>
+          </div>
+        </a>
+        <a class="svc" href="https://aoharu-intern.worcry.com/shinsotsu-re/?utm_source=aoharu_site" target="_blank" rel="noopener">
+          <div class="svc-ph"><img src="https://aoharu-intern.worcry.com/img/card-shinsotsu-re.jpg" alt="AOHARU 新卒Reのサイト" loading="lazy"></div>
+          <div class="svc-body">
+            <span class="svc-stage">YEAR 4<small>大学4年生・内定獲得後</small></span>
+            <img class="svc-logo lg" src="https://aoharu-intern.worcry.com/img/logo-shinsotsu-re.png" alt="AOHARU 新卒Re">
+            <span class="svc-sub">内定を持つ学生の選び直し支援</span>
+            <p class="svc-desc">その内定、本当にゴールでいい？ 内定を持っている4年生が、もう一度自分の言葉で選び直す。</p>
+            <p class="svc-for"><b>企業</b>内定を持つ学生と、あらためて出会える<br><b>学生</b>内定を持ったまま、次の選択肢を探せる</p>
+            <span class="go">VIEW</span>
+          </div>
+        </a>
+      </div>
+      <a class="svc-wide onb" href="https://aoharu-intern.worcry.com/onboarding/?utm_source=aoharu_site" target="_blank" rel="noopener">
+        <span class="logo-chip"><img class="svc-logo lg" src="https://aoharu-intern.worcry.com/img/logo-onboarding.png" alt="AOHARU オンボーディング"></span>
+        <div><span class="svc-stage">AFTER ENTRY<small><span class="ph">入社前から、</span><span class="ph">入社半年後まで</span></small></span><p>採用してからが、スタート。内定承諾の日から月に1度となりに立ち、早く活躍できる状態まで伴走します。</p></div>
+        <span class="go">VIEW</span>
+      </a>
+      <a class="svc-wide" href="https://aoharu-intern.worcry.com/scout/?utm_source=aoharu_site" target="_blank" rel="noopener">
+        <span class="logo-chip"><img class="svc-logo lg" src="https://aoharu-intern.worcry.com/img/logo-gakusei-rpo.png" alt="AOHARU 学生RPO"></span>
+        <div><span class="svc-stage">FOR COMPANY<small><span class="ph">学生の視点を入れた</span><span class="ph">採用代行</span></small></span><p>戦略設計からスカウト運用、選考、クロージングまで。必要な部分だけをお任せいただけます。</p></div>
+        <span class="go">VIEW</span>
+      </a>
+      <p class="svc-note">採用代行（RPO）は、どのサービスにもオプションとして付けられます。／各サービスのサイトは別タブで開きます。</p>
+    </div>
+  </section>
+
+  <!-- FOR COMPANY / FOR STUDENT -->
+  <section class="frame split" aria-label="あなたに合った入口">
+    <a class="door co" id="for-company" href="https://aoharu-intern.com/?utm_source=aoharu_site" target="_blank" rel="noopener">
+      <img src="https://aoharu-intern.worcry.com/img/team-discussion.jpg" alt="" loading="lazy">
+      <span class="en">FOR COMPANY</span>
+      <span class="door-logo"><img src="https://aoharu-intern.worcry.com/img/logo-navi.png" alt="AOHARUナビ"></span>
+      <h3><span class="ph">求人を出して、</span><span class="ph">1年生から出会う。</span></h3>
+      <p>長期インターンから新卒採用まで、AOHARUナビに掲載できます。大学1年生から4年生まで、登録した学生にそのまま届きます。</p>
+      <span class="btn">AOHARUナビに掲載する</span>
+    </a>
+    <a class="door st" id="for-student" href="https://aoharu-intern.worcry.com/student/?utm_source=aoharu_site" target="_blank" rel="noopener">
+      <img src="https://aoharu-intern.worcry.com/img/workshop-group-pose.jpg" alt="" loading="lazy">
+      <span class="en">FOR STUDENT</span>
+      <h3><span class="ph">1年生から、</span><br><span class="ph">はたらくを試していい。</span></h3>
+      <p>やりたいことが決まっていなくても大丈夫。学年ごとに、AOHARUの入口があります。</p>
+      <span class="btn">学生向けサイトを見る ↗</span>
+    </a>
+  </section>
+
+  <!-- VOICE（インタビュー・コラム） -->
+  <section class="frame column" id="voice">
+    <div class="col-wrap">
+      <div class="col-top">
+        <div class="hd"><p class="hd-en">VOICE<b>_</b></p><p class="hd-ja">はたらく人たちの、青春の記録</p></div>
+        <div class="col-tools">
+          <div class="col-tabs" role="group" aria-label="カテゴリで絞り込む">
+            <button class="col-tab" id="colTabAll" data-cat="all" aria-pressed="true">すべて</button>
+            <button class="col-tab" id="colTabStudent" data-cat="student" aria-pressed="false">学生インタビュー</button>
+            <button class="col-tab" id="colTabCompany" data-cat="company" aria-pressed="false">企業インタビュー</button>
+            <button class="col-tab" id="colTabColumn" data-cat="column" aria-pressed="false">コラム</button>
+          </div>
+          <a class="col-all" id="colAll" href="https://aoharu-intern.com/companies/a6e86024-7da3-4141-9b2d-fc0f92e3b738/voice" target="_blank" rel="noopener">すべて読む</a>
+        </div>
+      </div>
+
+      <!-- 新しい記事ほど上に。トップページには最大5件（先頭の1件が大きく表示される）
+           AOHARUナビのVOICEを読み込めたら、data-navi="1" の静的カードはナビの記事に置き換わる（読み込めない時は静的カードのまま） -->
+      <div class="col-list" id="colList">
+        <a class="ci" data-navi="1" data-cat="column" href="https://www.wantedly.com/companies/company_9004359/post_articles/1043143" target="_blank" rel="noopener">
+          <div class="ci-ph"><img src="https://aoharu-intern.worcry.com/img/voice-1043143.jpg" alt="" loading="lazy"></div>
+          <div class="ci-body">
+            <span class="ci-cat">コラム<span>AOHARUインターン</span></span>
+            <h3 class="ci-title">「就活が始まる前に話せていたら」──AOHARUインターンが生まれた理由</h3>
+            <p class="ci-lead">インターンを迷っている大学生へ。このサービスをつくった理由を書きました。</p>
+          </div>
+        </a>
+        <a class="ci" data-cat="company" href="https://www.wantedly.com/companies/company_9004359/post_articles/1035495" target="_blank" rel="noopener">
+          <div class="ci-ph"><img src="https://aoharu-intern.worcry.com/img/voice-1035495.jpg" alt="" loading="lazy"></div>
+          <div class="ci-body">
+            <span class="ci-cat">企業インタビュー<span>代表 鈴木脩平</span></span>
+            <h3 class="ci-title">営業最下位から4年でトップセールスへ。挫折が教えてくれた「一人では勝てない」という真実</h3>
+            <p class="ci-lead">うまくいかなかった日々の先に、何があったのか。WorCry創業の原点をたどるインタビュー。</p>
+          </div>
+        </a>
+        <a class="ci" data-navi="1" data-cat="student" href="https://www.wantedly.com/companies/company_9004359/post_articles/1087683" target="_blank" rel="noopener">
+          <div class="ci-ph"><img src="https://aoharu-intern.worcry.com/img/voice-1087683.jpg" alt="" loading="lazy"></div>
+          <div class="ci-body">
+            <span class="ci-cat">学生インタビュー<span>地方私立大学 C.Nさん</span></span>
+            <h3 class="ci-title">「将来の話まで踏み込んでくれた」フルリモートの現場が、視野を変えた4ヶ月</h3>
+            <p class="ci-lead">地方大学生のリアルVol.3。</p>
+          </div>
+        </a>
+        <a class="ci" data-navi="1" data-cat="student" href="https://www.wantedly.com/companies/company_9004359/post_articles/1086998" target="_blank" rel="noopener">
+          <div class="ci-ph"><img src="https://aoharu-intern.worcry.com/img/voice-1086998.jpg" alt="" loading="lazy"></div>
+          <div class="ci-body">
+            <span class="ci-cat">学生インタビュー<span>東洋大学1年生 S.Sさん</span></span>
+            <h3 class="ci-title">「もっと早く始めればよかった」初日を忘れても続けた4ヶ月で気づいた、動くことの意味</h3>
+            <p class="ci-lead">大学1年のリアルVol.3。</p>
+          </div>
+        </a>
+        <a class="ci" data-cat="company" href="https://www.wantedly.com/companies/company_9004359/post_articles/1035497" target="_blank" rel="noopener">
+          <div class="ci-ph"><img src="https://aoharu-intern.worcry.com/img/voice-1035497.jpg" alt="" loading="lazy"></div>
+          <div class="ci-body">
+            <span class="ci-cat">企業インタビュー<span>代表 鈴木脩平</span></span>
+            <h3 class="ci-title">稼げる道を選ばず、「使命」で起業した理由──「はたらくに青春を」に込めた想い</h3>
+            <p class="ci-lead">なぜこの事業なのか。ミッションが生まれた場所の話。</p>
+          </div>
+        </a>
+        <a class="ci" data-cat="company" href="https://www.wantedly.com/companies/company_9004359/post_articles/1043141" target="_blank" rel="noopener">
+          <div class="ci-ph"><img src="https://aoharu-intern.worcry.com/img/voice-1043141.jpg" alt="" loading="lazy"></div>
+          <div class="ci-body">
+            <span class="ci-cat">企業インタビュー<span>COO 根岸勇丞</span></span>
+            <h3 class="ci-title">母のサロン経営を手伝い、ビジネスの面白さに目覚めた──COO根岸勇丞の原点</h3>
+            <p class="ci-lead">学生時代に触れた商売の手触りが、いまの仕事につながっている。</p>
+          </div>
+        </a>
+        <a class="ci" data-navi="1" data-cat="student" href="https://www.wantedly.com/companies/company_9004359/post_articles/1082784" target="_blank" rel="noopener">
+          <div class="ci-ph"><img src="https://aoharu-intern.worcry.com/img/voice-1082784.jpg" alt="" loading="lazy"></div>
+          <div class="ci-body">
+            <span class="ci-cat">学生インタビュー<span>都内私立大学3年生</span></span>
+            <h3 class="ci-title">「営業、向いてる？」不動産ベンチャーに飛び込んで見えてきた自分の話</h3>
+            <p class="ci-lead">大学1年の本音Vol.1。やってみて初めて分かったこと。</p>
+          </div>
+        </a>
+        <a class="ci" data-navi="1" data-cat="student" href="https://www.wantedly.com/companies/company_9004359/post_articles/1082112" target="_blank" rel="noopener">
+          <div class="ci-ph"><img src="https://aoharu-intern.worcry.com/img/voice-1082112.jpg" alt="" loading="lazy"></div>
+          <div class="ci-body">
+            <span class="ci-cat">学生インタビュー<span>早稲田大学3年生</span></span>
+            <h3 class="ci-title">25社の面接を経て長期インターンを選んだ話</h3>
+            <p class="ci-lead">大学1年で動いた理由Vol.1。動き出すまでに考えたこと。</p>
+          </div>
+        </a>
+        <p class="col-empty" id="colEmpty" hidden>このカテゴリの記事は準備中です。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="frame contact" id="contact">
+    <div class="hd"><p class="hd-en" style="border-color:var(--white)">CONTACT</p><p class="hd-ja">お問い合わせ</p></div>
+    <h2><span class="ph">はじめの一歩は、</span><span class="ph">ここから。</span></h2>
+    <div class="cta-row">
+      <button type="button" class="cta co as-btn" id="openContact"><span><small>FOR COMPANY</small><b><span class="ph">話を</span><span class="ph">聞いてみる</span></b></span></button>
+      <a class="cta line" href="https://form.lmes.jp/landing-qr/2008019424-482x88yd?uLand=h9lfCb" target="_blank" rel="noopener"><span><small>FOR STUDENT</small><b><span class="ph">LINEで</span><span class="ph">気軽に相談する</span></b></span></a>
+    </div>
+  </section>
+
+  <footer id="nft" class="frame">
+  <div class="nft-in">
+    <div class="nft-head">
+      <a href="https://www.worcry.com/" class="nft-logo"><img src="data:image/png;base64,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" alt="WorCry"></a>
+      <div class="nft-sns">
+        <a href="https://x.com/Worcry_shuhei" aria-label="X" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.747l7.73-8.835L1.254 2.25H8.08l4.259 5.63 5.905-5.63zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        <a href="https://www.instagram.com/aoharu_shinsotsu_official/" aria-label="Instagram（AOHARU新卒）" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a><a href="https://www.instagram.com/aoharu_intern_official/" aria-label="Instagram（AOHARUインターン）" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+        <a href="https://www.tiktok.com/@aoharu_shinsotsu" aria-label="TikTok" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.28 6.28 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.66a8.25 8.25 0 004.83 1.55V6.77a4.85 4.85 0 01-1.06-.08z"/></svg></a>
+        <a href="https://www.youtube.com/@AOHARU-worcry" aria-label="YouTube" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+        <a href="https://s.lmes.jp/landing-qr/2008019424-482x88yd?uLand=nPzP0u" aria-label="LINE" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.105.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg></a>
+        <a href="https://note.com/worcry" aria-label="note" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M18.5 0h-13C2.46 0 0 2.46 0 5.5v13C0 21.54 2.46 24 5.5 24h13c3.04 0 5.5-2.46 5.5-5.5v-13C24 2.46 21.54 0 18.5 0zM7.5 7h9a.75.75 0 010 1.5h-9A.75.75 0 017.5 7zm0 4.5h9a.75.75 0 010 1.5h-9a.75.75 0 010-1.5zm0 4.5h5a.75.75 0 010 1.5h-5a.75.75 0 010-1.5z"/></svg></a>
+      </div>
+    </div>
+    <div class="nft-nav">
+      <div class="nft-col">
+        <div class="nft-col-ttl">学生の方へ</div>
+        <a href="https://aoharu-intern.com/">長期インターンを探す</a>
+      </div>
+      <div class="nft-col">
+        <div class="nft-col-ttl">採用担当者の方へ</div>
+        <a href="https://aoharu-intern.worcry.com/long-intern/">AOHARU インターン</a>
+        <a href="https://aoharu-intern.worcry.com/shinsotsu/">AOHARU 新卒</a>
+        <a href="https://aoharu-intern.worcry.com/shinsotsu-re/">AOHARU 新卒Re</a>
+        <a href="https://aoharu-intern.worcry.com/onboarding/">AOHARU オンボーディング</a>
+        <a href="https://aoharu-intern.worcry.com/scout/">AOHARU 学生RPO</a>
+      </div>
+      <div class="nft-col">
+        <div class="nft-col-ttl">会社情報</div>
+        <a href="https://www.worcry.com/">運営会社</a>
+        <a href="https://www.worcry.com/contact">CONTACT</a>
+      </div>
+    </div>
+    <div class="nft-btm">
+      <div class="nft-legal">
+        <a href="https://www.worcry.com/privacy-policy">プライバシーポリシー</a>
+        <a href="https://www.worcry.com/kiyaku">人材紹介サービス利用規約</a>
+        <a href="https://www.worcry.com/kiyaku-scl">特定商取引法に基づく表記</a>
+      </div>
+      <div class="nft-copy">© 2026 WorCry Inc. All rights reserved.</div>
+    </div>
+  </div>
+</footer>
+
+  <!-- 問い合わせポップアップ -->
+  <div class="modal" id="contactModal" role="dialog" aria-modal="true" aria-labelledby="cmTitle" hidden>
+    <div class="modal-back" data-close></div>
+    <div class="modal-card">
+      <button class="modal-x" type="button" data-close aria-label="閉じる">×</button>
+      <div id="cmForm">
+        <p class="modal-eyebrow">FOR COMPANY</p>
+        <h3 id="cmTitle">話を聞いてみる</h3>
+        <p class="modal-lead">サービスの説明も、学年ごとの進め方の相談も、ここから。1営業日以内にご連絡します。</p>
+        <form id="contactForm" action="https://script.google.com/macros/s/AKfycbz5E_ewxy_QKq2I-371XIIGuBL-8TO465xl8gb-TywnUp7tb_CLSe1Y8FYU8NFoe8icOQ/exec" method="post">
+          <input type="hidden" name="_form" value="AOHARUサービスサイト／話を聞いてみる">
+          <label>会社名<input type="text" name="会社名" id="cf-company" placeholder="株式会社○○" required></label>
+          <label>お名前<input type="text" name="お名前" id="cf-name" placeholder="山田 太郎" required></label>
+          <label>メールアドレス<input type="email" name="email" id="cf-email" placeholder="taro@company.co.jp" required></label>
+          <label>電話番号（任意）<input type="tel" name="電話番号" id="cf-tel" placeholder="03-0000-0000"></label>
+          <label>ご相談内容（任意）<textarea name="ご要望" id="cf-note" rows="3" placeholder="サービスの説明を聞きたい／学生を紹介してほしい　など"></textarea></label>
+          <label class="modal-agree"><input type="checkbox" name="_consent" id="cf-agree" value="同意" required><span><a href="https://www.worcry.com/privacy-policy" target="_blank" rel="noopener">プライバシーポリシー</a>に同意します</span></label>
+          <button type="submit" class="modal-send" id="cfSend">送信する</button>
+          <p class="modal-note">送信内容は採用のご相談にのみ使用します。しつこい営業はしません。</p>
+        </form>
+      </div>
+      <div id="cmDone" hidden>
+        <p class="modal-eyebrow">THANK YOU</p>
+        <h3>送信しました。</h3>
+        <p class="modal-lead">1営業日以内に、担当からご連絡します。<br>お急ぎの場合は、そのままお電話でもご相談いただけます。</p>
+        <button type="button" class="modal-send" data-close>閉じる</button>
+      </div>
+    </div>
+  </div>
+</main>
+
+<script>
+(() => {
+  const menu = document.getElementById('menu');
+  const openBtn = document.getElementById('menuOpen');
+  const setMenu = (on) => {
+    menu.hidden = !on;
+    openBtn.setAttribute('aria-expanded', String(on));
+    document.body.style.overflow = on ? 'hidden' : '';
+    if (on) document.getElementById('menuClose').focus();
+  };
+  openBtn.addEventListener('click', () => setMenu(true));
+  document.getElementById('menuClose').addEventListener('click', () => setMenu(false));
+  menu.addEventListener('click', (e) => { if (e.target.closest('a')) setMenu(false); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !menu.hidden) setMenu(false); });
+
+  // VOICE：カテゴリで絞り込み、先頭の1件を大きく、最大5件まで表示
+  const MAX_COLUMNS = 5;
+  const colList = document.getElementById('colList');
+  const tabs = [...document.querySelectorAll('.col-tab')];
+  let currentCat = 'all';
+  const renderColumns = (cat) => {
+    currentCat = cat;
+    let shown = 0;
+    colList.querySelectorAll('.ci').forEach((el) => {
+      const match = cat === 'all' || el.dataset.cat === cat;
+      const visible = match && shown < MAX_COLUMNS;
+      el.hidden = !visible;
+      el.classList.toggle('is-feature', visible && shown === 0);
+      if (visible) shown++;
+    });
+    document.getElementById('colEmpty').hidden = shown > 0;
+    tabs.forEach((t) => t.setAttribute('aria-pressed', String(t.dataset.cat === cat)));
+  };
+  tabs.forEach((t) => t.addEventListener('click', () => renderColumns(t.dataset.cat)));
+  renderColumns('all');
+
+  // VOICE：AOHARUナビ（正本）の公開記事を読み込んで差し込む
+  // 分類はタイトルで判定：「〜さんの場合」=学生インタビュー／「社長のボヤキ」=コラム／それ以外=企業インタビュー
+  const NAVI = 'https://aoharu-intern.com';
+  const NAVI_COMPANY = 'a6e86024-7da3-4141-9b2d-fc0f92e3b738';
+  const NAVI_QUERY = 'query($id: ID!){ publicCompany(id:$id){ voices { id title content status publishedAt createdAt files { url } } } }';
+  const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const toCard = (v) => {
+    const raw = v.title.trim();
+    const student = raw.match(/──\s*(.+?)さんの場合\s*$/);
+    const cat = /ボヤキ/.test(raw) ? 'column' : student ? 'student' : 'company';
+    const sub = cat === 'student' ? student[1].trim() + 'さん' : cat === 'column' || /鈴木/.test(raw) ? '代表 鈴木脩平' : /根岸/.test(raw) ? 'COO 根岸勇丞' : 'WorCry';
+    const label = {student:'学生インタビュー', company:'企業インタビュー', column:'コラム'}[cat];
+    const series = (raw.match(/^【(.+?)】/) || [])[1];
+    const title = raw.replace(/^【.+?】\s*/, '').replace(/──\s*.+?の場合\s*$/, '');
+    const firstLine = (v.content || '').split('\n').map((l) => l.replace(/^[#>*\-\s■]+/, '').trim())
+      .find((l) => l && l !== '---' && !/^\[.*\]\(.*\)$/.test(l)) || '';
+    const lead = series ? series + '。' : firstLine.slice(0, 60);
+    const img = v.files && v.files[0] ? v.files[0].url : '';
+    const a = document.createElement('a');
+    a.className = 'ci'; a.dataset.cat = cat; a.dataset.source = 'navi';
+    a.href = `${NAVI}/companies/${NAVI_COMPANY}/voice/${v.id}`; a.target = '_blank'; a.rel = 'noopener';
+    a.innerHTML = `<div class="ci-ph">${img ? `<img src="${esc(img)}" alt="" loading="lazy">` : ''}</div>
+          <div class="ci-body"><span class="ci-cat">${label}<span>${esc(sub)}</span></span>
+          <h3 class="ci-title">${esc(title)}</h3><p class="ci-lead">${esc(lead)}</p></div>`;
+    return a;
+  };
+  fetch(`${NAVI}/api/graphql?query=${encodeURIComponent(NAVI_QUERY)}&variables=${encodeURIComponent(JSON.stringify({id: NAVI_COMPANY}))}`)
+    .then((r) => r.ok ? r.json() : Promise.reject(r.status))
+    .then((json) => {
+      const now = Date.now();
+      const voices = (json.data && json.data.publicCompany && json.data.publicCompany.voices || [])
+        .filter((v) => v.status === 'PUBLISHED' && new Date(v.publishedAt || v.createdAt).getTime() <= now)
+        .sort((a, b) => new Date(b.publishedAt || b.createdAt) - new Date(a.publishedAt || a.createdAt));
+      if (!voices.length) return;
+      colList.querySelectorAll('.ci[data-navi="1"]').forEach((el) => el.remove());
+      const first = colList.querySelector('.ci');
+      voices.forEach((v) => colList.insertBefore(toCard(v), first || document.getElementById('colEmpty')));
+      renderColumns(currentCat);
+    })
+    .catch(() => { /* 読み込めない時は静的カードのまま表示 */ });
+
+  // 問い合わせポップアップ
+  const modal = document.getElementById('contactModal');
+  const cmForm = document.getElementById('cmForm');
+  const cmDone = document.getElementById('cmDone');
+  const setModal = (on) => {
+    modal.hidden = !on;
+    document.body.style.overflow = on ? 'hidden' : '';
+    if (on) document.getElementById('cf-company').focus();
+  };
+  document.getElementById('openContact').addEventListener('click', () => {
+    cmForm.hidden = false; cmDone.hidden = true; setModal(true);
+  });
+  modal.addEventListener('click', (e) => { if (e.target.closest('[data-close]')) setModal(false); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !modal.hidden) setModal(false); });
+
+  document.getElementById('contactForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const form = e.currentTarget;
+    const send = document.getElementById('cfSend');
+    send.disabled = true; send.textContent = '送信中…';
+    const done = () => { cmForm.hidden = true; cmDone.hidden = false; send.disabled = false; send.textContent = '送信する'; form.reset(); };
+    fetch(form.action, { method: 'POST', mode: 'no-cors', body: new FormData(form) }).then(done).catch(done);
+  });
+})();
+</script>
+</body>
+</html>
