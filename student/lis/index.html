@@ -946,13 +946,16 @@ document.addEventListener('click', function(e){
 <script>
 (function(){
   const params = new URLSearchParams(location.search);
+  let gclid = params.get("gclid") || params.get("wbraid") || params.get("gbraid") || "";
+  try { if (gclid) sessionStorage.setItem("aoharu_gclid", gclid); else gclid = sessionStorage.getItem("aoharu_gclid") || ""; } catch(e){}
   const utmContent = params.get("utm_content");
   const utmTerm = params.get("utm_term");
-  if (!utmContent && !utmTerm) return;
+  if (!utmContent && !utmTerm && !gclid) return;
   document.querySelectorAll("[data-cta]").forEach(function(el){
     const qs = [];
     if (utmContent) qs.push("cid1=" + encodeURIComponent(utmContent));
     if (utmTerm) qs.push("cid2=" + encodeURIComponent(utmTerm));
+    if (gclid) qs.push("cid3=" + encodeURIComponent(gclid));
     if (!qs.length) return;
     const href = el.getAttribute("href");
     const separator = href.includes("?") ? "&" : "?";
