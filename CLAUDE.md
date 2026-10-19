@@ -26,6 +26,12 @@
 - 全トラッキングは `async`/`defer`（描画をブロックしない）。CSSはインラインで外部リクエストを削減。
 - **チャネル別タグは `lp_channel` で出し分ける**：Meta Pixel は meta チャネル、Yahooタグは Yahoo チャネルのLPでだけ発火。Google リスティング用LP（lis）で Meta/Yahoo を鳴らさない（無駄＝重さの原因）。これはGTMのトリガー設定で行う（LPコードではない）。
 
+## 流入リンク・LINE CTA（uLand）
+- LINE登録ボタンの `href` は、必ず**エルメ「QRコードアクション（流入経路分析）」が発行したURLをそのままコピペ**する。手打ち・打ち直し禁止（過去に sticky CTA を手打ちして `uLand→uland`・`eWC3aS→ewc3as` と小文字化し、sticky経由の登録が流入未計上になった）。
+- パラメータ名は必ず **`uLand`（Lは大文字）**。`uland` はエルメが認識せず計上されない。
+- コード値は**大文字小文字を厳密に区別**する（`eWC3aS` と `ewc3as` は別物、後者は未登録＝未計上）。
+- CTA位置ごとにエルメ側アクションが用意されている。sticky（追従ボタン）は header と同じコードを共用する運用（例：student/index は header・sticky とも `eWC3aS`）。新規CTAを足すときはエルメで対応アクションを確認してから貼る。
+
 ## SEO・メタ
 - **広告用LP（lis / meta / meta1 等）は `noindex, nofollow`**。自然流入LP（`/student/` 本体）のみ index ＋ self-canonical。
 - OGP画像・favicon・`og:url`・canonical を整備。構造化データ（FAQPage 等）は自然流入LPに付与。
@@ -42,6 +48,7 @@
 6. 広告LPは noindex,nofollow／OGP・canonical整備
 7. 統一ドメイン配下・共有アセット参照、デプロイ成功を確認
 8. モバイル実機で表示確認（LP利便性＝post-click品質が平均以上を目標）
+9. LINE CTAの `uLand` は大文字L・コードはエルメ発行値をそのままコピペ（手打ち禁止・大小区別）。sticky含め全CTAが登録済みコードかを確認
 
 ## 参考：効果実績
 - LP軽量化③（2026/10）：FV動画 5.2MB→530KB（-90%）＋poster/favicon圧縮＋`preload=metadata`化で、モバイルのコールドロードを約4.8MB削減。Google広告のLP利便性スコア（post-click QS）が全KWで「平均未満」だった主因がFV動画の重さだった。
