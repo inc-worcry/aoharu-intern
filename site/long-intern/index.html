@@ -1259,6 +1259,11 @@ body{line-height:1.7}
   .hero-badge{white-space:normal;font-size:11px;line-height:1.5}
   .price-badge{font-size:12px}
 }
+
+/* 指定どおりの改行で固定する見出し（<br>の位置だけで改行。幅に合わせて文字を縮める） */
+.sec-head .sh{white-space:nowrap;font-size:clamp(24px,2.2vw,32px)}
+@media (max-width:1100px){.sec-head .sh{font-size:clamp(24px,3.2vw,32px)}}
+@media (max-width:860px){.sec-head .sh{font-size:min(5.4vw,26px);letter-spacing:.01em;line-height:1.5}}
 </style>
 <link rel="canonical" href="https://aoharu-intern.com/long-intern">
 <script type="application/ld+json">
@@ -1488,7 +1493,7 @@ body{line-height:1.7}
 <section id="concept" class="frame sec bgw">
   <div class="wrap">
     <div class="concept-head">
-      <div class="sec-head"><div class="sec-head-l"><div class="hd"><span class="hd-no">01</span><p class="hd-en">CONCEPT</p><p class="hd-ja">サービスの<wbr>考え方</p></div><h2 class="sh">“未来の<wbr>仲間”と<wbr>一緒に、<br>会社も<wbr>育つ。</h2></div>
+      <div class="sec-head"><div class="sec-head-l"><div class="hd"><span class="hd-no">01</span><p class="hd-en">CONCEPT</p><p class="hd-ja">サービスの<wbr>考え方</p></div><h2 class="sh">“未来の仲間”と一緒に、<br>会社も育つ。</h2></div>
       <p class="c-body">成長意欲の<wbr>高い<wbr>大学1・<wbr>2年生だけを<wbr>厳選し、<br>スタートアップ・ベンチャー企業へ<wbr>ご紹介。<br>早期から<wbr>育て、<wbr>長く<wbr>関わる。<br>“成長支援型”の<wbr>長期インターン紹介サービスです。</p></div>
     </div>
     <figure class="ph-slot wide"><figcaption>PHOTO ｜ 受入企業で<wbr>働く<wbr>1・<wbr>2年生<br>社員と<wbr>並んで<wbr>PC作業・MTGで<wbr>発言している<wbr>場面<wbr>（横長 21:9）</figcaption></figure>
@@ -1503,7 +1508,7 @@ body{line-height:1.7}
 <!-- PROBLEM -->
 <section id="issue" class="frame sec dark">
   <div class="wrap">
-    <div class="sec-head"><div class="sec-head-l"><div class="hd"><span class="hd-no">02</span><p class="hd-en">ISSUE</p><p class="hd-ja">よく<wbr>ある<wbr>課題</p></div><h2 class="sh">こんな<wbr>採用課題、<br>ありませんか？</h2></div>
+    <div class="sec-head"><div class="sec-head-l"><div class="hd"><span class="hd-no">02</span><p class="hd-en">ISSUE</p><p class="hd-ja">よく<wbr>ある<wbr>課題</p></div><h2 class="sh">こんな採用課題、<br>ありませんか？</h2></div>
     <p class="sl">「優秀な<wbr>学生に<wbr>早く<wbr>出会い、<wbr>長く<wbr>育てたい」。<br>でも、<wbr>従来の<wbr>長期インターン紹介では、<wbr>こんな<wbr>壁に<wbr>ぶつかります。</p></div>
     <div class="prob-grid">
       <div class="prob-card"><div class="prob-num">課題 01</div><h3>戦力に<wbr>なった<wbr>頃には、<br>もう<wbr>卒業してしまう</h3><p>3・<wbr>4年生からの<wbr>短期接点では、<wbr>育って<wbr>戦力に<wbr>なった<wbr>頃には<wbr>就活・卒業。<wbr>じっくり育てる<wbr>時間が<wbr>取れません。</p></div>
@@ -1516,7 +1521,7 @@ body{line-height:1.7}
 <!-- DIFF（差別化の核） -->
 <section id="why" class="frame sec bgw">
   <div class="wrap">
-    <div class="sec-head"><div class="sec-head-l"><div class="hd"><span class="hd-no">03</span><p class="hd-en">WHY AOHARU</p><p class="hd-ja">他社との<wbr>違い</p></div><h2 class="sh">求人サイトに<br>「載せて<wbr>終わり」じゃない。</h2></div>
+    <div class="sec-head"><div class="sec-head-l"><div class="hd"><span class="hd-no">03</span><p class="hd-en">WHY AOHARU</p><p class="hd-ja">他社との<wbr>違い</p></div><h2 class="sh">求人サイトに<br>「載せて終わり」じゃない。</h2></div>
     <p class="sl" style="max-width:820px">多くの<wbr>長期インターン紹介は、<wbr>求人サイトに<wbr>掲載し、<wbr>学生が<wbr>自らエントリーして<wbr>決まる<wbr>“掲載型”。<br class="sp-br">AOHARU&nbsp;インターンは、<wbr>ここが<wbr>決定的に<wbr>違います。</p></div>
     <div class="diff-cols">
       <div class="diff-card alt">
@@ -1534,7 +1539,7 @@ body{line-height:1.7}
 <!-- COMPARISON（図解） -->
 <section class="frame sec bgw">
   <div class="wrap">
-    <div class="sec-head"><div class="sec-head-l"><div class="hd"><span class="hd-no">04</span><p class="hd-en">COMPARISON</p><p class="hd-ja">比較</p></div><h2 class="sh">「ここまで<wbr>やる」紹介会社は、<br>多く<wbr>ありません。</h2></div>
+    <div class="sec-head"><div class="sec-head-l"><div class="hd"><span class="hd-no">04</span><p class="hd-en">COMPARISON</p><p class="hd-ja">比較</p></div><h2 class="sh">「ここまでやる」紹介会社は、<br>多くありません。</h2></div>
     <p class="sl">紹介前に<wbr>“全員”と<wbr>面談する。<wbr>入社後の<wbr>定着まで<wbr>伴走する。<br>大学1・<wbr>2年生に<wbr>特化し、<wbr>腰を<wbr>据えて<wbr>働ける<wbr>学生を<wbr>厳選して<wbr>ご紹介します。</p></div>
     <p class="cmp-scroll-hint">← 横スクロールで<wbr>比較 →</p>
     <div class="cmp">
@@ -1553,7 +1558,7 @@ body{line-height:1.7}
 <!-- SERVICE（4つの価値） -->
 <section id="service" class="frame sec bgw">
   <div class="wrap">
-    <div class="sec-head"><div class="sec-head-l"><div class="hd"><span class="hd-no">05</span><p class="hd-en">SERVICE</p><p class="hd-ja">サービス内容</p></div><h2 class="sh">企業に<wbr>とっての<wbr>4つの<wbr>価値</h2></div>
+    <div class="sec-head"><div class="sec-head-l"><div class="hd"><span class="hd-no">05</span><p class="hd-en">SERVICE</p><p class="hd-ja">サービス内容</p></div><h2 class="sh">企業にとっての4つの価値</h2></div>
     <p class="sl">大学1・<wbr>2年生に<wbr>限定して<wbr>紹介。<wbr>必ずキャリアカウンセリングを<wbr>実施し、<wbr>自走力・<wbr>主体性が<wbr>高く<wbr>カルチャーフィットする<wbr>学生を<wbr>推薦します。</p></div>
     <div class="svc-wrap">
       <div class="svc-list">
@@ -1594,7 +1599,7 @@ body{line-height:1.7}
 <!-- MATCHING EVENT -->
 <section id="event" class="frame sec bgw">
   <div class="wrap">
-    <div class="sec-head"><div class="sec-head-l"><div class="hd"><span class="hd-no">06</span><p class="hd-en">MATCHING EVENT</p><p class="hd-ja">マッチングイベント</p></div><h2 class="sh">「集める」と<wbr>「見極める」を、<br>一度に。</h2></div>
+    <div class="sec-head"><div class="sec-head-l"><div class="hd"><span class="hd-no">06</span><p class="hd-en">MATCHING EVENT</p><p class="hd-ja">マッチングイベント</p></div><h2 class="sh">「集める」と「見極める」を、<br>一度に。</h2></div>
     <p class="sl">月2回の<wbr>オンラインイベントで、<wbr>企業5社 × 候補者10名が<wbr>出会う。<br>求人票では<wbr>伝わらない<wbr>魅力を、<wbr>対話で<wbr>直接届けられます。</p></div>
 
     <div class="mev">
@@ -1620,7 +1625,7 @@ body{line-height:1.7}
 <!-- FLOW -->
 <section id="flow" class="frame sec bgw">
   <div class="wrap">
-    <div class="sec-head"><div class="sec-head-l"><div class="hd"><span class="hd-no">07</span><p class="hd-en">FLOW</p><p class="hd-ja">紹介の<wbr>流れ</p></div><h2 class="sh">母集団形成から<wbr>定着まで、<br>一気<wbr>通貫で<wbr>伴走します。</h2></div></div>
+    <div class="sec-head"><div class="sec-head-l"><div class="hd"><span class="hd-no">07</span><p class="hd-en">FLOW</p><p class="hd-ja">紹介の<wbr>流れ</p></div><h2 class="sh">母集団形成から定着まで、<br>一気通貫で伴走します。</h2></div></div>
     <div class="flow-wrap">
       <div class="f-item"><div class="f-dot"></div><div class="f-step">PHASE 01</div><div class="f-ttl">母集団形成</div><div class="f-body">LINE・イベント等で、<wbr>成長意欲の<wbr>高い1・<wbr>2年生を<wbr>集めます。</div></div>
       <div class="f-item"><div class="f-dot"></div><div class="f-step">PHASE 02</div><div class="f-ttl">全員と<wbr>面談</div><div class="f-body">学生全員に<wbr>キャリアカウンセリングを<wbr>実施し、<wbr>見極めます。</div></div>
@@ -1634,7 +1639,7 @@ body{line-height:1.7}
 <!-- STUDY（学業との両立） -->
 <section class="frame sec bgw">
   <div class="wrap">
-    <div class="sec-head"><div class="sec-head-l"><div class="hd"><span class="hd-no">08</span><p class="hd-en">SUPPORT</p><p class="hd-ja">学業との<wbr>両立</p></div><h2 class="sh">本当に<wbr>1〜2年生で<br>大丈夫？</h2></div></div>
+    <div class="sec-head"><div class="sec-head-l"><div class="hd"><span class="hd-no">08</span><p class="hd-en">SUPPORT</p><p class="hd-ja">学業との<wbr>両立</p></div><h2 class="sh">本当に1〜2年生で<br>大丈夫？</h2></div></div>
     <div class="study-wrap">
       <div class="study-top"><p class="study-lead">「大学1〜<wbr>2年生に<wbr>特化」と<wbr>聞くと、<b>「授業や<wbr>試験で<wbr>忙しくて、<wbr>途中で<wbr>来られなくなるのでは？」</b><br>——<wbr>そんな<wbr>不安を<wbr>感じる<wbr>企業さまも<wbr>少なく<wbr>ありません。<br>AOHARU&nbsp;インターンでは、<wbr>学生が<wbr>無理なく<wbr>続けられる<wbr>よう<b>学業との<wbr>両立を<wbr>支えています。</b></p><figure class="ph-slot"><figcaption>PHOTO ｜ 授業の<wbr>あとに<wbr>出社する<wbr>学生<br>キャンパスと<wbr>オフィス、<wbr>両方の<wbr>顔が<wbr>見える<wbr>1枚<wbr>（4:3）</figcaption></figure></div>
       <div class="study-list">
@@ -1650,7 +1655,7 @@ body{line-height:1.7}
 <!-- TRACTION -->
 <section id="traction" class="frame sec haru sky">
   <div class="wrap">
-    <div class="sec-head"><div class="sec-head-l"><div class="hd"><span class="hd-no">09</span><p class="hd-en">TRACTION</p><p class="hd-ja">実績</p></div><h2 class="sh">これまでの<wbr>実績。</h2></div></div>
+    <div class="sec-head"><div class="sec-head-l"><div class="hd"><span class="hd-no">09</span><p class="hd-en">TRACTION</p><p class="hd-ja">実績</p></div><h2 class="sh">これまでの実績。</h2></div></div>
     <p class="stats-note">※ 数値は<wbr>2026年7月現在</p>
     <div class="s-grid">
       <div class="s-item"><div class="s-num">92<small>名</small></div><div class="s-lbl">決定数</div></div>
@@ -1676,7 +1681,7 @@ body{line-height:1.7}
 <!-- JOBS -->
 <section class="frame sec bgw">
   <div class="wrap">
-    <div class="sec-head"><div class="sec-head-l"><div class="hd"><span class="hd-no">10</span><p class="hd-en">JOBS</p><p class="hd-ja">求人サイト</p></div><h2 class="sh">学生が<wbr>集まる、<br>求人サイト。</h2></div>
+    <div class="sec-head"><div class="sec-head-l"><div class="hd"><span class="hd-no">10</span><p class="hd-en">JOBS</p><p class="hd-ja">求人サイト</p></div><h2 class="sh">学生が集まる、<br>求人サイト。</h2></div>
     <p class="sl" style="max-width:800px">成長意欲の<wbr>高い<wbr>大学1・<wbr>2年生が<wbr>集まる、<wbr>AOHARUの<wbr>求人サイト。<br>掲載して<wbr>終わり、ではなく<wbr>——集まった<wbr>学生に、<wbr>私たちが<wbr>会いに<wbr>行きます。</p></div>
   </div>
   <div class="jobs-carousel">
