@@ -1,0 +1,35 @@
+name: Deploy worcry.com (FTP)
+
+# worcry.com コーポレートサイト → Xserver /worcry.com/public_html/
+# 注意：配信先に LP のフォルダ（aoharu-intern.worcry.com/）がある。
+#       dangerous-clean-slate は絶対に使わない。この処理は自分がアップしたファイル以外は消さない。
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'worcry-hp/public/**'
+      - '.github/workflows/deploy-worcry-hp.yml'
+  workflow_dispatch:
+
+concurrency:
+  group: ftp-worcry-hp
+  cancel-in-progress: false
+
+jobs:
+  worcry-hp:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: FTP Deploy to Xserver
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server:   ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
+          port: 21
+          timeout: 120000
+          local-dir: ./worcry-hp/public/
+          server-dir: /worcry.com/public_html/

@@ -1,0 +1,24 @@
+# WorCry コーポレートサイト（Xserver /worcry.com/public_html/）
+# 注意：この下に aoharu-intern.worcry.com のフォルダがあり、この設定はサブドメインにも継承される。
+#       必ず worcry.com / www.worcry.com のときだけ効くように書くこと（LPを壊さない）。
+<If "%{HTTP_HOST} =~ /^(www\.)?worcry\.com$/">
+  ErrorDocument 404 /404.html
+  DirectoryIndex index.html
+</If>
+
+RewriteEngine On
+# https と www に統一（worcry.com のみ）
+RewriteCond %{HTTP_HOST} ^(www\.)?worcry\.com$ [NC]
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP_HOST} ^worcry\.com$ [NC]
+RewriteRule ^(.*)$ https://www.worcry.com/$1 [R=301,L]
+
+# 旧STUDIOのURLから新しいページへ（worcry.com のみ）
+RewriteCond %{HTTP_HOST} ^www\.worcry\.com$ [NC]
+RewriteRule ^service/rp/?$ https://aoharu-intern.com/rpo/?utm_source=worcry_hp [R=301,L]
+RewriteCond %{HTTP_HOST} ^www\.worcry\.com$ [NC]
+RewriteRule ^service/op/?$ https://aoharu-intern.worcry.com/?utm_source=worcry_hp [R=301,L]
+RewriteCond %{HTTP_HOST} ^www\.worcry\.com$ [NC]
+RewriteRule ^service/?$ https://aoharu-intern.worcry.com/?utm_source=worcry_hp [R=301,L]
+RewriteCond %{HTTP_HOST} ^www\.worcry\.com$ [NC]
+RewriteRule ^case(/.*)?$ / [R=301,L]
