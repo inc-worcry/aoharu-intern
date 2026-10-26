@@ -1398,6 +1398,35 @@ body{line-height:1.7}
 .motion .bar-fill{transform:scaleX(0);transform-origin:left center;transition:transform 1s cubic-bezier(.2,.7,.2,1);transition-delay:calc(var(--d,0) * 80ms)}
 .motion .data-grid.in .bar-fill{transform:none}
 
+
+/* ============================================================
+   v12 FAQ（開閉はブラウザ標準の details）
+   ============================================================ */
+.faq-list{border-top:1px solid var(--line)}
+.faq-item{border-bottom:1px solid var(--line)}
+.faq-item summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:44px 1fr 28px;align-items:center;gap:0 8px;padding:22px 4px}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{content:"";width:14px;height:14px;justify-self:end;background:
+  linear-gradient(var(--ink),var(--ink)) center/14px 2px no-repeat,linear-gradient(var(--ink),var(--ink)) center/2px 14px no-repeat;transition:transform .25s ease}
+.faq-item[open] summary::after{transform:rotate(45deg)}
+.faq-item summary:hover .faq-qt{color:var(--sky-deep)}
+.faq-q,.faq-al{font-family:var(--en);font-weight:700;font-size:28px;line-height:1;color:var(--sky)}
+.faq-al{color:var(--haru)}
+.faq-qt{font-size:16px;font-weight:700;line-height:1.6;color:var(--ink)}
+.faq-a{display:grid;grid-template-columns:44px 1fr;gap:0 8px;padding:0 36px 24px 4px}
+.faq-a p{margin:0;font-size:14.5px;line-height:1.85;color:var(--ink-soft)}
+.faq-more{text-align:center;margin-top:36px}
+.motion .faq-item{opacity:0;transform:translateY(12px);transition:opacity .5s ease,transform .5s ease;transition-delay:calc(var(--d,0) * 70ms)}
+.motion .faq-list.in .faq-item{opacity:1;transform:none}
+@media (max-width:860px){
+  .faq-item summary{grid-template-columns:32px 1fr 22px;padding:18px 2px}
+  .faq-q,.faq-al{font-size:22px}
+  .faq-qt{font-size:14.5px}
+  .faq-a{grid-template-columns:32px 1fr;padding:0 6px 18px 2px}
+  .faq-a p{font-size:13.5px;line-height:1.8}
+  .faq-more{margin-top:26px}
+}
+
 </style>
 <link rel="canonical" href="https://aoharu-intern.com/long-intern">
 <script type="application/ld+json">
@@ -1453,6 +1482,76 @@ body{line-height:1.7}
     "@type": "Offer",
     "description": "初期費用0円・完全成果報酬"
    }
+  },
+  {
+   "@type": "FAQPage",
+   "@id": "https://aoharu-intern.com/long-intern/#faq",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "費用はいつ発生しますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "採用が決定したときにのみ発生する、完全成果報酬型です。初期費用は0円です。具体的なプラン・金額は、資料または個別相談にてご案内します。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "紹介した学生がすぐに辞めてしまった場合は？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "早期退職保証があります。入社から1ヶ月未満で退職した場合は、成果報酬の50%を返金します。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "大学1・2年生で、授業との両立は大丈夫ですか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "週3日前後の稼働を前提にカウンセリングを行い、企業と学生、双方の希望を踏まえてマッチングします。学生の稼働日数が少ない場合は、料金を調整します。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "どんな学生を紹介してもらえますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "成長意欲の高い大学1・2年生（29卒・30卒）です。紹介の前に学生全員とキャリアカウンセリングを行い、貴社の求人をヒアリングしたうえで、合う学生だけを推薦します。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "求人サイトへの掲載とは、何が違いますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "掲載して応募を待つのではなく、私たちが学生全員と面談してからご紹介します。面談のセットから日程調整、クロージングまで代行するため、採用担当者さまの手間も抑えられます。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "マッチングイベントは、どのような形式ですか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "月2回、オンラインで開催しています。企業5社×候補者10名が、Zoomのブレイクアウトルームで12分ずつ全社と対話する形式です（候補者1名につき最大2社）。終了後は興味度アンケートで双方の希望を確認し、合意した組み合わせから面接日程を調整します。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "どんな業種・職種での実績がありますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "業種は広告・メディア（40%）、サービス（35%）、IT・WEB（10%）、不動産（10%）など。職種は営業（40%）、マーケ・広報（30%）、コーポレート（15%）などです（2026年7月現在）。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "問い合わせから紹介までは、どのような流れですか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "資料請求・お問い合わせをいただいたら、1営業日以内にご連絡します。求人内容をヒアリングしたうえで学生全員と面談し、合う学生をご紹介。その後の日程調整・選考から、入社後の両立支援まで伴走します。"
+     }
+    }
+   ]
   }
  ]
 }
@@ -1486,6 +1585,7 @@ body{line-height:1.7}
       <a href="#flow">FLOW<small>紹介の<wbr>流れ</small></a>
       <a href="#traction">TRACTION<small>実績</small></a>
       <a href="#pricing">PRICING<small>料金</small></a>
+      <a href="#faq">FAQ<small>よくあるご質問</small></a>
       <a href="#cta">CONTACT<small>お問い<wbr>合わせ</small></a>
     </nav>
     <div>
@@ -1853,7 +1953,7 @@ body{line-height:1.7}
           <div class="price-badge">✔ <b>完全</b>成果報酬</div>
           <div class="price-badge">✔ 早期退職保証<wbr><span class="nw">（1ヶ月未満は<b>50%返金</b>）</span></div>
         </div>
-        <a href="#cta" class="price-cta">まずは<wbr>話を<wbr>聞いてみる&nbsp;→</a>
+        <a href="#cta" class="price-cta" onclick="openIqModal();return false;">まずは<wbr>話を<wbr>聞いてみる&nbsp;→</a>
       </div>
     </div>
   </div>
@@ -1895,6 +1995,25 @@ body{line-height:1.7}
         <a href="https://aoharu-intern.com/shinsotsu/" target="_blank" rel="noopener" class="lt-btn">サービスサイトは<wbr>こちら&nbsp;→</a>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="frame sec bgw">
+  <div class="wrap">
+    <div class="sec-head"><div class="sec-head-l"><div class="hd"><span class="hd-no">12</span><p class="hd-en">FAQ</p><p class="hd-ja">よくある<wbr>ご質問</p></div><h2 class="sh">気になる点に、<br>お答えします。</h2></div>
+    <p class="sl">導入前に<wbr>よく<wbr>いただく<wbr>ご質問を<wbr>まとめました。<wbr>ほかにも<wbr>気になる<wbr>点が<wbr>あれば、<wbr>お気軽に<wbr>ご相談ください。</p></div>
+    <div class="faq-list">
+      <details class="faq-item"><summary><span class="faq-q">Q</span><span class="faq-qt">費用は<wbr>いつ発生しますか？</span></summary><div class="faq-a"><span class="faq-al">A</span><p>採用が<wbr>決定した<wbr>ときに<wbr>のみ<wbr>発生する、<wbr>完全成<wbr>果報酬型です。<wbr>初期費用は<wbr>0円です。<wbr>具体的な<wbr>プラン・<wbr>金額は、<wbr>資料または<wbr>個別相談にて<wbr>ご案内します。</p></div></details>
+      <details class="faq-item"><summary><span class="faq-q">Q</span><span class="faq-qt">紹介した<wbr>学生が<wbr>すぐに<wbr>辞めてしまった<wbr>場合は？</span></summary><div class="faq-a"><span class="faq-al">A</span><p>早期退職保証が<wbr>あります。<wbr>入社から<wbr>1ヶ月未満で<wbr>退職した<wbr>場合は、<wbr>成果報酬の<wbr>50%を<wbr>返金します。</p></div></details>
+      <details class="faq-item"><summary><span class="faq-q">Q</span><span class="faq-qt">大学1・<wbr>2年生で、<wbr>授業との<wbr>両立は<wbr>大丈夫ですか？</span></summary><div class="faq-a"><span class="faq-al">A</span><p>週3日前後の<wbr>稼働を<wbr>前提に<wbr>カウンセリングを<wbr>行い、<wbr>企業と<wbr>学生、<wbr>双方の<wbr>希望を<wbr>踏まえて<wbr>マッチングします。<wbr>学生の<wbr>稼働日数が<wbr>少ない<wbr>場合は、<wbr>料金を<wbr>調整します。</p></div></details>
+      <details class="faq-item"><summary><span class="faq-q">Q</span><span class="faq-qt">どんな<wbr>学生を<wbr>紹介して<wbr>もらえますか？</span></summary><div class="faq-a"><span class="faq-al">A</span><p>成長意欲の<wbr>高い<wbr>大学1・<wbr>2年生<wbr>（29卒・30卒）です。<wbr>紹介の<wbr>前に<wbr>学生全員と<wbr>キャリアカウンセリングを<wbr>行い、<wbr>貴社の<wbr>求人を<wbr>ヒアリングしたうえで、<wbr>合う<wbr>学生だけを<wbr>推薦します。</p></div></details>
+      <details class="faq-item"><summary><span class="faq-q">Q</span><span class="faq-qt">求人サイトへの<wbr>掲載とは、<wbr>何が<wbr>違いますか？</span></summary><div class="faq-a"><span class="faq-al">A</span><p>掲載して<wbr>応募を<wbr>待つのではなく、<wbr>私たちが学生全員と<wbr>面談してから<wbr>ご紹介します。<wbr>面談の<wbr>セットから<wbr>日程調整、<wbr>クロージングまで<wbr>代行する<wbr>ため、<wbr>採用担当者さまの<wbr>手間も<wbr>抑えられます。</p></div></details>
+      <details class="faq-item"><summary><span class="faq-q">Q</span><span class="faq-qt">マッチングイベントは、<wbr>どのような<wbr>形式ですか？</span></summary><div class="faq-a"><span class="faq-al">A</span><p>月2回、<wbr>オンラインで<wbr>開催しています。<wbr>企業5社×候補者10名が、<wbr>Zoomの<wbr>ブレイクアウトルームで<wbr>12<wbr>分ずつ<wbr>全社と<wbr>対話する<wbr>形式です<wbr>（候補者1名に<wbr>つき最大2社）。<wbr>終了後は<wbr>興味度アンケートで<wbr>双方の<wbr>希望を<wbr>確認し、<wbr>合意した<wbr>組み合わせから<wbr>面接日程を<wbr>調整します。</p></div></details>
+      <details class="faq-item"><summary><span class="faq-q">Q</span><span class="faq-qt">どんな<wbr>業種・職種での<wbr>実績が<wbr>ありますか？</span></summary><div class="faq-a"><span class="faq-al">A</span><p>業種は<wbr>広告・メディア<wbr>（40%）、<wbr>サービス<wbr>（35%）、<wbr>IT・WEB<wbr>（10%）、<wbr>不動産<wbr>（10%）など。<wbr>職種は<wbr>営業<wbr>（40%）、<wbr>マーケ・<wbr>広報<wbr>（30%）、<wbr>コーポレート<wbr>（15%）などです<wbr>（2026年7月現在）。</p></div></details>
+      <details class="faq-item"><summary><span class="faq-q">Q</span><span class="faq-qt">問い<wbr>合わせから<wbr>紹介までは、<wbr>どのような<wbr>流れですか？</span></summary><div class="faq-a"><span class="faq-al">A</span><p>資料請求・<wbr>お問い<wbr>合わせを<wbr>いただいたら、<wbr>1営業日以内に<wbr>ご連絡します。<wbr>求人内容を<wbr>ヒアリングしたうえで<wbr>学生全員と<wbr>面談し、<wbr>合う<wbr>学生を<wbr>ご紹介。<wbr>その後の<wbr>日程調整・選考から、<wbr>入社後の<wbr>両立支援まで<wbr>伴走します。</p></div></details>
+    </div>
+    <div class="faq-more"><a href="#cta" class="price-cta">資料請求・お問い合わせ&nbsp;→</a></div>
   </div>
 </section>
 
@@ -2154,74 +2273,7 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')closeDlModal
 </script>
 
 
-<!-- Mobile Contact Modal (長期LP) -->
-<div id="m-modal" role="dialog" aria-modal="true" onclick="if(event.target===this)closeMModal()" style="display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.55);z-index:9999;overflow-y:auto;-webkit-overflow-scrolling:touch;">
-  <div style="background:#fff;border-radius:16px;max-width:440px;width:92%;margin:28px auto 56px;padding:28px 22px 32px;position:relative;box-shadow:0 8px 32px rgba(0,0,0,.18);">
-    <button onclick="closeMModal()" aria-label="閉じる" style="position:absolute;top:12px;right:16px;background:none;border:none;font-size:26px;line-height:1;cursor:pointer;color:#bbb;padding:0;">&times;</button>
-    <div style="font-size:11px;font-weight:700;color:#29ABE2;letter-spacing:.1em;margin-bottom:4px;">CONTACT</div>
-    <h3 style="font-size:1.2rem;font-weight:800;margin:0 0 6px;color:#1A1A2A;line-height:1.4;">まずはお気軽に<br>ご相談ください！</h3>
-    <p style="font-size:12px;color:#999;margin:0 0 20px;line-height:1.6;">資料請求・個別相談、1営業日以内にご連絡します。</p>
-    <div id="m-modal-form-wrap">
-    <form id="m-modal-form" onsubmit="submitMModal(event)" style="all:unset;display:block;">
-      <div style="margin-bottom:12px;display:block;">
-        <label style="display:block;font-size:12px;font-weight:600;color:#555;margin-bottom:5px;">会社名<span style="color:#e55;margin-left:3px;">*</span></label>
-        <input type="text" name="会社名" placeholder="株式会社○○" required style="display:block;width:100%;padding:10px 13px;border:1.5px solid #ddd;border-radius:8px;font-size:14px;box-sizing:border-box;outline:none;font-family:inherit;-webkit-appearance:none;">
-      </div>
-      <div style="margin-bottom:12px;display:block;">
-        <label style="display:block;font-size:12px;font-weight:600;color:#555;margin-bottom:5px;">お名前<span style="color:#e55;margin-left:3px;">*</span></label>
-        <input type="text" name="お名前" placeholder="山田 太郎" required style="display:block;width:100%;padding:10px 13px;border:1.5px solid #ddd;border-radius:8px;font-size:14px;box-sizing:border-box;outline:none;font-family:inherit;-webkit-appearance:none;">
-      </div>
-      <div style="margin-bottom:12px;display:block;">
-        <label style="display:block;font-size:12px;font-weight:600;color:#555;margin-bottom:5px;">メールアドレス<span style="color:#e55;margin-left:3px;">*</span></label>
-        <input type="email" name="email" placeholder="taro@company.co.jp" required style="display:block;width:100%;padding:10px 13px;border:1.5px solid #ddd;border-radius:8px;font-size:14px;box-sizing:border-box;outline:none;font-family:inherit;-webkit-appearance:none;">
-      </div>
-      <div style="margin-bottom:12px;display:block;">
-        <label style="display:block;font-size:12px;font-weight:600;color:#555;margin-bottom:5px;">電話番号</label>
-        <input type="tel" name="電話番号" placeholder="03-0000-0000" style="display:block;width:100%;padding:10px 13px;border:1.5px solid #ddd;border-radius:8px;font-size:14px;box-sizing:border-box;outline:none;font-family:inherit;-webkit-appearance:none;">
-      </div>
-      <div style="margin-bottom:16px;display:block;">
-        <label style="display:block;font-size:12px;font-weight:600;color:#555;margin-bottom:5px;">ご要望・ご質問</label>
-        <textarea name="ご要望" placeholder="資料請求・個別相談など、お気軽にどうぞ" rows="3" style="display:block;width:100%;padding:10px 13px;border:1.5px solid #ddd;border-radius:8px;font-size:14px;box-sizing:border-box;outline:none;font-family:inherit;resize:vertical;min-height:72px;"></textarea>
-      </div>
-      <div style="margin-bottom:16px;">
-        <label style="display:flex;gap:8px;align-items:flex-start;cursor:pointer;font-size:12px;color:#666;line-height:1.5;">
-          <input type="checkbox" id="m-modal-agree" required style="margin-top:2px;flex-shrink:0;width:14px;height:14px;cursor:pointer;">
-          <span><a href="https://www.worcry.com/privacy-policy" target="_blank" style="color:#29ABE2;text-decoration:none;">プライバシーポリシー</a>に同意する</span>
-        </label>
-      </div>
-      <button type="submit" style="display:block;width:100%;padding:13px;background:#29ABE2;color:#fff;border:none;border-radius:10px;font-size:15px;font-weight:700;cursor:pointer;font-family:inherit;letter-spacing:.04em;">送信する&nbsp;→</button>
-    </form>
-    </div>
-  </div>
-</div>
-<script>
-function openMModal(){document.getElementById('m-modal').style.display='block';document.body.style.overflow='hidden';}
-function closeMModal(){document.getElementById('m-modal').style.display='none';document.body.style.overflow='';}
-function submitMModal(e){
-  e.preventDefault();
-  if(!document.getElementById('m-modal-agree').checked){alert('プライバシーポリシーへの同意が必要です。');return;}
-  var form=document.getElementById('m-modal-form');
-  var data=new FormData();
-  data.append('会社名',form.querySelector('[name="会社名"]').value||'');
-  data.append('お名前',form.querySelector('[name="お名前"]').value||'');
-  data.append('email',form.querySelector('[name="email"]').value||'');
-  data.append('電話番号',form.querySelector('[name="電話番号"]').value||'');
-  data.append('ご要望',form.querySelector('[name="ご要望"]').value||'');
-  data.append('_consent','on');
-  var wrap=document.getElementById('m-modal-form-wrap');
-  wrap.innerHTML='<p style="text-align:center;padding:32px 0;font-size:15px;color:#29ABE2;font-weight:700;">送信中...</p>';
-  fetch('https://script.google.com/macros/s/AKfycbz5E_ewxy_QKq2I-371XIIGuBL-8TO465xl8gb-TywnUp7tb_CLSe1Y8FYU8NFoe8icOQ/exec',{method:'POST',body:data})
-  .then(function(){wrap.innerHTML='<div style="text-align:center;padding:32px 16px;"><div style="font-size:2rem;margin-bottom:12px;">✅</div><p style="font-size:15px;font-weight:700;color:#1A1A2A;margin:0 0 6px;">送信が完了しました！</p><p style="font-size:12px;color:#999;">1営業日以内にご連絡いたします。</p></div>';})
-  .catch(function(){wrap.innerHTML='<div style="text-align:center;padding:32px 16px;"><div style="font-size:2rem;margin-bottom:12px;">✅</div><p style="font-size:15px;font-weight:700;color:#1A1A2A;margin:0 0 6px;">送信が完了しました！</p><p style="font-size:12px;color:#999;">1営業日以内にご連絡いたします。</p></div>';});
-}
-document.addEventListener('DOMContentLoaded',function(){
-  document.querySelectorAll('a[href="#cta"]').forEach(function(btn){
-    btn.addEventListener('click',function(e){
-      if(window.innerWidth<=640){e.preventDefault();openMModal();}
-    });
-  });
-});
-</script>
+
 <script>
 (function(){
   var menu=document.getElementById('menu'),openBtn=document.getElementById('menuOpen');
@@ -2258,6 +2310,7 @@ document.addEventListener('DOMContentLoaded',function(){
   order('.mev-rooms','i.st');
   order('.flow-wrap','.f-dot');
   order('.data-grid','.bar-fill');
+  order('.faq-list','.faq-item');
   document.querySelectorAll('.cmp-grid').forEach(function(g){
     [].forEach.call(g.children,function(c,i){c.style.setProperty('--d',Math.floor(i/4))});
     g.querySelectorAll('.cmp-mark').forEach(function(m){m.style.setProperty('--d',m.parentNode.style.getPropertyValue('--d'))});
@@ -2274,7 +2327,7 @@ document.addEventListener('DOMContentLoaded',function(){
     setTimeout(function(){el.textContent=fmt(to)},dur+400); // 描画が止まっても最終値は必ず出す
   }
 
-  var TARGET='.rv,.ig-tl,.ig-fn,.flow-wrap,.diff-cols .diff-card,.ig-cost,.mev,.cmp,.data-grid,.line-stats';
+  var TARGET='.faq-list,.rv,.ig-tl,.ig-fn,.flow-wrap,.diff-cols .diff-card,.ig-cost,.mev,.cmp,.data-grid,.line-stats';
   var pending=[].slice.call(document.querySelectorAll(TARGET));
   function reveal(el){
     el.classList.add('in');
@@ -2297,6 +2350,15 @@ document.addEventListener('DOMContentLoaded',function(){
   check();
 })();
 
+</script>
+<script>
+/* FVフォームと下部CONTACT以外のCTA（href="#cta"）は、その場で資料請求ポップアップを開く */
+document.addEventListener('click',function(e){
+  var a=e.target.closest&&e.target.closest('a[href="#cta"]');
+  if(!a)return;e.preventDefault();
+  var m=document.getElementById('menu');if(m&&!m.hidden){m.hidden=true;document.body.style.overflow='';var b=document.getElementById('menuOpen');if(b)b.setAttribute('aria-expanded','false');}
+  if(typeof openIqModal==='function')openIqModal();
+});
 </script>
 </body>
   </html>
