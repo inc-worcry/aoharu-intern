@@ -1,0 +1,29 @@
+name: Cleanup onboarding (FTP)
+
+on:
+  workflow_dispatch:
+
+jobs:
+  remove:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install lftp
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq lftp
+
+      - name: Remove /onboarding/ from Xserver
+        env:
+          S: ${{ secrets.FTP_SERVER }}
+          U: ${{ secrets.FTP_USERNAME }}
+          P: ${{ secrets.FTP_PASSWORD }}
+        run: |
+          lftp -c "
+            set ftp:ssl-force true;
+            set ftp:ssl-protect-data true;
+            open -u \"\$U\",\"\$P\" \"\$S\";
+            cd /worcry.com/public_html/aoharu-intern.worcry.com/;
+            echo '--- before ---';
+            cls -1;
+            rm -r onboarding;
+            echo '--- after ---';
+            cls -1;
+          "
