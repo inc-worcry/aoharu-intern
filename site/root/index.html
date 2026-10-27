@@ -74,7 +74,7 @@ h1,h2,h3{text-wrap:balance}
 .hdr-cta.co{background:var(--sky)} .hdr-cta.st{background:var(--haru)}
 .hdr-cta small{font-size:11px;font-weight:500;letter-spacing:.08em;line-height:1.5;opacity:.92}
 .hdr-cta b{font-size:14px;font-weight:700;letter-spacing:.06em;line-height:1.5}
-.hdr-cta b::after{content:"  →"}
+.hdr-cta b::after{content:"\00a0→"}
 .menu-btn{width:62px;min-height:60px;border:0;cursor:pointer;background:var(--ink);color:var(--white);display:flex;
   flex-direction:column;align-items:center;justify-content:center}
 .menu-btn i{display:block;width:24px;height:2px;background:currentColor;box-shadow:0 7px 0 currentColor,0 -7px 0 currentColor}
@@ -179,7 +179,7 @@ h1,h2,h3{text-wrap:balance}
 .journey{background:var(--white);padding:clamp(64px,9vw,120px) clamp(20px,5vw,80px)}
 .jr-wrap{max-width:1120px;margin:0 auto}
 .jr-head{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(28px,5vw,72px);align-items:center;margin-bottom:clamp(40px,5vw,64px)}
-.jr-head h2{font-family:var(--mincho);font-weight:800;font-size:clamp(28px,3.4vw,46px);line-height:1.55;letter-spacing:.06em;margin:0;text-wrap:balance}
+.jr-head h2{font-family:var(--mincho);font-weight:800;font-size:clamp(28px,3.1vw,43px);line-height:1.55;letter-spacing:.06em;margin:0;text-wrap:balance}
 .jr-head p{margin:0 0 1em;font-size:15px;line-height:2.1;color:var(--ink-soft);max-width:36em}
 .jr-head strong{color:var(--ink);background:linear-gradient(transparent 68%,var(--haru-pale) 68%)}
 .jr-more{font-weight:700;font-size:14px;text-decoration:none;border-bottom:1px solid var(--ink);padding-bottom:2px}
@@ -301,7 +301,7 @@ h1,h2,h3{text-wrap:balance}
 .ci-body{display:flex;flex-direction:column;gap:6px;min-width:0}
 .ci-cat{font-size:11px;font-weight:700;letter-spacing:.06em;color:#6EC7EE}
 .ci-cat span{color:#9AA1A9;font-weight:500;margin-left:.6em}
-.ci-title{margin:0;font-size:15px;font-weight:700;line-height:1.7;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.ci-title{margin:0;font-size:15px;font-weight:700;line-height:1.7;text-wrap:pretty;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
 .ci.is-feature .ci-title{font-size:clamp(20px,2vw,26px);font-weight:900;line-height:1.6;-webkit-line-clamp:4;text-wrap:balance}
 .ci:hover .ci-title{color:var(--haru)}
 .ci-lead{display:none;margin:0;font-size:14px;line-height:1.95;color:#B9BEC5}
@@ -425,14 +425,21 @@ h1,h2,h3{text-wrap:balance}
 /* タブレット〜小さめPC：サービスカードを横長1列に */
 @media (max-width:1100px){
   .svc-cols{grid-template-columns:1fr}
-  .svc{display:grid;grid-template-columns:minmax(0,38%) 1fr}
+  .svc{display:grid;grid-template-columns:minmax(0,44%) 1fr}
   .svc::before{grid-column:1/-1}
-  .svc-ph{aspect-ratio:auto;min-height:220px}
+  .svc-ph{aspect-ratio:16/10;min-height:0;align-self:center;margin:20px 0 20px 20px;border-radius:3px}
 }
 @media (max-width:600px){
+  .col-tabs{flex-wrap:wrap;gap:10px 18px;overflow-x:visible}
   .svc{display:flex}
-  .svc-ph{aspect-ratio:16/10;min-height:0}
+  .svc-ph{aspect-ratio:16/10;min-height:0;margin:0;border-radius:0}
   .svc-logo.lg{height:24px}
+}
+/* 小さいスマホ：下の固定バーのラベルが2行に折れないように */
+@media (max-width:430px){
+  .hdr-cta{padding:10px}
+  .hdr-cta b{font-size:12px}
+  .hdr-cta b::after{content:""}
 }
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important}
@@ -660,7 +667,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </div>
         </a>
         <a class="svc" href="https://aoharu-intern.com/shinsotsu-re/?utm_source=aoharu_site" target="_blank" rel="noopener">
-          <div class="svc-ph"><img src="img/card-shinsotsu-re.jpg?v=2" alt="AOHARU 新卒Reのサイト" loading="lazy"></div>
+          <div class="svc-ph"><img src="img/card-shinsotsu-re.jpg?v=3" alt="AOHARU 新卒Reのサイト" loading="lazy"></div>
           <div class="svc-body">
             <span class="svc-stage">YEAR 4<small>大学4年生・内定獲得後</small></span>
             <img class="svc-logo lg" src="img/logo-shinsotsu-re.png" alt="AOHARU 新卒Re">
