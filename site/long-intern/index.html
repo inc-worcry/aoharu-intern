@@ -1464,6 +1464,67 @@ body{line-height:1.7}
 .price-body .price-badge{padding-left:0}
 .price-body .price-cta{display:inline-flex}
 @media (max-width:860px){.price-body .price-badges{flex-direction:column;align-items:flex-start;gap:4px}.price-body .price-badge{text-align:left}}
+
+/* ============================================================
+   v16 レスポンシブの最終調整（10/27 全幅を目視して詰めた）
+   ============================================================ */
+/* イベント図の注記：区切りは「｜」、スマホでは1項目ずつ改行 */
+.mev-legend-note .nt + .nt::before{content:"｜";margin:0 .3em;color:#B8C0C8}
+.mev-legend .mev-legend-note .nt{display:inline}
+@media (max-width:860px){.hero,.hero-body{min-height:0}}
+.mev-room .rn{white-space:nowrap;font-family:var(--en);font-size:11px;letter-spacing:.08em}
+
+/* ---------- タブレット（641〜860px）：スマホの1列をやめ、PCに近い横並びに ---------- */
+@media (min-width:641px) and (max-width:860px){
+  .hero-body{grid-template-columns:minmax(0,1fr) 290px;gap:24px;padding:104px 28px 48px;align-items:center}
+  .hero-form-card{display:block!important;margin-top:0}
+  .hero h1,.hero-text h1{font-size:clamp(34px,5.6vw,46px)}
+  .hfc-head{padding:14px 16px}.hfc-body{padding:16px}
+  .hfc-fl{margin-bottom:8px}
+  .concept-cards-row{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;flex-direction:initial}
+  .prob-grid{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;overflow:visible;margin:0!important;padding:0!important}
+  .prob-grid>*{flex:initial!important}
+  .diff-card{grid-template-columns:150px 1fr;padding:20px}
+  .diff-flow{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .dstep + .dstep{margin:0 0 0 -1px}
+  .dstep .ar{left:-13px;top:50%;transform:translateY(-50%)}
+  .dstep,.dstep.s2,.dstep.s3{padding:12px 18px;font-size:13.5px}
+  .cmp-scroll-hint{display:none}
+  .hfc-sub .nw{display:block}
+  .hfc-sep{display:none}
+  .study-top{grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:28px}
+  .study-char{width:100%}
+  .ig-fn{grid-template-columns:minmax(0,.7fr) minmax(0,1.5fr);gap:28px}
+  .data-grid{grid-template-columns:1fr 1fr;gap:28px}
+  .ig-cost{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .ig-cost-step + .ig-cost-step{border-left:0;border-top:1px solid var(--line)}
+  .ig-cost-step.is-goal{border-top-color:var(--sky)}
+  .ig-cost-step + .ig-cost-step::before{content:"→";left:-13px;top:50%;transform:translateY(-50%)}
+  .price-body .price-badges{flex-direction:row;flex-wrap:wrap;gap:6px 24px}
+  .flow-wrap{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media (min-width:700px) and (max-width:860px){
+  .cmp-grid{min-width:0}
+}
+@media (min-width:760px) and (max-width:860px){
+  .mev-steps{flex-direction:row}
+  .mev-ar{transform:none;padding:0 6px}
+}
+
+/* ---------- スマホ（〜640px） ---------- */
+@media (max-width:640px){
+  .hero-body{padding-bottom:32px}
+  .mev-legend .mev-legend-note{display:block;flex-basis:100%;margin-top:4px;line-height:1.7}
+  .mev-legend .mev-legend-note .nt{display:block}
+  .mev-legend-note .nt + .nt::before{content:none}
+  .mev-legend{align-items:flex-start}
+  .mev-room .rn{font-size:10.5px;letter-spacing:.02em}
+  .price-body .price-badges{gap:2px}
+  .price-body .price-badge{padding:6px 0}
+  .lt-card{text-align:left;align-items:flex-start}
+  .lt-poke{width:72px}
+  .lt-btn{width:auto}
+}
 </style>
 <link rel="canonical" href="https://aoharu-intern.com/long-intern">
 <script type="application/ld+json">
@@ -1690,7 +1751,7 @@ body{line-height:1.7}
 </svg></div>
         <div>
           <div class="hfc-ttl">まずは<wbr>お気軽に<wbr>ご相談を！</div>
-          <div class="hfc-sub">資料請求は<wbr>こちら / 1営業日以内に<wbr>返信</div>
+          <div class="hfc-sub"><span class="nw">資料請求はこちら</span><span class="hfc-sep"> / </span><span class="nw">1営業日以内に返信</span></div>
         </div>
       </div>
       <form class="hfc-body" action="https://script.google.com/macros/s/AKfycbz5E_ewxy_QKq2I-371XIIGuBL-8TO465xl8gb-TywnUp7tb_CLSe1Y8FYU8NFoe8icOQ/exec" method="POST" data-gas="1"><input type="hidden" name="_form" value="FVフォーム">
@@ -1864,7 +1925,7 @@ body{line-height:1.7}
         </div>
         <div class="mev-rooms"><div class="mev-room"><span class="rn">ROOM 1</span><span class="ppl"><i class="co"></i><i class="st"></i><i class="st"></i></span></div><div class="mev-room"><span class="rn">ROOM 2</span><span class="ppl"><i class="co"></i><i class="st"></i><i class="st"></i></span></div><div class="mev-room"><span class="rn">ROOM 3</span><span class="ppl"><i class="co"></i><i class="st"></i><i class="st"></i></span></div><div class="mev-room"><span class="rn">ROOM 4</span><span class="ppl"><i class="co"></i><i class="st"></i><i class="st"></i></span></div><div class="mev-room"><span class="rn">ROOM 5</span><span class="ppl"><i class="co"></i><i class="st"></i><i class="st"></i></span></div></div>
       </div>
-      <div class="mev-legend"><span><i class="co"></i>企業</span><span><i class="st"></i>学生</span><span class="mev-legend-note">ZOOMブレイクアウト方<wbr>式｜12分×5で<wbr>全社と<wbr>対話｜1名に<wbr>つき最大2社</span></div>
+      <div class="mev-legend"><span><i class="co"></i>企業</span><span><i class="st"></i>学生</span><span class="mev-legend-note"><span class="nt">ZOOMブレイクアウト方式</span><span class="nt">12分×5で<wbr>全社と<wbr>対話</span><span class="nt">1名につき最大2社</span></span></div>
       <div class="mev-steps">
         <div class="mev-step"><span class="n">01</span><div><b>興味度アンケート</b><small>5段階＋理由記述</small></div></div>
         <span class="mev-ar">→</span>
