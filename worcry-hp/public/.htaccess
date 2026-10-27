@@ -1,3 +1,7 @@
+SetEnvIf Request_URI ".*" Ngx_Cache_NoCacheMode=off
+SetEnvIf Request_URI ".*" Ngx_Cache_AllCacheMode
+
+# ↑ Xserverのサーバーパネル（キャッシュ設定）が書く行。消さない。
 # WorCry コーポレートサイト（Xserver /worcry.com/public_html/）
 # 注意：この下に aoharu-intern.worcry.com のフォルダがあり、この設定はサブドメインにも継承される。
 #       必ず worcry.com / www.worcry.com のときだけ効くように書くこと（LPを壊さない）。
@@ -15,7 +19,7 @@ RewriteRule ^(.*)$ https://www.worcry.com/$1 [R=301,L]
 
 # 旧STUDIOのURLから新しいページへ（worcry.com のみ）
 RewriteCond %{HTTP_HOST} ^www\.worcry\.com$ [NC]
-RewriteRule ^service/rp/?$ https://aoharu-intern.com/rpo/?utm_source=worcry_hp [R=301,L]
+RewriteRule ^service/rp/?$ https://aoharu-intern.worcry.com/rpo/?utm_source=worcry_hp [R=301,L]
 RewriteCond %{HTTP_HOST} ^www\.worcry\.com$ [NC]
 RewriteRule ^service/op/?$ https://aoharu-intern.worcry.com/?utm_source=worcry_hp [R=301,L]
 RewriteCond %{HTTP_HOST} ^www\.worcry\.com$ [NC]

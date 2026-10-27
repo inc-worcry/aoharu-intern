@@ -3,4 +3,4 @@
 - 原本は `~/Downloads/WorCry資料/worcry-hp-renewal/`（build.py で生成した dist/ をここ public/ に同期する）。手順はスキル `worcry-hp`。
 - `public/` が Xserver の `/worcry.com/public_html/` へFTP配信される（`.github/workflows/deploy-worcry-hp.yml`）。
 - 同じフォルダに LP（`aoharu-intern.worcry.com/`）がある。**削除系の設定は使わない／.htaccess はHPのホスト限定で書く。**
-- `htaccess.pending` は、既存の .htaccess の中身を確認して統合するまで配信しない。
+- `public/.htaccess` は既存（Xserverのキャッシュ設定2行）＋HPのルール。HPのルールは必ずホスト限定。元の2行だけの版は `htaccess.original`（緊急時の戻し用）。
