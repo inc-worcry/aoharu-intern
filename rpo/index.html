@@ -53,7 +53,7 @@ img{max-width:100%;display:block}
 a{color:inherit}
 .frame{border-radius:var(--r);overflow:hidden;position:relative}
 .frame + .frame{margin-top:var(--gut)}
-.in-wrap{max-width:1240px;margin:0 auto;padding:clamp(64px,9vw,128px) clamp(20px,5vw,72px)}
+.in-wrap{max-width:1360px;margin:0 auto;padding:clamp(64px,9vw,128px) clamp(20px,3.6vw,56px)}
 
 /* ---------- 見出し（既存AOHARUサイト準拠） ---------- */
 .hd-en{font-family:var(--en);font-weight:700;font-size:clamp(40px,5.4vw,72px);letter-spacing:.06em;line-height:1;margin:0;
@@ -456,7 +456,7 @@ a.csc:hover .csc-foot em{transform:translateX(6px);background:var(--sky)}
 /* ---------- CTA ---------- */
 .cta-mid{background:#fff}
 .cta-mid.alt{background:var(--ink);color:#fff}
-.cm-in{max-width:1240px;margin:0 auto;padding:clamp(40px,5vw,64px) clamp(20px,5vw,72px);display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+.cm-in{max-width:1360px;margin:0 auto;padding:clamp(40px,5vw,64px) clamp(20px,3.6vw,56px);display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
 .cm-t{margin:0;font-size:clamp(20px,2.2vw,30px);font-weight:900;line-height:1.55;letter-spacing:.04em}
 .cm-b{display:flex;gap:10px;flex-wrap:wrap}
 .cm-b .btn{padding:18px 26px}
@@ -603,7 +603,16 @@ details p{margin:0 0 24px;padding-left:34px;color:var(--ink-soft);font-size:14.5
   .fv-copy{font-size:clamp(34px,9.4vw,52px)}
   .scroll-cue{display:none}
   .concept .in-wrap,.faq .in-wrap{grid-template-columns:1fr}
-  .svc-grid{grid-template-columns:1fr}
+  .svc-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  .svc-img{aspect-ratio:4/3}
+  .svc-no{left:8px;top:8px;font-size:11px;padding:3px 8px 2px}
+  .svc-body{padding:12px 12px 12px}
+  .svc-tag{font-size:10.5px;letter-spacing:.06em;line-height:1.5}
+  .svc h3{font-size:14.5px;margin:6px 0 10px;line-height:1.5}
+  .svc h3 br{display:none}
+  .svc p.d{display:none}
+  .svc-more{padding-top:10px;font-size:11px;letter-spacing:.1em}
+  .svc-more .arr{width:30px;height:22px;border-radius:6px}
   .hs-sticky{position:relative;height:auto;padding:110px 0 70px}
   .hs-head{top:36px}
   .hs-nav{display:none}
