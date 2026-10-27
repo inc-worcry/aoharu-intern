@@ -661,3 +661,9 @@ main{flex:1 0 auto}
   .msg-split{grid-template-columns:minmax(0,1fr)}
   .msg-split .msg-hero{min-height:0;height:auto;aspect-ratio:4/3}
 }
+
+/* ---------- 代表メッセージ：写真を小さく（4：6、写真は縦長の一定サイズ）2026-10-27 ---------- */
+.msg-split{grid-template-columns:minmax(0,4fr) minmax(0,6fr);align-items:start}
+.msg-split .msg-hero{height:auto;min-height:0;aspect-ratio:4/5;max-width:420px;width:100%}
+.msg-split .msg-hero img{object-position:58% 25%}
+@media (max-width:960px){.msg-split{grid-template-columns:minmax(0,1fr)}.msg-split .msg-hero{aspect-ratio:4/3;max-width:480px}}
