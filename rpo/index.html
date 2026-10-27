@@ -220,7 +220,8 @@ body.nosplash .splash{display:none}
 /* ---------- SERVICE：3カード ---------- */
 .service{background:var(--grad)}
 .svc-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--gut);margin-top:clamp(40px,5vw,64px)}
-@media (max-width:1200px) and (min-width:901px){.svc-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:1024px) and (min-width:901px){.svc-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (min-width:1025px) and (max-width:1200px){.svc-grid{gap:14px}.svc-body{padding:18px 16px 20px}.svc h3{font-size:16.5px}.svc p.d{font-size:13px}.svc-tag{font-size:11px}}
 @media (min-width:1201px){.svc-body{padding:22px 20px 24px}.svc h3{font-size:clamp(17px,1.35vw,20px)}.svc p.d{font-size:13.5px}}
 .svc{background:#fff;border-radius:18px;overflow:hidden;cursor:pointer;display:flex;flex-direction:column;border:0;padding:0;text-align:left;
   font-family:inherit;color:inherit;transition:transform .5s var(--ease),box-shadow .5s var(--ease);transform-style:preserve-3d}
