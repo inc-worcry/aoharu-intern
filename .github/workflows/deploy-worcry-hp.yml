@@ -3,6 +3,7 @@ name: Deploy worcry.com (FTP)
 # worcry.com コーポレートサイト → Xserver /worcry.com/public_html/
 # 注意：配信先に LP のフォルダ（aoharu-intern.worcry.com/）がある。
 #       dangerous-clean-slate は絶対に使わない。この処理は自分がアップしたファイル以外は消さない。
+# FTPが一時的にタイムアウトしたら、このファイルを少し変えて push すれば再実行される。
 on:
   push:
     branches: [ main ]
