@@ -641,3 +641,4 @@ main{flex:1 0 auto}
 .msg-photo{margin:36px 0 0;overflow:hidden;border-radius:8px;aspect-ratio:4/5;background:var(--rule)}
 .msg-photo img{width:100%;height:100%;object-fit:cover;object-position:62% 30%}
 @media (max-width:860px){.msg-photo{max-width:420px;aspect-ratio:4/3;margin-top:28px}.msg-photo img{object-position:60% 25%}}
+.msg-body{max-width:42em}
