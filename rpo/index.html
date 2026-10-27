@@ -219,7 +219,9 @@ body.nosplash .splash{display:none}
 
 /* ---------- SERVICE：3カード ---------- */
 .service{background:var(--grad)}
-.svc-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--gut);margin-top:clamp(40px,5vw,64px)}
+.svc-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--gut);margin-top:clamp(40px,5vw,64px)}
+@media (max-width:1200px) and (min-width:901px){.svc-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (min-width:1201px){.svc-body{padding:22px 20px 24px}.svc h3{font-size:clamp(17px,1.35vw,20px)}.svc p.d{font-size:13.5px}}
 .svc{background:#fff;border-radius:18px;overflow:hidden;cursor:pointer;display:flex;flex-direction:column;border:0;padding:0;text-align:left;
   font-family:inherit;color:inherit;transition:transform .5s var(--ease),box-shadow .5s var(--ease);transform-style:preserve-3d}
 .svc:hover{box-shadow:0 30px 60px -20px rgba(30,31,36,.35)}
@@ -232,7 +234,7 @@ body.nosplash .splash{display:none}
   background:var(--ink);padding:4px 12px 3px;border-radius:6px}
 .svc-body{padding:26px 26px 28px;display:flex;flex-direction:column;flex:1}
 .svc-tag{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--gray);margin:0}
-.svc h3{margin:8px 0 12px;font-size:clamp(19px,1.6vw,23px);font-weight:900;line-height:1.5;letter-spacing:.03em}
+.svc h3{word-break:keep-all;overflow-wrap:anywhere;margin:8px 0 12px;font-size:clamp(19px,1.6vw,23px);font-weight:900;line-height:1.5;letter-spacing:.03em}
 .svc p.d{margin:0;font-size:14px;color:var(--ink-soft);line-height:1.85}
 .svc-more{margin-top:auto;padding-top:22px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--line);
   font-family:var(--en);font-weight:600;font-size:14px;letter-spacing:.16em}
@@ -710,7 +712,7 @@ details p{margin:0 0 24px;padding-left:34px;color:var(--ink-soft);font-size:14.5
           <div class="svc-img"><div class="ph" data-tone="1" data-src="@F" data-label=""></div><span class="svc-no">PLAN 01</span></div>
           <div class="svc-body">
             <p class="svc-tag">新卒採用 フルサポートRPO</p>
-            <h3>専属人事が、<br>いなくていい。</h3>
+            <h3>専属人事が、<br>いなく<wbr>ていい。</h3>
             <p class="d">採用戦略からスカウト・選考・クロージング、入社後の研修まで。代表が“外部の採用責任者”として、全案件に直接入ります。</p>
             <div class="svc-more">VIEW DETAIL<span class="arr">→</span></div>
           </div>
@@ -719,7 +721,7 @@ details p{margin:0 0 24px;padding-left:34px;color:var(--ink-soft);font-size:14.5
           <div class="svc-img"><div class="ph" data-tone="2" data-src="@G" data-label=""></div><span class="svc-no">PLAN 02</span></div>
           <div class="svc-body">
             <p class="svc-tag">学生RPO</p>
-            <h3>学生が、学生のために<br>考える新卒採用。</h3>
+            <h3>学生が、<wbr>学生のために<br>考える<wbr>新卒採用。</h3>
             <p class="d">現役の大学生2名が主担当となり、新卒ダイレクトリクルーティングを設計から運用まで回します。送る前にHR経験者が全件をレビューします。</p>
             <div class="svc-more">VIEW DETAIL<span class="arr">→</span></div>
           </div>
@@ -728,7 +730,7 @@ details p{margin:0 0 24px;padding-left:34px;color:var(--ink-soft);font-size:14.5
           <div class="svc-img"><div class="ph" data-tone="3" data-src="@N3" data-label=""></div><span class="svc-no">PLAN 03</span></div>
           <div class="svc-body">
             <p class="svc-tag">長期インターン採用RPO</p>
-            <h3>長期インターン採用を、<br>集めるところから任せる。</h3>
+            <h3>長期インターン<wbr>採用を、<br>集める<wbr>ところから<wbr>任せる。</h3>
             <p class="d">大学1・2年生向けの求人メディア「AOHARUナビ」への掲載、採用代行、学生の紹介を一つの窓口で。大学1・2年生との出会いを、将来の新卒採用の起点にします。</p>
             <div class="svc-more">VIEW DETAIL<span class="arr">→</span></div>
           </div>
@@ -737,7 +739,7 @@ details p{margin:0 0 24px;padding-left:34px;color:var(--ink-soft);font-size:14.5
           <div class="svc-img"><div class="ph" data-tone="4" data-src="@J" data-label=""></div><span class="svc-no">PLAN 04</span></div>
           <div class="svc-body">
             <p class="svc-tag">内定者・新入社員オンボーディング</p>
-            <h3>入社式を、<br>ゴールにしない。</h3>
+            <h3>入社式を、<br>ゴールに<wbr>しない。</h3>
             <p class="d">内定を出した日から、入社半年後まで。月に1度直接会い、辞退を防ぎ、早く活躍できる状態まで伴走します。形は集合研修でも、中身は1on1と同じ感覚で関わります。</p>
             <div class="svc-more">VIEW DETAIL<span class="arr">→</span></div>
           </div>
@@ -759,7 +761,7 @@ details p{margin:0 0 24px;padding-left:34px;color:var(--ink-soft);font-size:14.5
           <div class="panel-img"><div class="ph" data-tone="4" data-src="@N6" data-label=""></div><span class="big">01</span></div>
           <div class="panel-body">
             <p class="panel-tag">PLAN 01 ／ 新卒採用 フルサポートRPO</p>
-            <h3>専属人事が、<br>いなくていい。</h3>
+            <h3>専属人事が、<br>いなく<wbr>ていい。</h3>
             <p class="cp">採用戦略の設計から、スカウト・エージェント対応、選考・クロージング、内定者フォロー、入社後の研修まで。代表・鈴木が担当ではなく“外部の採用責任者”として全案件を直接PMし、一貫して引き受けます。新卒紹介サービス「AOHARU新卒」と組み合わせて、母集団を厚くすることもできます。</p>
             <h4>こんな課題に</h4>
             <ul class="for"><li>採用担当者がいない、または片手間になっている</li><li>選考基準がバラバラで、ペルソナが曖昧</li><li>内定辞退が多く、クロージングが弱い</li><li>採用しても早期に離脱してしまう</li></ul>
@@ -784,7 +786,7 @@ details p{margin:0 0 24px;padding-left:34px;color:var(--ink-soft);font-size:14.5
           <div class="panel-img"><div class="ph" data-tone="5" data-src="@N1" data-label=""></div><span class="big">02</span></div>
           <div class="panel-body">
             <p class="panel-tag">PLAN 02 ／ 学生RPO</p>
-            <h3>学生が、学生のために<br>考える新卒採用。</h3>
+            <h3>学生が、<wbr>学生のために<br>考える<wbr>新卒採用。</h3>
             <p class="cp">スカウトを受け取るのは学生なのに、戦略を立てているのは学生ではない人たち。現役の大学生2名が主担当となり、新卒ダイレクトリクルーティングを設計から運用まで回します。外に出す前に、HR経験者が全件をレビューします。</p>
             <h4>月額に含む8つの実務（候補者が面接の席に着くまで）</h4>
             <ol class="eight"><li><b>01</b>ペルソナ設計</li><li><b>02</b>求人票リライト</li><li><b>03</b>スカウト原稿</li><li><b>04</b>スカウト送信</li><li><b>05</b>返信の一次対応</li><li><b>06</b>日程調整</li><li><b>07</b>前日リマインド</li><li><b>08</b>月次レポート</li></ol>
@@ -800,7 +802,7 @@ details p{margin:0 0 24px;padding-left:34px;color:var(--ink-soft);font-size:14.5
           <div class="panel-img"><div class="ph" data-tone="1" data-src="@N3" data-label=""></div><span class="big">03</span></div>
           <div class="panel-body">
             <p class="panel-tag">PLAN 03 ／ 長期インターン採用RPO</p>
-            <h3>長期インターン採用を、<br>集めるところから任せる。</h3>
+            <h3>長期インターン<wbr>採用を、<br>集める<wbr>ところから<wbr>任せる。</h3>
             <p class="cp">大学1・2年生との出会いを、将来の新卒採用の起点に。自社メディアでの募集から代行、紹介までを組み合わせて、採用数と質の両方をつくります。</p>
             <h4>媒体・代行・紹介をワンストップで</h4>
             <div class="trio">
@@ -822,7 +824,7 @@ details p{margin:0 0 24px;padding-left:34px;color:var(--ink-soft);font-size:14.5
           <div class="panel-img"><div class="ph" data-tone="2" data-src="@E" data-label=""></div><span class="big">04</span></div>
           <div class="panel-body">
             <p class="panel-tag">PLAN 04 ／ 内定者・新入社員オンボーディング</p>
-            <h3>入社式を、<br>ゴールにしない。</h3>
+            <h3>入社式を、<br>ゴールに<wbr>しない。</h3>
             <p class="cp">内定が出るのは大学3年の秋。そこから入社まで、1年半近い時間があります。仕事のやり方は配属先が教えてくれる。先に渡しておきたいのは、この会社がどういう会社なのかというカルチャーと、どこに配属されても効いてくる基礎のほうです。形は集合研修でも、中身は1on1と同じ感覚で関わります。</p>
             <h4>時間をかけるのは、この3つ</h4>
             <div class="trio">
