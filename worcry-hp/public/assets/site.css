@@ -642,3 +642,11 @@ main{flex:1 0 auto}
 .msg-photo img{width:100%;height:100%;object-fit:cover;object-position:62% 30%}
 @media (max-width:860px){.msg-photo{max-width:420px;aspect-ratio:4/3;margin-top:28px}.msg-photo img{object-position:60% 25%}}
 .msg-body{max-width:42em}
+
+/* ---------- 代表メッセージ：写真を上に横幅いっぱい、本文は下（2026-10-27） ---------- */
+.msg-photo{display:none}
+.msg-hero{margin:0 0 clamp(48px,6vw,80px);overflow:hidden;border-radius:8px;aspect-ratio:21/9;background:var(--rule)}
+.msg-hero img{width:100%;height:100%;object-fit:cover;object-position:50% 28%}
+.msg-grid{grid-template-columns:minmax(0,3fr) minmax(0,9fr)}
+.msg-side{position:static}
+@media (max-width:860px){.msg-hero{aspect-ratio:4/3}.msg-hero img{object-position:58% 25%}}
