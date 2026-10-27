@@ -1427,6 +1427,19 @@ body{line-height:1.7}
   .faq-more{margin-top:26px}
 }
 
+
+/* ============================================================
+   v13 FV下のマーキー（総合サイトの「Dramatic Work, Emotional Life.」と同じ作り・水色版）
+   ============================================================ */
+.mq{background:var(--grad);color:#fff;padding-block:18px;white-space:nowrap;margin-top:var(--gut)}
+.mq-track{display:inline-flex;animation:mq 42s linear infinite}
+.mq-track span{font-family:var(--en);font-weight:700;font-size:clamp(40px,5.6vw,80px);letter-spacing:.04em;line-height:1;padding-right:.6em}
+.mq-track span:nth-child(even){color:transparent;-webkit-text-stroke:1.5px #fff}
+@keyframes mq{to{transform:translateX(-50%)}}
+.mq + .poke-bridge{margin-top:-10px}
+/* 視差効果を減らす設定の人は止める（?motion=1 のときは動かす）。時間を短くする指定は入れない */
+@media (prefers-reduced-motion:reduce){html:not(.motion) .mq-track{animation:none}}
+@media (max-width:860px){.mq{padding-block:12px}.mq-track span{font-size:clamp(30px,9vw,40px)}}
 </style>
 <link rel="canonical" href="https://aoharu-intern.com/long-intern">
 <script type="application/ld+json">
@@ -1671,6 +1684,9 @@ body{line-height:1.7}
     </div>
   </div>
 </section>
+
+<!-- MARQUEE -->
+<div class="frame mq" aria-hidden="true"><div class="mq-track"><span>Meet Early, Grow Together.</span><span>Meet Early, Grow Together.</span><span>Meet Early, Grow Together.</span><span>Meet Early, Grow Together.</span><span>Meet Early, Grow Together.</span><span>Meet Early, Grow Together.</span></div></div>
 
 <!-- POKE BRIDGE -->
 <div class="poke-bridge"><div class="pokekun-img"><svg viewBox="0 0 220 244" xmlns="http://www.w3.org/2000/svg" style="width:92px;height:auto;">
