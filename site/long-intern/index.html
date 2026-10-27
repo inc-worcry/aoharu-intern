@@ -1440,6 +1440,20 @@ body{line-height:1.7}
 /* 視差効果を減らす設定の人は止める（?motion=1 のときは動かす）。時間を短くする指定は入れない */
 @media (prefers-reduced-motion:reduce){html:not(.motion) .mq-track{animation:none}}
 @media (max-width:860px){.mq{padding-block:12px}.mq-track span{font-size:clamp(30px,9vw,40px)}}
+
+/* ============================================================
+   v14 キャリアタイプ診断（AOHARUナビ）のキャラクター。使うのは5人だけ（HPと被らない人）
+   ============================================================ */
+.chars{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--gut);margin:0 auto clamp(32px,4vw,48px);max-width:880px;align-items:start}
+.chars figure{margin:0;overflow:hidden;background:#F7F6F3}
+.chars figure:nth-child(even){margin-top:28px}
+.chars img,.study-char img{display:block;width:100%;height:auto}
+.study-char{margin:0;justify-self:center;width:min(100%,300px);background:#F7F6F3;overflow:hidden}
+@media (max-width:860px){
+  .chars{gap:8px;margin-bottom:24px}
+  .chars figure:nth-child(even){margin-top:14px}
+  .study-char{width:min(70%,240px)}
+}
 </style>
 <link rel="canonical" href="https://aoharu-intern.com/long-intern">
 <script type="application/ld+json">
@@ -1722,7 +1736,7 @@ body{line-height:1.7}
       <div class="sec-head"><div class="sec-head-l"><div class="hd"><span class="hd-no">01</span><p class="hd-en">CONCEPT</p><p class="hd-ja">サービスの<wbr>考え方</p></div><h2 class="sh">“未来の仲間”と一緒に、<br>会社も育つ。</h2></div>
       <p class="c-body">成長意欲の<wbr>高い<wbr>大学1・<wbr>2年生だけを<wbr>厳選し、<br>スタートアップ・ベンチャー企業へ<wbr>ご紹介。<br>早期から<wbr>育て、<wbr>長く<wbr>関わる。<br>“成長支援型”の<wbr>長期インターン紹介サービスです。</p></div>
     </div>
-    <figure class="ph-slot wide"><figcaption>PHOTO ｜ 受入企業で<wbr>働く<wbr>1・<wbr>2年生<br>社員と<wbr>並んで<wbr>PC作業・MTGで<wbr>発言している<wbr>場面<wbr>（横長 21:9）</figcaption></figure>
+    <div class="chars" aria-hidden="true"><figure><img src="/long-intern/img/chars/seeker.webp" alt="" width="307" height="307" loading="lazy" decoding="async"></figure><figure><img src="/long-intern/img/chars/igniter.webp" alt="" width="307" height="307" loading="lazy" decoding="async"></figure><figure><img src="/long-intern/img/chars/inventor.webp" alt="" width="307" height="307" loading="lazy" decoding="async"></figure><figure><img src="/long-intern/img/chars/producer.webp" alt="" width="307" height="307" loading="lazy" decoding="async"></figure></div>
     <div class="concept-cards-row">
       <div class="cc2"><div class="cc2-en">EARLY</div><h3>大学1・<wbr>2年生に<wbr>特化</h3><p>就活が<wbr>本格化する<wbr>前の<wbr>早い<wbr>段階で、<wbr>行動力・成長意欲の<wbr>高い<wbr>優秀層と<wbr>接点を<wbr>持てます。</p></div>
       <div class="cc2"><div class="cc2-en">CURATED</div><h3>全員<wbr>面談で<wbr>厳選紹介</h3><p>求人サイトに<wbr>載せて<wbr>待つのではなく、<wbr>学生全員と<wbr>面談し、<wbr>貴社に<wbr>合う<wbr>人材だけを<wbr>ご紹介します。</p></div>
@@ -1872,7 +1886,7 @@ body{line-height:1.7}
   <div class="wrap">
     <div class="sec-head"><div class="sec-head-l"><div class="hd"><span class="hd-no">08</span><p class="hd-en">SUPPORT</p><p class="hd-ja">学業との<wbr>両立</p></div><h2 class="sh">本当に1〜2年生で<br>大丈夫？</h2></div></div>
     <div class="study-wrap">
-      <div class="study-top"><p class="study-lead">「大学1〜<wbr>2年生に<wbr>特化」と<wbr>聞くと、<b>「授業や<wbr>試験で<wbr>忙しくて、<wbr>途中で<wbr>来られなくなるのでは？」</b><br>——<wbr>そんな<wbr>不安を<wbr>感じる<wbr>企業さまも<wbr>少なく<wbr>ありません。<br>AOHARU&nbsp;インターンでは、<wbr>学生が<wbr>無理なく<wbr>続けられる<wbr>よう<b>学業との<wbr>両立を<wbr>支えています。</b></p><figure class="ph-slot"><figcaption>PHOTO ｜ 授業の<wbr>あとに<wbr>出社する<wbr>学生<br>キャンパスと<wbr>オフィス、<wbr>両方の<wbr>顔が<wbr>見える<wbr>1枚<wbr>（4:3）</figcaption></figure></div>
+      <div class="study-top"><p class="study-lead">「大学1〜<wbr>2年生に<wbr>特化」と<wbr>聞くと、<b>「授業や<wbr>試験で<wbr>忙しくて、<wbr>途中で<wbr>来られなくなるのでは？」</b><br>——<wbr>そんな<wbr>不安を<wbr>感じる<wbr>企業さまも<wbr>少なく<wbr>ありません。<br>AOHARU&nbsp;インターンでは、<wbr>学生が<wbr>無理なく<wbr>続けられる<wbr>よう<b>学業との<wbr>両立を<wbr>支えています。</b></p><figure class="study-char" aria-hidden="true"><img src="/long-intern/img/chars/creator.webp" alt="" width="307" height="307" loading="lazy" decoding="async"></figure></div>
       <div class="study-list">
         <div class="study-item"><div class="study-check">✓</div><p>企業と<wbr>学生、<wbr>双方の<wbr>希望を<wbr>踏まえて<wbr>マッチング</p></div>
         <div class="study-item"><div class="study-check">✓</div><p>週3日前後の<wbr>稼働を<wbr>前提に、<wbr>カウンセリングを<wbr>実施</p></div>
@@ -2283,7 +2297,7 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')closeDlModal
   var root=document.documentElement;root.classList.add('motion');
 
   // 1) ふわっと現れる要素（兄弟の順番で少しずつ遅らせる）
-  var RV='.sec-head,.cc2,.prob-card,.svc-row,.study-item,.study-top,.lt-card,.ph-slot,.price-big,.price-sub,.price-badges,.price-cta,.jobs-cta,.cta-form,.cta-h,.cta-lead,.ig-fn-pool';
+  var RV='.sec-head,.cc2,.prob-card,.svc-row,.study-item,.study-top,.lt-card,.ph-slot,.chars figure,.price-big,.price-sub,.price-badges,.price-cta,.jobs-cta,.cta-form,.cta-h,.cta-lead,.ig-fn-pool';
   document.querySelectorAll(RV).forEach(function(el){
     if(el.closest('.hero'))return;
     var sib=[].filter.call(el.parentNode.children,function(c){return c.matches(RV)});
