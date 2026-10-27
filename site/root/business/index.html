@@ -445,6 +445,23 @@ h1,h2,h3{text-wrap:balance}
   *,*::before,*::after{animation:none!important;transition:none!important}
   .marquee{overflow-x:auto}
 }
+/* FAQ */
+.faq{background:var(--white);padding:clamp(56px,8vw,112px) clamp(20px,5vw,80px)}
+.faq-list{max-width:820px;margin:0 auto;display:flex;flex-direction:column;gap:14px}
+.faq details{background:var(--paper);border:1px solid #E3E8EB;border-radius:16px;overflow:hidden;transition:border-color .2s}
+.faq details[open]{border-color:var(--sky);box-shadow:0 18px 44px rgba(10,40,70,.08)}
+.faq summary{list-style:none;cursor:pointer;display:flex;align-items:flex-start;gap:16px;
+  padding:clamp(18px,2.4vw,26px) clamp(20px,2.6vw,32px);font-weight:700;font-size:clamp(15px,1.5vw,17px);line-height:1.6}
+.faq summary::-webkit-details-marker{display:none}
+.faq .q{flex:0 0 auto;font-family:var(--en);font-weight:700;font-size:22px;color:var(--sky);line-height:1.2;width:26px}
+.faq .qt{flex:1 1 auto}
+.faq .chev{flex:0 0 auto;width:22px;height:22px;position:relative;margin-top:4px;transition:transform .3s}
+.faq .chev::before,.faq .chev::after{content:"";position:absolute;top:10px;width:12px;height:2px;background:var(--haru);border-radius:2px}
+.faq .chev::before{left:1px;transform:rotate(45deg)}
+.faq .chev::after{right:1px;transform:rotate(-45deg)}
+.faq details[open] .chev{transform:rotate(180deg)}
+.faq .a{padding:0 clamp(20px,2.6vw,32px) clamp(20px,2.6vw,28px) clamp(56px,4.8vw,74px);color:var(--ink-soft);font-size:14.5px;line-height:2}
+.faq .a b{color:var(--ink)}
 </style>
 <script type="application/ld+json">
 {
@@ -455,8 +472,8 @@ h1,h2,h3{text-wrap:balance}
    "@id": "https://aoharu-intern.com/#organization",
    "name": "株式会社WorCry",
    "alternateName": "WorCry Inc.",
-   "url": "https://www.worcry.com/",
-   "logo": "https://aoharu-intern.worcry.com/og.png",
+   "url": "https://aoharu-intern.com/",
+   "logo": "https://aoharu-intern.worcry.com/img/logo-aoharu.png",
    "foundingDate": "2024-12-03",
    "founder": {
     "@type": "Person",
@@ -489,6 +506,100 @@ h1,h2,h3{text-wrap:balance}
    "publisher": {
     "@id": "https://aoharu-intern.com/#organization"
    }
+  },
+  {
+   "@type": "Service",
+   "name": "長期インターン紹介",
+   "serviceType": "長期インターン紹介",
+   "provider": { "@id": "https://aoharu-intern.com/#organization" },
+   "areaServed": "JP",
+   "description": "大学1・2年生を中心とした学生と企業をつなぐ長期インターンの紹介。早期から優秀な学生と接点を持ち、新卒の母集団形成につなげます。"
+  },
+  {
+   "@type": "Service",
+   "name": "新卒採用代行（RPO）",
+   "serviceType": "新卒採用代行（RPO）",
+   "provider": { "@id": "https://aoharu-intern.com/#organization" },
+   "areaServed": "JP",
+   "description": "新卒採用の母集団形成から選考・内定フォローまでを支援・代行する採用支援サービス（RPO）。人事・人材業界経験のスペシャリストが伴走します。"
+  },
+  {
+   "@type": "Service",
+   "name": "超早期新卒採用支援（AOHARU新卒）",
+   "serviceType": "新卒採用支援",
+   "provider": { "@id": "https://aoharu-intern.com/#organization" },
+   "areaServed": "JP",
+   "description": "大学2年生の秋冬から学生との接点をつくり、3年夏インターン・本選考・内定承諾まで伴走する超早期の新卒採用支援。独自のLINEミニアプリで貴社だけのタレントプールを形成します。"
+  },
+  {
+   "@type": "Service",
+   "name": "入社後オンボーディング",
+   "serviceType": "オンボーディング支援",
+   "provider": { "@id": "https://aoharu-intern.com/#organization" },
+   "areaServed": "JP",
+   "description": "内定者フォローと入社後の定着・立ち上がりを支援するオンボーディング。"
+  },
+  {
+   "@type": "FAQPage",
+   "@id": "https://aoharu-intern.com/business#faq",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "AOHARUはどんなサービスですか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "“入社後の想定外をなくす”採用支援サービスです。長期インターン紹介（AOHARUインターン）、採用代行（AOHARU RPO）、超早期新卒採用支援（AOHARU新卒）、入社後の定着支援（AOHARU オンボーディング）の4つを軸に、採用サイト制作や動画などのオプションも組み合わせて、貴社の採用課題に合わせたカスタマイズプランでご案内します。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "企業側にはどんなメリットがありますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "“採って終わり”ではなく、合う人と長く続く関係をつくれることです。大学1・2年という早い段階から優秀層と接点を持てるため、競合が動き出す前にコア人材との信頼関係を築けます（早期接触）。母集団形成から面談アトラクト・紹介・日程調整・クロージングまで一気通貫でサポートし（エージェント型）、毎年ゼロから集めるフロー型ではなく、1・2年から母集団を資産として積み上げるストック型の採用へ切り替えることで、採用コストも最適化できます。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "料金体系を教えてください。",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "初期費用0円・完全成果報酬型です。費用が発生するのは採用が決定したときのみ。貴社の採用課題や稼働に合わせたカスタマイズプランでご案内しており、具体的な金額は資料または個別相談にてご案内します。入社後1ヵ月未満の早期退職は成果報酬の50%を返金する早期退職保証付きです。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "どんな企業に向いていますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "学生との接点をつくりづらい中小・ベンチャー企業から、優秀層へ競合より早くアプローチしたい大手・メガベンチャーまで幅広くご活用いただけます。「優秀な学生と出会う機会が欲しい」「内定辞退や早期離職を防ぎたい」「入社後のミスマッチを減らし早期戦力化したい」——こうした課題に合わせて設計します。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "支援体制はどうなっていますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "代表・鈴木が全案件のPMとして直接伴走します。15年以上にわたり新卒・中途の採用と組織づくりを支援してきた経験をもとに、経営視点と現場視点の両方から設計。プロジェクトマネージャーも人事・人材業界経験を持つスペシャリストで構成しています。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "なぜ今、新卒採用の早期化なのですか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "優秀な学生ほど、3年の夏にはもう動きを終えています。勝敗は、誰も動いていない2年生の時点で静かに決している——だからこそ、早く会い、見極め、関係を育てた企業が最後に選ばれます。就活の早期化が進むいま、1・2年から相互理解を深めておくことが、学生・企業双方のミスマッチ防止にもつながります。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "長期インターンの仕組みを教えてください。",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "大学1・2年生に特化した“成長支援型”の長期インターン紹介です。紹介する学生には必ずキャリアカウンセリングを実施し、自走力・主体性が高く、貴社にカルチャーフィットする学生を推薦します。週3日前後の稼働を前提にマッチングし、母集団形成→全員との面談・厳選紹介→日程調整→入社後の定着支援まで一気通貫でサポート。月2回のマッチングイベント（企業5社×候補者10名の総当たり形式）も開催しています。"
+     }
+    }
+   ]
   }
  ]
 }
@@ -791,6 +902,41 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </a>
         <p class="col-empty" id="colEmpty" hidden>このカテゴリの記事は準備中です。</p>
       </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="frame faq" id="faq" aria-label="よくある質問">
+    <div class="hd"><p class="hd-en">FAQ<b>_</b></p><p class="hd-ja">よくある質問</p></div>
+    <div class="faq-list">
+      <details open>
+        <summary><span class="q">Q</span><span class="qt">AOHARUはどんなサービスですか？</span><span class="chev"></span></summary>
+        <div class="a"><b>“入社後の想定外をなくす”採用支援サービス</b>です。長期インターン紹介（AOHARUインターン）、採用代行（AOHARU RPO）、超早期新卒採用支援（AOHARU新卒）、入社後の定着支援（AOHARU オンボーディング）の4つを軸に、採用サイト制作や動画などのオプションも組み合わせて、<b>貴社の採用課題に合わせたカスタマイズプラン</b>でご案内します。</div>
+      </details>
+      <details>
+        <summary><span class="q">Q</span><span class="qt">企業側にはどんなメリットがありますか？</span><span class="chev"></span></summary>
+        <div class="a"><b>“採って終わり”ではなく、合う人と長く続く関係をつくれる</b>ことです。大学1・2年という早い段階から優秀層と接点を持てるため、競合が動き出す前にコア人材との信頼関係を築けます（<b>早期接触</b>）。母集団形成から面談アトラクト・紹介・日程調整・クロージングまで一気通貫でサポートし（<b>エージェント型</b>）、毎年ゼロから集めるフロー型ではなく、1・2年から母集団を“資産”として積み上げる<b>ストック型</b>の採用へ切り替えることで、採用コストも最適化できます。</div>
+      </details>
+      <details>
+        <summary><span class="q">Q</span><span class="qt">料金体系を教えてください。</span><span class="chev"></span></summary>
+        <div class="a"><b>初期費用0円・完全成果報酬型</b>です。費用が発生するのは<b>採用が決定したときのみ</b>。貴社の採用課題や稼働に合わせた<b>カスタマイズプラン</b>でご案内しており、具体的な金額は資料または個別相談にてご案内します。入社後1ヵ月未満の早期退職は成果報酬の50%を返金する<b>早期退職保証</b>付きです。</div>
+      </details>
+      <details>
+        <summary><span class="q">Q</span><span class="qt">どんな企業に向いていますか？</span><span class="chev"></span></summary>
+        <div class="a">学生との接点をつくりづらい<b>中小・ベンチャー企業</b>から、優秀層へ競合より早くアプローチしたい<b>大手・メガベンチャー</b>まで幅広くご活用いただけます。「優秀な学生と出会う機会が欲しい」「内定辞退や早期離職を防ぎたい」「入社後のミスマッチを減らし早期戦力化したい」——こうした課題に合わせて設計します。</div>
+      </details>
+      <details>
+        <summary><span class="q">Q</span><span class="qt">支援体制はどうなっていますか？</span><span class="chev"></span></summary>
+        <div class="a"><b>代表・鈴木が全案件のPMとして直接伴走</b>します。15年以上にわたり新卒・中途の採用と組織づくりを支援してきた経験をもとに、経営視点と現場視点の両方から設計。プロジェクトマネージャーも人事・人材業界経験を持つスペシャリストで構成しています。</div>
+      </details>
+      <details>
+        <summary><span class="q">Q</span><span class="qt">なぜ今、新卒採用の早期化なのですか？</span><span class="chev"></span></summary>
+        <div class="a">優秀な学生ほど、3年の夏にはもう動きを終えています。<b>勝敗は、誰も動いていない2年生の時点で静かに決している</b>——だからこそ、早く会い、見極め、関係を育てた企業が最後に選ばれます。就活の早期化が進むいま、1・2年から相互理解を深めておくことが、学生・企業双方の<b>ミスマッチ防止</b>にもつながります。</div>
+      </details>
+      <details>
+        <summary><span class="q">Q</span><span class="qt">長期インターンの仕組みを教えてください。</span><span class="chev"></span></summary>
+        <div class="a">大学<b>1・2年生に特化した“成長支援型”</b>の長期インターン紹介です。紹介する学生には必ずキャリアカウンセリングを実施し、自走力・主体性が高く、貴社にカルチャーフィットする学生を推薦します。週3日前後の稼働を前提にマッチングし、<b>母集団形成 → 全員との面談・厳選紹介 → 日程調整 → 入社後の定着支援</b>まで一気通貫でサポート。月2回のマッチングイベント（企業5社×候補者10名の総当たり形式）も開催しています。</div>
+      </details>
     </div>
   </section>
 
