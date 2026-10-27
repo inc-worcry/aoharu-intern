@@ -1454,6 +1454,16 @@ body{line-height:1.7}
   .chars figure:nth-child(even){margin-top:14px}
   .study-char{width:min(70%,240px)}
 }
+
+/* ============================================================
+   v15 11 PRICING を他セクションと同じ左揃え（番号見出し＋リード文の2カラム）に
+   ============================================================ */
+.sec-head .sh em{font-style:normal;color:var(--sky)}
+.price-body .ig-cost{max-width:none;margin:0 0 24px}
+.price-body .price-badges{justify-content:flex-start;max-width:none;margin:0 0 28px;padding:16px 0;gap:8px 28px}
+.price-body .price-badge{padding-left:0}
+.price-body .price-cta{display:inline-flex}
+@media (max-width:860px){.price-body .price-badges{flex-direction:column;align-items:flex-start;gap:4px}.price-body .price-badge{text-align:left}}
 </style>
 <link rel="canonical" href="https://aoharu-intern.com/long-intern">
 <script type="application/ld+json">
@@ -1943,11 +1953,9 @@ body{line-height:1.7}
 <!-- PRICE -->
 <section id="pricing" class="frame sec bgw">
   <div class="wrap">
-    <div class="price-wrap">
-      <div class="price-card">
-        <div class="hd"><span class="hd-no">11</span><p class="hd-en">PRICING</p><p class="hd-ja">料金</p></div>
-        <div class="price-big">初期費用 <em>0円</em>。<br>完全成果報酬型。</div>
-        <p class="price-sub">採用が<wbr>決定した<wbr>ときに<wbr>のみ<wbr>費用が<wbr>発生。<wbr>リスクを<wbr>抑えて<wbr>始められます。<br>具体的な<wbr>プラン・<wbr>金額は、<wbr>資料または<wbr>個別相談にて<wbr>ご案内します。</p>
+    <div class="sec-head"><div class="sec-head-l"><div class="hd"><span class="hd-no">11</span><p class="hd-en">PRICING</p><p class="hd-ja">料金</p></div><h2 class="sh">初期費用 <em>0円</em>。<br>完全成果報酬型。</h2></div>
+    <p class="sl">採用が<wbr>決定した<wbr>ときに<wbr>のみ<wbr>費用が<wbr>発生。<wbr>リスクを<wbr>抑えて<wbr>始められます。<br>具体的な<wbr>プラン・<wbr>金額は、<wbr>資料または<wbr>個別相談にて<wbr>ご案内します。</p></div>
+    <div class="price-body">
         <div class="ig-cost" role="img" aria-label="ご相談・資料請求は0円、学生のご紹介・面談も0円、採用が決定したときにはじめて成果報酬が発生します。">
           <div class="ig-cost-step"><span class="ig-cost-no">STEP 1</span><b>ご相談・資料請求</b><em>0円</em></div>
           <div class="ig-cost-step"><span class="ig-cost-no">STEP 2</span><b>学生のご紹介・面談</b><em>0円</em></div>
@@ -1959,7 +1967,6 @@ body{line-height:1.7}
           <div class="price-badge">✔ 早期退職保証<wbr><span class="nw">（1ヶ月未満は<b>50%返金</b>）</span></div>
         </div>
         <a href="#cta" class="price-cta" onclick="openIqModal();return false;">まずは<wbr>話を<wbr>聞いてみる&nbsp;→</a>
-      </div>
     </div>
   </div>
 </section>
