@@ -206,6 +206,14 @@ h1,h2,h3{text-wrap:balance}
 .stop small{font-size:12px;font-weight:700;color:var(--ink-soft);line-height:1.6}
 .stop b{font-size:16px;font-weight:900;letter-spacing:.04em;line-height:1.3;white-space:nowrap}
 .jr-lane.old .jr-label{color:var(--gray)}
+.jr-lane.rpo{align-items:start}
+.rpo-bar{grid-row:1;grid-column:2/12;display:flex;background:var(--ink);color:var(--white);border-radius:2px}
+.rpo-bar span{flex:1;padding:11px 6px 10px;text-align:center;font-size:12px;font-weight:700;line-height:1.4;
+  letter-spacing:.02em;border-left:1px solid rgba(255,255,255,.24)}
+.rpo-bar span:first-child{border-left:0}
+.rpo-cap{grid-row:2;grid-column:2/12;margin:12px 0 0;font-size:13px;font-weight:500;color:var(--ink-soft)}
+.rpo-cap a{margin-left:.7em;font-weight:700;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--ink);white-space:nowrap}
+.rpo-cap a:hover{color:var(--sky-deep);border-color:var(--sky-deep)}
 
 /* ---------- SERVICE ---------- */
 .service{background:var(--sky-pale);padding:clamp(64px,9vw,120px) clamp(20px,5vw,80px)}
@@ -239,10 +247,6 @@ h1,h2,h3{text-wrap:balance}
 .svc-wide.navi:hover{background:#E8850F}
 .svc-wide.navi .svc-stage,.svc-wide.navi .svc-stage small{color:var(--white)}
 .svc-wide.navi p{color:rgba(255,255,255,.95)}
-.svc-wide.onb{background:var(--sky)}
-.svc-wide.onb:hover{background:#1B8FC4}
-.svc-wide.onb .svc-stage,.svc-wide.onb .svc-stage small{color:var(--white)}
-.svc-wide.onb p{color:rgba(255,255,255,.95)}
 .svc-note{margin:16px 0 0;font-size:12px;color:var(--gray);text-align:right}
 
 /* ---------- FOR COMPANY / STUDENT ---------- */
@@ -524,7 +528,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <h3>FOR COMPANY ／ 企業の方</h3>
       <ul>
         <li><a href="https://aoharu-intern.com/rpo/?utm_source=aoharu_site" target="_blank" rel="noopener">AOHARU RPO<span>↗</span></a></li>
-        <li><a href="https://aoharu-intern.com/onboarding/?utm_source=aoharu_site" target="_blank" rel="noopener">AOHARU オンボーディング（入社後）<span>↗</span></a></li>
       </ul>
     </div>
   </div>
@@ -585,7 +588,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p class="jr-hint">横にスクロールして見られます →</p>
       <div class="jr-scroll" tabindex="0" aria-label="大学1年から入社までの図（横にスクロールできます）">
         <div class="jr">
-          <div class="jr-grid jr-years"><span></span><span>1ST<small>大学1年</small></span><span>2ND<small>大学2年</small></span><span>3RD<small>大学3年</small></span><span>4TH<small>大学4年</small></span><span>ENTRY<small>入社</small></span></div>
+          <div class="jr-grid jr-years"><span></span><span>1ST<small>大学1年</small></span><span>2ND<small>大学2年</small></span><span>3RD<small>大学3年</small></span><span>4TH<small>大学4年</small></span><span>ENTRY<small>入社後</small></span></div>
           <div class="jr-grid jr-lane old">
             <span class="jr-label"><small>FLOW</small>これまでの<br>新卒採用</span>
             <i class="seg seg-old"></i>
@@ -597,7 +600,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div class="stop" style="grid-column:2/6"><img class="svc-logo sm" src="img/logo-intern.png" alt="AOHARU インターン"><small><span class="ph">就活の前に出会い、</span><span class="ph">素顔を知る</span></small></div>
             <div class="stop" style="grid-column:6/8"><img class="svc-logo sm" src="img/logo-shinsotsu.png" alt="AOHARU 新卒"><small>確かめて選ぶ</small></div>
             <div class="stop" style="grid-column:8/10"><img class="svc-logo sm" src="img/logo-shinsotsu-re.png" alt="AOHARU 新卒Re"><small><span class="ph">内定のその先も、</span><span class="ph">選び直せる</span></small></div>
-            <div class="stop" style="grid-column:10/12"><img class="svc-logo sm wide" src="img/logo-onboarding.png" alt="AOHARU オンボーディング"><small><span class="ph">入社後半年まで、</span><span class="ph">立ち上がりに伴走</span></small></div>
+          </div>
+          <div class="jr-grid jr-lane rpo">
+            <span class="jr-label"><small>RPO</small>実務は、<br>代行できる</span>
+            <div class="rpo-bar">
+              <span>採用戦略</span><span>母集団形成</span><span>面接代行</span><span>クロージング</span><span>内定者フォロー</span><span>新入社員研修</span><span>紹介</span>
+            </div>
+            <p class="rpo-cap"><span class="ph">1年生との出会いから、</span><span class="ph">入社後の立ち上がりまで。</span><span class="ph">必要な部分だけでも、</span><span class="ph">私たちが手を動かします。</span><a href="https://aoharu-intern.worcry.com/rpo/?utm_source=aoharu_site" target="_blank" rel="noopener">AOHARU RPO を見る ↗</a></p>
           </div>
         </div>
       </div>
@@ -662,14 +671,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </div>
         </a>
       </div>
-      <a class="svc-wide onb" href="https://aoharu-intern.com/onboarding/?utm_source=aoharu_site" target="_blank" rel="noopener">
-        <span class="logo-chip"><img class="svc-logo lg" src="img/logo-onboarding.png" alt="AOHARU オンボーディング"></span>
-        <div><span class="svc-stage">AFTER ENTRY<small><span class="ph">入社前から、</span><span class="ph">入社半年後まで</span></small></span><p>採用してからが、スタート。内定承諾の日から月に1度となりに立ち、早く活躍できる状態まで伴走します。</p></div>
-        <span class="go">VIEW</span>
-      </a>
       <a class="svc-wide" href="https://aoharu-intern.com/rpo/?utm_source=aoharu_site" target="_blank" rel="noopener">
         <span class="logo-chip"><img class="svc-logo lg" src="img/logo-rpo.png" alt="AOHARU RPO"></span>
-        <div><span class="svc-stage">FOR COMPANY<small><span class="ph">新卒採用に特化した</span><span class="ph">採用代行</span></small></span><p>採用戦略から面接、クロージング、内定者フォロー、入社後の研修まで。必要な部分だけをお任せいただけます。</p></div>
+        <div><span class="svc-stage">FOR COMPANY<small><span class="ph">新卒採用に特化した</span><span class="ph">採用代行</span></small></span><p>採用戦略から母集団形成、面接、クロージング、内定者フォロー、入社後の研修まで。必要な部分だけをお任せいただけます。</p></div>
         <span class="go">VIEW</span>
       </a>
       <p class="svc-note">採用代行（RPO）は、どのサービスにもオプションとして付けられます。／各サービスのサイトは別タブで開きます。</p>
@@ -816,7 +820,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <a href="https://aoharu-intern.com/long-intern/">AOHARU インターン</a>
         <a href="https://aoharu-intern.com/shinsotsu/">AOHARU 新卒</a>
         <a href="https://aoharu-intern.com/shinsotsu-re/">AOHARU 新卒Re</a>
-        <a href="https://aoharu-intern.com/onboarding/">AOHARU オンボーディング</a>
         <a href="https://aoharu-intern.com/rpo/">AOHARU RPO</a>
       </div>
       <div class="nft-col">

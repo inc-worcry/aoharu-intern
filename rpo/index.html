@@ -217,7 +217,7 @@ body.nosplash .splash{display:none}
 
 /* ---------- SERVICE：3カード ---------- */
 .service{background:var(--grad)}
-.svc-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--gut);margin-top:clamp(40px,5vw,64px)}
+.svc-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--gut);margin-top:clamp(40px,5vw,64px)}
 .svc{background:#fff;border-radius:18px;overflow:hidden;cursor:pointer;display:flex;flex-direction:column;border:0;padding:0;text-align:left;
   font-family:inherit;color:inherit;transition:transform .5s var(--ease),box-shadow .5s var(--ease);transform-style:preserve-3d}
 .svc:hover{box-shadow:0 30px 60px -20px rgba(30,31,36,.35)}
@@ -506,7 +506,7 @@ details p{margin:0 0 24px;padding-left:34px;color:var(--ink-soft);font-size:14.5
   transition:border-color .2s,background .2s}
 .fld input:focus,.fld textarea:focus{outline:none;border-color:var(--ink);background:#fff}
 .fld textarea{min-height:110px;resize:vertical}
-.plans{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.plans{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
 .plans label{position:relative;cursor:pointer}
 .plans input{position:absolute;opacity:0}
 .plans span{display:flex;align-items:center;justify-content:center;text-align:center;height:100%;min-height:62px;font-size:12.5px;font-weight:700;line-height:1.5;padding:14px 18px;border:1px solid var(--line);border-radius:8px;background:var(--paper);transition:.2s}
@@ -652,7 +652,7 @@ details p{margin:0 0 24px;padding-left:34px;color:var(--ink-soft);font-size:14.5
   <small><b>RPO</b> by WorCry</small>
 </a>
 <div class="hdr">
-  <a class="c2" href="#service"><small>3つのプラン</small><b>サービスを見る</b></a>
+  <a class="c2" href="#service"><small>4つのプラン</small><b>サービスを見る</b></a>
   <a class="c1" href="#contact"><small>まずは相談から</small><b>お問い合わせ</b></a>
 </div>
 
@@ -702,7 +702,7 @@ details p{margin:0 0 24px;padding-left:34px;color:var(--ink-soft);font-size:14.5
   <section class="frame service" id="service">
     <div class="in-wrap">
       <h2 class="hd-en rv">SER<b>V</b>ICE</h2>
-      <p class="hd-ja rv d1">3つのプラン</p>
+      <p class="hd-ja rv d1">4つのプラン</p>
       <div class="svc-grid">
         <button class="svc rv" data-go="0">
           <div class="svc-img"><div class="ph" data-tone="1" data-src="@F" data-label=""></div><span class="svc-no">PLAN 01</span></div>
@@ -731,6 +731,15 @@ details p{margin:0 0 24px;padding-left:34px;color:var(--ink-soft);font-size:14.5
             <div class="svc-more">VIEW DETAIL<span class="arr">→</span></div>
           </div>
         </button>
+        <button class="svc rv d3" data-go="3">
+          <div class="svc-img"><div class="ph" data-tone="4" data-src="@J" data-label=""></div><span class="svc-no">PLAN 04</span></div>
+          <div class="svc-body">
+            <p class="svc-tag">内定者・新入社員オンボーディング</p>
+            <h3>入社式を、<br>ゴールにしない。</h3>
+            <p class="d">内定を出した日から、入社半年後まで。月に1度直接会い、辞退を防ぎ、早く活躍できる状態まで伴走します。形は集合研修でも、中身は1on1と同じ感覚で関わります。</p>
+            <div class="svc-more">VIEW DETAIL<span class="arr">→</span></div>
+          </div>
+        </button>
       </div>
       <div class="svc-foot rv"><p class="svc-hint">カードを押すと、サービス詳細が開きます。</p><a class="navi-link" href="https://aoharu-intern.com/" target="_blank" rel="noopener"><img src="data:image/png;base64,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" alt="AOHARUナビ"><span><small>長期インターンの求人掲載だけをご希望の方へ</small><b>AOHARUナビへの掲載はこちら ↗</b></span></a></div>
     </div>
@@ -741,7 +750,7 @@ details p{margin:0 0 24px;padding-left:34px;color:var(--ink-soft);font-size:14.5
     <div class="hs-sticky">
       <div class="hs-head">
         <div><h2 class="hd-en">DETAIL</h2></div>
-        <div class="hs-nav" id="hsNav"><button class="on" data-go="0">PLAN 01</button><button data-go="1">PLAN 02</button><button data-go="2">PLAN 03</button></div>
+        <div class="hs-nav" id="hsNav"><button class="on" data-go="0">PLAN 01</button><button data-go="1">PLAN 02</button><button data-go="2">PLAN 03</button><button data-go="3">PLAN 04</button></div>
       </div>
       <div class="hs-track" id="hsTrack">
         <article class="panel" data-i="0">
@@ -807,6 +816,30 @@ details p{margin:0 0 24px;padding-left:34px;color:var(--ink-soft);font-size:14.5
             </div>
           </div>
         </article>
+        <article class="panel" data-i="3">
+          <div class="panel-img"><div class="ph" data-tone="2" data-src="@E" data-label=""></div><span class="big">04</span></div>
+          <div class="panel-body">
+            <p class="panel-tag">PLAN 04 ／ 内定者・新入社員オンボーディング</p>
+            <h3>入社式を、<br>ゴールにしない。</h3>
+            <p class="cp">内定が出るのは大学3年の秋。そこから入社まで、1年半近い時間があります。仕事のやり方は配属先が教えてくれる。先に渡しておきたいのは、この会社がどういう会社なのかというカルチャーと、どこに配属されても効いてくる基礎のほうです。形は集合研修でも、中身は1on1と同じ感覚で関わります。</p>
+            <h4>時間をかけるのは、この3つ</h4>
+            <div class="trio">
+              <div><small>原点</small><b>なぜこの会社を選んだのか</b><p>3ヶ月もすれば、たいてい忘れます。入る前に本人の言葉で残し、つらくなったときに立ち返る場所をつくる</p></div>
+              <div><small>居場所</small><b>ここにいていいのか</b><p>いちばん多い相談は、仕事の中身ではありません。月に1度必ず会う人がいる。それだけで、辞めるまでの距離が変わる</p></div>
+              <div><small>これから</small><b>3年後どうなっていたいか</b><p>社内では聞きにくい話を、社外の人間だからまっすぐ聞く。そのうえで、この会社の中でどう叶えるかを一緒に探す</p></div>
+            </div>
+            <h4>内定承諾から、入社半年後まで</h4>
+            <ol class="eight"><li><b>01</b>内定〜3月／原点を、ことばに</li><li><b>02</b>4月／立ち上がりの研修</li><li><b>03</b>7月／再度、キックオフ</li><li><b>04</b>10月／自走フェーズへ</li></ol>
+            <h4>こんな企業に</h4>
+            <ul class="for"><li>内定を出したあと、入社まで渡すものがない</li><li>配属後の立ち上がりに差が出てしまう</li><li>研修のカリキュラムが自社にない</li><li>迎える側（上司・トレーナー）の準備もしておきたい</li></ul>
+            <h4>実績</h4>
+            <div class="stats"><div><b>50<span>社以上</span></b><small>支援実績</small></div><div><b>300<span>名以上</span></b><small>のべ対象人数</small></div><div><b>4.8<span>/5.0</span></b><small>研修アンケート平均<br>支援社数・対象人数は、代表・鈴木の前職在籍時における登壇・支援実績を含みます。</small></div></div>
+            <div class="panel-foot">
+              <div class="price"><small>料金</small><b>個別<span>にご提案</span></b><div class="tbd">決まったパッケージは当てはめません。目指す状態をうかがってから設計します／1回からの単発も可</div></div>
+              <a class="btn" href="#contact">このプランを相談する →</a>
+            </div>
+          </div>
+        </article>
       </div>
       <div class="hs-progress"><i id="hsBar"></i></div>
     </div>
@@ -828,6 +861,8 @@ details p{margin:0 0 24px;padding-left:34px;color:var(--ink-soft);font-size:14.5
         <div class="cell"><i class="h"></i></div><div class="cell"><i class="f"></i></div><div class="cell"><i class="h"></i></div><div class="cell"><i class="h"></i></div><div class="cell"><i></i></div><div class="cell"><i></i></div><div class="cell"><i></i></div>
         <div class="pl"><small>PLAN 03</small>長期インターン</div>
         <div class="cell"><i class="h"></i></div><div class="cell"><i class="f"></i></div><div class="cell"><i class="f"></i></div><div class="cell"><i class="h"></i></div><div class="cell"><i class="f"></i></div><div class="cell"><i></i></div><div class="cell"><i class="f"></i></div>
+        <div class="pl"><small>PLAN 04</small>オンボーディング</div>
+        <div class="cell"><i class="h"></i></div><div class="cell"><i></i></div><div class="cell"><i></i></div><div class="cell"><i class="h"></i></div><div class="cell"><i class="f"></i></div><div class="cell"><i class="f"></i></div><div class="cell"><i></i></div>
       </div>
       </div>
       <div class="cmp-legend"><span><i style="background:var(--ink)"></i>担当</span><span><i style="background:repeating-linear-gradient(90deg,var(--gray) 0 6px,transparent 6px 10px)"></i>一部担当</span><span><i style="background:var(--line)"></i>対象外</span><span>※仮の配置です</span></div>
@@ -964,6 +999,7 @@ details p{margin:0 0 24px;padding-left:34px;color:var(--ink-soft);font-size:14.5
             <label><input type="checkbox" id="ct-p1" name="plan" value="フルサポートRPO"><span>新卒採用<br>フルサポートRPO</span></label>
             <label><input type="checkbox" id="ct-p2" name="plan" value="学生RPO"><span>学生RPO</span></label>
             <label><input type="checkbox" id="ct-p3" name="plan" value="長期インターン採用RPO"><span>長期インターン<br>採用RPO</span></label>
+            <label><input type="checkbox" id="ct-p4" name="plan" value="内定者・新入社員オンボーディング"><span>内定者・新入社員<br>オンボーディング</span></label>
           </div>
         </div>
         <label class="fld"><span>ご相談内容<small>任意</small></span><textarea id="ct-msg" name="message" placeholder="例）27卒で営業職を5名採用したい／スカウトの返信率が上がらない"></textarea></label>
@@ -1000,7 +1036,6 @@ details p{margin:0 0 24px;padding-left:34px;color:var(--ink-soft);font-size:14.5
         <a href="https://aoharu-intern.com/long-intern/">AOHARU インターン</a>
         <a href="https://aoharu-intern.com/shinsotsu/">AOHARU 新卒</a>
         <a href="https://aoharu-intern.com/shinsotsu-re/">AOHARU 新卒Re</a>
-        <a href="https://aoharu-intern.com/onboarding/">AOHARU オンボーディング</a>
         <a href="https://aoharu-intern.com/rpo/">AOHARU RPO</a>
       </div>
       <div class="nft-col">
@@ -1173,8 +1208,8 @@ details p{margin:0 0 24px;padding-left:34px;color:var(--ink-soft);font-size:14.5
 
   /* ポップアップ版 */
   const pop=$('#pop');let pi=0;
-  function openPop(i){pi=(i+3)%3;const cl=panels[pi].cloneNode(true);$('#popBody').replaceChildren(cl);cl.querySelectorAll('.ph').forEach(bindImg);
-    cl.querySelectorAll('a[href="#contact"]').forEach(a=>a.addEventListener('click',()=>pop.close()));pop.scrollTop=0;$('#popPrev').textContent='← PLAN 0'+((pi+2)%3+1);$('#popNext').textContent='PLAN 0'+((pi+1)%3+1)+' →';if(!pop.open)pop.showModal()}
+  function openPop(i){pi=(i+4)%4;const cl=panels[pi].cloneNode(true);$('#popBody').replaceChildren(cl);cl.querySelectorAll('.ph').forEach(bindImg);
+    cl.querySelectorAll('a[href="#contact"]').forEach(a=>a.addEventListener('click',()=>pop.close()));pop.scrollTop=0;$('#popPrev').textContent='← PLAN 0'+((pi+3)%4+1);$('#popNext').textContent='PLAN 0'+((pi+1)%4+1)+' →';if(!pop.open)pop.showModal()}
   $('#popClose').onclick=()=>pop.close();$('#popPrev').onclick=()=>openPop(pi-1);$('#popNext').onclick=()=>openPop(pi+1);
   pop.addEventListener('click',e=>{if(e.target===pop)pop.close()});
 })();
