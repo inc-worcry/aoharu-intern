@@ -667,3 +667,54 @@ main{flex:1 0 auto}
 .msg-split .msg-hero{height:auto;min-height:0;aspect-ratio:4/5;max-width:420px;width:100%}
 .msg-split .msg-hero img{object-position:58% 25%}
 @media (max-width:960px){.msg-split{grid-template-columns:minmax(0,1fr)}.msg-split .msg-hero{aspect-ratio:4/3;max-width:480px}}
+
+/* ---------- レスポンシブ総点検（2026-10-27） ---------- */
+/* 小さすぎた文字を12px以上に */
+.fv-scroll{font-size:12px}
+.field em{font-size:12px}
+.hd-nav a .ext{font-size:12px}
+/* 本文中のURLは丸ごと次の行へ送る（途中で折らない。収まらないときだけ折る） */
+.prose a{word-break:normal;overflow-wrap:anywhere}
+/* 特商法の箇条書き */
+.dd-list{list-style:none;padding:0;margin:0;display:grid;gap:6px}
+.dd-list li{position:relative;padding-left:1em}
+.dd-list li::before{content:"・";position:absolute;left:0}
+@media (max-width:640px){
+  /* FV下部の一文：SCROLL表示とぶつからないよう、中央寄せで少し上へ */
+  .fv-foot{display:flex;left:var(--gl);right:var(--gr);justify-content:center;bottom:150px;text-align:center}
+  .fv-cap{font-size:13px;line-height:1.9;letter-spacing:.14em}
+  /* パンくず・地図リンクを指で押しやすく */
+  .crumb a{display:inline-block;padding:10px 0}
+  a.inline{padding:8px 0}
+  /* フッター：サービス名を途中で折らない */
+  .ft-nav{grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr)}
+  .ft-nav > div:last-child{grid-column:1/-1}
+  .ft-nav a{white-space:nowrap}
+}
+@media (max-width:600px){
+  /* トップのContactカード：画像を右上に小さく置き、文章は全幅で */
+  .c-card{display:block;position:relative;min-height:0}
+  .c-text{padding:26px 22px 24px}
+  .c-card h3{padding-right:92px;min-height:62px}
+  .c-img{position:absolute;right:16px;top:18px;width:80px;margin:0}
+  .c-img img{border-radius:8px}
+}
+.prose .dd-list{list-style:none;padding-left:0}
+.prose .dd-list li::marker{content:none}
+@media (max-width:480px){.cta-ttl{font-size:20px;letter-spacing:.06em}}
+@media (max-width:640px){
+  /* スマホ：SCROLLの文字は外して線だけ。一文はその線の上に */
+  .fv-scroll span{display:none}
+  .fv-scroll i{height:64px}
+  .fv-foot{bottom:84px}
+}
+@media (max-width:360px){.fv-sub::before,.fv-sub::after{display:none}}
+.fv-sub{white-space:nowrap}
+/* タブレット（2列表示）で5枚目のカードが1枚だけ残らないよう、最後の1枚は横幅いっぱいに */
+@media (min-width:601px) and (max-width:960px){.svc-cards > li:last-child:nth-child(odd){grid-column:1/-1}}
+/* 代表メッセージ：タブレットでは写真と本文の左右分割を保つ（縦並びは700px未満だけ） */
+@media (min-width:700px) and (max-width:960px){
+  .msg-split{grid-template-columns:minmax(0,4fr) minmax(0,6fr);gap:36px}
+  .msg-split .msg-hero{aspect-ratio:4/5;max-width:none}
+  .msg-body{font-size:15px}
+}
