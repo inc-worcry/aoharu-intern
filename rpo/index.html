@@ -241,6 +241,7 @@ body.nosplash .splash{display:none}
   background:var(--ink);padding:4px 12px 3px;border-radius:6px}
 .svc-body{padding:26px 26px 28px;display:flex;flex-direction:column;flex:1}
 .svc-tag{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--gray);margin:0}
+.svc h3 .ln{display:block}
 .svc h3{word-break:keep-all;overflow-wrap:anywhere;margin:8px 0 12px;font-size:clamp(19px,1.6vw,23px);font-weight:900;line-height:1.5;letter-spacing:.03em}
 .svc p.d{margin:0;font-size:14px;color:var(--ink-soft);line-height:1.85}
 .svc-more{margin-top:auto;padding-top:22px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--line);
@@ -617,7 +618,7 @@ details p{margin:0 0 24px;padding-left:34px;color:var(--ink-soft);font-size:14.5
   .svc-no{left:8px;top:8px;font-size:11px;padding:3px 8px 2px}
   .svc-body{padding:12px 12px 12px}
   .svc-tag{font-size:11px;letter-spacing:.02em;line-height:1.5}
-  .svc h3{font-size:clamp(13px,3.9vw,14.5px);margin:6px 0 10px;line-height:1.5}
+  .svc h3{font-size:clamp(12.5px,3.4vw,14px);letter-spacing:0;margin:6px 0 10px;line-height:1.5}
   .svc h3 br{display:none}
   .svc p.d{display:none}
   .svc-more{padding-top:10px;font-size:11px;letter-spacing:.1em}
@@ -656,6 +657,7 @@ details p{margin:0 0 24px;padding-left:34px;color:var(--ink-soft);font-size:14.5
   .stack-key{display:flex}
   .rough-ctl{left:auto;right:var(--gut);flex-wrap:wrap;max-width:240px}
 }
+@media (max-width:360px){.service .in-wrap{padding-left:12px;padding-right:12px}.svc-grid{gap:8px}.svc-body{padding:12px 8px}.svc h3{font-size:12px}}
 </style>
 </head>
 <body>
@@ -714,8 +716,8 @@ details p{margin:0 0 24px;padding-left:34px;color:var(--ink-soft);font-size:14.5
         <p class="hd-ja rv d1">AOHARU RPOとは</p>
       </div>
       <div>
-        <p class="concept-txt" id="conceptTxt">新卒採用は、¦いく¦つもの¦「瞬間」で¦できている。|会社を¦はじめて¦知った¦瞬間。|この¦人と¦話したいと¦思えた¦瞬間。|ここで¦働くと¦決めた¦瞬間。|私たちは¦その¦一つ¦ひとつに¦手を¦伸ばし、*¦ハイタッチ*を¦交わしに¦いく。</p>
-        <p class="lead concept-sub rv">AOHARU RPOは、<wbr>新卒採用だけに<wbr>特化した<wbr>採用代行です。<wbr>運営する<wbr>株式会社WorCryは、<wbr>大学1・<wbr>2年生向けの<wbr>長期インターン紹介<wbr>「AOHARUインターン」⁠や<wbr>求人メディア<wbr>「AOHARUナビ」⁠を<wbr>通じて、<wbr>就職活動が<wbr>始まる<wbr>前の<wbr>学生と<wbr>日々<wbr>向き合っています。<wbr>その<wbr>学生との<wbr>近さを<wbr>活かし、<wbr>企業と<wbr>学生の<wbr>「手が<wbr>合う<wbr>瞬間」⁠を、<wbr>採用の<wbr>最初から<wbr>入社後まで<wbr>つくり続けます。</p>
+        <p class="concept-txt" id="conceptTxt">新卒採用は、¦いく¦つもの¦「瞬間」で¦できている。|会社を¦はじめて¦知った¦瞬間。|この¦人と¦話したいと¦思えた¦瞬間。|ここでは¦たらくと¦決めた¦瞬間。|私たちは¦その¦一つ¦ひとつに¦手を¦伸ばし、*¦ハイタッチ*を¦交わしに¦いく。</p>
+        <p class="lead concept-sub rv">AOHARU RPOは、<wbr>新卒採用だけに<wbr>特化した<wbr>採用代行です。<wbr>運営する<wbr>株式会社WorCryは、<wbr>大学1・<wbr>2年生向けの<wbr>長期インターン紹介<wbr>「AOHARUインターン」<wbr>⁠や<wbr>求人メディア<wbr>「AOHARUナビ」⁠を<wbr>通じて、<wbr>就職活動が<wbr>始まる<wbr>前の<wbr>学生と<wbr>日々<wbr>向き合っています。<wbr>その<wbr>学生との<wbr>近さを<wbr>活かし、<wbr>企業と<wbr>学生の<wbr>「手が<wbr>合う<wbr>瞬間」⁠を、<wbr>採用の<wbr>最初から<wbr>入社後まで<wbr>つくり続けます。</p>
       </div>
     </div>
   </section>
@@ -730,7 +732,7 @@ details p{margin:0 0 24px;padding-left:34px;color:var(--ink-soft);font-size:14.5
           <div class="svc-img"><div class="ph" data-tone="1" data-src="@F" data-label=""></div><span class="svc-no">PLAN 01</span></div>
           <div class="svc-body">
             <p class="svc-tag">新卒採用 フルサポート<wbr>RPO</p>
-            <h3>専属人事が、<br>いなくていい。</h3>
+            <h3><span class="ln">専属人事が、</span><span class="ln">いなくていい。</span></h3>
             <p class="d">採用戦略から<wbr>スカウト・選考・クロージング、<wbr>入社後の<wbr>研修まで。<wbr>代表が<wbr>“外部の<wbr>採用責任者”と<wbr>して、<wbr>全案件に<wbr>直接入ります。</p>
             <div class="svc-more">VIEW DETAIL<span class="arr">→</span></div>
           </div>
@@ -739,7 +741,7 @@ details p{margin:0 0 24px;padding-left:34px;color:var(--ink-soft);font-size:14.5
           <div class="svc-img"><div class="ph" data-tone="2" data-src="@G" data-label=""></div><span class="svc-no">PLAN 02</span></div>
           <div class="svc-body">
             <p class="svc-tag">学生RPO</p>
-            <h3>学生が、<wbr>学生の<wbr>ために<br>考える<wbr>新卒採用。</h3>
+            <h3><span class="ln">学生が、<wbr>学生の<wbr>ために</span><span class="ln">考える<wbr>新卒採用。</span></h3>
             <p class="d">現役の<wbr>大学生2名が<wbr>主担当と<wbr>なり、<wbr>新卒ダイレクトリクルーティングを<wbr>設計から<wbr>運用まで<wbr>回します。<wbr>送る<wbr>前に<wbr>HR経験者が<wbr>全件を<wbr>レビューします。</p>
             <div class="svc-more">VIEW DETAIL<span class="arr">→</span></div>
           </div>
@@ -748,8 +750,8 @@ details p{margin:0 0 24px;padding-left:34px;color:var(--ink-soft);font-size:14.5
           <div class="svc-img"><div class="ph" data-tone="3" data-src="@N3" data-label=""></div><span class="svc-no">PLAN 03</span></div>
           <div class="svc-body">
             <p class="svc-tag">長期インターン<wbr>採用RPO</p>
-            <h3>長期インターン<wbr>採用を、<br>集める<wbr>ところから<wbr>任せる。</h3>
-            <p class="d">大学1・<wbr>2年生向けの<wbr>求人メディア<wbr>「AOHARUナビ」⁠への<wbr>掲載、<wbr>採用代行、<wbr>学生の<wbr>紹介を<wbr>一つの<wbr>窓口で。<wbr>大学1・<wbr>2年生との<wbr>出会いを、<wbr>将来の<wbr>新卒採用の<wbr>起点にします。</p>
+            <h3><span class="ln">長期インターンを、</span><span class="ln">集める<wbr>ところから。</span></h3>
+            <p class="d">大学1・<wbr>2年生向けの<wbr>求人メディア<wbr>「AOHARUナビ」<wbr>⁠への<wbr>掲載、<wbr>採用代行、<wbr>学生の<wbr>紹介を<wbr>一つの<wbr>窓口で。<wbr>大学1・<wbr>2年生との<wbr>出会いを、<wbr>将来の<wbr>新卒採用の<wbr>起点にします。</p>
             <div class="svc-more">VIEW DETAIL<span class="arr">→</span></div>
           </div>
         </button>
@@ -757,7 +759,7 @@ details p{margin:0 0 24px;padding-left:34px;color:var(--ink-soft);font-size:14.5
           <div class="svc-img"><div class="ph" data-tone="4" data-src="@J" data-label=""></div><span class="svc-no">PLAN 04</span></div>
           <div class="svc-body">
             <p class="svc-tag">内定者・<wbr>新入社員<wbr>オンボーディング</p>
-            <h3>入社式を、<br>ゴールに<wbr>しない。</h3>
+            <h3><span class="ln">入社式を、</span><span class="ln">ゴールに<wbr>しない。</span></h3>
             <p class="d">内定を<wbr>出した<wbr>日から、<wbr>入社半年後まで。<wbr>月に<wbr>1度直接会い、<wbr>辞退を<wbr>防ぎ、<wbr>早く<wbr>活躍できる<wbr>状態まで<wbr>伴走します。<wbr>形は<wbr>集合研修でも、<wbr>中身は<wbr>1on1と<wbr>同じ<wbr>感覚で<wbr>関わります。</p>
             <div class="svc-more">VIEW DETAIL<span class="arr">→</span></div>
           </div>
@@ -999,7 +1001,7 @@ details p{margin:0 0 24px;padding-left:34px;color:var(--ink-soft);font-size:14.5
       <div class="ct-copy">
         <h2 class="hd-en rv">CON<b>T</b>ACT</h2>
         <h2 class="ttl rv d1">新卒採用の<wbr>悩みを、<br>まずは<wbr>30分で。</h2>
-        <p class="lead rv d2">採用計画が<wbr>固まっていなくても<wbr>大丈夫です。<wbr>資料を<wbr>お送りする<wbr>代わりに、<wbr>30分で<wbr>いまの<wbr>状況を<wbr>うかが<wbr>い、<wbr>御社に<wbr>合う<wbr>プランと<wbr>進め方を<wbr>その場で<wbr>お出しします。</p>
+        <p class="lead rv d2">採用計画が<wbr>固まっていなくても<wbr>大丈夫です。<wbr>資料を<wbr>お送りする<wbr>代わりに、<wbr>30分で<wbr>いまの<wbr>状況を<wbr>うかが<wbr>い、<wbr>貴社に<wbr>合う<wbr>プランと<wbr>進め方を<wbr>その場で<wbr>お出しします。</p>
         <ul class="ct-points rv d3">
           <li><b>30 MIN</b>オンラインで<wbr>30分。<wbr>相談は<wbr>無料です。</li>
           <li><b>DIRECT</b>代表の<wbr>鈴木が、<wbr>直接お話を<wbr>うかが<wbr>います。</li>
