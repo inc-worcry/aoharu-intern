@@ -946,8 +946,10 @@ document.addEventListener('click', function(e){
 <script>
 (function(){
   const params = new URLSearchParams(location.search);
-  const utmContent = params.get("utm_content");
-  const utmTerm = params.get("utm_term");
+  let utmContent = params.get("utm_content");
+  let utmTerm = params.get("utm_term");
+  // 2026/10/28 学年別ページへ移動してもMeta広告の識別子(cid1/cid2)を引き継ぐためタブ内に保持
+  try { if (utmContent || utmTerm) { sessionStorage.setItem("aoharu_utm_content", utmContent || ""); sessionStorage.setItem("aoharu_utm_term", utmTerm || ""); } else { utmContent = sessionStorage.getItem("aoharu_utm_content") || ""; utmTerm = sessionStorage.getItem("aoharu_utm_term") || ""; } } catch(e){}
   if (!utmContent && !utmTerm) return;
   document.querySelectorAll("[data-cta]").forEach(function(el){
     const qs = [];
