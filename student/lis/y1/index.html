@@ -533,5 +533,18 @@ if (utmTerm) qs.push("cid2=" + encodeURIComponent(utmTerm)); if (gclid) qs.push(
   });
 })();
 </script>
+<!-- LINE追加の手順を案内（2026/10/28：LINE追加ページまで来た人の約26%が追加せず離脱） -->
+<script>
+(function(){
+  document.querySelectorAll('a.cta[data-cta]').forEach(function(a){
+    if(!/^(hero|mid|closing)$/.test(a.getAttribute('data-cta'))) return;
+    var p=document.createElement('p');
+    p.className='cta-note cta-steps';
+    p.style.marginTop='8px';
+    p.textContent='LINEが開いたら「許可する」→「追加」の2タップで完了';
+    a.insertAdjacentElement('afterend',p);
+  });
+})();
+</script>
 </body>
 </html>
