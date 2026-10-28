@@ -541,7 +541,9 @@ upd();addEventListener("scroll",upd,{passive:true});addEventListener("resize",up
     p.className='cta-note cta-steps';
     p.style.marginTop='8px';
     p.textContent='LINEが開いたら「許可する」→「追加」の2タップで完了';
-    a.insertAdjacentElement('afterend',p);
+    var t=(a.parentElement&&/ctawrap|cta-wrap/.test(a.parentElement.className))?a.parentElement:a;
+    p.style.textAlign='center';
+    t.insertAdjacentElement('afterend',p);
   });
 })();
 </script>
