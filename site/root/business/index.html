@@ -464,13 +464,13 @@ h1,h2,h3{text-wrap:balance}
 .faq .a b{color:var(--ink)}
 /* ---------- スマホ：間延びを詰める（2026-10-29） ---------- */
 @media (max-width:600px){
-  /* FV：文字は上（空の上に）。写真の下側はカーブミラーを見せる */
+  /* FV：電柱とミラーを右上、キーメッセージは左下 */
   .fv{height:min(calc(100svh - 84px),600px);min-height:540px}
-  .fv-photo{background-position:62% 74%}
-  .fv::before{background:linear-gradient(180deg,rgba(10,50,78,.62) 0%,rgba(10,50,78,.34) 40%,rgba(10,50,78,0) 64%)}
-  .fv-body{top:112px;bottom:auto;left:22px;right:22px;transform:none;max-width:none;display:flex;flex-direction:column-reverse}
-  .fv-copy{font-size:clamp(32px,9.4vw,42px);line-height:1.34;text-shadow:0 2px 16px rgba(10,50,78,.3)}
-  .fv-poem{margin:20px 0 0;font-size:12px;line-height:2}
+  .fv-photo{background-size:auto 130%;background-position:58% 100%}
+  .fv::before{background:linear-gradient(180deg,rgba(10,50,78,0) 38%,rgba(10,50,78,.48) 66%,rgba(10,50,78,.74) 100%)}
+  .fv-body{top:auto;bottom:26px;left:22px;right:22px;transform:none;max-width:none}
+  .fv-poem{margin:0 0 14px;font-size:12px;line-height:2}
+  .fv-copy{font-size:clamp(32px,9.4vw,42px);line-height:1.34}
   /* 見出し・余白 */
   .concept,.journey,.value,.service,.column,.contact{padding:44px 20px}
   .faq{padding:44px 14px}
