@@ -894,7 +894,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <button class="col-tab" id="colTabAll" data-cat="all" aria-pressed="true">すべて</button>
             <button class="col-tab" id="colTabStudent" data-cat="student" aria-pressed="false">学生インタビュー</button>
             <button class="col-tab" id="colTabCompany" data-cat="company" aria-pressed="false">企業インタビュー</button>
-            <button class="col-tab" id="colTabColumn" data-cat="column" aria-pressed="false">コラム</button>
+            <button class="col-tab" id="colTabColumn" data-cat="column" aria-pressed="false">コラム</button><button class="col-tab" id="colTabGuide" data-cat="guide" aria-pressed="false">AOHARUガイド</button>
           </div>
           <a class="col-all" id="colAll" href="https://aoharu-intern.com/companies/a6e86024-7da3-4141-9b2d-fc0f92e3b738/voice" target="_blank" rel="noopener">すべて読む</a>
         </div>
@@ -1139,9 +1139,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   const toCard = (v) => {
     const raw = v.title.trim();
     const student = raw.match(/──\s*(.+?)さんの場合\s*$/);
-    const cat = /ボヤキ/.test(raw) ? 'column' : student ? 'student' : 'company';
+    const cat = /ボヤキ/.test(raw) ? 'column' : /AOHARUガイド|AOHARU流/.test(raw) ? 'guide' : student ? 'student' : 'company';
     const sub = cat === 'student' ? student[1].trim() + 'さん' : cat === 'column' || /鈴木/.test(raw) ? '代表 鈴木脩平' : /根岸/.test(raw) ? 'COO 根岸勇丞' : 'WorCry';
-    const label = {student:'学生インタビュー', company:'企業インタビュー', column:'コラム'}[cat];
+    const label = {student:'学生インタビュー', company:'企業インタビュー', column:'コラム', guide:'AOHARUガイド'}[cat];
     const series = (raw.match(/^【(.+?)】/) || [])[1];
     const title = raw.replace(/^【.+?】\s*/, '').replace(/──\s*.+?の場合\s*$/, '');
     const firstLine = (v.content || '').split('\n').map((l) => l.replace(/^[#>*\-\s■]+/, '').trim())
