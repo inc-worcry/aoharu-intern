@@ -678,6 +678,15 @@ details p{margin:0 0 24px;padding-left:34px;color:var(--ink-soft);font-size:14.5
   .faq summary{padding-top:16px;padding-bottom:16px}
 }
 @media (max-width:340px){.svc h3 .ln{white-space:normal}}
+
+/* ---------- お問い合わせのポップアップ（2026-10-29） ---------- */
+dialog.cpop{border:0;padding:0;background:transparent;width:min(640px,calc(100vw - 24px));max-height:calc(100dvh - 24px);overflow:visible}
+dialog.cpop::backdrop{background:rgba(20,22,28,.62);-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px)}
+.cpop-in{position:relative;max-height:calc(100dvh - 24px);overflow-y:auto;border-radius:18px;-webkit-overflow-scrolling:touch}
+.cpop-in{background:#fff}
+.cpop-in .ct-form{opacity:1;transform:none;transition:none;border-radius:0}
+.cpop-x{position:absolute;top:10px;right:10px;z-index:2;width:40px;height:40px;border:0;border-radius:50%;background:var(--paper);color:var(--ink);font-size:22px;line-height:1;cursor:pointer}
+.cpop-ttl{position:sticky;top:0;z-index:1;margin:0;padding:18px 60px 14px 24px;background:#fff;border-bottom:1px solid var(--line);font-weight:900;font-size:17px;letter-spacing:.04em}
 </style>
 </head>
 <body>
@@ -1256,6 +1265,30 @@ details p{margin:0 0 24px;padding-left:34px;color:var(--ink-soft);font-size:14.5
     cl.querySelectorAll('a[href="#contact"]').forEach(a=>a.addEventListener('click',()=>pop.close()));pop.scrollTop=0;$('#popPrev').textContent='← PLAN 0'+((pi+3)%4+1);$('#popNext').textContent='PLAN 0'+((pi+1)%4+1)+' →';if(!pop.open)pop.showModal()}
   $('#popClose').onclick=()=>pop.close();$('#popPrev').onclick=()=>openPop(pi-1);$('#popNext').onclick=()=>openPop(pi+1);
   pop.addEventListener('click',e=>{if(e.target===pop)pop.close()});
+})();
+</script>
+<script>
+/* お問い合わせボタン → フォームをポップアップで開く（下部のフォームをそのまま移して使う） */
+(function(){
+  var form=document.getElementById('ctForm'); if(!form||!window.HTMLDialogElement) return;
+  var dlg=document.createElement('dialog'); dlg.className='cpop'; dlg.setAttribute('aria-label','お問い合わせ');
+  dlg.innerHTML='<div class="cpop-in"><button type="button" class="cpop-x" aria-label="閉じる">×</button><p class="cpop-ttl">無料で相談する</p></div>';
+  document.body.appendChild(dlg);
+  var box=dlg.querySelector('.cpop-in'), mark=document.createComment('ctForm');
+  function open(){
+    document.querySelectorAll('dialog[open]').forEach(function(d){ if(d!==dlg) d.close(); });
+    if(!dlg.open){ form.parentNode.insertBefore(mark,form); box.appendChild(form); form.classList.add('in'); dlg.showModal(); box.scrollTop=0; }
+  }
+  function restore(){ if(mark.parentNode){ mark.parentNode.insertBefore(form,mark); mark.remove(); } }
+  function shut(){ if(dlg.open) dlg.close(); restore(); }
+  dlg.addEventListener('close',function(){ if(!dlg.open) restore(); });
+  dlg.addEventListener('cancel',function(e){ e.preventDefault(); shut(); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape'&&dlg.open){ e.preventDefault(); shut(); } });
+  dlg.addEventListener('click',function(e){ if(e.target===dlg||e.target.closest('.cpop-x')) shut(); });
+  document.addEventListener('click',function(e){
+    var a=e.target.closest('a[href="#contact"]'); if(!a) return;
+    e.preventDefault(); e.stopPropagation(); open();
+  },true);
 })();
 </script>
 </body>
