@@ -40,7 +40,7 @@
     };
     const spawn = (x, y, scale = 1) => {
       const [word, tone] = WORDS[wordAt++ % WORDS.length]; n++;
-      drops.push({ x, y, t: 0, word, tone, fall: 900, life: 9000 + Math.random() * 2500, fs: calm ? 22 : 24 + Math.random() * 12,
+      drops.push({ x, y, t: 0, word, tone, fall: 900, life: 9000 + Math.random() * 2500, fs: (calm ? 22 : 24 + Math.random() * 12) * (W < 600 ? 0.55 : W < 900 ? 0.75 : 1),  /* スマホは小さく：小さいから味がある */
         maxR: Math.max(W, H) * (calm ? 0.26 : 0.32 + Math.random() * 0.18) * scale });
     };
     const frame = now => {

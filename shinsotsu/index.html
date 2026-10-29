@@ -169,7 +169,7 @@ textarea.fi{resize:vertical;line-height:1.8}
   letter-spacing:.08em;padding:15px;cursor:pointer;transition:background .2s}
 .send:hover{background:var(--haru-deep)}
 .send:disabled{background:#C9CED3;cursor:not-allowed}
-.form-note{margin:10px 0 0;font-size:11.5px;color:var(--gray);text-align:center}
+.form-note{margin:10px 0 0;font-size:12px;color:var(--gray);text-align:center}
 
 /* ---------- マーキー ---------- */
 .marquee{background:var(--grad);color:var(--white);padding-block:18px;white-space:nowrap}
@@ -259,12 +259,12 @@ textarea.fi{resize:vertical;line-height:1.8}
 .cmp th.axis,.cmp td.axis{text-align:left;font-weight:700;color:var(--ink);white-space:nowrap;padding-left:22px}
 .cmp .us{background:#FEF4E8;color:var(--ink);font-weight:700}
 .cmp thead .us{font-size:15px;color:var(--white);background:var(--haru-deep)}
-.cmp td.us small{display:block;font-weight:500;font-size:11.5px;color:var(--ink-soft)}
+.cmp td.us small{display:block;font-weight:500;font-size:12px;color:var(--ink-soft)}
 .cmp td.us .mk{color:var(--haru-deep)}
 .cmp thead th{border-bottom:2px solid var(--ink)}
 .cmp td{color:var(--ink-soft)}
 .cmp .mk{font-family:var(--ja);font-weight:900;margin-right:4px}
-.note{margin:14px 0 0;font-size:11.5px;color:var(--gray);text-align:center}
+.note{margin:14px 0 0;font-size:12px;color:var(--gray);text-align:center}
 
 /* ---------- 活動シーン ---------- */
 .scene{background:var(--white);padding:clamp(48px,6vw,80px) 0}
@@ -656,7 +656,7 @@ html.js .dash-ph.is-in img{opacity:1;transform:none}
   .sb-d{grid-column:2/-1;text-align:right;margin-top:-6px}
   .eb-v,.sb-v{font-size:17px}
   .door-figs{gap:16px}
-  .door-figs small{font-size:11px}
+  .door-figs small{font-size:12px}
 }
 
 
@@ -739,8 +739,8 @@ html.js .is-in .sh-ph img,html.js .nt-ph.is-in img{opacity:1;transform:none}
   .mkt-key{flex-direction:column;gap:10px}
   .mkt-key p,.mkt-key p:last-child{text-align:left}
   .mkt-key b{display:block;margin:2px 0 0 18px}
-  .nt li{grid-template-columns:92px 1fr}
-  .nt-when{white-space:nowrap;font-size:11.5px;letter-spacing:.02em}
+  .nt li{grid-template-columns:96px 1fr}
+  .nt-when{white-space:nowrap;font-size:12px;letter-spacing:0}
   /* フッター */
   #nft .nft-sns{flex-wrap:nowrap;gap:8px}
   #nft .nft-sns a{width:32px;height:32px}
@@ -767,11 +767,54 @@ html.js .is-in .sh-ph img,html.js .nt-ph.is-in img{opacity:1;transform:none}
   .sh .lead{max-width:36em}
 }
 
+@media (max-width:360px){
+  .nt li{grid-template-columns:1fr}
+  .nt-when{grid-row:auto}
+  .nt small{grid-column:1}
+}
 /* 動きを減らす設定：大きな動き（背景ズーム・流れる帯）だけ止める。数字の一度きりの演出は残す */
 @media (prefers-reduced-motion:reduce){
   .fv-copy span,.marquee-track,.scene-track{animation:none!important}
   .is-skel .fv-fig b,.is-skel .ph-kpi,.is-skel .stat b,.is-skel .univ .pc,.is-skel .univ .nm,.evi.is-skel .evi-num b,.early.is-skel .early-t b{animation:none!important}
   .marquee,.scene-track-outer{overflow-x:auto}
+}
+
+/* ---------- スマホ：間延びを詰める（2026-10-29） ---------- */
+@media (max-width:600px){
+  section.frame{padding-top:42px;padding-bottom:42px}
+  .fv-in{padding-bottom:36px}
+  .sh{margin-bottom:22px;padding-bottom:14px}
+  .sh.sh-sub{margin-top:32px}
+  .flow-out{margin-top:20px}
+  .mkt,.early,.evi,.stay{margin-top:24px;padding:18px}
+  .early-bars,.stay-bars{margin:14px 0 12px}
+  .concept-body{margin-bottom:20px}
+  .card{padding:14px 0}
+  .prob{gap:22px}
+  .prob-item{display:grid;grid-template-columns:auto 1fr;column-gap:14px;align-items:center}
+  .prob-item .num{grid-row:1;font-size:40px}
+  .prob-item h3{grid-column:2;margin:0;font-size:17px}
+  .prob-item p{grid-column:1/-1;margin-top:10px}
+  .svc-grid{gap:14px}
+  .svc-row{padding:16px 0}
+  .phase-grid{margin-top:22px}
+  .ph-item{padding:16px 0}
+  .nt-poke{margin:18px 0 22px}
+  .pf{margin-bottom:28px}
+  .voices{margin-bottom:28px}
+  .stats{margin-bottom:24px;gap:22px}
+  .stu-cta{margin-top:22px}
+  .dash-grid{gap:14px}
+  .dash-pt{padding:14px 0}
+  .door{min-height:300px}
+  .cta-form{margin-top:24px}
+}
+@media (max-width:600px){
+  .univ{grid-template-columns:1fr 1fr;column-gap:16px}
+  .univ li{gap:8px;padding:8px 0;font-size:13px}
+  .univ .rk{font-size:13px;width:16px}
+  .univ .ub{display:none}
+  .univ .pc{width:auto;font-size:14px}
 }
 </style>
 <link rel="canonical" href="https://aoharu-intern.com/shinsotsu">
@@ -898,8 +941,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
         <div class="fv-figs infog">
           <div class="fv-fig">
-            <b><span id="line-cnt1" data-count="4587">4,587</span><small>人</small></b>
-            <span><span class="ph">大学2年生の</span><span class="ph">LINE登録人数</span><br><em><span class="nw">（2026年9月現在）</span></em></span>
+            <b><span id="line-cnt1" data-count="4587">4,587</span><small>名</small></b>
+            <span><span class="ph">大学1・<wbr>2年生の</span><span class="ph">LINE友だち登録数</span><br><em><span class="nw">（2026年7月現在）</span></em></span>
           </div>
           <div class="fv-fig">
             <b><span id="line-cnt2" data-count="523">523</span><small>名</small></b>
@@ -926,7 +969,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <label class="agree"><input type="checkbox" id="hfc-agree" onchange="document.getElementById('hfc-btn').disabled=!this.checked"><span><a href="https://www.worcry.com/privacy-policy" target="_blank" rel="noopener">プライバシーポリシー</a>に<wbr>同意する</span></label>
         <button class="send" id="hfc-btn" type="button" onclick="submitHfc()" disabled>資料請求する<wbr> →</button>
         <div id="hfc-done" style="display:none"></div>
-        <p class="form-note" id="hfc-note">30秒で<wbr>完了 · 翌営業日以内に<wbr>返信</p>
+        <p class="form-note" id="hfc-note">30秒で<wbr>完了 · 1営業日以内に<wbr>返信</p>
       </div>
     </div>
   </section>
@@ -958,19 +1001,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div class="flow-bar" aria-hidden="true"></div>
           <div class="flow-step">
             <h3>最初の<wbr>接触</h3>
-            <p>LINE友達登録で<wbr>リーチ。<wbr>大学2年生4,587名<wbr><span class="nw">（2026年9月現在）</span><wbr>の<wbr>母集団から、<wbr>御社の<wbr>条件に<wbr>合う<wbr>学生を<wbr>選定します。</p>
+            <p>LINE友だち登録で<wbr>リーチ。<wbr>大学1・<wbr>2年生4,587名<wbr><span class="nw">（2026年7月現在）</span><wbr>の<wbr>母集団から、<wbr>貴社の<wbr>条件に<wbr>合う<wbr>学生を<wbr>選定します。</p>
           </div>
           <div class="flow-step">
             <h3>スコアリング＆ナーチャリング</h3>
-            <p>志望度・学力・志向を<wbr>数値化。<wbr>御社への<wbr>相性スコアが<wbr>高い<wbr>学生に、<wbr>専属CAが<wbr>継続接触・関係<wbr>構築します。</p>
+            <p>志望度・学力・志向を<wbr>数値化。<wbr>貴社への<wbr>相性スコアが<wbr>高い<wbr>学生に、<wbr>専属CAが<wbr>継続接触・関係<wbr>構築します。</p>
           </div>
           <div class="flow-step">
             <h3>サマーインターン参加</h3>
-            <p>厳選した<wbr>高志望度学生を<wbr>御社の<wbr>サマーインターンへ<wbr>送客。<wbr>関係値が<wbr>育った<wbr>状態で<wbr>参加する<wbr>ため、<wbr>本気度が<wbr>違います。</p>
+            <p>厳選した<wbr>高志望度学生を<wbr>貴社の<wbr>サマーインターンへ<wbr>送客。<wbr>関係値が<wbr>育った<wbr>状態で<wbr>参加する<wbr>ため、<wbr>本気度が<wbr>違います。</p>
           </div>
           <div class="flow-step">
             <h3>内定承諾</h3>
-            <p>2年生から<wbr>育てた<wbr>学生が、<wbr>競合に<wbr>取られる<wbr>前に<wbr>御社を<wbr>選ぶ。<wbr>これが<wbr>「先に<wbr>会う」ことの<wbr>最大の<wbr>リターンです。</p>
+            <p>2年生から<wbr>育てた<wbr>学生が、<wbr>競合に<wbr>取られる<wbr>前に<wbr>貴社を<wbr>選ぶ。<wbr>これが<wbr>「先に<wbr>会う」ことの<wbr>最大の<wbr>リターンです。</p>
           </div>
         </div>
       </div>
@@ -995,7 +1038,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <section class="frame concept" id="concept">
     <div class="in">
       <div class="sh has-ph"><div class="sh-l"><p class="sh-en"><span class="sh-no">02</span><span class="sh-w">CONCEPT<b>_</b></span><small>サービスの<wbr>考え方</small></p><h2 class="ttl"><span class="ph">学生の<wbr>選択肢を<wbr>広げる。</span><span class="ph">その<wbr>そばに、<wbr>ずっと<wbr>いる。</span></h2></div><figure class="sh-ph"><img src="/shinsotsu/img/concept.jpg" alt="付箋を貼ったガラス越しに話し合う若いチーム" width="540" height="360" loading="lazy"></figure></div>
-      <p class="concept-body">AOHARU 新卒は、<wbr>大学2年生の<wbr>秋から<wbr>学生一人<wbr>ひとりに<wbr>向き合い、<wbr>キャリアの<wbr>選択肢を<wbr>広げながら<wbr>貴社との<wbr>接点を<wbr>育てます。<wbr>伴走・<wbr>寄り添い・コミット。<wbr>それが<wbr>私たちの<wbr>スタンスです。</p>
+      <p class="concept-body">AOHARU 新卒は、<wbr>大学2年生の<wbr>夏から<wbr>学生一人<wbr>ひとりに<wbr>向き合い、<wbr>キャリアの<wbr>選択肢を<wbr>広げながら<wbr>貴社との<wbr>接点を<wbr>育てます。<wbr>伴走・<wbr>寄り添い・コミット。<wbr>それが<wbr>私たちの<wbr>スタンスです。</p>
       <div class="cards3">
         <div class="card">
           <div class="card-en">FOR STUDENT</div>
@@ -1024,7 +1067,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="prob-item">
           <span class="num">01<small>課題</small></span>
           <h3>3年夏インターンへの<br>集客が<wbr>足りない</h3>
-          <p>2年生の<wbr>時点で<wbr>御社を<wbr>知らない<wbr>学生は<wbr>そもそも<wbr>来てくれません。<wbr>知名度より<wbr>「接点の<wbr>早さ」が<wbr>勝負です。</p>
+          <p>2年生の<wbr>時点で<wbr>貴社を<wbr>知らない<wbr>学生は<wbr>そもそも<wbr>来てくれません。<wbr>知名度より<wbr>「接点の<wbr>早さ」が<wbr>勝負です。</p>
         </div>
         <div class="prob-item">
           <span class="num">02<small>課題</small></span>
@@ -1034,7 +1077,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="prob-item">
           <span class="num">03<small>課題</small></span>
           <h3>他社に<wbr>「第一志望」を<br>取られている</h3>
-          <p>就活本格化前に<wbr>御社の<wbr>ファンに<wbr>なって<wbr>もらえていない。<wbr>早期の<wbr>志望度形成が<wbr>必要です。</p>
+          <p>就活本格化前に<wbr>貴社の<wbr>ファンに<wbr>なって<wbr>もらえていない。<wbr>早期の<wbr>志望度形成が<wbr>必要です。</p>
         </div>
       </div>
       <div class="early infog">
@@ -1062,7 +1105,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div class="svc-row">
             <span class="num">01</span>
             <div>
-              <h3>大学2年生の<wbr>秋から<wbr>接点を<wbr>作る</h3>
+              <h3>大学2年生の<wbr>夏から<wbr>接点を<wbr>作る</h3>
               <p>オープンカンパニー・<wbr><span class="nw">1〜2DAY</span><wbr>インターンへ<wbr>送客。<wbr>就活意識が<wbr>固まる<wbr>前に<wbr>貴社へ<wbr>知って<wbr>もらう<wbr>アプローチを<wbr>します。</p>
             </div>
           </div>
@@ -1077,7 +1120,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <span class="num">03</span>
             <div>
               <h3>3年サマーへ<wbr>高志望度のまま<wbr>誘導</h3>
-              <p>御社を<wbr>志望している<wbr>学生を<wbr>厳選して<wbr>3年夏の<wbr>短期インターンへ。<wbr>本選考・内定承諾まで<wbr>一気通貫。</p>
+              <p>貴社を<wbr>志望している<wbr>学生を<wbr>厳選して<wbr>3年夏の<wbr>短期インターンへ。<wbr>本選考・内定承諾まで<wbr>一気通貫。</p>
             </div>
           </div>
         </div>
@@ -1089,7 +1132,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- PHASE：支援の流れ -->
   <section class="frame phase" id="phase">
     <div class="in">
-      <div class="sh has-ph"><div class="sh-l"><p class="sh-en"><span class="sh-no">05</span><span class="sh-w">PHASE<b>_</b></span><small>支援の<wbr>流れ</small></p><h2 class="ttl"><span class="ph">2年生の<wbr>秋から<wbr>3年夏まで、</span><span class="ph">一気<wbr>通貫で<wbr>つなぎます。</span></h2></div><figure class="sh-ph"><img src="/shinsotsu/img/phase.jpg" alt="学生の前でプレゼンテーションする社会人" width="540" height="360" loading="lazy"></figure></div>
+      <div class="sh has-ph"><div class="sh-l"><p class="sh-en"><span class="sh-no">05</span><span class="sh-w">PHASE<b>_</b></span><small>支援の<wbr>流れ</small></p><h2 class="ttl"><span class="ph">2年生の<wbr>夏から<wbr>3年夏まで、</span><span class="ph">一気<wbr>通貫で<wbr>つなぎます。</span></h2></div><figure class="sh-ph"><img src="/shinsotsu/img/phase.jpg" alt="学生の前でプレゼンテーションする社会人" width="540" height="360" loading="lazy"></figure></div>
       <div class="phase-grid infog">
         <div class="ph-item">
           <div class="ph-step">PHASE 01</div>
@@ -1175,7 +1218,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="prob-item">
           <span class="num">01<small>強み</small></span>
           <h3>大学2年生との<wbr>早期接点</h3>
-          <p>就活意識が<wbr>固まる<wbr>前に<wbr>御社を<wbr>好きに<wbr>なって<wbr>もらう。<wbr>早いから<wbr>効く、<wbr>早いから<wbr>合理的。</p>
+          <p>就活意識が<wbr>固まる<wbr>前に<wbr>貴社を<wbr>好きに<wbr>なって<wbr>もらう。<wbr>早いから<wbr>効く、<wbr>早いから<wbr>合理的。</p>
         </div>
         <div class="prob-item">
           <span class="num">02<small>強み</small></span>
@@ -1209,7 +1252,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- COMPARE：他社比較 -->
   <section class="frame compare" id="compare">
     <div class="in">
-      <div class="sh"><div class="sh-l"><p class="sh-en"><span class="sh-no">08</span><span class="sh-w">COMPARE<b>_</b></span><small>他社比較</small></p><h2 class="ttl">なぜ、<span class="sans">AOHARU 新卒</span>？</h2></div><p class="lead"><span class="ph">サマーインターンへの<wbr>集客力と、</span><span class="ph">内定承諾まで<wbr>繋がる<wbr>質を</span><span class="ph">両立する<wbr>ために<wbr>設計されています。</span></p></div>
+      <div class="sh"><div class="sh-l"><p class="sh-en"><span class="sh-no">08</span><span class="sh-w">COMPARE<b>_</b></span><small>他社比較</small></p><h2 class="ttl">なぜ、<span class="sans">AOHARU 新卒</span>？</h2></div><p class="lead"><span class="ph">サマーインターンへの<wbr>集客力と、</span><span class="ph">内定承諾まで<wbr>つながる質を</span><span class="ph">両立する<wbr>ために<wbr>設計されています。</span></p></div>
       <p class="flow-hint cmp-hint">横に<wbr>スクロールして<wbr>見られます →</p>
       <div class="cmp-scroll">
         <table class="cmp">
@@ -1217,7 +1260,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <tr><th class="axis">比較軸</th><th class="us">AOHARU 新卒</th><th>大手ナビサイト</th><th>DR</th><th>AGT<wbr>（紹介会社）</th></tr>
           </thead>
           <tbody>
-            <tr><td class="axis">接触開始時期</td><td class="us">2年生秋冬〜</td><td>3年生〜</td><td>2〜4年生</td><td>3〜4年生</td></tr>
+            <tr><td class="axis">接触開始時期</td><td class="us">2年生夏〜</td><td>3年生〜</td><td>2〜4年生</td><td>3〜4年生</td></tr>
             <tr><td class="axis">サマー集客力</td><td class="us"><span class="mk">◎</span>質重視</td><td><span class="mk">○</span>中程度</td><td><span class="mk">△</span>個別対応</td><td><span class="mk">△</span>低い</td></tr>
             <tr><td class="axis">志望度の<wbr>質</td><td class="us"><span class="mk">◎</span>高志望度厳選</td><td>一般<wbr>配信が<wbr>中心</td><td><span class="mk">○</span>個人差<wbr>あり</td><td><span class="mk">○</span>中程度</td></tr>
             <tr><td class="axis">学生伴走サポート</td><td class="us"><span class="mk">◎</span>専属CA担当</td><td>対象外</td><td>対象外</td><td><span class="mk">△</span>限定的</td></tr>
@@ -1286,7 +1329,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="pf" style="margin-top:clamp(28px,3.5vw,44px)">
         <div class="pf-item"><div class="pf-tag">大学</div><h3>MARCH以上<wbr>・旧帝・早慶が<wbr>中心</h3></div>
         <div class="pf-item"><div class="pf-tag">志向</div><h3>成長意欲の<wbr>高い<wbr>学生</h3></div>
-        <div class="pf-item"><div class="pf-tag">時期</div><h3>大学2年生の<wbr>秋から<wbr>接触</h3></div>
+        <div class="pf-item"><div class="pf-tag">時期</div><h3>大学2年生の<wbr>夏から<wbr>接触</h3></div>
         <div class="pf-item"><div class="pf-tag">管理</div><h3>志望度スコアで<wbr>企業別に<wbr>管理</h3></div>
       </div>
 
@@ -1334,12 +1377,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- DASHBOARD -->
   <section class="frame dash" id="dashboard">
     <div class="in">
-      <div class="sh"><div class="sh-l"><p class="sh-en"><span class="sh-no">10</span><span class="sh-w">DASHBOARD<b>_</b></span><small>ダッシュボード</small></p><h2 class="ttl"><span class="ph">御社と<wbr>出会った<wbr>学生が</span><span class="ph">いまどうしているか、</span><span class="ph">いつでも<wbr>見られます。</span></h2></div><p class="lead">毎朝<wbr>更新。<wbr>動くべき学生が<wbr>出た<wbr>ときは、<wbr>こちらから<wbr>お知らせします。<wbr>人事の<wbr>方が<wbr>毎日<wbr>開く<wbr>必要は<wbr>ありません。</p></div>
+      <div class="sh"><div class="sh-l"><p class="sh-en"><span class="sh-no">10</span><span class="sh-w">DASHBOARD<b>_</b></span><small>ダッシュボード</small></p><h2 class="ttl"><span class="ph">貴社と<wbr>出会った<wbr>学生が</span><span class="ph">いまどうしているか、</span><span class="ph">いつでも<wbr>見られます。</span></h2></div><p class="lead">毎朝<wbr>更新。<wbr>動くべき学生が<wbr>出た<wbr>ときは、<wbr>こちらから<wbr>お知らせします。<wbr>人事の<wbr>方が<wbr>毎日<wbr>開く<wbr>必要は<wbr>ありません。</p></div>
       <div class="dash-grid">
-        <figure class="dash-ph"><img src="/shinsotsu/img/dashboard.webp" alt="AOHARUのダッシュボード画面（御社プール・ステージ別の内訳・いま動ける学生）" width="2000" height="1315" loading="lazy"></figure>
+        <figure class="dash-ph"><img src="/shinsotsu/img/dashboard.webp" alt="AOHARUのダッシュボード画面（貴社プール・ステージ別の内訳・いま動ける学生）" width="2000" height="1315" loading="lazy"></figure>
         <div class="dash-pts">
           <div class="dash-pt"><span class="num">01</span><div><h3>毎朝、<wbr>自動で<wbr>更新</h3><p>面談や<wbr>就業の<wbr>記録が<wbr>入ると、<wbr>翌朝には<wbr>画面に<wbr>反映されます。</p></div></div>
-          <div class="dash-pt"><span class="num">02</span><div><h3>見えるのは<wbr>御社の<wbr>学生だけ</h3><p>閲覧できるのは、<wbr>許可した<wbr>ご担当者の<wbr>アカウントのみです。</p></div></div>
+          <div class="dash-pt"><span class="num">02</span><div><h3>見えるのは<wbr>貴社の<wbr>学生だけ</h3><p>閲覧できるのは、<wbr>許可した<wbr>ご担当者の<wbr>アカウントのみです。</p></div></div>
           <div class="dash-pt"><span class="num">03</span><div><h3>動くべき学生は、<wbr>こちらから<wbr>連絡します</h3><p>インターン終了、<wbr>学年の<wbr>切り<wbr>替わり、<wbr>志望の<wbr>変化。<wbr>タイミングを<wbr>お知らせします。</p></div></div>
         </div>
       </div>
@@ -1366,7 +1409,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <details><summary>大学2年生に<wbr>選考を<wbr>行うのですか？</summary><p>いいえ。<wbr>2年生との<wbr>接点は、<wbr>選考ではなく<wbr>関係<wbr>づくりと<wbr>育成と<wbr>して<wbr>設計します。<wbr>選考は<wbr>3年生以降、<wbr>正規の<wbr>ルートで<wbr>行っていただきます。</p></details>
         <details><summary>どんな<wbr>学生と<wbr>出会えますか？</summary><p>面談まで<wbr>進んだ<wbr>学生の<wbr>うち、<wbr>MARCH以上が<wbr>77%、<wbr>出身高校の<wbr>偏差値60以上が<wbr>63%、<wbr>体育会・スポーツ系の<wbr>経験者が<wbr>48%です。<wbr>大手志望の<wbr>意欲層を<wbr>中心に<wbr>ご紹介します。</p></details>
         <details><summary>人事の<wbr>工数は<wbr>どれくらい<wbr>かかりますか？</summary><p>学生への<wbr>配信や<wbr>面談、<wbr>3年夏までの<wbr>ナーチャリングは<wbr>私たちが<wbr>担います。<wbr>動くべき学生が<wbr>出た<wbr>ときだけ<wbr>お知らせするので、<wbr>日々の<wbr>運用の<wbr>手間は<wbr>ほとんど<wbr>かかりません。</p></details>
-        <details><summary>学生の<wbr>状況は、<wbr>どうやって<wbr>確認できますか？</summary><p>ダッシュボードで、<wbr>御社と<wbr>接点を<wbr>持った<wbr>学生の<wbr>段階や<wbr>最近の<wbr>動きを<wbr>いつでも<wbr>ご覧いただけます。<wbr>データは<wbr>毎朝<wbr>自動で<wbr>更新されます。</p></details>
+        <details><summary>学生の<wbr>状況は、<wbr>どうやって<wbr>確認できますか？</summary><p>ダッシュボードで、<wbr>貴社と<wbr>接点を<wbr>持った<wbr>学生の<wbr>段階や<wbr>最近の<wbr>動きを<wbr>いつでも<wbr>ご覧いただけます。<wbr>データは<wbr>毎朝<wbr>自動で<wbr>更新されます。</p></details>
         <details><summary>いつから<wbr>始めるのが<wbr>よいですか？</summary><p>大学2年生の<wbr>秋冬インターンに<wbr>合わせて<wbr>始めるのが<wbr>基本です。<wbr>いまの<wbr>時期から<wbr>何が<wbr>できるかは、<wbr>個別相談<wbr>（30分・<wbr>無料）で<wbr>一緒に<wbr>整理します。</p></details>
         <details><summary>長期インターン紹介や<wbr>採用代行と<wbr>あわせて<wbr>依頼できますか？</summary><p>はい。<wbr>大学1・<wbr>2年生の<wbr>長期インターン紹介<wbr>（AOHARU インターン）と<wbr>組み合わせられます。<wbr>採用代行<wbr>（AOHARU RPO）も<wbr>オプションで<wbr>付けられます。</p></details>
       </div>
@@ -1419,14 +1462,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 .nft-sns a:hover{background:#29ABE2;color:#fff}
 .nft-sns svg{width:15px;height:15px;fill:currentColor;display:block}
 .nft-nav{display:grid;grid-template-columns:1fr 1.6fr 1.3fr;gap:40px;padding-bottom:36px;border-bottom:1px solid rgba(255,255,255,.18);margin-bottom:24px}
-.nft-col-ttl{font-size:9.5px;font-weight:700;color:#fff;letter-spacing:.18em;text-transform:uppercase;margin-bottom:16px}
+.nft-col-ttl{font-size:12px;font-weight:700;color:#fff;letter-spacing:.18em;text-transform:uppercase;margin-bottom:16px}
 .nft-col a{display:block;font-size:12.5px;color:#D5D7DA;margin-bottom:10px;line-height:1.4}
 .nft-col a:hover{color:#29ABE2}
 .nft-btm{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding:18px 0 36px}
-.nft-legal{display:flex;flex-wrap:wrap;font-size:10.5px;color:#C4C7CB}
+.nft-legal{display:flex;flex-wrap:wrap;font-size:12px;color:#C4C7CB}
 .nft-legal a{padding:0 10px;border-left:1px solid rgba(255,255,255,.3)}
 .nft-legal a:first-child{padding-left:0;border-left:0}
-.nft-copy{font-size:10.5px;color:#C4C7CB;white-space:nowrap}
+.nft-copy{font-size:12px;color:#C4C7CB;white-space:nowrap}
 @media(max-width:860px){.nft-nav{grid-template-columns:1fr 1fr;gap:28px}.nft-in{padding:0 24px}}
 @media(max-width:640px){.nft-head{flex-direction:column;align-items:flex-start;gap:18px}.nft-nav{grid-template-columns:1fr 1fr;gap:20px}.nft-btm{flex-direction:column;align-items:flex-start;gap:8px}}
 </style>
@@ -1436,7 +1479,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <a href="https://www.worcry.com/" class="nft-logo"><img src="/shinsotsu/img/worcry-logo-white.png" alt="WorCry"></a>
       <div class="nft-sns">
         <a href="https://x.com/Worcry_shuhei" aria-label="X" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.747l7.73-8.835L1.254 2.25H8.08l4.259 5.63 5.905-5.63zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
-        <a href="https://www.instagram.com/aoharu_shinsotsu_official/" aria-label="Instagram（AOHARU新卒）" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a><a href="https://www.instagram.com/aoharu_intern_official/" aria-label="Instagram（AOHARUインターン）" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+        <a href="https://www.instagram.com/aoharu_shinsotsu_official/" aria-label="Instagram（AOHARU 新卒）" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a><a href="https://www.instagram.com/aoharu_intern_official/" aria-label="Instagram（AOHARU インターン）" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
         <a href="https://www.tiktok.com/@aoharu_shinsotsu" aria-label="TikTok" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.28 6.28 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.66a8.25 8.25 0 004.83 1.55V6.77a4.85 4.85 0 01-1.06-.08z"/></svg></a>
         <a href="https://www.youtube.com/@AOHARU-worcry" aria-label="YouTube" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
         <a href="https://s.lmes.jp/landing-qr/2008019424-482x88yd?uLand=nPzP0u" aria-label="LINE" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.105.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg></a>
