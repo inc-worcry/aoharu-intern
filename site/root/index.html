@@ -465,8 +465,8 @@ h1,h2,h3{text-wrap:balance}
 /* ---------- スマホ：間延びを詰める（2026-10-29） ---------- */
 @media (max-width:600px){
   /* FV：文字は上（空の上に）。写真の下側はカーブミラーを見せる */
-  .fv{height:calc(100svh - 84px);min-height:560px;max-height:740px}
-  .fv-photo{background-position:62% 70%}
+  .fv{height:min(calc(100svh - 84px),600px);min-height:540px}
+  .fv-photo{background-position:62% 74%}
   .fv::before{background:linear-gradient(180deg,rgba(10,50,78,.62) 0%,rgba(10,50,78,.34) 40%,rgba(10,50,78,0) 64%)}
   .fv-body{top:112px;bottom:auto;left:22px;right:22px;transform:none;max-width:none;display:flex;flex-direction:column-reverse}
   .fv-copy{font-size:clamp(32px,9.4vw,42px);line-height:1.34;text-shadow:0 2px 16px rgba(10,50,78,.3)}
