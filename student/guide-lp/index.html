@@ -11,48 +11,178 @@
 <link rel="apple-touch-icon" href="/student/assets/apple-touch-icon.png">
 <title>1・2年生からの就活スタートガイド（無料）｜AOHARUインターン</title>
 <style>
-:root{--b:#29abe2;--bd:#1b86b5;--o:#f7941d;--od:#c96f0a;--ink:#23272e;--sub:#5b6470;--bg:#f3f8fb;--line:#e3eaef}
-*{margin:0;padding:0;box-sizing:border-box}
-body{background:#eef3f6;font-family:"Hiragino Kaku Gothic ProN","Noto Sans JP","Noto Sans CJK JP",sans-serif;color:var(--ink);line-height:1.7}
-.phone{max-width:480px;margin:0 auto;background:#fff;position:relative;min-height:100vh}
-header{display:flex;align-items:center;justify-content:space-between;padding:12px 18px;border-bottom:3px solid var(--b)}
-.logo{font-weight:900;font-size:22px;letter-spacing:.02em}.logo .h{color:var(--b)}.logo .r{color:var(--o)}
-header small{font-size:11px;color:var(--sub);font-weight:700}
-.hero{background:linear-gradient(180deg,#eaf7fd 0%,#fff 100%);padding:26px 20px 22px;text-align:center}
-.kick{display:inline-block;background:#fff;border:2px solid var(--b);color:var(--bd);font-weight:800;font-size:12px;border-radius:999px;padding:3px 12px}
-.hero h1{font-size:27px;line-height:1.35;margin:12px 0 6px;font-weight:900}
-.hero h1 em{font-style:normal;color:var(--b)}
-.hero .lead{font-size:14px;color:var(--sub)}
-.cover-img{display:block;width:220px;height:auto;margin:18px auto 20px;border-radius:12px;box-shadow:0 10px 24px rgba(41,171,226,.22);border:1px solid var(--line)}
-.cta{display:block;width:100%;background:#06c755;color:#fff;font-weight:900;font-size:18px;text-align:center;border-radius:999px;padding:15px 10px;text-decoration:none;box-shadow:0 5px 0 #04933f}
-.cta small{display:block;font-size:11px;font-weight:700;opacity:.9}
-.micro{font-size:11px;color:var(--sub);margin-top:8px}
-section{padding:26px 20px;border-top:1px solid var(--line)}
-h2{font-size:19px;font-weight:900;line-height:1.4;margin-bottom:14px}
-h2 .n{color:var(--b)}
-.list{display:grid;gap:10px}
-.item{display:flex;gap:12px;align-items:flex-start;background:var(--bg);border-radius:12px;padding:12px}
-.item .num{flex:none;width:30px;height:30px;border-radius:50%;background:var(--b);color:#fff;font-weight:900;display:flex;align-items:center;justify-content:center;font-size:13px}
-.item b{display:block;font-size:14px}
-.item p{font-size:12px;color:var(--sub)}
-.quote{background:#fff;border:2px solid var(--line);border-left:5px solid var(--o);border-radius:10px;padding:12px 14px;margin-bottom:10px}
-.quote p{font-size:14px;font-weight:700}
-.quote span{font-size:11px;color:var(--sub)}
-.steps{display:grid;gap:10px}
-.step{display:flex;gap:12px;align-items:center;border:2px solid var(--line);border-radius:12px;padding:12px}
-.step .ic{flex:none;width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;background:#eaf7fd}
-.step b{font-size:14px;display:block}
-.step p{font-size:12px;color:var(--sub)}
-.step.key{border-color:var(--o);background:#fffaf3}
-.step.key .ic{background:#fff0dc}
-.allow{margin:0 3px;display:inline-block;font-size:11px;background:#06c755;color:#fff;border-radius:6px;padding:2px 8px;font-weight:800}
-.faq details{border-bottom:1px solid var(--line);padding:12px 0}
-.faq summary{font-weight:800;font-size:14px;cursor:pointer;list-style:none}
-.faq summary::before{content:"Q. ";color:var(--b)}
-.faq p{font-size:13px;color:var(--sub);margin-top:6px}
-.final{background:linear-gradient(180deg,#fff 0%,#eaf7fd 100%);text-align:center}
-.sticky{position:sticky;bottom:0;padding:10px 14px calc(12px + env(safe-area-inset-bottom));background:rgba(255,255,255,.95);border-top:1px solid var(--line)}
-.sticky .cta{font-size:16px;padding:12px}
+
+  :root{
+    --ink:#1a1333; --sub:#5b5478; --accent:#ff5a7a; --accent2:#6b5bff;
+    --pop:#ffd43b; --line:#06c755; --bg1:#f6f4ff; --bg2:#e7eefc; --card:#ffffff;
+    --bl:#2b86e0; --or:#f5a623;
+    --radius:22px; --maxw:960px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",system-ui,sans-serif;color:var(--ink);
+    background:var(--bg1);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 20px;}
+  section{padding:62px 0;}
+  h2{font-size:28px;font-weight:900;text-align:center;line-height:1.35;margin-bottom:10px;}
+  h2 .mark{color:var(--accent);}
+  .lead{text-align:center;color:var(--sub);font-size:15px;margin-bottom:36px;}
+
+  header{position:sticky;top:0;z-index:50;background:rgba(246,244,255,.9);backdrop-filter:blur(8px);border-bottom:1px solid #e4defa;}
+  .hbar{display:flex;align-items:center;justify-content:space-between;height:60px;}
+  .logo{font-weight:900;font-size:17px;letter-spacing:.02em;display:flex;align-items:center;gap:9px;}
+  .logo img{height:30px;width:auto;}
+  .logo small{display:block;font-size:10px;color:var(--sub);font-weight:700;letter-spacing:.14em;}
+  .hcta{background:var(--line);color:#fff;font-weight:800;font-size:13px;padding:9px 16px;border-radius:999px;text-decoration:none;white-space:nowrap;}
+
+  /* hero (Horoyoi/FANCL-style: continuously drifting character field + copy on top) */
+  .hero{background:linear-gradient(165deg,#fef6ff 0%,var(--bg1) 45%,var(--bg2) 100%);position:relative;overflow:hidden;}
+  .herostage{position:relative;height:600px;}
+  .bgfield{position:absolute;inset:0;display:flex;gap:16px;justify-content:center;z-index:1;opacity:.48;}
+  .col{display:flex;flex-direction:column;gap:16px;width:156px;flex:0 0 auto;animation:drift var(--sp,30s) linear infinite;will-change:transform;}
+  .col.rev{animation-direction:reverse;}
+  @keyframes drift{ from{transform:translateY(0);} to{transform:translateY(-50%);} }
+  .bc{width:100%;aspect-ratio:1;border-radius:16px;background-size:cover;background-position:center;box-shadow:0 8px 18px rgba(47,75,134,.08);filter:saturate(.75);}
+  .c1{background-image:url(c1.webp);} .c2{background-image:url(c2.webp);}
+  .c3{background-image:url(c3.webp);} .c4{background-image:url(c4.webp);}
+  .c5{background-image:url(c5.webp);} .c6{background-image:url(c6.webp);}
+  .c7{background-image:url(c7.webp);} .c8{background-image:url(c8.webp);}
+  .scrim{position:absolute;inset:0;z-index:2;pointer-events:none;background:radial-gradient(62% 56% at 50% 48%, rgba(255,255,255,.93) 0%, rgba(255,255,255,.72) 46%, rgba(255,255,255,.28) 76%, rgba(255,255,255,0) 100%);}
+  .accent{position:absolute;z-index:2;font-size:30px;animation:bobbing var(--as,6s) ease-in-out infinite;filter:drop-shadow(0 6px 10px rgba(0,0,0,.08));pointer-events:none;}
+  @keyframes bobbing{ 0%,100%{transform:translateY(0) rotate(var(--ar,0deg));} 50%{transform:translateY(-14px) rotate(var(--ar,0deg));} }
+  .hero.paused .col,.hero.paused .accent{animation-play-state:paused;}
+
+  .herooverlay{position:absolute;left:50%;top:50%;z-index:3;width:min(600px,90%);transform:translate(-50%,-50%);text-align:center;
+    opacity:0;animation:fadeUp .9s ease forwards;animation-delay:.25s;}
+  @keyframes fadeUp{ from{opacity:0;transform:translate(-50%,-44%);} to{opacity:1;transform:translate(-50%,-50%);} }
+  .eyebrow{display:inline-block;background:#fff;border:2px solid var(--bl);color:var(--bl);font-weight:800;font-size:13px;padding:6px 16px;border-radius:999px;margin-bottom:16px;box-shadow:0 6px 16px rgba(43,134,224,.12);letter-spacing:.02em;}
+  .hero h1{font-size:44px;font-weight:900;line-height:1.16;letter-spacing:.01em;text-shadow:0 2px 16px rgba(255,255,255,.95);}
+  .hero h1 u{color:var(--or);text-decoration-color:var(--pop);text-decoration-thickness:8px;text-underline-offset:2px;}
+  .hero h1 b{color:var(--accent);}
+  .hero .pitch{margin-top:14px;font-size:16px;color:var(--ink);font-weight:700;text-shadow:0 1px 12px rgba(255,255,255,.95);}
+  .hero .pitch b{color:var(--accent2);}
+
+  .ctaBlock{margin-top:22px;}
+  .btn-line{display:inline-flex;flex-direction:column;align-items:center;gap:2px;background:var(--line);color:#fff;text-decoration:none;font-weight:900;font-size:21px;padding:18px 44px;border-radius:999px;box-shadow:0 16px 34px rgba(6,199,85,.4);transition:transform .1s;}
+  .btn-line:active{transform:scale(.98);}
+  .btn-line small{font-weight:700;font-size:12px;opacity:.95;}
+  .reassure{margin-top:11px;font-size:13px;color:var(--sub);font-weight:800;text-shadow:0 1px 8px rgba(255,255,255,.95);}
+  .pausebtn{position:absolute;top:14px;right:16px;z-index:4;background:rgba(255,255,255,.85);border:1px solid #e4defa;border-radius:999px;font-size:12px;font-weight:800;color:var(--sub);padding:6px 12px;cursor:pointer;}
+
+  @media(prefers-reduced-motion:reduce){ .col,.accent{animation:none!important;} .herooverlay{animation:none!important;opacity:1!important;transform:translate(-50%,-50%)!important;} }
+
+  /* BENEFITS (the hero of this page) */
+  .benefits{background:linear-gradient(160deg,#fff,var(--bg1));}
+  .bgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
+  .b{background:var(--card);border-radius:var(--radius);padding:24px;box-shadow:0 10px 26px rgba(90,60,160,.09);position:relative;border:1px solid #efeaff;display:flex;gap:16px;align-items:flex-start;}
+  .b.feature{grid-column:1 / -1;background:linear-gradient(120deg,#fff,#fff7f9);border:2px solid #ffd9e2;}
+  .b .ic{width:56px;height:56px;border-radius:15px;display:flex;align-items:center;justify-content:center;font-size:30px;flex-shrink:0;background:#f1edff;}
+  .b h3{font-size:18px;font-weight:900;margin-bottom:4px;display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+  .b p{font-size:14px;color:var(--sub);}
+  .tag{font-size:11px;font-weight:900;padding:3px 10px;border-radius:999px;background:var(--pop);color:#5a3d00;}
+  .tag.free{background:#e3fbec;color:#0a8f43;}
+  .b .thumbs{display:flex;gap:6px;margin-top:10px;}
+  .b .thumbs img{width:48px;height:48px;border-radius:9px;object-fit:cover;}
+
+  /* 16 type mini gallery inside benefit 1 context */
+  .typestrip{display:grid;grid-template-columns:repeat(8,1fr);gap:8px;margin-top:26px;}
+  .typestrip img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:10px;box-shadow:0 5px 12px rgba(90,60,160,.1);}
+
+  /* guide preview */
+  .gpreview{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:28px;}
+  .gpreview figure{width:220px;}
+  .gpreview img{width:100%;border-radius:10px;box-shadow:0 14px 30px rgba(47,75,134,.2);border:1px solid #eee;display:block;}
+  .gpreview figcaption{font-size:12px;color:var(--sub);font-weight:700;text-align:center;margin-top:8px;}
+  .gpreview figure:nth-child(1){transform:rotate(-2deg);} .gpreview figure:nth-child(3){transform:rotate(2deg);}
+  .gchips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;max-width:680px;margin:0 auto;}
+  .gchip{background:#fff;border:1.5px solid #e3dcff;color:var(--ink);font-weight:800;font-size:12px;padding:7px 14px;border-radius:999px;}
+  .gchip b{color:var(--accent2);}
+
+  /* benefits: 2 big cards + 3 small */
+  .btop{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+  .bigcard{background:var(--card);border-radius:var(--radius);padding:26px;box-shadow:0 14px 34px rgba(90,60,160,.1);border:1px solid #efeaff;display:flex;flex-direction:column;}
+  .bigcard.pink{background:linear-gradient(140deg,#fff,#fff5f8);border-color:#ffd9e2;}
+  .bigcard.yellow{background:linear-gradient(140deg,#fff,#fffaf0);border-color:#ffe6b3;}
+  .bhead{display:flex;align-items:center;gap:12px;margin-bottom:10px;}
+  .bhead h3{font-size:20px;font-weight:900;display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+  .bigcard>p{font-size:14px;color:var(--sub);}
+  .bigcard .typestrip{grid-template-columns:repeat(4,1fr);margin-top:16px;}
+  .gpreview.sm{gap:8px;margin:16px 0 12px;}
+  .gpreview.sm figure{width:auto;flex:1;transform:none!important;}
+  .gpreview.sm img{box-shadow:0 8px 18px rgba(47,75,134,.16);}
+  .gpreview.sm figcaption{font-size:10px;margin-top:5px;}
+  .bbot{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:16px;}
+  .bbot .b{flex-direction:column;}
+  .bbot .b .ic{margin-bottom:6px;}
+  .merits{margin-top:16px;display:flex;flex-direction:column;gap:8px;padding:0;}
+  .merits li{list-style:none;font-size:13.5px;font-weight:700;color:var(--ink);display:flex;gap:9px;align-items:flex-start;line-height:1.5;}
+  .merits li::before{content:"✓";color:var(--line);font-weight:900;flex-shrink:0;}
+  .merits b{color:var(--accent);white-space:nowrap;}
+  .bbot .b b{color:var(--accent2);}
+
+  /* urgency band */
+  .urgency{background:linear-gradient(160deg,#fff,#eaf2fd);}
+  .urgency h2 span{color:var(--bl);}
+  .ustats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:8px 0 22px;}
+  .ustat{background:#fff;border-radius:18px;padding:24px 18px;text-align:center;box-shadow:0 8px 22px rgba(43,134,224,.1);border:1px solid #d3e6fb;}
+  .un{font-size:36px;font-weight:900;color:var(--bl);line-height:1.05;letter-spacing:-.01em;}
+  .un small{font-size:18px;}
+  .ul{font-size:12.5px;color:var(--sub);font-weight:700;margin-top:10px;line-height:1.55;}
+  .ufoot{text-align:center;font-weight:800;color:var(--ink);font-size:15px;}
+  .ufoot b{color:var(--bl);}
+
+  .pains{background:#fff;}
+  .painlist{max-width:620px;margin:0 auto;display:flex;flex-direction:column;gap:12px;}
+  .pain{display:flex;gap:12px;align-items:flex-start;background:var(--bg1);border-radius:14px;padding:16px 18px;font-weight:700;}
+  .pain .c{color:var(--accent);font-weight:900;}
+
+  .steps{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+  .step{flex:1;min-width:200px;max-width:260px;background:var(--card);border-radius:var(--radius);padding:24px 20px;text-align:center;box-shadow:0 8px 22px rgba(90,60,160,.08);}
+  .step .sn{font-size:13px;font-weight:900;color:var(--accent2);letter-spacing:.1em;}
+  .step .si{font-size:38px;margin:8px 0;}
+  .step h3{font-size:16px;font-weight:900;margin-bottom:4px;}
+  .step p{font-size:13px;color:var(--sub);}
+
+  .faq{max-width:640px;margin:24px auto 0;display:flex;flex-direction:column;gap:10px;}
+  details{background:var(--card);border-radius:14px;padding:4px 20px;box-shadow:0 6px 16px rgba(90,60,160,.06);}
+  summary{font-weight:800;font-size:15px;padding:16px 0;cursor:pointer;list-style:none;position:relative;}
+  summary::-webkit-details-marker{display:none;}
+  summary::after{content:"＋";position:absolute;right:0;color:var(--accent2);font-weight:900;}
+  details[open] summary::after{content:"−";}
+  details p{padding:0 0 16px;font-size:14px;color:var(--sub);}
+
+  .final{background:linear-gradient(160deg,var(--accent2),#8b7bff);color:#fff;text-align:center;}
+  .final h2{color:#fff;} .final .lead{color:rgba(255,255,255,.85);}
+
+  footer{background:#140f28;color:#9b93bd;font-size:12px;text-align:center;padding:40px 20px;}
+  footer .fl{margin-bottom:10px;color:#cfc8ea;font-weight:800;}
+
+  .sticky{position:fixed;left:0;right:0;bottom:0;z-index:60;background:rgba(255,255,255,.95);backdrop-filter:blur(8px);border-top:1px solid #e4defa;padding:10px 16px;display:none;}
+  .sticky a{display:block;text-align:center;background:var(--line);color:#fff;font-weight:900;font-size:17px;padding:15px;border-radius:999px;text-decoration:none;}
+
+  .devnote{background:#fff7d6;border-top:2px dashed #e6c200;color:#6b5600;font-size:13px;line-height:1.8;padding:22px 20px;}
+  .devnote b{color:#a36a00;} .devnote .wrap{max-width:760px;}
+
+  @media(max-width:720px){
+    .herostage{height:560px;}
+    .col{width:118px;gap:12px;}
+    .bgfield{gap:12px;}
+    .herooverlay{width:92%;}
+    .accent{font-size:24px;}
+    .hero h1{font-size:31px;} h2{font-size:23px;}
+    .hero .pitch{font-size:14px;}
+    .btn-line{font-size:18px;padding:16px 30px;}
+    .bgrid{grid-template-columns:1fr;}
+    .btop{grid-template-columns:1fr;}
+    .bbot{grid-template-columns:1fr;}
+    .ustats{grid-template-columns:1fr;}
+    .b.feature{grid-column:auto;}
+    .typestrip{grid-template-columns:repeat(4,1fr);}
+    .sticky{display:block;} body{padding-bottom:78px;} section{padding:46px 0;}
+    .offer-pill{font-size:13px;}
+  }
+
+
 /* ---------- Footer（/student/lis と共通） ---------- */
 #nft{background:#4D5156;color:#C4C7CB;padding:52px 0 0;font-family:inherit;text-align:center}
 #nft a{text-decoration:none;color:inherit;transition:color .18s,background .18s}
@@ -76,62 +206,177 @@ h2 .n{color:var(--b)}
 @media(max-width:860px){.nft-nav{grid-template-columns:1fr 1fr;gap:28px}.nft-in{padding:0 24px}}
 @media(max-width:640px){.nft-head{flex-direction:column;align-items:flex-start;gap:18px}.nft-nav{grid-template-columns:1fr 1fr;gap:20px}.nft-btm{flex-direction:column;align-items:flex-start;gap:8px}}
 #nft{border-top:0;font-size:inherit}
+
 </style></head><body>
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NGGHLZ38" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-<div class="phone">
-<header><div class="logo">AO<span class="h">H</span>A<span class="r">R</span>U</div><small>大学1・2年生の長期インターン</small></header>
+<header>
+  <div class="wrap hbar">
+    <div class="logo"><img src="poke.webp" alt="ぽけくん"><span class="brand">AO<b style="color:var(--bl)">H</b>A<b style="color:var(--or)">R</b>Uインターン<small>就活スタート応援</small></span></div>
+    <a class="hcta cta" href="https://s.lmes.jp/landing-qr/2008019424-482x88yd?uLand=LTo9qR" data-cta="header">LINEで受け取る</a>
+  </div>
+</header>
 
-<div class="hero">
-  <span class="kick">大学1・2年生のあなたへ ／ 無料</span>
-  <h1>やりたいことがなくても、<br><em>始めていい。</em></h1>
-  <p class="lead">1・2年生からの就活スタートガイド</p>
-  <img class="cover-img" src="cover.webp" alt="1・2年生からの就活スタートガイド 表紙" width="372" height="544">
-  <a class="cta" href="https://s.lmes.jp/landing-qr/2008019424-482x88yd?uLand=LTo9qR" data-cta="hero">LINEで無料で受け取る<small>友だち追加後、すぐにトークに届きます</small></a>
-  <p class="micro">登録は30秒。いつでもブロックできます。</p>
+<!-- HERO -->
+<div class="hero" id="hero">
+  <button class="pausebtn" id="pausebtn" type="button" aria-label="モーションを止める">⏸ モーション</button>
+  <div class="herostage">
+    <div class="bgfield" aria-hidden="true">
+      <div class="col" style="--sp:34s"><div class="bc c1"></div><div class="bc c3"></div><div class="bc c5"></div><div class="bc c7"></div><div class="bc c2"></div><div class="bc c1"></div><div class="bc c3"></div><div class="bc c5"></div><div class="bc c7"></div><div class="bc c2"></div></div>
+      <div class="col rev" style="--sp:28s"><div class="bc c4"></div><div class="bc c6"></div><div class="bc c8"></div><div class="bc c1"></div><div class="bc c3"></div><div class="bc c4"></div><div class="bc c6"></div><div class="bc c8"></div><div class="bc c1"></div><div class="bc c3"></div></div>
+      <div class="col" style="--sp:40s"><div class="bc c2"></div><div class="bc c5"></div><div class="bc c7"></div><div class="bc c4"></div><div class="bc c6"></div><div class="bc c2"></div><div class="bc c5"></div><div class="bc c7"></div><div class="bc c4"></div><div class="bc c6"></div></div>
+      <div class="col rev" style="--sp:31s"><div class="bc c8"></div><div class="bc c1"></div><div class="bc c3"></div><div class="bc c5"></div><div class="bc c7"></div><div class="bc c8"></div><div class="bc c1"></div><div class="bc c3"></div><div class="bc c5"></div><div class="bc c7"></div></div>
+      <div class="col" style="--sp:26s"><div class="bc c6"></div><div class="bc c2"></div><div class="bc c4"></div><div class="bc c8"></div><div class="bc c1"></div><div class="bc c6"></div><div class="bc c2"></div><div class="bc c4"></div><div class="bc c8"></div><div class="bc c1"></div></div>
+      <div class="col rev" style="--sp:37s"><div class="bc c3"></div><div class="bc c7"></div><div class="bc c5"></div><div class="bc c2"></div><div class="bc c6"></div><div class="bc c3"></div><div class="bc c7"></div><div class="bc c5"></div><div class="bc c2"></div><div class="bc c6"></div></div>
+    </div>
+
+    <div class="scrim"></div>
+
+    <div class="herooverlay">
+      <span class="eyebrow">● 1・2年生専用｜就活スタート</span>
+      <h1>「やりたいこと」が、<br>まだ<u>なくても</u>いい。</h1>
+      <p class="pitch">診断・ガイド・プロ相談まで。<br>就活のはじめの一歩、ぜんぶ<b>LINEで無料</b>。</p>
+      <div class="ctaBlock">
+        <a class="btn-line cta" data-cta="hero" href="https://s.lmes.jp/landing-qr/2008019424-482x88yd?uLand=LTo9qR">
+          LINEで無料で受け取る
+          <small>友だち追加後、すぐにトークに届きます</small>
+        </a>
+        <div class="reassure">✓ 無料　✓ 約1分　✓ 1・2年生専用</div>
+      </div>
+    </div>
+  </div>
 </div>
 
-<section>
-  <h2>このガイドで<span class="n">わかること</span></h2>
-  <div class="list">
-    <div class="item"><div class="num">01</div><div><b>就活のいまと、1・2年生の本音</b><p>3年生の夏までのスケジュールをデータで。</p></div></div>
-    <div class="item"><div class="num">02</div><div><b>「話せる経験」のつくり方</b><p>面接で見られる3つの条件と、5つの選択肢。</p></div></div>
-    <div class="item"><div class="num">03</div><div><b>4つの質問で、次の一歩がわかる</b><p>タップで答えるだけ。A〜Dで自分の一歩が出ます。</p></div></div>
-    <div class="item"><div class="num">04</div><div><b>先輩4人のリアル</b><p>不安だったこと、変わったこと、合わなかったこと。</p></div></div>
-    <div class="item"><div class="num">05</div><div><b>書き込みワーク「10の質問」</b><p>やりたいことの種を、自分の言葉で見つける。</p></div></div>
+<!-- URGENCY -->
+<section class="urgency">
+  <div class="wrap">
+    <h2>就活は、もう<span>始まっている</span>。</h2>
+    <p class="lead">「3年生から」じゃ遅い。1・2年生から動く人が、年々増えています。</p>
+    <div class="ustats">
+      <div class="ustat"><div class="un">34.6<small>%</small></div><div class="ul">3年生の1月時点で、すでに内定を持っていた学生</div></div>
+      <div class="ustat"><div class="un">82.4<small>%</small></div><div class="ul">内定先が、インターン等で先に接点のあった企業</div></div>
+      <div class="ustat"><div class="un">毎月520<small>名</small></div><div class="ul">AOHARUに新しく登録する、1・2年生の数</div></div>
+    </div>
+    <p class="ufoot">動き出すのが早い人ほど、先に<b>“話せる経験”</b>を持っている。</p>
   </div>
 </section>
 
-<section>
-  <h2>ガイドに登場する先輩の声</h2>
-  <div class="quote"><p>「不安は、行動でしか解決できない」</p><span>大学2年生・営業（部活と両立）</span></div>
-  <div class="quote"><p>「『合わない』と分かったのが、いちばんの収穫」</p><span>大学3年生・不動産営業</span></div>
-  <p class="micro">4,500人以上の大学1・2年生と向き合ってきたAOHARUがまとめました。</p>
-</section>
+<!-- BENEFITS = the real differentiator -->
+<section class="benefits">
+  <div class="wrap">
+    <h2>LINE追加で、使えるようになる<span class="mark">5つ</span></h2>
+    <p class="lead">友だち追加するだけ。もちろん、ぜんぶ無料。</p>
+    <!-- 2 big cards: 16TYPE診断 ＆ 就活スタートガイド -->
+    <div class="btop">
+      <div class="bigcard pink">
+        <div class="bhead"><div class="ic" style="background:#ffe3ec;">🧭</div><h3>16TYPE診断 <span class="tag free">無料</span></h3></div>
+        <p>10問に答えるだけで、あなたの就活タイプと強みがわかる。結果はLINEにそのまま届きます。</p>
+        <div class="typestrip">
+          <img loading="lazy" decoding="async" src="c1.webp" alt=""><img loading="lazy" decoding="async" src="c3.webp" alt=""><img loading="lazy" decoding="async" src="c2.webp" alt=""><img loading="lazy" decoding="async" src="c5.webp" alt="">
+          <img loading="lazy" decoding="async" src="c7.webp" alt=""><img loading="lazy" decoding="async" src="c4.webp" alt=""><img loading="lazy" decoding="async" src="c8.webp" alt=""><img loading="lazy" decoding="async" src="c6.webp" alt="">
+        </div>
+        <ul class="merits">
+          <li>自分の<b>強み</b>と、向いてる動き方がわかる</li>
+          <li>やりたいことが無くても、<b>進む方向</b>が見える</li>
+          <li>面接で使える<b>“自分の言葉”</b>が手に入る</li>
+        </ul>
+      </div>
 
-<section>
-  <h2>受け取りは<span class="n">3ステップ</span></h2>
-  <div class="steps">
-    <div class="step"><div class="ic">👆</div><div><b>① 「LINEで受け取る」をタップ</b><p>LINEアプリが開きます。</p></div></div>
-    <div class="step key"><div class="ic">✅</div><div><b>② 「許可する」→「友だち追加」</b><p>LINEで確認画面が出たら<span class="allow">許可する</span>を押して、そのまま友だち追加してください。</p></div></div>
-    <div class="step"><div class="ic">💬</div><div><b>③ トークにガイドが届く</b><p>友だち追加すると、すぐにガイドのリンクが届きます。</p></div></div>
+      <div class="bigcard yellow">
+        <div class="bhead"><div class="ic" style="background:#fff3d6;">📘</div><h3>就活スタートガイド <span class="tag">今なら無料</span></h3></div>
+        <p>タイプ別に「何から始めればいいか」がわかる資料。書き込みワーク付きで、読んで終わりにしない。</p>
+        <div class="gpreview sm">
+          <figure><img loading="lazy" decoding="async" src="cover.webp" alt="表紙"><figcaption>表紙</figcaption></figure>
+          <figure><img loading="lazy" decoding="async" src="page4.webp" alt="就活データ"><figcaption>就活データ</figcaption></figure>
+          <figure><img loading="lazy" decoding="async" src="page6.webp" alt="経験のつくり方"><figcaption>経験のつくり方</figcaption></figure>
+        </div>
+        <div class="gchips">
+          <span class="gchip">📚 全<b>7</b>章</span>
+          <span class="gchip">✍️ 書き込みワーク付き</span>
+          <span class="gchip">🗣 先輩のリアルな声</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3 smaller cards -->
+    <div class="bbot">
+      <div class="b"><div class="ic" style="background:#e6f7ea;">💬</div><div><h3>プロに相談し放題</h3><p>人材業界<b>8年以上</b>のプロに、不安も心配事も進め方も相談し放題。ひとりで抱えなくて大丈夫。</p></div></div>
+      <div class="b"><div class="ic" style="background:#e9e6ff;">🎯</div><div><h3>企業と直接つながる</h3><p>企業と直接話せるイベントや、<b>授業と両立できる有給インターン</b>を紹介。ガクチカ以上の“実力”が身につく。</p></div></div>
+      <div class="b"><div class="ic" style="background:#e3f0ff;">🔔</div><div><h3>選択肢がどんどん広がる</h3><p>毎週増える新着求人で選択肢が拡大。いろいろ知るうちに、<b>“自分の軸”</b>が見えてくる。</p></div></div>
+    </div>
   </div>
 </section>
 
-<section class="faq">
-  <h2>よくある質問</h2>
-  <details open><summary>本当に無料？</summary><p>無料です。ガイドを読むだけでもOKです。</p></details>
-  <details><summary>インターンをやると決めていなくてもいい？</summary><p>大丈夫です。「まだ何も決まっていない」人のためのガイドです。</p></details>
-  <details><summary>しつこい連絡は来ない？</summary><p>届くのは就活やインターンのお役立ち情報です。いつでもブロックできます。</p></details>
+<!-- PAINS -->
+<section class="pains">
+  <div class="wrap">
+    <h2>こんな人に、届けたい。</h2>
+    <p class="lead">ひとつでも当てはまったら、きっと役に立ちます。</p>
+    <div class="painlist">
+      <div class="pain"><span class="c">✔</span>「やりたいこと」がまだ見つからない</div>
+      <div class="pain"><span class="c">✔</span>就活で話せるような経験が、正直まだない</div>
+      <div class="pain"><span class="c">✔</span>何から手をつければいいか分からない</div>
+      <div class="pain"><span class="c">✔</span>相談できる相手が、まわりにいない</div>
+    </div>
+  </div>
 </section>
 
+<!-- STEPS -->
+<section>
+  <div class="wrap">
+    <h2>受け取りまで、<span class="mark">3ステップ</span></h2>
+    <p class="lead">最短1分。登録フォームの入力はありません。</p>
+    <div class="steps">
+      <div class="step"><div class="sn">STEP 1</div><div class="si">📱</div><h3>LINEで友だち追加</h3><p>ボタンをタップして追加するだけ。</p></div>
+      <div class="step"><div class="sn">STEP 2</div><div class="si">✏️</div><h3>16TYPE診断に回答</h3><p>直感でOK。約1分で終わります。</p></div>
+      <div class="step"><div class="sn">STEP 3</div><div class="si">🎁</div><h3>結果＆特典が届く</h3><p>診断結果・ガイド・求人情報がトークに。</p></div>
+    </div>
+    <div class="ctaBlock" style="text-align:center;">
+      <a class="btn-line cta" data-cta="mid" href="https://s.lmes.jp/landing-qr/2008019424-482x88yd?uLand=LTo9qR">
+        LINEで無料で受け取る
+        <small>友だち追加後、すぐにトークに届きます</small>
+      </a>
+      <div class="reassure">✓ 無料　✓ 約1分　✓ 1・2年生専用</div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="pains">
+  <div class="wrap">
+    <h2>よくある質問</h2>
+    <div class="faq">
+      <details><summary>本当に全部無料ですか？</summary><p>はい、診断・ガイド・相談・求人情報まで、すべて無料です。費用は一切かかりません。</p></details>
+      <details><summary>1・2年生でも大丈夫？</summary><p>むしろ早いほど差がつきます。就活本番前の今だからこそ役立つ内容です。</p></details>
+      <details><summary>やりたいことが、まだ決まっていなくても大丈夫？</summary><p>むしろ、その状態からで大丈夫です。「やりたいこと」は、何かを経験してから見えてくるもの。診断とガイドが、あなたの最初の一歩を一緒に探します。</p></details>
+      <details><summary>相談ってどんなことができる？</summary><p>就活の始め方、自己分析、インターン選び、面接の不安など何でもOK。プロが伴走します。</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL -->
 <section class="final">
-  <h2>まずは、読むところから。</h2>
-  <a class="cta" href="https://s.lmes.jp/landing-qr/2008019424-482x88yd?uLand=LTo9qR" data-cta="final">LINEで無料で受け取る<small>友だち追加後、すぐにトークに届きます</small></a>
+  <div class="wrap">
+    <h2>就活のいいこと、ぜんぶLINEで。</h2>
+    <p class="lead">診断・ガイド・プロ相談・求人情報。追加して損なし、いいことしかない。</p>
+    <div class="ctaBlock" style="text-align:center;">
+      <a class="btn-line cta" data-cta="final" href="https://s.lmes.jp/landing-qr/2008019424-482x88yd?uLand=LTo9qR" style="background:#fff;color:var(--line);">
+        LINEで無料で受け取る
+        <small style="color:var(--line);">友だち追加後、すぐにトークに届きます</small>
+      </a>
+    </div>
+  </div>
 </section>
 
-<div class="sticky"><a class="cta" href="https://s.lmes.jp/landing-qr/2008019424-482x88yd?uLand=LTo9qR" data-cta="sticky">LINEで無料で受け取る</a></div>
+<div class="sticky">
+  <a class="cta" data-cta="sticky" href="https://s.lmes.jp/landing-qr/2008019424-482x88yd?uLand=LTo9qR">LINEで無料で受け取る</a>
 </div>
+
+<script>
+(function(){var h=document.getElementById('hero'),b=document.getElementById('pausebtn');if(!h||!b)return;
+b.addEventListener('click',function(){var p=h.classList.toggle('paused');b.textContent=p?'▶ モーション':'⏸ モーション';});})();
+</script>
+
 <footer id="nft">
   <div class="nft-in">
     <div class="nft-head">
