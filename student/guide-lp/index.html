@@ -43,14 +43,13 @@
   .col.rev{animation-direction:reverse;}
   @keyframes drift{ from{transform:translateY(0);} to{transform:translateY(-50%);} }
   .bc{width:100%;aspect-ratio:1;border-radius:16px;background-size:cover;background-position:center;box-shadow:0 8px 18px rgba(47,75,134,.08);filter:saturate(.75);}
-  .c1{background-image:url(c1.webp);} .c2{background-image:url(c2.webp);}
-  .c3{background-image:url(c3.webp);} .c4{background-image:url(c4.webp);}
-  .c5{background-image:url(c5.webp);} .c6{background-image:url(c6.webp);}
-  .c7{background-image:url(c7.webp);} .c8{background-image:url(c8.webp);}
+  .c1{background-image:url(/student/guide-lp/c1.webp);} .c2{background-image:url(/student/guide-lp/c2.webp);}
+  .c3{background-image:url(/student/guide-lp/c3.webp);} .c4{background-image:url(/student/guide-lp/c4.webp);}
+  .c5{background-image:url(/student/guide-lp/c5.webp);} .c6{background-image:url(/student/guide-lp/c6.webp);}
+  .c7{background-image:url(/student/guide-lp/c7.webp);} .c8{background-image:url(/student/guide-lp/c8.webp);}
   .scrim{position:absolute;inset:0;z-index:2;pointer-events:none;background:radial-gradient(62% 56% at 50% 48%, rgba(255,255,255,.93) 0%, rgba(255,255,255,.72) 46%, rgba(255,255,255,.28) 76%, rgba(255,255,255,0) 100%);}
   .accent{position:absolute;z-index:2;font-size:30px;animation:bobbing var(--as,6s) ease-in-out infinite;filter:drop-shadow(0 6px 10px rgba(0,0,0,.08));pointer-events:none;}
   @keyframes bobbing{ 0%,100%{transform:translateY(0) rotate(var(--ar,0deg));} 50%{transform:translateY(-14px) rotate(var(--ar,0deg));} }
-  .hero.paused .col,.hero.paused .accent{animation-play-state:paused;}
 
   .herooverlay{position:absolute;left:50%;top:50%;z-index:3;width:min(600px,90%);transform:translate(-50%,-50%);text-align:center;
     opacity:0;animation:fadeUp .9s ease forwards;animation-delay:.25s;}
@@ -67,7 +66,6 @@
   .btn-line:active{transform:scale(.98);}
   .btn-line small{font-weight:700;font-size:12px;opacity:.95;}
   .reassure{margin-top:11px;font-size:13px;color:var(--sub);font-weight:800;text-shadow:0 1px 8px rgba(255,255,255,.95);}
-  .pausebtn{position:absolute;top:14px;right:16px;z-index:4;background:rgba(255,255,255,.85);border:1px solid #e4defa;border-radius:999px;font-size:12px;font-weight:800;color:var(--sub);padding:6px 12px;cursor:pointer;}
 
   @media(prefers-reduced-motion:reduce){ .col,.accent{animation:none!important;} .herooverlay{animation:none!important;opacity:1!important;transform:translate(-50%,-50%)!important;} }
 
@@ -214,14 +212,13 @@
 
 <header>
   <div class="wrap hbar">
-    <div class="logo"><img src="poke.webp" alt="ぽけくん"><span class="brand">AO<b style="color:var(--bl)">H</b>A<b style="color:var(--or)">R</b>Uインターン<small>就活スタート応援</small></span></div>
+    <div class="logo"><img src="/student/guide-lp/poke.webp" alt="ぽけくん"><span class="brand">AO<b style="color:var(--bl)">H</b>A<b style="color:var(--or)">R</b>Uインターン<small>就活スタート応援</small></span></div>
     <a class="hcta cta" href="https://s.lmes.jp/landing-qr/2008019424-482x88yd?uLand=LTo9qR" data-cta="header">LINEで受け取る</a>
   </div>
 </header>
 
 <!-- HERO -->
 <div class="hero" id="hero">
-  <button class="pausebtn" id="pausebtn" type="button" aria-label="モーションを止める">⏸ モーション</button>
   <div class="herostage">
     <div class="bgfield" aria-hidden="true">
       <div class="col" style="--sp:34s"><div class="bc c1"></div><div class="bc c3"></div><div class="bc c5"></div><div class="bc c7"></div><div class="bc c2"></div><div class="bc c1"></div><div class="bc c3"></div><div class="bc c5"></div><div class="bc c7"></div><div class="bc c2"></div></div>
@@ -274,8 +271,8 @@
         <div class="bhead"><div class="ic" style="background:#ffe3ec;">🧭</div><h3>16TYPE診断 <span class="tag free">無料</span></h3></div>
         <p>10問に答えるだけで、あなたの就活タイプと強みがわかる。結果はLINEにそのまま届きます。</p>
         <div class="typestrip">
-          <img loading="lazy" decoding="async" src="c1.webp" alt=""><img loading="lazy" decoding="async" src="c3.webp" alt=""><img loading="lazy" decoding="async" src="c2.webp" alt=""><img loading="lazy" decoding="async" src="c5.webp" alt="">
-          <img loading="lazy" decoding="async" src="c7.webp" alt=""><img loading="lazy" decoding="async" src="c4.webp" alt=""><img loading="lazy" decoding="async" src="c8.webp" alt=""><img loading="lazy" decoding="async" src="c6.webp" alt="">
+          <img loading="lazy" decoding="async" src="/student/guide-lp/c1.webp" alt=""><img loading="lazy" decoding="async" src="/student/guide-lp/c3.webp" alt=""><img loading="lazy" decoding="async" src="/student/guide-lp/c2.webp" alt=""><img loading="lazy" decoding="async" src="/student/guide-lp/c5.webp" alt="">
+          <img loading="lazy" decoding="async" src="/student/guide-lp/c7.webp" alt=""><img loading="lazy" decoding="async" src="/student/guide-lp/c4.webp" alt=""><img loading="lazy" decoding="async" src="/student/guide-lp/c8.webp" alt=""><img loading="lazy" decoding="async" src="/student/guide-lp/c6.webp" alt="">
         </div>
         <ul class="merits">
           <li>自分の<b>強み</b>と、向いてる動き方がわかる</li>
@@ -288,9 +285,9 @@
         <div class="bhead"><div class="ic" style="background:#fff3d6;">📘</div><h3>就活スタートガイド <span class="tag">今なら無料</span></h3></div>
         <p>タイプ別に「何から始めればいいか」がわかる資料。書き込みワーク付きで、読んで終わりにしない。</p>
         <div class="gpreview sm">
-          <figure><img loading="lazy" decoding="async" src="cover.webp" alt="表紙"><figcaption>表紙</figcaption></figure>
-          <figure><img loading="lazy" decoding="async" src="page4.webp" alt="就活データ"><figcaption>就活データ</figcaption></figure>
-          <figure><img loading="lazy" decoding="async" src="page6.webp" alt="経験のつくり方"><figcaption>経験のつくり方</figcaption></figure>
+          <figure><img loading="lazy" decoding="async" src="/student/guide-lp/cover.webp" alt="表紙"><figcaption>表紙</figcaption></figure>
+          <figure><img loading="lazy" decoding="async" src="/student/guide-lp/page4.webp" alt="就活データ"><figcaption>就活データ</figcaption></figure>
+          <figure><img loading="lazy" decoding="async" src="/student/guide-lp/page6.webp" alt="経験のつくり方"><figcaption>経験のつくり方</figcaption></figure>
         </div>
         <div class="gchips">
           <span class="gchip">📚 全<b>7</b>章</span>
@@ -374,9 +371,6 @@
   <a class="cta" data-cta="sticky" href="https://s.lmes.jp/landing-qr/2008019424-482x88yd?uLand=LTo9qR">LINEで無料で受け取る</a>
 </div>
 
-<script>
-(function(){var h=document.getElementById('hero'),b=document.getElementById('pausebtn');if(!h||!b)return;b.addEventListener('click',function(){var p=h.classList.toggle('paused');b.textContent=p?'\u25b6 \u30e2\u30fc\u30b7\u30e7\u30f3':'\u23f8 \u30e2\u30fc\u30b7\u30e7\u30f3';});})();
-</script>
 
 <footer id="nft">
   <div class="nft-in">
