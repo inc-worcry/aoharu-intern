@@ -25,7 +25,7 @@
   .wrap{max-width:var(--maxw);margin:0 auto;padding:0 20px;}
   section{padding:62px 0;}
   h2{font-size:28px;font-weight:900;text-align:center;line-height:1.35;margin-bottom:10px;}
-  h2 .mark{color:var(--accent);}
+  h2 .mark{color:var(--accent);white-space:nowrap;}
   .lead{text-align:center;color:var(--sub);font-size:15px;margin-bottom:36px;}
 
   header{position:sticky;top:0;z-index:50;background:rgba(246,244,255,.9);backdrop-filter:blur(8px);border-bottom:1px solid #e4defa;}
@@ -151,8 +151,8 @@
   details[open] summary::after{content:"−";}
   details p{padding:0 0 16px;font-size:14px;color:var(--sub);}
 
-  .final{background:linear-gradient(160deg,var(--accent2),#8b7bff);color:#fff;text-align:center;}
-  .final h2{color:#fff;} .final .lead{color:rgba(255,255,255,.85);}
+  .final{background:linear-gradient(160deg,#f4f1ff,#ece6ff);text-align:center;}
+  .final h2{color:var(--ink);} .final .lead{color:var(--sub);}
 
   footer{background:#140f28;color:#9b93bd;font-size:12px;text-align:center;padding:40px 20px;}
   footer .fl{margin-bottom:10px;color:#cfc8ea;font-weight:800;}
@@ -176,6 +176,7 @@
     .btop{grid-template-columns:1fr;}
     .bbot{grid-template-columns:1fr;}
     .ustats{grid-template-columns:1fr;}
+    .merits li{font-size:12.5px;line-height:1.45;}
     .b.feature{grid-column:auto;}
     .typestrip{grid-template-columns:repeat(4,1fr);}
     .sticky{display:block;} body{padding-bottom:78px;} section{padding:46px 0;}
@@ -206,6 +207,7 @@
 @media(max-width:860px){.nft-nav{grid-template-columns:1fr 1fr;gap:28px}.nft-in{padding:0 24px}}
 @media(max-width:640px){.nft-head{flex-direction:column;align-items:flex-start;gap:18px}.nft-nav{grid-template-columns:1fr 1fr;gap:20px}.nft-btm{flex-direction:column;align-items:flex-start;gap:8px}}
 #nft{border-top:0;font-size:inherit}
+
 
 </style></head><body>
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NGGHLZ38" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -357,12 +359,12 @@
 <!-- FINAL -->
 <section class="final">
   <div class="wrap">
-    <h2>就活のいいこと、ぜんぶLINEで。</h2>
-    <p class="lead">診断・ガイド・プロ相談・求人情報。追加して損なし、いいことしかない。</p>
+    <h2>まずは、じぶんを知るところから。</h2>
+    <p class="lead">診断もガイドも、プロへの相談も。はじめの一歩は、気軽にLINEで。</p>
     <div class="ctaBlock" style="text-align:center;">
-      <a class="btn-line cta" data-cta="final" href="https://s.lmes.jp/landing-qr/2008019424-482x88yd?uLand=LTo9qR" style="background:#fff;color:var(--line);">
+      <a class="btn-line cta" data-cta="final" href="https://s.lmes.jp/landing-qr/2008019424-482x88yd?uLand=LTo9qR">
         LINEで無料で受け取る
-        <small style="color:var(--line);">友だち追加後、すぐにトークに届きます</small>
+        <small>友だち追加後、すぐにトークに届きます</small>
       </a>
     </div>
   </div>
@@ -373,8 +375,7 @@
 </div>
 
 <script>
-(function(){var h=document.getElementById('hero'),b=document.getElementById('pausebtn');if(!h||!b)return;
-b.addEventListener('click',function(){var p=h.classList.toggle('paused');b.textContent=p?'▶ モーション':'⏸ モーション';});})();
+(function(){var h=document.getElementById('hero'),b=document.getElementById('pausebtn');if(!h||!b)return;b.addEventListener('click',function(){var p=h.classList.toggle('paused');b.textContent=p?'\u25b6 \u30e2\u30fc\u30b7\u30e7\u30f3':'\u23f8 \u30e2\u30fc\u30b7\u30e7\u30f3';});})();
 </script>
 
 <footer id="nft">
