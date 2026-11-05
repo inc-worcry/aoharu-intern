@@ -213,7 +213,7 @@
 <header>
   <div class="wrap hbar">
     <div class="logo"><img src="/student/guide-lp/poke.webp" alt="ぽけくん"><span class="brand">AO<b style="color:var(--bl)">H</b>A<b style="color:var(--or)">R</b>Uインターン<small>就活スタート応援</small></span></div>
-    <a class="hcta cta" href="https://s.lmes.jp/landing-qr/2008019424-482x88yd?uLand=LTo9qR" data-cta="header">LINEで受け取る</a>
+    <a class="hcta cta" href="#shindan" data-start="header">16TYPE診断</a>
   </div>
 </header>
 
@@ -236,9 +236,9 @@
       <h1>「やりたいこと」が、<br>まだ<u>なくても</u>いい。</h1>
       <p class="pitch">診断・ガイド・プロ相談まで。<br>就活のはじめの一歩、ぜんぶ<b>LINEで無料</b>。</p>
       <div class="ctaBlock">
-        <a class="btn-line cta" data-cta="hero" href="https://s.lmes.jp/landing-qr/2008019424-482x88yd?uLand=LTo9qR">
-          LINEで無料で受け取る
-          <small>友だち追加後、すぐにトークに届きます</small>
+        <a class="btn-line cta" data-start="hero" href="#shindan">
+          16TYPE診断をはじめる
+          <small>10問・約1分。結果と特典はLINEに届きます</small>
         </a>
         <div class="reassure">✓ 無料　✓ 約1分　✓ 1・2年生専用</div>
       </div>
@@ -326,14 +326,14 @@
     <h2>受け取りまで、<span class="mark">3ステップ</span></h2>
     <p class="lead">最短1分。登録フォームの入力はありません。</p>
     <div class="steps">
-      <div class="step"><div class="sn">STEP 1</div><div class="si">📱</div><h3>LINEで友だち追加</h3><p>ボタンをタップして追加するだけ。</p></div>
-      <div class="step"><div class="sn">STEP 2</div><div class="si">✏️</div><h3>16TYPE診断に回答</h3><p>直感でOK。約1分で終わります。</p></div>
+      <div class="step"><div class="sn">STEP 1</div><div class="si">✏️</div><h3>16TYPE診断に回答</h3><p>直感でOK。10問・約1分で終わります。</p></div>
+      <div class="step"><div class="sn">STEP 2</div><div class="si">📱</div><h3>LINEで友だち追加</h3><p>診断のあと、ボタンをタップして追加するだけ。</p></div>
       <div class="step"><div class="sn">STEP 3</div><div class="si">🎁</div><h3>結果＆特典が届く</h3><p>診断結果・ガイド・求人情報がトークに。</p></div>
     </div>
     <div class="ctaBlock" style="text-align:center;">
-      <a class="btn-line cta" data-cta="mid" href="https://s.lmes.jp/landing-qr/2008019424-482x88yd?uLand=LTo9qR">
-        LINEで無料で受け取る
-        <small>友だち追加後、すぐにトークに届きます</small>
+      <a class="btn-line cta" data-start="mid" href="#shindan">
+          16TYPE診断をはじめる
+          <small>10問・約1分。結果と特典はLINEに届きます</small>
       </a>
       <div class="reassure">✓ 無料　✓ 約1分　✓ 1・2年生専用</div>
     </div>
@@ -359,16 +359,16 @@
     <h2>まずは、じぶんを知るところから。</h2>
     <p class="lead">診断もガイドも、プロへの相談も。はじめの一歩は、気軽にLINEで。</p>
     <div class="ctaBlock" style="text-align:center;">
-      <a class="btn-line cta" data-cta="final" href="https://s.lmes.jp/landing-qr/2008019424-482x88yd?uLand=LTo9qR">
-        LINEで無料で受け取る
-        <small>友だち追加後、すぐにトークに届きます</small>
+      <a class="btn-line cta" data-start="final" href="#shindan">
+          16TYPE診断をはじめる
+          <small>10問・約1分。結果と特典はLINEに届きます</small>
       </a>
     </div>
   </div>
 </section>
 
 <div class="sticky">
-  <a class="cta" data-cta="sticky" href="https://s.lmes.jp/landing-qr/2008019424-482x88yd?uLand=LTo9qR">LINEで無料で受け取る</a>
+  <a class="cta" data-start="sticky" href="#shindan">16TYPE診断をはじめる（約1分）</a>
 </div>
 
 
@@ -414,6 +414,120 @@
     </div>
   </div>
 </footer>
+<!-- 16TYPE SHINDAN (guide-lp 専用。設問・判定は /16type と同じ) -->
+<style>
+.sd{position:fixed;inset:0;z-index:1000;background:#f6f4ff;display:none;overflow-y:auto;-webkit-overflow-scrolling:touch}
+.sd.on{display:block}
+body.sd-lock{overflow:hidden}
+.sd-in{max-width:560px;margin:0 auto;padding:16px 16px 40px;min-height:100%;display:flex;flex-direction:column}
+.sd-top{display:flex;align-items:center;justify-content:space-between;gap:12px;height:44px}
+.sd-x,.sd-back{appearance:none;border:0;background:none;font:inherit;color:var(--sub);font-size:14px;padding:8px 0;cursor:pointer}
+.sd-ttl{font-size:13px;font-weight:800;color:var(--ink);letter-spacing:.04em}
+.sd-x{font-size:22px;line-height:1;padding:8px}
+.sd-bar{height:6px;border-radius:99px;background:#e2def5;overflow:hidden;margin:4px 0 24px}
+.sd-bar i{display:block;height:100%;width:0;background:var(--bl);border-radius:99px;transition:width .25s}
+.sd-n{font-weight:800;color:var(--bl);font-size:13px;letter-spacing:.08em;margin:0 0 8px}
+.sd-scene{background:#fff;border-radius:16px;padding:16px;color:var(--sub);font-size:14px;line-height:1.8;margin:0 0 16px}
+.sd-q{font-size:20px;font-weight:800;line-height:1.5;color:var(--ink);margin:0 0 16px}
+.sd-opts{display:grid;gap:12px}
+.sd-opt{appearance:none;width:100%;text-align:left;border:2px solid #e2def5;background:#fff;border-radius:16px;padding:16px;font:inherit;font-size:15px;font-weight:700;line-height:1.6;color:var(--ink);cursor:pointer}
+.sd-opt:active,.sd-opt:focus-visible{border-color:var(--bl);outline:none}
+.sd-end{text-align:center;padding-top:8px}
+.sd-end img{width:120px;height:auto;margin:8px auto 16px;display:block}
+.sd-end h2{font-size:22px;line-height:1.5;margin:0 0 8px;color:var(--ink)}
+.sd-end p{color:var(--sub);font-size:14px;line-height:1.8;margin:0 0 24px}
+.sd-lock-card{background:#fff;border-radius:16px;padding:16px;margin:0 0 24px;text-align:left}
+.sd-lock-card b{display:block;font-size:13px;color:var(--sub);font-weight:700;margin:0 0 8px}
+.sd-lock-card ul{margin:0;padding:0;list-style:none;display:grid;gap:8px}
+.sd-lock-card li{font-size:14px;font-weight:700;color:var(--ink);padding-left:20px;position:relative}
+.sd-lock-card li:before{content:"";position:absolute;left:4px;top:.55em;width:8px;height:8px;border-radius:50%;background:var(--or)}
+.sd-line{display:block;background:var(--line);color:#fff;text-decoration:none;border-radius:999px;padding:16px;font-weight:800;font-size:17px;box-shadow:0 6px 0 #04a347}
+.sd-line small{display:block;font-size:12px;font-weight:700;opacity:.9;margin-top:4px}
+.sd-again{appearance:none;border:0;background:none;color:var(--sub);font:inherit;font-size:13px;text-decoration:underline;margin-top:16px;cursor:pointer}
+</style>
+<div class="sd" id="sd" role="dialog" aria-modal="true" aria-label="16TYPE診断">
+  <div class="sd-in">
+    <div class="sd-top"><button type="button" class="sd-back" id="sdBack">← 前の質問</button><span class="sd-ttl">16TYPE診断</span><button type="button" class="sd-x" id="sdClose" aria-label="閉じる">×</button></div>
+    <div id="sdQ">
+      <div class="sd-bar"><i id="sdBar"></i></div>
+      <p class="sd-n" id="sdN">Q1 / 10</p>
+      <p class="sd-scene" id="sdScene"></p>
+      <p class="sd-q" id="sdText"></p>
+      <div class="sd-opts"><button type="button" class="sd-opt" id="sdO0"></button><button type="button" class="sd-opt" id="sdO1"></button></div>
+    </div>
+    <div class="sd-end" id="sdEnd" hidden>
+      <img src="https://aoharu-intern.com/16type/brand/pokekun.png" alt="" width="120" height="120">
+      <h2>診断が完了しました！</h2>
+      <p>あなたのキャリアタイプは、LINEでお知らせします。<br>友だち追加すると、すぐにトークに届きます。</p>
+      <div class="sd-lock-card"><b>LINEに届くもの</b><ul><li>あなたのキャリアタイプと強み</li><li>タイプに合う仕事・求人</li><li>就活スタートガイド（無料）</li></ul></div>
+      <a class="sd-line" id="sdLine" data-cta="shindan" href="https://s.lmes.jp/landing-qr/2008019424-482x88yd?uLand=LTo9qR">LINEで診断結果を受け取る<small>友だち追加すると、すぐに届きます</small></a>
+      <button type="button" class="sd-again" id="sdAgain">はじめからやり直す</button>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  var Q=[
+    ["energy","インターン初日の朝。オフィスに入ると、社員さんたちが楽しそうに話しています。あなたの席は、その輪のすぐ隣です。","あなたはどう動きますか？","自分から声をかけて、輪に入っていく",2,"まず全体を見て、流れをつかんでから動く",-2],
+    ["focus","「これ、お願いできる？」と、社員さんから初めての仕事を頼まれました。締切は明日の夕方。机に戻って、取りかかる前に——。","まず知りたいのはどちらですか？","この仕事が何のためにあって、どこへつながるのか",1,"具体的な手順と、今日やる範囲",-1],
+    ["decide","会議の終了まであと5分。A案とB案で、チームの意見はちょうど半分に割れたままです。まだ意見を言っていないあなたに、みんなの視線が集まります。","結論を出すとき、何を優先しますか？","どの案がいちばん筋が通っているか",1,"みんなが納得して動けるかどうか",-1],
+    ["pace","2週間後が締切の課題が出ました。カレンダーを開くと、ほかの予定もそれなりに詰まっています。","あなたの進め方に近いのはどちらですか？","先に計画を立てて、前倒しで終わらせる",2,"状況を見ながら進めて、最後に集中して仕上げる",-2],
+    ["focus","夜、ベッドの中で、気になる会社の採用ページを開きました。気づけば30分たっています。","つい読み込んでしまうのはどちらですか？","その会社がこれから何を実現しようとしているか",1,"実際の仕事内容と、働く条件",-1],
+    ["decide","何度も見直して仕上げた資料を出した翌日。上司から「ちょっといい？」と声をかけられました。","うれしいのはどちらですか？","良い点も課題も、率直に指摘してもらえること",1,"そこに至るまでの過程も見てもらえること",-1],
+    ["energy","企画の締切は明後日。考えれば考えるほど、アイデアが同じところをぐるぐる回り始めました。","先にやってしまうのはどちらですか？","誰かに話しながら整理する",1,"一人で書き出して整理する",-1],
+    ["pace","気になる長期インターンが2社あります。条件はほぼ同じで、違うのは働き方だけ。応募できるのは1社です。","ワクワクするのはどんな環境ですか？","役割と、育っていく道筋が決まっている",1,"決まりきっておらず、任され方が変わっていく",-1],
+    ["focus","社会人の先輩とごはんに行った帰り道。今日聞いた話を、ふと思い返します。","あとから思い出すのはどちらの話ですか？","これから何が変わりそうか、という話",1,"実際にあった、具体的なエピソード",-1],
+    ["decide","内定をもらった2社のどちらかを選ぶことになりました。どちらも魅力的ですが、ひとつだけ引っかかることがあります。","これだけは納得できない、と感じるのはどちらですか？","筋が通っていないこと",1,"人が大切にされていないこと",-1]
+  ];
+  // energy focus decide pace
+  var T={"-1111":"strategist","-111-1":"seeker","1111":"reformer","111-1":"inventor","-11-11":"companion","-11-1-1":"creator","11-11":"cocreator","11-1-1":"igniter","-1-111":"builder","-1-1-11":"supporter","1-111":"operator","1-1-11":"connector","-1-11-1":"solver","-1-1-1-1":"artisan","1-11-1":"driver","1-1-1-1":"producer"};
+  // タイプ別の友だち追加URL（エルメの流入経路）。未設定のタイプは共通URL
+  var BASE="https://s.lmes.jp/landing-qr/2008019424-482x88yd?uLand=";
+  var U={};
+  var FALLBACK="LTo9qR";
+  var sd=document.getElementById('sd'),i=0,ans=[],started=false;
+  function ev(name,p){try{window.dataLayer=window.dataLayer||[];var o={event:name};for(var k in p)o[k]=p[k];window.dataLayer.push(o)}catch(e){}try{if(window.fbq)fbq('trackCustom',name==='guide_shindan_start'?'ShindanStart':'ShindanComplete',p||{})}catch(e){}}
+  function show(){
+    var q=Q[i];
+    document.getElementById('sdQ').hidden=false;document.getElementById('sdEnd').hidden=true;
+    document.getElementById('sdBack').style.visibility=i>0?'visible':'hidden';
+    document.getElementById('sdBar').style.width=(i/Q.length*100)+'%';
+    document.getElementById('sdN').textContent='Q'+(i+1)+' / '+Q.length;
+    document.getElementById('sdScene').textContent=q[1];
+    document.getElementById('sdText').textContent=q[2];
+    document.getElementById('sdO0').textContent=q[3];
+    document.getElementById('sdO1').textContent=q[5];
+    sd.scrollTop=0;
+  }
+  function finish(){
+    var s={energy:0,focus:0,decide:0,pace:0};
+    for(var k=0;k<Q.length;k++){s[Q[k][0]]+=ans[k]===0?Q[k][4]:Q[k][6]}
+    var key=['energy','focus','decide','pace'].map(function(a){return s[a]>0?'1':'-1'}).join('');
+    var type=T[key]||'strategist';
+    document.getElementById('sdLine').href=BASE+(U[type]||FALLBACK);
+    document.getElementById('sdQ').hidden=true;document.getElementById('sdEnd').hidden=false;
+    document.getElementById('sdBack').style.visibility='hidden';
+    sd.scrollTop=0;
+    ev('guide_shindan_complete',{shindan_type:type});
+  }
+  function pick(n){ans[i]=n;i++;if(i>=Q.length)finish();else show()}
+  function open(e){
+    if(e)e.preventDefault();
+    i=0;ans=[];show();sd.classList.add('on');document.body.classList.add('sd-lock');
+    if(!started){started=true;ev('guide_shindan_start',{guide_lp_cta:(e&&e.currentTarget&&e.currentTarget.getAttribute('data-start'))||''})}
+  }
+  function close(){sd.classList.remove('on');document.body.classList.remove('sd-lock')}
+  document.getElementById('sdO0').onclick=function(){pick(0)};
+  document.getElementById('sdO1').onclick=function(){pick(1)};
+  document.getElementById('sdBack').onclick=function(){if(i>0){i--;show()}};
+  document.getElementById('sdClose').onclick=close;
+  document.getElementById('sdAgain').onclick=function(){i=0;ans=[];show()};
+  document.querySelectorAll('[data-start]').forEach(function(a){a.addEventListener('click',open)});
+  if(location.hash==='#shindan')open();
+})();
+</script>
+<!-- /16TYPE SHINDAN -->
+
 <script>
 document.querySelectorAll('a[data-cta]').forEach(function(a){a.addEventListener('click',function(){
   window.dataLayer.push({event:'guide_lp_line_click',guide_lp_cta:a.getAttribute('data-cta')});
