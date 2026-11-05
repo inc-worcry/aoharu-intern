@@ -447,7 +447,7 @@ body.sd-lock{overflow:hidden}
 </style>
 <div class="sd" id="sd" role="dialog" aria-modal="true" aria-label="16TYPE診断">
   <div class="sd-in">
-    <div class="sd-top"><button type="button" class="sd-back" id="sdBack">← 前の質問</button><span class="sd-ttl">16TYPE診断</span><button type="button" class="sd-x" id="sdClose" aria-label="閉じる">×</button></div>
+    <div class="sd-top"><button type="button" class="sd-back" id="sdBack">← 前の質問</button><span class="sd-ttl">16TYPE診断</span><span class="sd-x" aria-hidden="true"></span></div>
     <div id="sdQ">
       <div class="sd-bar"><i id="sdBar"></i></div>
       <p class="sd-n" id="sdN">Q1 / 10</p>
@@ -483,7 +483,7 @@ body.sd-lock{overflow:hidden}
   var T={"-1111":"strategist","-111-1":"seeker","1111":"reformer","111-1":"inventor","-11-11":"companion","-11-1-1":"creator","11-11":"cocreator","11-1-1":"igniter","-1-111":"builder","-1-1-11":"supporter","1-111":"operator","1-1-11":"connector","-1-11-1":"solver","-1-1-1-1":"artisan","1-11-1":"driver","1-1-1-1":"producer"};
   // タイプ別の友だち追加URL（エルメの流入経路）。未設定のタイプは共通URL
   var BASE="https://s.lmes.jp/landing-qr/2008019424-482x88yd?uLand=";
-  var U={};
+  var U=null;
   var FALLBACK="LTo9qR";
   var sd=document.getElementById('sd'),i=0,ans=[],started=false,lineUrl=BASE+FALLBACK,lineType='';
   function ev(name,p){try{window.dataLayer=window.dataLayer||[];var o={event:name};for(var k in p)o[k]=p[k];window.dataLayer.push(o)}catch(e){}try{if(window.fbq)fbq('trackCustom',name==='guide_shindan_start'?'ShindanStart':'ShindanComplete',p||{})}catch(e){}}
@@ -520,7 +520,7 @@ body.sd-lock{overflow:hidden}
   document.getElementById('sdO0').onclick=function(){pick(0)};
   document.getElementById('sdO1').onclick=function(){pick(1)};
   document.getElementById('sdBack').onclick=function(){if(i>0){i--;show()}};
-  document.getElementById('sdClose').onclick=close;
+  
   // LINEへはリンクではなくボタンで移動（GTMのLead＝LPのLINEリンククリックと分けるため）
   document.getElementById('sdLine').onclick=function(){try{window.dataLayer=window.dataLayer||[];window.dataLayer.push({event:'guide_shindan_line_click',shindan_type:lineType})}catch(e){}setTimeout(function(){location.href=lineUrl},150)};
   document.getElementById('sdAgain').onclick=function(){i=0;ans=[];show()};
