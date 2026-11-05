@@ -444,11 +444,33 @@ body.sd-lock{overflow:hidden}
 .sd-line{appearance:none;border:0;width:100%;font-family:inherit;cursor:pointer;display:block;background:var(--line);color:#fff;text-decoration:none;border-radius:999px;padding:16px;font-weight:800;font-size:17px;box-shadow:0 6px 0 #04a347}
 .sd-line small{display:block;font-size:12px;font-weight:700;opacity:.9;margin-top:4px}
 .sd-again{appearance:none;border:0;background:none;color:var(--sub);font:inherit;font-size:13px;text-decoration:underline;margin-top:16px;cursor:pointer}
+.sd-intro{text-align:left;background:#fff;border:1px solid #e6e3f3;border-radius:24px;padding:28px 20px 24px;margin-top:8px;box-shadow:0 6px 0 #ebe8f6}
+.sd-k{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--bl);margin:0 0 12px}
+.sd-intro h2{font-size:22px;line-height:1.5;font-weight:900;color:var(--ink);margin:0 0 12px}
+.sd-lead{font-size:14px;line-height:1.9;color:var(--sub);margin:0 0 20px}
+.sd-pts{list-style:none;margin:0 0 24px;padding:0;display:grid;gap:8px}
+.sd-pts li{display:flex;align-items:center;gap:12px;background:#eef5fd;border-radius:14px;padding:14px 16px;font-size:15px;font-weight:800;color:var(--ink)}
+.sd-pts svg{flex:0 0 20px;width:20px;height:20px;stroke:var(--bl);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.sd-go{appearance:none;border:0;width:100%;display:flex;align-items:center;justify-content:center;gap:12px;background:var(--bl);color:#fff;font:inherit;font-size:17px;font-weight:800;border-radius:999px;padding:16px;box-shadow:0 6px 0 rgba(0,0,0,.18);cursor:pointer}
+.sd-go:active{transform:translateY(3px);box-shadow:0 3px 0 rgba(0,0,0,.18)}
+.sd-note{font-size:12px;color:var(--sub);text-align:center;margin:16px 0 0;line-height:1.7}
 </style>
 <div class="sd" id="sd" role="dialog" aria-modal="true" aria-label="16TYPE診断">
   <div class="sd-in">
     <div class="sd-top"><button type="button" class="sd-back" id="sdBack">← 前の質問</button><span class="sd-ttl">16TYPE診断</span><span class="sd-x" aria-hidden="true"></span></div>
-    <div id="sdQ">
+    <div class="sd-intro" id="sdIntro">
+      <p class="sd-k">BEFORE YOU START</p>
+      <h2>これから、10の場面であなたの選び方を見ていきます。</h2>
+      <p class="sd-lead">インターンの初日や、チームで意見が割れたときなど、就活やインターンでよくある場面が順番に出てきます。それぞれの場面で、いつもの自分に近いほうを選んでください。</p>
+      <ul class="sd-pts">
+        <li><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>正解・不正解はありません</li>
+        <li><svg viewBox="0 0 24 24"><path d="M10 3l1.8 5.2L17 10l-5.2 1.8L10 17l-1.8-5.2L3 10l5.2-1.8z"/><path d="M18 15l.8 2.2L21 18l-2.2.8L18 21l-.8-2.2L15 18l2.2-.8z"/></svg>迷ったら、直感で選んでください</li>
+        <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>全10問・約1分で終わります</li>
+      </ul>
+      <button type="button" class="sd-go" id="sdGo">1問目へ進む<span aria-hidden="true">→</span></button>
+      <p class="sd-note">答え終わると、あなたのタイプと就活スタートガイドがLINEに届きます。</p>
+    </div>
+    <div id="sdQ" hidden>
       <div class="sd-bar"><i id="sdBar"></i></div>
       <p class="sd-n" id="sdN">Q1 / 10</p>
       <p class="sd-scene" id="sdScene"></p>
@@ -487,7 +509,12 @@ body.sd-lock{overflow:hidden}
   var FALLBACK="LTo9qR";
   var sd=document.getElementById('sd'),i=0,ans=[],started=false,lineUrl=BASE+FALLBACK,lineType='';
   function ev(name,p){try{window.dataLayer=window.dataLayer||[];var o={event:name};for(var k in p)o[k]=p[k];window.dataLayer.push(o)}catch(e){}try{if(window.fbq)fbq('trackCustom',name==='guide_shindan_start'?'ShindanStart':'ShindanComplete',p||{})}catch(e){}}
+  function intro(){
+    document.getElementById('sdIntro').hidden=false;document.getElementById('sdQ').hidden=true;document.getElementById('sdEnd').hidden=true;
+    document.getElementById('sdBack').style.visibility='hidden';sd.scrollTop=0;
+  }
   function show(){
+    document.getElementById('sdIntro').hidden=true;
     var q=Q[i];
     document.getElementById('sdQ').hidden=false;document.getElementById('sdEnd').hidden=true;
     document.getElementById('sdBack').style.visibility=i>0?'visible':'hidden';
@@ -513,10 +540,11 @@ body.sd-lock{overflow:hidden}
   function pick(n){ans[i]=n;i++;if(i>=Q.length)finish();else show()}
   function open(e){
     if(e)e.preventDefault();
-    i=0;ans=[];show();sd.classList.add('on');document.body.classList.add('sd-lock');
+    i=0;ans=[];intro();sd.classList.add('on');document.body.classList.add('sd-lock');
     if(!started){started=true;ev('guide_shindan_start',{})}
   }
   function close(){sd.classList.remove('on');document.body.classList.remove('sd-lock')}
+  document.getElementById('sdGo').onclick=function(){try{window.dataLayer=window.dataLayer||[];window.dataLayer.push({event:'guide_shindan_intro_next'})}catch(e){}i=0;ans=[];show()};
   document.getElementById('sdO0').onclick=function(){pick(0)};
   document.getElementById('sdO1').onclick=function(){pick(1)};
   document.getElementById('sdBack').onclick=function(){if(i>0){i--;show()}};
