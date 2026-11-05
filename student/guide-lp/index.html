@@ -506,6 +506,9 @@ body.sd-lock{overflow:hidden}
   // タイプ別の友だち追加URL（エルメの流入経路）。未設定のタイプは共通URL
   var BASE="https://s.lmes.jp/landing-qr/2008019424-482x88yd?uLand=";
   var U={"reformer":"jpkLHC","strategist":"atnxJt","seeker":"PvszIJ","inventor":"Qbk1sZ","companion":"9u8JU3","creator":"lzVHrw","cocreator":"LZJajc","igniter":"m1uj8p","builder":"g8Hj3X","supporter":"zehnlH","operator":"HjzDiI","connector":"HC7oCT","solver":"mcBgWe","artisan":"laNHIu","driver":"5y2HPX","producer":"lfXmTP"};
+  // LINEの中（リッチメニュー・配信）から開いた人は ?src=line 付き。学年を聞かない結果テンプレ（WP_結果2_）のQRへ
+  var U2={"reformer":"wyVjQk","strategist":"vke7Sv","seeker":"kmO5qo","inventor":"dwpq6e","companion":"8rCOBy","creator":"PTHTvz","cocreator":"qHT3hE","igniter":"zoDbGx","builder":"CPJTzD","supporter":"XH24HC","operator":"b5GJ7e","connector":"x4hYGB","solver":"bAp4VP","artisan":"11TAkq","driver":"8cytwp","producer":"YEXttu"};
+  var FROM_LINE=/[?&]src=line(&|$)/.test(location.search);
   var FALLBACK="LTo9qR";
   var sd=document.getElementById('sd'),i=0,ans=[],started=false,lineUrl=BASE+FALLBACK,lineType='';
   function ev(name,p){try{window.dataLayer=window.dataLayer||[];var o={event:name};for(var k in p)o[k]=p[k];window.dataLayer.push(o)}catch(e){}try{if(window.fbq)fbq('trackCustom',name==='guide_shindan_start'?'ShindanStart':'ShindanComplete',p||{})}catch(e){}}
@@ -531,7 +534,7 @@ body.sd-lock{overflow:hidden}
     for(var k=0;k<Q.length;k++){s[Q[k][0]]+=ans[k]===0?Q[k][4]:Q[k][6]}
     var key=['energy','focus','decide','pace'].map(function(a){return s[a]>0?'1':'-1'}).join('');
     var type=T[key]||'strategist';
-    lineUrl=BASE+((U&&U[type])||FALLBACK);lineType=type;
+    lineUrl=BASE+(((FROM_LINE?U2:U)||{})[type]||FALLBACK);lineType=type;
     document.getElementById('sdQ').hidden=true;document.getElementById('sdEnd').hidden=false;
     document.getElementById('sdBack').style.visibility='hidden';
     sd.scrollTop=0;
