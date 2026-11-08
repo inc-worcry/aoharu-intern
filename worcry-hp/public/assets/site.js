@@ -202,6 +202,18 @@
   if (form) {
     const done = document.getElementById('formDone');
     const err = document.getElementById('formError');
+    /* スパム対策：表示した時刻（短すぎる送信をGAS側で除外）と reCAPTCHA v3 */
+    form.elements._t.value = String(Date.now());
+    const siteKey = form.dataset.sitekey;
+    if (siteKey) {
+      const sc = document.createElement('script');
+      sc.src = 'https://www.google.com/recaptcha/api.js?render=' + encodeURIComponent(siteKey);
+      sc.async = true; document.head.appendChild(sc);
+    }
+    const rcToken = () => new Promise(res => {
+      if (!siteKey || !window.grecaptcha) return res('');
+      grecaptcha.ready(() => grecaptcha.execute(siteKey, { action: 'contact' }).then(res, () => res('')));
+    });
     form.addEventListener('submit', async e => {
       e.preventDefault();
       err.hidden = true;
@@ -211,7 +223,9 @@
       if (!url) { err.textContent = '送信先が未設定です。お手数ですが saiyou@worcry.com までメールでご連絡ください。'; err.hidden = false; return; }
       btn.disabled = true; btn.textContent = '送信しています…';
       try {
-        await fetch(url, { method: 'POST', mode: 'no-cors', body: new URLSearchParams(new FormData(form)) });
+        const body = new URLSearchParams(new FormData(form));
+        body.set('g-recaptcha-response', await rcToken());
+        await fetch(url, { method: 'POST', mode: 'no-cors', body });
         form.hidden = true; done.hidden = false;
         done.scrollIntoView({ behavior: 'smooth', block: 'center' });
       } catch (_) {

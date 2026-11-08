@@ -16,7 +16,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Jost:wght@300;400;500&family=Noto+Sans+JP:wght@400;500;700;900&family=Shippori+Mincho+B1:wght@500;700;800&display=swap">
-<link rel="stylesheet" href="/assets/site.css?v=c31f7709">
+<link rel="stylesheet" href="/assets/site.css?v=62269607">
 </head>
 <body>
 <header class="hd" id="hd">
@@ -79,8 +79,10 @@
         </div>
       </aside>
       <div>
-        <form class="form" id="contactForm" data-endpoint="https://script.google.com/macros/s/AKfycbwjuJ4DABok4AZELbAL7HcuM-K02LXHmlREc-2X90WxlMAq_5E3oo7MQyvq4mWmuX3k/exec">
+        <form class="form" id="contactForm" data-endpoint="https://script.google.com/macros/s/AKfycbwjuJ4DABok4AZELbAL7HcuM-K02LXHmlREc-2X90WxlMAq_5E3oo7MQyvq4mWmuX3k/exec" data-sitekey="">
           <input type="hidden" name="_form" value="worcry.com お問い合わせ">
+          <input type="hidden" name="_t" value="">
+          <div class="hp-field" aria-hidden="true"><label for="f-website">ウェブサイト<wbr>（入力しないでください）</label><input id="f-website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
           <div class="field"><label for="f-company"><span class="nw">会社名・学校名</span><em>必須</em></label><input id="f-company" name="会社名" type="text" autocomplete="organization" required></div>
           <div class="field"><label for="f-name">お名前<em>必須</em></label><input id="f-name" name="お名前" type="text" autocomplete="name" required></div>
           <div class="field two">
@@ -101,6 +103,7 @@
           <label class="chk agree"><input id="f-agree" type="checkbox" required><span><a href="/privacy-policy/" target="_blank">プライバシーポリシー</a>に<wbr>同意する</span></label>
           <p class="form-error" id="formError" role="alert" hidden></p>
           <button class="btn fill big" type="submit">この内容で送信する</button>
+          
         </form>
         <div class="form-done" id="formDone" hidden>
           <p class="eyebrow"><b>THANK YOU</b>送信しました</p>
@@ -140,6 +143,6 @@
     </div>
   </div>
 </footer>
-<script src="/assets/site.js?v=c31f7709" defer></script>
+<script src="/assets/site.js?v=62269607" defer></script>
 </body>
 </html>
