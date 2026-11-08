@@ -1038,7 +1038,7 @@ dialog.cpop::backdrop{background:rgba(20,22,28,.62);-webkit-backdrop-filter:blur
         </ul>
         <div class="ct-alt rv"><a href="https://app.spirinc.com/t/H_vQ01vClf0LmLgUwmVWY/as/XMn5n8Z_s_rK6GUlabUGi/confirm" target="_blank" rel="noopener">日程を<wbr>選んで<wbr>予約する<wbr>&nbsp;↗</a></div>
       </div>
-      <form class="ct-form rv d1" id="ctForm" novalidate>
+      <form class="ct-form rv d1" id="ctForm" novalidate><div class="ao-hp" aria-hidden="true"><input type="text" name="website" tabindex="-1" autocomplete="off"></div>
         <div class="row2">
           <label class="fld"><span>会社名<em>必須</em></span><input id="ct-company" name="company" autocomplete="organization" required></label>
           <label class="fld"><span>お名前<em>必須</em></span><input id="ct-name" name="name" autocomplete="name" required></label>
@@ -1061,7 +1061,7 @@ dialog.cpop::backdrop{background:rgba(20,22,28,.62);-webkit-backdrop-filter:blur
         <p class="ct-note">新卒採用のみ<wbr>対応しています。</p>
         <div class="ct-done" role="status"><b>送信<wbr>ありがとう<wbr>ございます。</b><p>1営業日以内に、<wbr>代表の<wbr>鈴木より<wbr>ご連絡します。<br>お急ぎの<wbr>場合は、<wbr>このまま<wbr>日程を<wbr>ご予約いただけます。</p><a class="ct-spir" href="https://app.spirinc.com/t/H_vQ01vClf0LmLgUwmVWY/as/XMn5n8Z_s_rK6GUlabUGi/confirm" target="_blank" rel="noopener">日程を<wbr>選んで<wbr>予約する<wbr>&nbsp;↗</a></div>
         <p class="ct-err" id="ctErr" role="alert" hidden>送信できませんでした。<wbr>時間を<wbr>おいて<wbr>再度<wbr>お試しいただくか、<wbr>日程予約から<wbr>ご連絡ください。</p>
-      </form>
+      <p class="ao-rc">このフォームは reCAPTCHA で保護されています（Google <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">プライバシーポリシー</a>・<a href="https://policies.google.com/terms" target="_blank" rel="noopener">利用規約</a>）</p></form>
     </div>
   </section>
 </main>
@@ -1205,7 +1205,7 @@ dialog.cpop::backdrop{background:rgba(20,22,28,.62);-webkit-backdrop-filter:blur
     body.set('email',$('#ct-email').value.trim());body.set('tel',$('#ct-tel').value.trim());
     plans.forEach(v=>body.append('plan',v));body.set('message',$('#ct-msg').value.trim());
     sub2.disabled=true;sub2.textContent='送信中…';$('#ctErr').hidden=true;
-    fetch(GAS_URL,{method:'POST',mode:'no-cors',body})
+    (window.aoSpam?window.aoSpam(ctf):Promise.resolve({})).then(x=>{Object.keys(x).forEach(k=>body.set(k,x[k]));return fetch(GAS_URL,{method:'POST',mode:'no-cors',body})})
       .then(()=>ctf.classList.add('sent'))
       .catch(()=>{$('#ctErr').hidden=false;sub2.textContent='無料で相談する →';chk2()});
   });
@@ -1289,6 +1289,28 @@ dialog.cpop::backdrop{background:rgba(20,22,28,.62);-webkit-backdrop-filter:blur
     var a=e.target.closest('a[href="#contact"]'); if(!a) return;
     e.preventDefault(); e.stopPropagation(); open();
   },true);
+})();
+</script>
+<!-- スパム対策（2026-11）：表示からの経過時間・隠し入力欄・reCAPTCHA v3。判定は各GASで行う -->
+<style>.ao-hp{position:absolute!important;left:-9999px;width:1px;height:1px;overflow:hidden}.grecaptcha-badge{visibility:hidden}.ao-rc{margin:10px 0 0;font-size:11px;line-height:1.7;opacity:.72;text-align:center}.ao-rc a{color:inherit;text-decoration:underline}</style>
+<script>
+(function(){
+  var K='6LfHOhYuAAAAAAkmORWx4rw0Bo4Qwnt2X2vIbGq7', t0=Date.now();
+  var s=document.createElement('script'); s.src='https://www.google.com/recaptcha/api.js?render='+K; s.async=true; document.head.appendChild(s);
+  window.aoSpam=function(form){
+    var w='';
+    if(form&&form.querySelector('[name="website"]')) w=form.querySelector('[name="website"]').value;
+    else document.querySelectorAll('[name="website"]').forEach(function(i){ if(i.value) w=i.value; });
+    var o={_e:String(Date.now()-t0), website:w, 'g-recaptcha-response':''};
+    return new Promise(function(res){
+      if(!window.grecaptcha||!grecaptcha.ready) return res(o);
+      var done=false, tm=setTimeout(function(){ if(!done){done=true;res(o);} },4000);
+      grecaptcha.ready(function(){
+        grecaptcha.execute(K,{action:'contact'}).then(function(t){ if(done)return; done=true; clearTimeout(tm); o['g-recaptcha-response']=t; res(o); },
+          function(){ if(!done){done=true;clearTimeout(tm);res(o);} });
+      });
+    });
+  };
 })();
 </script>
 </body>

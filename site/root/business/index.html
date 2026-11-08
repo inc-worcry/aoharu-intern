@@ -1072,7 +1072,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <p class="modal-eyebrow">FOR COMPANY</p>
         <h3 id="cmTitle">話を聞いてみる</h3>
         <p class="modal-lead">サービスの説明も、学年ごとの進め方の相談も、ここから。1営業日以内にご連絡します。</p>
-        <form id="contactForm" action="https://script.google.com/macros/s/AKfycbz5E_ewxy_QKq2I-371XIIGuBL-8TO465xl8gb-TywnUp7tb_CLSe1Y8FYU8NFoe8icOQ/exec" method="post">
+        <form id="contactForm" action="https://script.google.com/macros/s/AKfycbz5E_ewxy_QKq2I-371XIIGuBL-8TO465xl8gb-TywnUp7tb_CLSe1Y8FYU8NFoe8icOQ/exec" method="post"><div class="ao-hp" aria-hidden="true"><input type="text" name="website" tabindex="-1" autocomplete="off"></div>
           <input type="hidden" name="_form" value="AOHARUサービスサイト／話を聞いてみる">
           <label>会社名<input type="text" name="会社名" id="cf-company" placeholder="株式会社○○" required></label>
           <label>お名前<input type="text" name="お名前" id="cf-name" placeholder="山田 太郎" required></label>
@@ -1082,7 +1082,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <label class="modal-agree"><input type="checkbox" name="_consent" id="cf-agree" value="同意" required><span><a href="https://www.worcry.com/privacy-policy" target="_blank" rel="noopener">プライバシーポリシー</a>に同意します</span></label>
           <button type="submit" class="modal-send" id="cfSend">送信する</button>
           <p class="modal-note">送信内容は採用のご相談にのみ使用します。しつこい営業はしません。</p>
-        </form>
+        <p class="ao-rc">このフォームは reCAPTCHA で保護されています（Google <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">プライバシーポリシー</a>・<a href="https://policies.google.com/terms" target="_blank" rel="noopener">利用規約</a>）</p></form>
       </div>
       <div id="cmDone" hidden>
         <p class="modal-eyebrow">THANK YOU</p>
@@ -1192,8 +1192,31 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     const send = document.getElementById('cfSend');
     send.disabled = true; send.textContent = '送信中…';
     const done = () => { cmForm.hidden = true; cmDone.hidden = false; send.disabled = false; send.textContent = '送信する'; form.reset(); };
-    fetch(form.action, { method: 'POST', mode: 'no-cors', body: new FormData(form) }).then(done).catch(done);
+    const fd = new FormData(form);
+    (window.aoSpam ? window.aoSpam(form) : Promise.resolve({})).then((x) => { Object.keys(x).forEach((k) => fd.set(k, x[k])); return fetch(form.action, { method: 'POST', mode: 'no-cors', body: fd }); }).then(done).catch(done);
   });
+})();
+</script>
+<!-- スパム対策（2026-11）：表示からの経過時間・隠し入力欄・reCAPTCHA v3。判定は各GASで行う -->
+<style>.ao-hp{position:absolute!important;left:-9999px;width:1px;height:1px;overflow:hidden}.grecaptcha-badge{visibility:hidden}.ao-rc{margin:10px 0 0;font-size:11px;line-height:1.7;opacity:.72;text-align:center}.ao-rc a{color:inherit;text-decoration:underline}</style>
+<script>
+(function(){
+  var K='6LfHOhYuAAAAAAkmORWx4rw0Bo4Qwnt2X2vIbGq7', t0=Date.now();
+  var s=document.createElement('script'); s.src='https://www.google.com/recaptcha/api.js?render='+K; s.async=true; document.head.appendChild(s);
+  window.aoSpam=function(form){
+    var w='';
+    if(form&&form.querySelector('[name="website"]')) w=form.querySelector('[name="website"]').value;
+    else document.querySelectorAll('[name="website"]').forEach(function(i){ if(i.value) w=i.value; });
+    var o={_e:String(Date.now()-t0), website:w, 'g-recaptcha-response':''};
+    return new Promise(function(res){
+      if(!window.grecaptcha||!grecaptcha.ready) return res(o);
+      var done=false, tm=setTimeout(function(){ if(!done){done=true;res(o);} },4000);
+      grecaptcha.ready(function(){
+        grecaptcha.execute(K,{action:'contact'}).then(function(t){ if(done)return; done=true; clearTimeout(tm); o['g-recaptcha-response']=t; res(o); },
+          function(){ if(!done){done=true;clearTimeout(tm);res(o);} });
+      });
+    });
+  };
 })();
 </script>
 </body>

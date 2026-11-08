@@ -966,10 +966,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <label class="fl">メールアドレス<input class="fi" type="email" name="email" placeholder="taro@company.co.jp" required></label>
         <label class="fl">電話番号 <span class="opt">（任意）</span><input class="fi" type="tel" name="tel" placeholder="03-0000-0000"></label>
         <label class="fl">備考 <span class="opt">（任意）</span><textarea class="fi fi-sm" name="message" rows="1" placeholder="ご相談内容など"></textarea></label>
+        <div class="ao-hp" aria-hidden="true"><input type="text" name="website" tabindex="-1" autocomplete="off"></div>
         <label class="agree"><input type="checkbox" id="hfc-agree" onchange="document.getElementById('hfc-btn').disabled=!this.checked"><span><a href="https://www.worcry.com/privacy-policy" target="_blank" rel="noopener">プライバシーポリシー</a>に<wbr>同意する</span></label>
         <button class="send" id="hfc-btn" type="button" onclick="submitHfc()" disabled>お問い<wbr>合わせする<wbr> →</button>
         <div id="hfc-done" style="display:none"></div>
         <p class="form-note" id="hfc-note">30秒で<wbr>完了 · 1営業日以内に<wbr>返信</p>
+        <p class="ao-rc">この<wbr>フォームは<wbr> reCAPTCHA で<wbr>保護されています<wbr>（Google <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">プライバシーポリシー</a>・<a href="https://policies.google.com/terms" target="_blank" rel="noopener">利用規約</a>）</p>
       </div>
     </div>
   </section>
@@ -1428,7 +1430,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <li><b>27卒</b>の、<wbr>内定辞退後の<wbr>補充</li>
         </ul>
       </div>
-      <form class="cta-form" id="cta-form" onsubmit="submitCta(event)">
+      <form class="cta-form" id="cta-form" onsubmit="submitCta(event)"><div class="ao-hp" aria-hidden="true"><input type="text" name="website" tabindex="-1" autocomplete="off"></div>
         <img class="poke" src="/shinsotsu/img/pokekun.png" alt="" aria-hidden="true" width="291" height="320" style="width:76px">
         <div class="fl2">
           <label class="fl">会社名<input class="fi" type="text" name="company" placeholder="株式会社○○" required></label>
@@ -1443,7 +1445,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <button class="send" id="cta-btn" type="submit" disabled>お問い<wbr>合わせする<wbr> →</button>
         <div id="cta-done" style="display:none"></div>
         <p class="form-note" id="cta-note">送信後、<wbr>担当者より<wbr>1営業日以内に<wbr>ご連絡いたします。</p>
-      </form>
+      <p class="ao-rc">この<wbr>フォームは<wbr> reCAPTCHA で<wbr>保護されています<wbr>（Google <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">プライバシーポリシー</a>・<a href="https://policies.google.com/terms" target="_blank" rel="noopener">利用規約</a>）</p></form>
     </div>
   </section>
 
@@ -1533,7 +1535,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <p class="form-eyebrow">CONTACT</p>
     <h3>まずは<wbr>お気軽に<wbr>ご相談ください！</h3>
     <p class="form-sub">お問い<wbr>合わせ・個別相談、<wbr>1営業日以内に<wbr>ご連絡します。</p>
-    <form id="modal-cta-form" onsubmit="submitModal(event)">
+    <form id="modal-cta-form" onsubmit="submitModal(event)"><div class="ao-hp" aria-hidden="true"><input type="text" name="website" tabindex="-1" autocomplete="off"></div>
       <label class="fl">会社名<input class="fi" type="text" name="company" placeholder="株式会社○○" required></label>
       <label class="fl">お名前<input class="fi" type="text" name="name" placeholder="山田 太郎" required></label>
       <label class="fl">メールアドレス<input class="fi" type="email" name="email" placeholder="taro@company.co.jp" required></label>
@@ -1541,9 +1543,31 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <label class="fl">お問い<wbr>合わせ内容 <span class="opt">（任意）</span><textarea class="fi" name="message" rows="3" placeholder="ご相談内容など、お気軽にどうぞ"></textarea></label>
       <label class="agree"><input type="checkbox" id="modal-agree" required><span><a href="https://www.worcry.com/privacy-policy" target="_blank" rel="noopener">プライバシーポリシー</a>に<wbr>同意する</span></label>
       <button class="send" type="submit">送信する<wbr> →</button>
-    </form>
+    <p class="ao-rc">この<wbr>フォームは<wbr> reCAPTCHA で<wbr>保護されています<wbr>（Google <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">プライバシーポリシー</a>・<a href="https://policies.google.com/terms" target="_blank" rel="noopener">利用規約</a>）</p></form>
   </div>
 </div>
+<!-- スパム対策（2026-11）：表示からの経過時間・隠し入力欄・reCAPTCHA v3。判定は各GASで行う -->
+<style>.ao-hp{position:absolute!important;left:-9999px;width:1px;height:1px;overflow:hidden}.grecaptcha-badge{visibility:hidden}.ao-rc{margin:10px 0 0;font-size:11px;line-height:1.7;opacity:.72;text-align:center}.ao-rc a{color:inherit;text-decoration:underline}</style>
+<script>
+(function(){
+  var K='6LfHOhYuAAAAAAkmORWx4rw0Bo4Qwnt2X2vIbGq7', t0=Date.now();
+  var s=document.createElement('script'); s.src='https://www.google.com/recaptcha/api.js?render='+K; s.async=true; document.head.appendChild(s);
+  window.aoSpam=function(form){
+    var w='';
+    if(form&&form.querySelector('[name="website"]')) w=form.querySelector('[name="website"]').value;
+    else document.querySelectorAll('[name="website"]').forEach(function(i){ if(i.value) w=i.value; });
+    var o={_e:String(Date.now()-t0), website:w, 'g-recaptcha-response':''};
+    return new Promise(function(res){
+      if(!window.grecaptcha||!grecaptcha.ready) return res(o);
+      var done=false, tm=setTimeout(function(){ if(!done){done=true;res(o);} },4000);
+      grecaptcha.ready(function(){
+        grecaptcha.execute(K,{action:'contact'}).then(function(t){ if(done)return; done=true; clearTimeout(tm); o['g-recaptcha-response']=t; res(o); },
+          function(){ if(!done){done=true;clearTimeout(tm);res(o);} });
+      });
+    });
+  };
+})();
+</script>
 
 <script>
 const GAS_URL      = "https://script.google.com/macros/s/AKfycbz3Nbd8CtPb25Pni3nogrKiSbIRdEZNliIpOsPMNPgrHfso7cCbshO5n0V1V3ACu0mm/exec";
@@ -1579,9 +1603,9 @@ function sendToGas(data, doneId, noteId, btnId) {
     btn.textContent = '送信中...';
   }
   if (note) { note.style.color = ''; note.textContent = ''; }
-  fetch(GAS_URL, {
-    method: 'POST',
-    body: JSON.stringify(data)
+  (window.aoSpam ? window.aoSpam() : Promise.resolve({})).then(function(x){
+    Object.assign(data, x);
+    return fetch(GAS_URL, { method: 'POST', body: JSON.stringify(data) });
   }).then(res => {
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({ event: 'dl_form_submit' });
