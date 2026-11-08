@@ -203,7 +203,8 @@
     const done = document.getElementById('formDone');
     const err = document.getElementById('formError');
     /* スパム対策：表示した時刻（短すぎる送信をGAS側で除外）と reCAPTCHA v3 */
-    form.elements._t.value = String(Date.now());
+    const shownAt = Date.now();
+    form.elements._t.value = String(shownAt);
     const siteKey = form.dataset.sitekey;
     if (siteKey) {
       const sc = document.createElement('script');
@@ -224,6 +225,7 @@
       btn.disabled = true; btn.textContent = '送信しています…';
       try {
         const body = new URLSearchParams(new FormData(form));
+        body.set('_e', String(Date.now() - shownAt));
         body.set('g-recaptcha-response', await rcToken());
         await fetch(url, { method: 'POST', mode: 'no-cors', body });
         form.hidden = true; done.hidden = false;
