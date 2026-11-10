@@ -6,7 +6,7 @@
 <!-- dataLayer: lp_channel -->
 <script>window.dataLayer=window.dataLayer||[];dataLayer.push({lp_channel:'rpo'});</script>
 <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5ZW5J2LR');</script>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-NXCNC85H');</script>
 <!-- End Google Tag Manager -->
 <title>AOHARU RPO｜新卒採用に特化したRPO（採用代行）</title>
 <meta name="description" content="新卒採用に、ハイタッチを。AOHARU RPOは新卒採用だけに特化した採用代行です。採用戦略から面接・クロージング・内定者フォロー・入社後の研修まで、代表が責任者として並走します。">
@@ -691,7 +691,7 @@ dialog.cpop::backdrop{background:rgba(20,22,28,.62);-webkit-backdrop-filter:blur
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5ZW5J2LR" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NXCNC85H" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
 <!-- SPLASH -->
@@ -1207,7 +1207,7 @@ dialog.cpop::backdrop{background:rgba(20,22,28,.62);-webkit-backdrop-filter:blur
     sub2.disabled=true;sub2.textContent='送信中…';$('#ctErr').hidden=true;
     if(window.aoSrc){window.aoSrc.fields.forEach(k=>{if(window.aoSrc.src[k])body.set(k,window.aoSrc.src[k])});if(window.aoSrc.parts.length)body.set('_form','AOHARU RPO LP / '+window.aoSrc.parts.join(' / '));}
     (window.aoSpam?window.aoSpam(ctf):Promise.resolve({})).then(x=>{Object.keys(x).forEach(k=>body.set(k,x[k]));return fetch(GAS_URL,{method:'POST',mode:'no-cors',body})})
-      .then(()=>ctf.classList.add('sent'))
+      .then(()=>{window.dataLayer=window.dataLayer||[];window.dataLayer.push({event:'dl_form_submit',form_name:'rpo'});ctf.classList.add('sent')})
       .catch(()=>{$('#ctErr').hidden=false;sub2.textContent='無料で相談する →';chk2()});
   });
 
