@@ -1,8 +1,16 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NXCNC85H');</script>
+<!-- End Google Tag Manager -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="canonical" href="https://aoharu-intern.com/pool">
 <title>新卒タレントプール採用 ｜ WorCry（ワークライ）</title>
 <meta name="description" content="「採ってみたら違った」をなくす、新卒タレントプール採用。就活が始まる前——大学1・2年から学生とつながる“タレントプール”を築き、育てて確かめてから採用へ。フロー型からストック型の新卒採用に。長期インターン紹介と超早期新卒紹介の2サービスで、採用責任者を支援します。">
 <meta property="og:title" content="新卒タレントプール採用 ｜ WorCry">
@@ -581,6 +589,10 @@ section.blk{padding:84px 0}
 </style>
 </head>
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NXCNC85H"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
 <header>
   <div class="wrap nav">
@@ -617,7 +629,7 @@ section.blk{padding:84px 0}
         <div class="form-badge"><span><b>30秒</b>のかんたん入力で、サービス資料をお届けします</span></div>
         <div class="pbar"><i id="pbar"></i></div>
         <div class="pstep-lbl" id="pstepLbl">1 / 5</div>
-        <form id="leadForm" autocomplete="on" novalidate>
+        <form id="leadForm" autocomplete="on" novalidate><div class="ao-hp" aria-hidden="true"><input type="text" name="website" tabindex="-1" autocomplete="off"></div>
           <div class="fstep on" data-step="1">
             <label for="role">あなたの役職を選択してください</label>
             <select id="role" name="role" required>
@@ -636,6 +648,7 @@ section.blk{padding:84px 0}
             <button type="button" class="fbtn back" id="backBtn" style="display:none">←</button>
             <button type="button" class="fbtn next" id="nextBtn">次へ →</button>
           </div>
+          <p class="ao-rc">この<wbr>フォームは<wbr> reCAPTCHA で<wbr>保護されています<wbr>（Google <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">プライバシーポリシー</a>・<a href="https://policies.google.com/terms" target="_blank" rel="noopener">利用規約</a>）</p>
         </form>
       </div>
     </div>
@@ -940,6 +953,29 @@ section.blk{padding:84px 0}
   </div>
 </footer>
 
+<!-- スパム対策（2026-11）：表示からの経過時間・隠し入力欄・reCAPTCHA v3。判定は各GASで行う -->
+<style>.ao-hp{position:absolute!important;left:-9999px;width:1px;height:1px;overflow:hidden}.grecaptcha-badge{visibility:hidden}.ao-rc{margin:10px 0 0;font-size:11px;line-height:1.7;opacity:.72;text-align:center}.ao-rc a{color:inherit;text-decoration:underline}</style>
+<script>
+(function(){
+  var K='6LfHOhYuAAAAAAkmORWx4rw0Bo4Qwnt2X2vIbGq7', t0=Date.now();
+  var s=document.createElement('script'); s.src='https://www.google.com/recaptcha/api.js?render='+K; s.async=true; document.head.appendChild(s);
+  window.aoSpam=function(form){
+    var w='';
+    if(form&&form.querySelector('[name="website"]')) w=form.querySelector('[name="website"]').value;
+    else document.querySelectorAll('[name="website"]').forEach(function(i){ if(i.value) w=i.value; });
+    var o={_e:String(Date.now()-t0), website:w, 'g-recaptcha-response':''};
+    return new Promise(function(res){
+      if(!window.grecaptcha||!grecaptcha.ready) return res(o);
+      var done=false, tm=setTimeout(function(){ if(!done){done=true;res(o);} },4000);
+      grecaptcha.ready(function(){
+        grecaptcha.execute(K,{action:'contact'}).then(function(t){ if(done)return; done=true; clearTimeout(tm); o['g-recaptcha-response']=t; res(o); },
+          function(){ if(!done){done=true;clearTimeout(tm);res(o);} });
+      });
+    });
+  };
+})();
+</script>
+
 <script>
 // mobile menu
 const hamb=document.getElementById('hamb'),mmenu=document.getElementById('mmenu');
@@ -951,7 +987,8 @@ setTimeout(function(){document.querySelectorAll('.reveal:not(.in)').forEach(func
 
 // ---- 30sec lead form -> price modal ----
 (function(){
-  var GAS_ENDPOINT="";
+  var GAS_ENDPOINT="https://script.google.com/macros/s/AKfycbz3Nbd8CtPb25Pni3nogrKiSbIRdEZNliIpOsPMNPgrHfso7cCbshO5n0V1V3ACu0mm/exec";
+  var MAIL_GAS_ENDPOINT="https://script.google.com/macros/s/AKfycby7F4UHGQUIdw8zHdrUyAns1gb_0n-bi04r3cjCM3TVlSfyUJ8qRiqQGRqrX2ZaI-RK9Q/exec"; // /shinsotsu と同じ（新卒シート＋通知メール）
   var form=document.getElementById('leadForm'); if(!form) return;
   var steps=Array.prototype.slice.call(form.querySelectorAll('.fstep'));
   var bar=document.getElementById('pbar'),lbl=document.getElementById('pstepLbl');
@@ -980,7 +1017,20 @@ setTimeout(function(){document.querySelectorAll('.reveal:not(.in)').forEach(func
   function closeModal(){modal.classList.remove('open');modal.setAttribute('aria-hidden','true');document.body.style.overflow='';}
   function openModal(){modal.classList.add('open');modal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';}
   if(modal){modal.querySelectorAll('[data-close]').forEach(function(el){el.addEventListener('click',closeModal)});document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal()});}
-  function submit(){collect();data.source='pool-lp';data.page='shinsotsu-talent-pool';if(GAS_ENDPOINT){try{fetch(GAS_ENDPOINT,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(data)});}catch(e){}}openModal();}
+  function track(){var q=new URLSearchParams(location.search);['utm_source','utm_medium','utm_campaign','utm_content','gclid'].forEach(function(k){if(q.get(k))data[k]=q.get(k);});data.landing=location.href.split('#')[0];data.referrer=document.referrer||'';}
+  function submit(){collect();track();data.source='pool-lp';data.page='shinsotsu-talent-pool';
+    data.message='【新卒タレントプールLP】役職：'+(data.role||'未選択')+'／ページ：'+data.landing;
+    nextBtn.disabled=true;nextBtn.textContent='送信中...';
+    (window.aoSpam?window.aoSpam(form):Promise.resolve({})).then(function(x){
+      Object.assign(data,x);
+      var body=JSON.stringify(data);
+      try{fetch(GAS_ENDPOINT,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:body});}catch(e){}
+      try{fetch(MAIL_GAS_ENDPOINT,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:body});}catch(e){}
+      window.dataLayer=window.dataLayer||[];window.dataLayer.push({event:'dl_form_submit',form_name:'pool'});
+      nextBtn.disabled=false;nextBtn.textContent='サービス資料を受け取る →';
+      openModal();
+    });
+  }
   render();
 })();
 
