@@ -570,9 +570,17 @@ body.sd-lock{overflow:hidden}
 <!-- /16TYPE SHINDAN -->
 
 <script>
+// Instagramオーガニック用：?ch=ig のときだけ LINEボタンを IG_WP就活ガイド（uLand=u4cfAr）に切り替える。Meta広告の経路（LTo9qR）と計測を分けるため（11/11）
+(function(){
+  if(!/[?&]ch=ig(&|$)/.test(location.search))return;
+  window.GUIDE_CH='ig';
+  document.querySelectorAll('a[href*="uLand=LTo9qR"]').forEach(function(a){a.href=a.href.replace('uLand=LTo9qR','uLand=u4cfAr')});
+})();
+</script>
+<script>
 document.querySelectorAll('a[data-cta]').forEach(function(a){a.addEventListener('click',function(){
   window.dataLayer.push({event:'guide_lp_line_click',guide_lp_cta:a.getAttribute('data-cta')});
-  try{if(window.fbq){fbq('trackCustom','GuideLpLineClick',{position:a.getAttribute('data-cta')});}}catch(e){}
+  try{if(window.fbq&&window.GUIDE_CH!=='ig'){fbq('trackCustom','GuideLpLineClick',{position:a.getAttribute('data-cta')});}}catch(e){}
 });});
 </script>
 </body></html>
