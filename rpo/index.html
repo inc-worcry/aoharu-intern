@@ -1205,6 +1205,7 @@ dialog.cpop::backdrop{background:rgba(20,22,28,.62);-webkit-backdrop-filter:blur
     body.set('email',$('#ct-email').value.trim());body.set('tel',$('#ct-tel').value.trim());
     plans.forEach(v=>body.append('plan',v));body.set('message',$('#ct-msg').value.trim());
     sub2.disabled=true;sub2.textContent='送信中…';$('#ctErr').hidden=true;
+    if(window.aoSrc){window.aoSrc.fields.forEach(k=>{if(window.aoSrc.src[k])body.set(k,window.aoSrc.src[k])});if(window.aoSrc.parts.length)body.set('_form','AOHARU RPO LP / '+window.aoSrc.parts.join(' / '));}
     (window.aoSpam?window.aoSpam(ctf):Promise.resolve({})).then(x=>{Object.keys(x).forEach(k=>body.set(k,x[k]));return fetch(GAS_URL,{method:'POST',mode:'no-cors',body})})
       .then(()=>ctf.classList.add('sent'))
       .catch(()=>{$('#ctErr').hidden=false;sub2.textContent='無料で相談する →';chk2()});
@@ -1311,6 +1312,24 @@ dialog.cpop::backdrop{background:rgba(20,22,28,.62);-webkit-backdrop-filter:blur
       });
     });
   };
+})();
+</script>
+<!-- 流入元トラッキング（gclid / utm）：/long-intern と同じ保存キー。送信時に window.aoSrc を使う（2026-11） -->
+<script>
+(function(){
+  var KEY="aoharu_src_v1", KEYS=["gclid","wbraid","gbraid","utm_source","utm_medium","utm_campaign","utm_term","utm_content"];
+  var q=new URLSearchParams(location.search), fresh={};
+  KEYS.forEach(function(k){var v=q.get(k); if(v) fresh[k]=v;});
+  if((fresh.gclid||fresh.wbraid||fresh.gbraid)&&!fresh.utm_source){fresh.utm_source="google";fresh.utm_medium="cpc";}
+  var src={}; try{src=JSON.parse(sessionStorage.getItem(KEY)||"{}");}catch(e){}
+  if(Object.keys(fresh).length){src=fresh;src.landing_page=location.pathname+location.search;src.referrer=document.referrer||"";try{sessionStorage.setItem(KEY,JSON.stringify(src));}catch(e){}}
+  if(!src.landing_page) src.landing_page=location.pathname+location.search;
+  if(!src.referrer) src.referrer=document.referrer||"";
+  var parts=[];
+  if(src.utm_source||src.utm_medium) parts.push((src.utm_source||"-")+"/"+(src.utm_medium||"-"));
+  if(src.utm_campaign) parts.push(src.utm_campaign);
+  if(src.gclid) parts.push("gclid:"+src.gclid); else if(src.wbraid) parts.push("wbraid:"+src.wbraid); else if(src.gbraid) parts.push("gbraid:"+src.gbraid);
+  window.aoSrc={src:src,parts:parts,fields:KEYS.concat(["landing_page","referrer"])};
 })();
 </script>
 </body>

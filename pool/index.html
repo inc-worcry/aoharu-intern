@@ -1042,6 +1042,7 @@ setTimeout(function(){document.querySelectorAll('.reveal:not(.in)').forEach(func
   }
   function submit(){collect();track();data.source='pool-lp';data.page='shinsotsu-talent-pool';
     data.message='【新卒タレントプールLP】役職：'+(data.role||'未選択')+'／ページ：'+data.landing;
+    if(window.aoSrc){window.aoSrc.fields.forEach(function(k){if(window.aoSrc.src[k]&&!data[k])data[k]=window.aoSrc.src[k];});if(window.aoSrc.parts.length)data.message+='／流入元：'+window.aoSrc.parts.join(' / ');}
     nextBtn.disabled=true;nextBtn.textContent='送信中...';
     (window.aoSpam?window.aoSpam(form):Promise.resolve({})).then(function(x){
       Object.assign(data,x);
@@ -1112,6 +1113,24 @@ setTimeout(function(){document.querySelectorAll('.reveal:not(.in)').forEach(func
   view.addEventListener('pointerdown',function(e){sx=e.clientX;});
   view.addEventListener('pointerup',function(e){if(sx===null)return;var d=e.clientX-sx;if(Math.abs(d)>40){d<0?next():prev();}sx=null;});
   render(); raf=requestAnimationFrame(tick);
+})();
+</script>
+<!-- 流入元トラッキング（gclid / utm）：/long-intern と同じ保存キー。送信時に window.aoSrc を使う（2026-11） -->
+<script>
+(function(){
+  var KEY="aoharu_src_v1", KEYS=["gclid","wbraid","gbraid","utm_source","utm_medium","utm_campaign","utm_term","utm_content"];
+  var q=new URLSearchParams(location.search), fresh={};
+  KEYS.forEach(function(k){var v=q.get(k); if(v) fresh[k]=v;});
+  if((fresh.gclid||fresh.wbraid||fresh.gbraid)&&!fresh.utm_source){fresh.utm_source="google";fresh.utm_medium="cpc";}
+  var src={}; try{src=JSON.parse(sessionStorage.getItem(KEY)||"{}");}catch(e){}
+  if(Object.keys(fresh).length){src=fresh;src.landing_page=location.pathname+location.search;src.referrer=document.referrer||"";try{sessionStorage.setItem(KEY,JSON.stringify(src));}catch(e){}}
+  if(!src.landing_page) src.landing_page=location.pathname+location.search;
+  if(!src.referrer) src.referrer=document.referrer||"";
+  var parts=[];
+  if(src.utm_source||src.utm_medium) parts.push((src.utm_source||"-")+"/"+(src.utm_medium||"-"));
+  if(src.utm_campaign) parts.push(src.utm_campaign);
+  if(src.gclid) parts.push("gclid:"+src.gclid); else if(src.wbraid) parts.push("wbraid:"+src.wbraid); else if(src.gbraid) parts.push("gbraid:"+src.gbraid);
+  window.aoSrc={src:src,parts:parts,fields:KEYS.concat(["landing_page","referrer"])};
 })();
 </script>
 </body>
