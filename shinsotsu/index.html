@@ -1603,6 +1603,10 @@ function sendToGas(data, doneId, noteId, btnId) {
     btn.textContent = '送信中...';
   }
   if (note) { note.style.color = ''; note.textContent = ''; }
+  if (window.aoSrc) {
+    window.aoSrc.fields.forEach(function(k){ if (window.aoSrc.src[k]) data[k] = window.aoSrc.src[k]; });
+    if (window.aoSrc.parts.length) data.message = (data.message ? data.message + '\n' : '') + '［流入元］' + window.aoSrc.parts.join(' / ');
+  }
   (window.aoSpam ? window.aoSpam() : Promise.resolve({})).then(function(x){
     Object.assign(data, x);
     return fetch(GAS_URL, { method: 'POST', body: JSON.stringify(data) });
@@ -1770,6 +1774,24 @@ document.addEventListener('DOMContentLoaded',function(){
   document.getElementById('menuClose').addEventListener('click', () => setMenu(false));
   menu.addEventListener('click', (e) => { if (e.target.closest('a')) { setMenu(false); if (document.getElementById('m-modal').style.display === 'block') document.body.style.overflow = 'hidden'; } });
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !menu.hidden) setMenu(false); });
+})();
+</script>
+<!-- 流入元トラッキング（gclid / utm）：/long-intern と同じ保存キー。送信時に window.aoSrc を使う（2026-11） -->
+<script>
+(function(){
+  var KEY="aoharu_src_v1", KEYS=["gclid","wbraid","gbraid","utm_source","utm_medium","utm_campaign","utm_term","utm_content"];
+  var q=new URLSearchParams(location.search), fresh={};
+  KEYS.forEach(function(k){var v=q.get(k); if(v) fresh[k]=v;});
+  if((fresh.gclid||fresh.wbraid||fresh.gbraid)&&!fresh.utm_source){fresh.utm_source="google";fresh.utm_medium="cpc";}
+  var src={}; try{src=JSON.parse(sessionStorage.getItem(KEY)||"{}");}catch(e){}
+  if(Object.keys(fresh).length){src=fresh;src.landing_page=location.pathname+location.search;src.referrer=document.referrer||"";try{sessionStorage.setItem(KEY,JSON.stringify(src));}catch(e){}}
+  if(!src.landing_page) src.landing_page=location.pathname+location.search;
+  if(!src.referrer) src.referrer=document.referrer||"";
+  var parts=[];
+  if(src.utm_source||src.utm_medium) parts.push((src.utm_source||"-")+"/"+(src.utm_medium||"-"));
+  if(src.utm_campaign) parts.push(src.utm_campaign);
+  if(src.gclid) parts.push("gclid:"+src.gclid); else if(src.wbraid) parts.push("wbraid:"+src.wbraid); else if(src.gbraid) parts.push("gbraid:"+src.gbraid);
+  window.aoSrc={src:src,parts:parts,fields:KEYS.concat(["landing_page","referrer"])};
 })();
 </script>
 </body>
