@@ -1018,14 +1018,37 @@ setTimeout(function(){document.querySelectorAll('.reveal:not(.in)').forEach(func
   function openModal(){modal.classList.add('open');modal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';}
   if(modal){modal.querySelectorAll('[data-close]').forEach(function(el){el.addEventListener('click',closeModal)});document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal()});}
   function track(){var q=new URLSearchParams(location.search);['utm_source','utm_medium','utm_campaign','utm_content','gclid'].forEach(function(k){if(q.get(k))data[k]=q.get(k);});data.landing=location.href.split('#')[0];data.referrer=document.referrer||'';}
+  // 旧URL（github.io）では新卒シート側のスパム判定を通らないため、aoharu-intern.com/pool/relay.html を隠しiframeで開き、そこから送る
+  var RELAY_ORIGIN='https://aoharu-intern.com', relayWin=null, relayReady=false;
+  if(location.hostname!=='aoharu-intern.com'){
+    var rf=document.createElement('iframe');rf.src=RELAY_ORIGIN+'/pool/relay.html';rf.title='form relay';rf.setAttribute('aria-hidden','true');rf.tabIndex=-1;
+    rf.style.cssText='position:absolute;width:1px;height:1px;border:0;left:-9999px;top:0';
+    window.addEventListener('message',function(e){if(e.origin===RELAY_ORIGIN&&e.data&&e.data.type==='pool-relay-ready'){relayReady=true;}});
+    document.body.appendChild(rf);relayWin=rf.contentWindow;
+  }
+  function viaRelay(d){
+    return new Promise(function(res){
+      var id=String(Date.now()),done=false;
+      function h(e){if(e.origin===RELAY_ORIGIN&&e.data&&e.data.type==='pool-sent'&&e.data.id===id){done=true;window.removeEventListener('message',h);res(true);}}
+      window.addEventListener('message',h);
+      relayWin.postMessage({type:'pool-submit',id:id,data:d},RELAY_ORIGIN);
+      setTimeout(function(){if(!done){window.removeEventListener('message',h);res(false);}},8000);
+    });
+  }
+  function direct(){
+    var body=JSON.stringify(data);
+    try{fetch(GAS_ENDPOINT,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:body});}catch(e){}
+    try{fetch(MAIL_GAS_ENDPOINT,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:body});}catch(e){}
+  }
   function submit(){collect();track();data.source='pool-lp';data.page='shinsotsu-talent-pool';
     data.message='【新卒タレントプールLP】役職：'+(data.role||'未選択')+'／ページ：'+data.landing;
     nextBtn.disabled=true;nextBtn.textContent='送信中...';
     (window.aoSpam?window.aoSpam(form):Promise.resolve({})).then(function(x){
       Object.assign(data,x);
-      var body=JSON.stringify(data);
-      try{fetch(GAS_ENDPOINT,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:body});}catch(e){}
-      try{fetch(MAIL_GAS_ENDPOINT,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:body});}catch(e){}
+      if(relayWin&&relayReady){var d=Object.assign({},data);delete d['g-recaptcha-response'];return viaRelay(d).then(function(ok){if(!ok)direct();});}
+      direct();
+    }).then(function(){
+
       window.dataLayer=window.dataLayer||[];window.dataLayer.push({event:'dl_form_submit',form_name:'pool'});
       nextBtn.disabled=false;nextBtn.textContent='サービス資料を受け取る →';
       openModal();
