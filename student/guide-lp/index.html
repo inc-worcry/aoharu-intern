@@ -578,4 +578,33 @@ document.querySelectorAll('a[data-cta]').forEach(function(a){a.addEventListener(
   try{if(window.fbq){fbq('trackCustom','GuideLpLineClick',{position:a.getAttribute('data-cta')});}}catch(e){}
 });});
 </script>
+
+<script>
+/* Meta広告 Instagram/FBアプリ内ブラウザ → LINE受け渡し対策。通常ブラウザ・QRスキャン(Safari/Chrome)は無改変 */
+(function(){
+  var ua=navigator.userAgent||'';
+  if(!/Instagram|FBAN|FBAV|FB_IAB|FBIOS/i.test(ua))return;
+  var isAndroid=/Android/i.test(ua);
+  var sel='a[href*="s.lmes.jp"],a[href*="lin.ee"],a[href*="line.me"]';
+  if(isAndroid){
+    Array.prototype.forEach.call(document.querySelectorAll(sel),function(a){
+      a.addEventListener('click',function(e){
+        var url=a.href;
+        e.preventDefault();
+        window.location.href='intent://'+url.replace(/^https?:\/\//,'')
+          +'#Intent;scheme=https;package=com.android.chrome;S.browser_fallback_url='
+          +encodeURIComponent(url)+';end';
+      });
+    });
+  }
+  var bar=document.createElement('div');
+  bar.setAttribute('role','note');
+  bar.style.cssText='position:fixed;left:8px;right:8px;bottom:8px;z-index:99999;background:#1f3d79;color:#fff;border-radius:12px;padding:11px 42px 11px 14px;font-size:12px;line-height:1.55;font-family:inherit;box-shadow:0 6px 20px rgba(0,0,0,.28);';
+  bar.innerHTML='LINE登録に進めない時は、画面<b>右上の「…」→「ブラウザで開く」</b>で解決します'
+    +'<span id="iabX" style="position:absolute;top:50%;right:12px;transform:translateY(-50%);font-size:18px;line-height:1;opacity:.85;padding:4px;cursor:pointer;">&times;</span>';
+  document.body.appendChild(bar);
+  var x=document.getElementById('iabX');
+  if(x)x.addEventListener('click',function(){bar.remove();});
+})();
+</script>
 </body></html>
