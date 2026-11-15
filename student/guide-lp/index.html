@@ -10,6 +10,8 @@
 <link rel="icon" type="image/png" href="/student/assets/favicon.png">
 <link rel="apple-touch-icon" href="/student/assets/apple-touch-icon.png">
 <title>1・2年生からの就活スタートガイド（無料）｜AOHARUインターン</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=LINE+Seed+JP:wght@400;700;800&display=swap" rel="stylesheet">
 <style>
 
   :root{
@@ -20,8 +22,9 @@
   }
   *{box-sizing:border-box;margin:0;padding:0;}
   html{scroll-behavior:smooth;}
-  body{font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",system-ui,sans-serif;color:var(--ink);
+  body{font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;color:var(--ink);
     background:var(--bg1);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+  h1,h2,h3,.eyebrow,.un,.btn-line,.hcta,.logo,.step .sn{font-family:"LINE Seed JP","Hiragino Sans",sans-serif;}
   .wrap{max-width:var(--maxw);margin:0 auto;padding:0 20px;}
   section{padding:62px 0;}
   h2{font-size:28px;font-weight:900;text-align:center;line-height:1.35;margin-bottom:10px;}
@@ -39,7 +42,7 @@
   .hero{background:linear-gradient(165deg,#fef6ff 0%,var(--bg1) 45%,var(--bg2) 100%);position:relative;overflow:hidden;}
   .herostage{position:relative;height:600px;}
   .bgfield{position:absolute;inset:0;display:flex;gap:16px;justify-content:center;z-index:1;opacity:.48;}
-  .col{display:flex;flex-direction:column;gap:16px;width:156px;flex:0 0 auto;animation:drift var(--sp,30s) linear infinite;will-change:transform;}
+  .col{display:flex;flex-direction:column;gap:16px;width:156px;flex:0 0 auto;}
   .col.rev{animation-direction:reverse;}
   @keyframes drift{ from{transform:translateY(0);} to{transform:translateY(-50%);} }
   .bc{width:100%;aspect-ratio:1;border-radius:16px;background-size:cover;background-position:center;box-shadow:0 8px 18px rgba(47,75,134,.08);filter:saturate(.75);}
@@ -246,7 +249,7 @@
           LINEで無料診断をはじめる
           <small>追加した瞬間に <span style="white-space:nowrap">①16タイプ診断</span> <span style="white-space:nowrap">②就活ガイド が届く</span></small>
         </a>
-        <div class="reassure r2"><span class="lk">🔒 受け取りはLINEだけ</span><span class="row2">✓登録フォームなし・約30秒　✓完全無料</span></div>
+        <div class="reassure r2"><span class="lk">受け取りはLINEだけ</span><span class="row2">✓登録フォームなし・約30秒　✓完全無料</span></div>
         <p class="whynow"><span class="nw">動き出しが早い人ほど有利。</span><span class="nw"><b>1・2年生の&ldquo;今&rdquo;がいちばん差がつく。</b></span></p>
       </div>
     </div>
@@ -275,7 +278,7 @@
     <!-- 2 big cards: 16TYPE診断 ＆ 就活スタートガイド -->
     <div class="btop">
       <div class="bigcard pink">
-        <div class="bhead"><div class="ic" style="background:#ffe3ec;">🧭</div><h3>16タイプ診断<span style="font-size:.6em;font-weight:700;color:#9aa1a9;letter-spacing:.04em;margin-left:7px">by AOHARU</span> <span class="tag free">無料</span></h3></div>
+        <div class="bhead"><h3>16TYPE診断 <span class="tag free">無料</span></h3></div>
         <p>10問に答えるだけで、あなたの就活タイプと強みがわかる。結果はLINEにそのまま届きます。</p>
         <div class="typestrip">
           <img loading="lazy" decoding="async" src="/student/guide-lp/c1.webp" alt=""><img loading="lazy" decoding="async" src="/student/guide-lp/c3.webp" alt=""><img loading="lazy" decoding="async" src="/student/guide-lp/c2.webp" alt=""><img loading="lazy" decoding="async" src="/student/guide-lp/c5.webp" alt="">
@@ -289,7 +292,7 @@
       </div>
 
       <div class="bigcard yellow">
-        <div class="bhead"><div class="ic" style="background:#fff3d6;">📘</div><h3>就活スタートガイド <span class="tag">今なら無料</span></h3></div>
+        <div class="bhead"><h3>就活スタートガイド <span class="tag">今なら無料</span></h3></div>
         <p>タイプ別に「何から始めればいいか」がわかる資料。書き込みワーク付きで、読んで終わりにしない。</p>
         <div class="gpreview sm">
           <figure><img loading="lazy" decoding="async" src="/student/guide-lp/cover.webp" alt="表紙"><figcaption>表紙</figcaption></figure>
@@ -297,18 +300,18 @@
           <figure><img loading="lazy" decoding="async" src="/student/guide-lp/page6.webp" alt="経験のつくり方"><figcaption>経験のつくり方</figcaption></figure>
         </div>
         <div class="gchips">
-          <span class="gchip">📚 全<b>7</b>章</span>
-          <span class="gchip">✍️ 書き込みワーク付き</span>
-          <span class="gchip">🗣 先輩のリアルな声</span>
+          <span class="gchip">全<b>7</b>章</span>
+          <span class="gchip">書き込みワーク付き</span>
+          <span class="gchip">先輩のリアルな声</span>
         </div>
       </div>
     </div>
 
     <!-- 3 smaller cards -->
     <div class="bbot">
-      <div class="b"><div class="ic" style="background:#e6f7ea;">💬</div><div><h3>プロに相談し放題</h3><p>人材業界<b>8年以上</b>のプロに、不安も心配事も進め方も相談し放題。ひとりで抱えなくて大丈夫。</p></div></div>
-      <div class="b"><div class="ic" style="background:#e9e6ff;">🎯</div><div><h3>企業と直接つながる</h3><p>企業と直接話せるイベントや、<b>授業と両立できる有給インターン</b>を紹介。ガクチカ以上の“実力”が身につく。</p></div></div>
-      <div class="b"><div class="ic" style="background:#e3f0ff;">🔔</div><div><h3>選択肢がどんどん広がる</h3><p>毎週増える新着求人で選択肢が拡大。いろいろ知るうちに、<b>“自分の軸”</b>が見えてくる。</p></div></div>
+      <div class="b"><div><h3>プロに相談し放題</h3><p>人材業界<b>8年以上</b>のプロに、不安も心配事も進め方も相談し放題。ひとりで抱えなくて大丈夫。</p></div></div>
+      <div class="b"><div><h3>企業と直接つながる</h3><p>企業と直接話せるイベントや、<b>授業と両立できる有給インターン</b>を紹介。ガクチカ以上の“実力”が身につく。</p></div></div>
+      <div class="b"><div><h3>選択肢がどんどん広がる</h3><p>毎週増える新着求人で選択肢が拡大。いろいろ知るうちに、<b>“自分の軸”</b>が見えてくる。</p></div></div>
     </div>
   </div>
 </section>
@@ -333,9 +336,9 @@
     <h2>受け取りまで、<span class="mark">3ステップ</span></h2>
     <p class="lead">最短1分。登録フォームの入力はありません。</p>
     <div class="steps">
-      <div class="step"><div class="sn">STEP 1</div><div class="si">📱</div><h3>LINEで友だち追加</h3><p>ボタンをタップして追加するだけ。</p></div>
-      <div class="step"><div class="sn">STEP 2</div><div class="si">✏️</div><h3>16タイプ診断に回答</h3><p>直感でOK。約1分で終わります。</p></div>
-      <div class="step"><div class="sn">STEP 3</div><div class="si">🎁</div><h3>結果＆特典が届く</h3><p>診断結果・ガイド・求人情報がトークに。</p></div>
+      <div class="step"><div class="sn">STEP 1</div><h3>LINEで友だち追加</h3><p>ボタンをタップして追加するだけ。</p></div>
+      <div class="step"><div class="sn">STEP 2</div><h3>16TYPE診断に回答</h3><p>直感でOK。約1分で終わります。</p></div>
+      <div class="step"><div class="sn">STEP 3</div><h3>結果＆特典が届く</h3><p>診断結果・ガイド・求人情報がトークに。</p></div>
     </div>
     <div class="ctaBlock" style="text-align:center;">
       <a class="btn-line cta" data-cta="mid" href="https://s.lmes.jp/landing-qr/2008019424-482x88yd?uLand=LTo9qR">
@@ -370,7 +373,7 @@
           LINEで無料診断をはじめる
           <small>追加した瞬間に <span style="white-space:nowrap">①16タイプ診断</span> <span style="white-space:nowrap">②就活ガイド が届く</span></small>
       </a>
-      <div class="reassure r2"><span class="lk">🔒 受け取りはLINEだけ</span><span class="row2">✓登録フォームなし・約30秒　✓完全無料</span></div>
+      <div class="reassure r2"><span class="lk">受け取りはLINEだけ</span><span class="row2">✓登録フォームなし・約30秒　✓完全無料</span></div>
       <p class="whynow"><span class="nw">動き出しが早い人ほど有利。</span><span class="nw"><b>1・2年生の&ldquo;今&rdquo;がいちばん差がつく。</b></span></p>
     </div>
   </div>
@@ -463,9 +466,9 @@ body.sd-lock{overflow:hidden}
 .sd-go:active{transform:translateY(3px);box-shadow:0 3px 0 rgba(0,0,0,.18)}
 .sd-note{font-size:12px;color:var(--sub);text-align:center;margin:16px 0 0;line-height:1.7}
 </style>
-<div class="sd" id="sd" role="dialog" aria-modal="true" aria-label="16タイプ診断">
+<div class="sd" id="sd" role="dialog" aria-modal="true" aria-label="16TYPE診断">
   <div class="sd-in">
-    <div class="sd-top"><button type="button" class="sd-back" id="sdBack">← 前の質問</button><span class="sd-ttl">16タイプ診断</span><span class="sd-x" aria-hidden="true"></span></div>
+    <div class="sd-top"><button type="button" class="sd-back" id="sdBack">← 前の質問</button><span class="sd-ttl">16TYPE診断</span><span class="sd-x" aria-hidden="true"></span></div>
     <div class="sd-intro" id="sdIntro">
       <p class="sd-k">BEFORE YOU START</p>
       <h2>これから、10の場面であなたの選び方を見ていきます。</h2>
@@ -570,17 +573,9 @@ body.sd-lock{overflow:hidden}
 <!-- /16TYPE SHINDAN -->
 
 <script>
-// Instagramオーガニック用：?ch=ig のときだけ LINEボタンを IG_WP就活ガイド（uLand=u4cfAr）に切り替える。Meta広告の経路（LTo9qR）と計測を分けるため（11/11）
-(function(){
-  if(!/[?&]ch=ig(&|$)/.test(location.search))return;
-  window.GUIDE_CH='ig';
-  document.querySelectorAll('a[href*="uLand=LTo9qR"]').forEach(function(a){a.href=a.href.replace('uLand=LTo9qR','uLand=u4cfAr')});
-})();
-</script>
-<script>
 document.querySelectorAll('a[data-cta]').forEach(function(a){a.addEventListener('click',function(){
   window.dataLayer.push({event:'guide_lp_line_click',guide_lp_cta:a.getAttribute('data-cta')});
-  try{if(window.fbq&&window.GUIDE_CH!=='ig'){fbq('trackCustom','GuideLpLineClick',{position:a.getAttribute('data-cta')});}}catch(e){}
+  try{if(window.fbq){fbq('trackCustom','GuideLpLineClick',{position:a.getAttribute('data-cta')});}}catch(e){}
 });});
 </script>
 </body></html>
