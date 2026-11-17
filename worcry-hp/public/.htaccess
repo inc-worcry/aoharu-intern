@@ -19,10 +19,10 @@ RewriteRule ^(.*)$ https://www.worcry.com/$1 [R=301,L]
 
 # 旧STUDIOのURLから新しいページへ（worcry.com のみ）
 RewriteCond %{HTTP_HOST} ^www\.worcry\.com$ [NC]
-RewriteRule ^service/rp/?$ https://aoharu-intern.worcry.com/rpo/?utm_source=worcry_hp [R=301,L]
+RewriteRule ^service/rp/?$ https://aoharu-intern.com/rpo?utm_source=worcry_hp [R=301,L]
 RewriteCond %{HTTP_HOST} ^www\.worcry\.com$ [NC]
-RewriteRule ^service/op/?$ https://aoharu-intern.worcry.com/?utm_source=worcry_hp [R=301,L]
+RewriteRule ^service/op/?$ https://aoharu-intern.com/business?utm_source=worcry_hp [R=301,L]
 RewriteCond %{HTTP_HOST} ^www\.worcry\.com$ [NC]
-RewriteRule ^service/?$ https://aoharu-intern.worcry.com/?utm_source=worcry_hp [R=301,L]
+RewriteRule ^service/?$ https://aoharu-intern.com/business?utm_source=worcry_hp [R=301,L]
 RewriteCond %{HTTP_HOST} ^www\.worcry\.com$ [NC]
 RewriteRule ^case(/.*)?$ / [R=301,L]
