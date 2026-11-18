@@ -8,7 +8,6 @@ on:
       - 'site/long-intern/**'
       - 'shinsotsu/**'
       - 'shinsotsu-re/**'
-      - 'scout/**'
       - 'pool/**'
       - 'student/**'
       - 'rpo/**'
@@ -95,28 +94,8 @@ jobs:
           local-dir: ./shinsotsu-re/
           server-dir: /worcry.com/public_html/aoharu-intern.worcry.com/shinsotsu-re/
 
-  scout:
-    needs: shinsotsu-re
-    if: ${{ !cancelled() }}
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: FTP Deploy to Xserver
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        with:
-          server:   ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          protocol: ftps
-          port: 21
-          timeout: 600000
-          local-dir: ./scout/
-          server-dir: /worcry.com/public_html/aoharu-intern.worcry.com/scout/
-
   pool:
-    needs: scout
+    needs: shinsotsu-re
     if: ${{ !cancelled() }}
     runs-on: ubuntu-latest
     steps:
