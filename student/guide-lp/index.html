@@ -245,9 +245,9 @@
       <h1>16タイプ<u>診断</u>して、<br>就活ガイドも<u>GET</u>。</h1>
       <p class="pitch"><span style="display:inline-block;font-size:18px;font-weight:900;color:#ff5a7a;margin-bottom:6px;">やりたいことが<span style="white-space:nowrap">決まってなくても、</span><span style="white-space:nowrap">大丈夫。</span></span><br><span style="white-space:nowrap">10問で、あなたの<b>強み</b>と<b>進む方向</b>がわかる。</span><br><span style="white-space:nowrap">結果もガイドも、ぜんぶ<b>LINEで無料</b>。</span></p>
       <div class="ctaBlock">
-        <a class="btn-line cta" data-cta="hero" href="https://s.lmes.jp/landing-qr/2008019424-482x88yd?uLand=4BCPpL">
-          LINEで無料診断をはじめる
-          <small>追加した瞬間に <span style="white-space:nowrap">①16タイプ診断</span> <span style="white-space:nowrap">②就活ガイド が届く</span></small>
+        <a class="btn-line cta" data-start href="#shindan">
+          無料で16タイプ診断をはじめる
+          <small>10問・約1分。<span style="white-space:nowrap">結果とガイド</span>は<span style="white-space:nowrap">このあとLINEで無料</span></small>
         </a>
         <div class="reassure r2"><span class="lk">受け取りはLINEだけ</span><span class="row2">✓登録フォームなし・約30秒　✓完全無料</span></div>
         <p class="whynow"><span class="nw">動き出しが早い人ほど有利。</span><span class="nw"><b>1・2年生の&ldquo;今&rdquo;がいちばん差がつく。</b></span></p>
@@ -341,9 +341,9 @@
       <div class="step"><div class="sn">STEP 3</div><h3>結果＆特典が届く</h3><p>診断結果・ガイド・求人情報がトークに。</p></div>
     </div>
     <div class="ctaBlock" style="text-align:center;">
-      <a class="btn-line cta" data-cta="mid" href="https://s.lmes.jp/landing-qr/2008019424-482x88yd?uLand=4BCPpL">
-          LINEで無料診断をはじめる
-          <small>友だち追加後、すぐにトークで診断スタート</small>
+      <a class="btn-line cta" data-start href="#shindan">
+          無料で16タイプ診断をはじめる
+          <small>10問・約1分。結果はこのあとLINEで受け取れる</small>
       </a>
       <div class="reassure">✓ 無料　✓ 約1分　✓ 1・2年生専用</div>
     </div>
@@ -369,9 +369,9 @@
     <h2>まずは、じぶんを知るところから。</h2>
     <p class="lead">診断もガイドも、プロへの相談も。はじめの一歩は、気軽にLINEで。</p>
     <div class="ctaBlock" style="text-align:center;">
-      <a class="btn-line cta" data-cta="final" href="https://s.lmes.jp/landing-qr/2008019424-482x88yd?uLand=4BCPpL">
-          LINEで無料診断をはじめる
-          <small>追加した瞬間に <span style="white-space:nowrap">①16タイプ診断</span> <span style="white-space:nowrap">②就活ガイド が届く</span></small>
+      <a class="btn-line cta" data-start href="#shindan">
+          無料で16タイプ診断をはじめる
+          <small>10問・約1分。<span style="white-space:nowrap">結果とガイド</span>は<span style="white-space:nowrap">このあとLINEで無料</span></small>
       </a>
       <div class="reassure r2"><span class="lk">受け取りはLINEだけ</span><span class="row2">✓登録フォームなし・約30秒　✓完全無料</span></div>
       <p class="whynow"><span class="nw">動き出しが早い人ほど有利。</span><span class="nw"><b>1・2年生の&ldquo;今&rdquo;がいちばん差がつく。</b></span></p>
@@ -380,7 +380,7 @@
 </section>
 
 <div class="sticky">
-  <a class="cta" data-cta="sticky" href="https://s.lmes.jp/landing-qr/2008019424-482x88yd?uLand=4BCPpL">LINEで無料診断をはじめる</a>
+  <a class="cta" data-start href="#shindan">無料で16タイプ診断をはじめる</a>
 </div>
 
 
@@ -564,7 +564,7 @@ body.sd-lock{overflow:hidden}
   document.getElementById('sdBack').onclick=function(){if(i>0){i--;show()}};
   
   // LINEへはリンクではなくボタンで移動（GTMのLead＝LPのLINEリンククリックと分けるため）
-  document.getElementById('sdLine').onclick=function(){try{window.dataLayer=window.dataLayer||[];window.dataLayer.push({event:'guide_shindan_line_click',shindan_type:lineType})}catch(e){}setTimeout(function(){location.href=lineUrl},150)};
+  document.getElementById('sdLine').onclick=function(){try{window.dataLayer=window.dataLayer||[];window.dataLayer.push({event:'guide_shindan_line_click',shindan_type:lineType})}catch(e){}var ua=navigator.userAgent||'',go=lineUrl;if(/Instagram|FBAN|FBAV|FB_IAB|FBIOS/i.test(ua)&&/Android/i.test(ua)){go='intent://'+lineUrl.replace(/^https?:\/\//,'')+'#Intent;scheme=https;package=com.android.chrome;S.browser_fallback_url='+encodeURIComponent(lineUrl)+';end'}setTimeout(function(){location.href=go},150)};
   document.getElementById('sdAgain').onclick=function(){i=0;ans=[];show()};
   document.querySelectorAll('[data-start]').forEach(function(a){a.addEventListener('click',open)});
   if(location.hash==='#shindan')open();
